@@ -1,5 +1,6 @@
 domain: Construction All Risks
 section_id: construction_car
+bundle_id: "construction-all-risks:20260412-gold"
 scenarios: 74
 fields: 14
 source_authenticity: synthetic

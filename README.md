@@ -20,7 +20,7 @@ Combined results across spacecraft (68 scenarios, depth 3) and construction (74 
 
 ## Dataset
 
-241 hand-authored scenarios across 4 domains with increasing exception chain depth:
+271 hand-authored scenarios across 5 domains with increasing exception chain depth:
 
 | Domain | Scenarios | Fields | Exception Depth | Source |
 |--------|:---------:|:------:|:---------------:|--------|
@@ -28,6 +28,7 @@ Combined results across spacecraft (68 scenarios, depth 3) and construction (74 
 | English Language | 43 | 12 | 2 | Real (Form AN) |
 | Spacecraft Crew Certification | 68 | 11 | 3 | Synthetic |
 | Construction All Risks | 74 | 14 | 5 | Synthetic (DE3/DE5) |
+| Benefits Entitlement | 30 | 8 | 3 | Synthetic (modelled on UC Regulations 2013) |
 
 See [`dataset/README.md`](dataset/README.md) for the full dataset card.
 
@@ -41,6 +42,7 @@ cd confidently-wrong-benchmark/benchmarks
 # Engine accuracy tests (no API key needed)
 uv run run_engine_tests.py ../dataset/spacecraft-crew-certification/
 uv run run_engine_tests.py ../dataset/construction-all-risks/
+uv run run_engine_tests.py ../dataset/benefits-entitlement/
 
 # LLM comparison (requires OPENAI_API_KEY and/or ANTHROPIC_API_KEY)
 uv run run_llm_comparison.py ../dataset/construction-all-risks/
@@ -51,6 +53,7 @@ uv run run_llm_comparison.py ../dataset/construction-all-risks/ --runs 3 --model
 
 ```
 dataset/                         # Benchmark scenarios (YAML)
+  benefits-entitlement/          # 30 scenarios, depth 3
   construction-all-risks/        # 74 scenarios, depth 5
   english-language/              # 43 scenarios, depth 2
   life-in-the-uk/                # 56 scenarios, depth 1
@@ -66,7 +69,7 @@ paper/                           # Paper source and PDF
 Paul Simpson. 2026.
 
 - arXiv: [TBD]
-- PDF: [`paper/confidently-wrong-v3.6.pdf`](paper/confidently-wrong-v3.6.pdf)
+- PDF: [`paper/confidently-wrong-v3.7.pdf`](paper/confidently-wrong-v3.7.pdf)
 
 ## Citation
 

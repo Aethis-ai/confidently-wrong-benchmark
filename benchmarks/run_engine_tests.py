@@ -70,6 +70,16 @@ def load_tests(example_dir: Path) -> list:
     return data.get("tests", [])
 
 
+def load_canonical_bundle_id(example_dir: Path) -> str | None:
+    """Read the canonical bundle_id from metadata.yaml if it exists."""
+    meta_path = example_dir / "metadata.yaml"
+    if not meta_path.exists():
+        return None
+    with open(meta_path) as f:
+        meta = yaml.safe_load(f)
+    return meta.get("bundle_id")
+
+
 async def discover_bundle(session: aiohttp.ClientSession, api_url: str, project_name: str, api_key: str | None = None) -> str:
     """Find the bundle_id for a project by matching section_id."""
     headers = {"X-API-Key": api_key} if api_key else {}
@@ -303,6 +313,8 @@ async def run_domain(
     tests = load_tests(example_dir)
 
     async with aiohttp.ClientSession() as session:
+        if not bundle_id:
+            bundle_id = load_canonical_bundle_id(example_dir)
         if not bundle_id:
             bundle_id = await discover_bundle(session, api_url, project, api_key)
 

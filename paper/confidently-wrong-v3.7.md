@@ -26,7 +26,7 @@ abstract: |
   a neuro-symbolic engine that uses LLMs to author rules from authoritative
   sources, then executes those rules through a formal constraint-based deterministic
   evaluation layer, providing constraint evaluation with mathematically
-  defined semantics. In a benchmark of 255 scenarios across five sections spanning
+  defined semantics. In a benchmark of 271 scenarios across five sections spanning
   two UK immigration requirements (life-in-the-UK knowledge and English language
   proficiency), a synthetic spacecraft certification statute, a synthetic
   construction insurance wording modelled on London market DE3/DE5 defect exclusion
@@ -60,9 +60,9 @@ We make three contributions:
 
 1. **A failure pattern taxonomy.** We identify and characterise two systematic failure patterns in nested exception-chain evaluation: *exemption anchoring* (failure to evaluate alternative routes independently when the primary route fails) and *exception chain collapse* (failure to correctly nest multi-level UNLESS logic). We demonstrate both are systematic across six models (three frontier, three production-tier) and two providers on this benchmarked class of task.
 
-2. **A multi-domain benchmark.** We present 255 scenarios across five sections spanning two UK immigration requirements (life-in-the-UK knowledge and English language proficiency), a synthetic spacecraft certification statute, a synthetic construction insurance wording modelled on London market DE3/DE5 clause structure, and a synthetic benefits entitlement regulation modelled on UK welfare legislation - designed to isolate exception chain evaluation and cross-clause scope reasoning as the test variables. Benchmark scenarios are released as a public dataset. The specific accuracy figures reported here will evolve as models improve; the task structure and failure pattern constitute the durable contribution.
+2. **A multi-domain benchmark.** We present 271 scenarios across five sections spanning two UK immigration requirements (life-in-the-UK knowledge and English language proficiency), a synthetic spacecraft certification statute, a synthetic construction insurance wording modelled on London market DE3/DE5 clause structure, and a synthetic benefits entitlement regulation modelled on UK welfare legislation - designed to isolate exception chain evaluation and cross-clause scope reasoning as the test variables. Benchmark scenarios are released as a public dataset. The specific accuracy figures reported here will evolve as models improve; the task structure and failure pattern constitute the durable contribution.
 
-3. **The Aethis Eligibility Module.** We describe a neuro-symbolic architecture that uses LLMs for rule authoring and a formal constraint evaluation engine for rule execution, achieving complete consistency with the benchmark's formal rule fixtures across all 255 scenarios, with <1ms evaluation latency and near-zero marginal cost after compilation.
+3. **The Aethis Eligibility Module.** We describe a neuro-symbolic architecture that uses LLMs for rule authoring and a formal constraint evaluation engine for rule execution, achieving complete consistency with the benchmark's formal rule fixtures across all 271 scenarios, with <1ms evaluation latency and near-zero marginal cost after compilation.
 
 The paper is structured as follows. Section 2 summarises key findings. Section 3 reviews related work. Section 4 characterises the failure pattern. Section 5 describes the architecture. Section 6 presents the benchmark. Section 7 discusses challenges in LLM-guided rule synthesis. Sections 8, 9, and 10 address generalisation, compliance, and limitations.
 
@@ -74,7 +74,7 @@ Artificial intelligence is entering high-stakes decision-making: immigration eli
 
 We present the **Aethis Eligibility Module** (hereafter: the Eligibility Module), a neuro-symbolic engine that separates what LLMs do well from what requires formal guarantees. LLMs read authoritative sources and generate rules as structured code. The Eligibility Module compiles and evaluates those rules using a formal constraint evaluation layer, providing constraint evaluation with mathematically defined semantics and full auditability.
 
-Our benchmark of 255 scenarios across five sections tests six LLMs (three frontier, three production-tier) against the Eligibility Module on the specific task of nested exception-chain evaluation. The Eligibility Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: Claude Opus 4.6 returns the wrong answer on 10% of spacecraft scenarios, and all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied. Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt fixes 5 of 7 original failures but introduces 20 new false positives, reducing net accuracy from 90% to 65%.
+Our benchmark of 271 scenarios across five sections tests six LLMs (three frontier, three production-tier) against the Eligibility Module on the specific task of nested exception-chain evaluation. The Eligibility Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: Claude Opus 4.6 returns the wrong answer on 10% of spacecraft scenarios, and all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied. Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt fixes 5 of 7 original failures but introduces 20 new false positives, reducing net accuracy from 90% to 65%.
 
 On the benchmarked class of nested exception-chain tasks, LLM errors are systematic enough that deterministic formal execution is the safer architecture for high-stakes decisions where 100% accuracy matters. This is not a claim that LLMs are unreliable in general; it is a specific finding about a specific class of rule evaluation.[^1]
 
@@ -175,7 +175,7 @@ The veteran exemption (Override C) is the hardest concept for LLMs in this bench
 
 In high-stakes decision-making, a false negative means wrongly telling someone they do not qualify. Exemptions exist specifically for edge cases - the people who cannot satisfy the standard route but qualify through an alternative path. These are precisely the applicants most likely to be wrongly denied. On the benchmarked exception-chain scenarios, the failures are systematic: Claude Opus 4.6 returns "ineligible" across all runs on veteran exemption scenarios. Majority voting would not catch this.
 
-Our construction insurance benchmark (Section 6.4) demonstrates the same failure pattern in a different domain: a CAR policy defect exclusion clause with a five-level exception chain. GPT-5.4, which achieves 100% on the spacecraft scenarios, drops to 96.6% on the insurance scenarios. The pattern is not specific to a single model, provider, or domain.
+Our construction insurance benchmark (Section 6.4) demonstrates the same failure pattern in a different domain: a CAR policy defect exclusion clause with a five-level exception chain (74 scenarios). GPT-5.4-mini drops to 85% on the 74-scenario construction benchmark, with failures concentrated on the access damage / enhanced cover / pioneer override logic. The pattern is not specific to a single model, provider, or domain.
 
 Our benefits entitlement benchmark (Section 6.5) introduces a distinct failure mode: **cross-clause scope confusion**. An immigration exemption (Regulation 6) bypasses the habitual residence test (Regulation 5), but does not affect the income threshold (Regulation 8) — these are independent conditions that must all be satisfied. Both GPT-5.4 (93%) and Claude Opus 4.6 (97%) incorrectly conclude that a refugee with income above the threshold is eligible, treating the immigration exemption as a general override rather than one scoped to habitual residence. The Eligibility Module evaluates each condition group independently and returns the correct answer.
 
@@ -296,9 +296,9 @@ Both systems receive identical inputs: the same legislation text (markdown-forma
 
 **Evaluation coverage.** Not all models were evaluated on all domains. The following matrix shows the scope of each model's evaluation:
 
-| Model | life_uk (56) | english_language (43) | spacecraft (68) | construction_car (58) | benefits_entitlement (30) | Notes |
+| Model | life_uk (56) | english_language (43) | spacecraft (68) | construction_car (74) | benefits_entitlement (30) | Notes |
 |-------|:---:|:---:|:---:|:---:|:---:|-------|
-| Claude Opus 4.6 | ✓ | ✓ | ✓ | — | ✓ | + robustness (N=10) |
+| Claude Opus 4.6 | ✓ | ✓ | ✓ | ✓ | ✓ | + robustness (N=10) |
 | Claude Sonnet 4.6 | ✓ | ✓ | ✓ | — | — | |
 | GPT-5.4 | ✓ | ✓ | ✓ | ✓ | ✓ | + enhanced prompt |
 | GPT-5.3 | — | — | — | 11-scenario subset | — | production reference |
@@ -338,9 +338,9 @@ All frontier models achieve 100% on the two immigration sections. This is expect
 | life_uk | 56 | 4 | Combinatorial: 3 bools x 7 ages | Low |
 | english_language | 43 | 12 | Canada trap, SELT edge cases, near-misses, multi-field interactions | Medium |
 | spacecraft | 68 | 11 | Three-level exception chain, nested IMPLIES, UNSAT early termination, adversarial | High |
-| construction_car | 58 | 14 | DE3/DE5 defect exclusion, access damage carve-back, enhanced cover chain, pioneer override, known defect limitation | High |
+| construction_car | 74 | 14 | DE3/DE5 defect exclusion, access damage carve-back, enhanced cover chain, pioneer override, negation stacking, multi-failure, contradictory surface cues, cross-clause | High |
 | benefits_entitlement | 30 | 8 | Cross-clause scope (immigration exemption scoped to habitual residence, not income), boundary values, absolute exclusion, contradictory surface cues | Medium-High |
-| **Total** | **255** | | | |
+| **Total** | **271** | | | |
 
 ## 6.3 Results
 
@@ -371,7 +371,7 @@ In all tables below, accuracy figures for the Eligibility Module refer to agreem
 
 *\*GPT-5-nano was evaluated on the 48-scenario baseline suite only (pre-adversarial expansion) and is included as a cost-scaled reference, not as a realistic deployment choice.*
 
-## 6.4 Construction Insurance: DE3/DE5 Defect Exclusion (58 Scenarios)
+## 6.4 Construction Insurance: DE3/DE5 Defect Exclusion (74 Scenarios)
 
 The construction insurance benchmark extends the evaluation into a domain with commercial relevance: London market Construction All Risks (CAR) policy wording. The test fixture is modelled on DE3/DE5 defect exclusion clauses used for major infrastructure projects.
 
@@ -397,23 +397,32 @@ The construction insurance benchmark extends the evaluation into a domain with c
 | Access, £800M, design | £800M | design | COVERED | ✅ | ❌ |
 
 **Table 8: Construction Insurance Full Results**
-*Evaluated: 2026-04-06.*
+*Evaluated: 2026-04-12 (74-scenario set). For the exception chain sub-analysis and reasoning-effort comparison, see the 11-scenario subset in Table 9 (evaluated 2026-04-06 on the pre-expansion set).*
 
-| Model | Accuracy | Exception Chain | Adversarial | Brief Cases |
-|-------|:--------:|:--------------:|:-----------:|:-----------:|
-| **Eligibility Module** | **58/58 (100%)** | **11/11 (100%)** | **14/14 (100%)** | **3/3 (100%)** |
-| GPT-5.4 | 56/58 (96.6%) | 10/11 (91%) | 14/14 (100%) | 3/3 (100%) |
-| GPT-5.4 (low reasoning)* | — | 7/11 (64%) | — | — |
-| GPT-5.3* | — | 7/11 (64%) | — | — |
-| GPT-4.1-mini | 46/58 (79.3%) | 5/11 (45%) | 10/14 (71%) | 3/3 (100%) |
+| Model | Accuracy | Consistent (3 runs) |
+|-------|:--------:|:-------------------:|
+| **Eligibility Module** | **74/74 (100%)** | **100%** |
+| GPT-5.4 | 74/74 (100%) | 100% |
+| Claude Opus 4.6 | 73/74 (99%) | 99% |
+| Claude Sonnet 4.6 | 72/74 (97%) | — |
+| GPT-5.4-mini | 63/74 (85%) | — |
 
-*\*GPT-5.3 and GPT-5.4 (low reasoning) were evaluated on the 11-scenario exception chain subset only. GPT-5.3 is included as a production-tier model representative of the class of systems widely deployed through consumer-facing interfaces. GPT-5.4 (low reasoning) uses the `reasoning_effort=low` parameter to test whether accuracy depends on reasoning compute.*
+GPT-5.4 achieves 100% on the full 74-scenario set (2026-04-12). This represents an improvement from 96.6% (56/58) on the pre-expansion set evaluated on 2026-04-06 — consistent with the temporal instability documented in Finding 6, where model weights shift between evaluations. GPT-5.4-mini shows the clearest failure pattern, dropping to 85% (63/74) with 11 failures concentrated on the access damage / enhanced cover / pioneer override logic. Claude Opus 4.6 fails one scenario (1/74) involving the pioneer override boundary.
+
+**Table 9: Construction Insurance Exception Chain Subset (11 scenarios, evaluated 2026-04-06)**
+*Retained for the reasoning-compute analysis in Finding 5. GPT-5.3 and GPT-5.4 (low reasoning) were evaluated on this subset only.*
+
+| Model | Accuracy | Notes |
+|-------|:--------:|-------|
+| **Eligibility Module** | **11/11 (100%)** | |
+| GPT-5.4 | 10/11 (91%) | Fails on pioneer override boundary |
+| GPT-5.4 (low reasoning) | 7/11 (64%) | Same 4 failures as GPT-5.3 |
+| GPT-5.3 | 7/11 (64%) | Production-tier reference |
+| GPT-4.1-mini | 5/11 (45%) | Systematic enhanced-cover failure |
 
 GPT-5.3 scores 64% on the exception chain benchmark: seven correct answers out of eleven. It correctly identifies absolute exclusions and simple carve-backs but fails on four scenarios requiring multi-level exception reasoning (enhanced cover reinstatement, pioneer override, and depth-5 unblock). GPT-5.4 at low reasoning effort scores 64% — an identical failure profile, with the same four scenarios failing. This convergence is consistent with exception chain accuracy in OpenAI's model family being dependent on reasoning compute allocated per request, rather than a capability that smaller models have failed to learn.
 
 Note: v3.5 of this paper reported GPT-5.3 at 27% (3/11). That figure was inflated by a token-limit bug in the benchmark harness: `max_completion_tokens=50` was insufficient for reasoning models whose internal chain-of-thought tokens consumed the budget before producing visible output. With the corrected limit (2000 tokens), GPT-5.3's actual accuracy is 64%. The correction is detailed in Section 6.9.
-
-GPT-5.4 fails on the pioneer override boundary: `access_500m_design` is incorrectly rejected (the override applies at >= £500M), while the identical scenario at £800M is correctly accepted. The Eligibility Module evaluates `500 >= 500 = True` with no ambiguity. GPT-4.1-mini fails systematically across the enhanced cover chain, treating the access damage exclusion as absolute and failing to apply the carve-back.
 
 ## 6.5 Benefits Entitlement: Cross-Clause Scope Confusion (30 Scenarios)
 
@@ -457,7 +466,7 @@ Seven findings emerge from the multi-model benchmark:
 
 **Finding 3: The veteran exemption is the universal failure point.** The most-failed scenario across all models is `age_59_veteran_1000hrs`. Every model except GPT-5.4 consistently (0/3 runs) marks this person ineligible. The LLM conflates two independent exemption pathways.
 
-**Finding 4: Frontier model accuracy is domain-dependent — no frontier model achieves 100% across all domains.** GPT-5.4 achieves 100% on both the spacecraft and immigration sections, but drops to 96.6% on construction insurance and 93% on benefits entitlement. Claude Opus 4.6 drops to 97% on benefits entitlement. The insurance failure occurs on a five-level exception chain; the benefits failure occurs on cross-clause scope confusion (Section 6.5) — a qualitatively different error where models extend an exemption beyond its regulatory scope. 100% accuracy on one domain does not predict 100% on another, and the failure patterns differ across domains.
+**Finding 4: Frontier model accuracy is domain-dependent — no frontier model achieves 100% across all domains.** GPT-5.4 achieves 100% on spacecraft, immigration, and construction sections (2026-04-12), but drops to 93% on benefits entitlement. Claude Opus 4.6 achieves 99% on construction but drops to 97% on benefits entitlement. GPT-5.4-mini drops to 85% on construction insurance. The benefits entitlement failure is the clearest discriminator: both GPT-5.4 and Claude Opus 4.6 fail on cross-clause scope confusion (Section 6.5), making this the domain where no frontier model achieves 100%. The construction failure pattern shifted between evaluations (GPT-5.4 improved from 96.6% on 2026-04-06 to 100% on 2026-04-12), confirming that 100% accuracy on one evaluation date does not guarantee 100% on another — the pattern is not stable, and the failure domain can shift without user action.
 
 **Finding 5: Exception chain accuracy is a function of reasoning compute.** GPT-5.3, a production-tier OpenAI model, scores 64% on the construction insurance exception chain — seven correct answers out of eleven. GPT-5.4, the frontier model, scores 91% with default (high) reasoning effort. When GPT-5.4's reasoning effort is reduced to "low", its accuracy drops to 64% — matching GPT-5.3 exactly, with the same four scenarios failing (enhanced cover reinstatement, pioneer override, depth-5 unblock, and the basic pioneer case). This convergence is consistent with the exception chain failure being a compute-dependent property rather than a capability gap between model tiers: the same model architecture produces correct or incorrect answers depending on how much reasoning budget is allocated per request. In production, reasoning effort may vary by API tier, load, or configuration — making LLM accuracy on exception chains inherently unstable. Claude Opus 4.6 is invariant under this test, producing 100% accuracy even at temperature 1.0.
 
@@ -477,7 +486,7 @@ Seven findings emerge from the multi-model benchmark:
 | Regulatory defensibility | Execution semantics defined | Statistical accuracy |
 | Model deprecation risk | None | Version-dependent |
 
-GPT-5.4 does not achieve 100% accuracy across all benchmark domains: it drops to 96.6% on construction insurance and 93% on benefits entitlement. A production system cannot guarantee that empirical accuracy on any benchmark extends to all possible inputs — it is an observation, not an execution-level guarantee.
+GPT-5.4 does not achieve 100% accuracy across all benchmark domains: it drops to 93% on benefits entitlement (and dropped to 96.6% on construction insurance in the 2026-04-06 evaluation, though the model improved to 100% by 2026-04-12). A production system cannot guarantee that empirical accuracy on any benchmark extends to all possible inputs — it is an observation, not an execution-level guarantee.
 
 ## 6.8 Robustness Analysis
 
@@ -666,7 +675,7 @@ The rule authoring pipeline includes multiple quality gates that ensure the cons
 
 1. **Structured input only.** The benchmark tests legal reasoning accuracy, not extraction from natural language or documents. A production system requires both; the extraction layer introduces its own error surface.
 2. **Level 2 validation is test-suite-dependent.** Rule formalisation quality is validated against SME-defined test suites (Section 7.4) and measured by internal LLM evaluator scores. The test suites provide ground-truth validation but are only as comprehensive as the scenarios they cover. Independent human review of generated rules against authoritative legal interpretations has not been performed.
-3. **255 scenarios across five domains.** The benchmark does not exhaust legal reasoning. It tests nested exception-chain evaluation and cross-clause scope reasoning across five domains; findings should not be generalised beyond these specific classes of task.
+3. **271 scenarios across five domains.** The benchmark does not exhaust legal reasoning. It tests nested exception-chain evaluation and cross-clause scope reasoning across five domains; findings should not be generalised beyond these specific classes of task.
 4. **Model versioning.** Results are tied to specific model versions available at time of evaluation. The public benchmark dataset allows this to be re-evaluated as models improve.
 
 ## 10.2 Future Work
@@ -706,7 +715,7 @@ The rule authoring pipeline includes multiple quality gates that ensure the cons
 
 ## A.4 Construction Insurance Scenario Design
 
-58 scenarios using a synthetic CAR policy defect exclusion endorsement modelled on London market DE3/DE5 clause structure. Exercises eight patterns: UNSAT early termination, multi-field AND, multi-route OR, three-level exception chain, nested IMPLIES, ENUM + IN, DATE-bounded BOOL, absolute exclusion, plus demo, adversarial, and boundary-stacking scenarios.
+74 scenarios using a synthetic CAR policy defect exclusion endorsement modelled on London market DE3/DE5 clause structure. Exercises eleven patterns: UNSAT early termination, multi-field AND, multi-route OR, three-level exception chain, nested IMPLIES, ENUM + IN, DATE-bounded BOOL, absolute exclusion, negation stacking, multi-failure stacking, and cross-clause interaction, plus demo, adversarial, boundary-stacking, and minimal-pair scenarios.
 
 **Fields:**
 
@@ -757,7 +766,7 @@ No special instructions about exemptions, alternative routes, or OR-branching.
 ## A.7 Reproduction
 
 ```bash
-# Full benchmark (255 scenarios across all sections)
+# Full benchmark (271 scenarios across all sections)
 uv run python scripts/benchmark_accuracy_ab.py --model claude-opus-4-6
 
 # Single section
@@ -839,4 +848,4 @@ All rules, fields, and rule sets are stored immutably with versioning and supers
 
 *Version 3.7 · Working paper · April 2026*
 
-*Changelog: v3.7 — added benefits entitlement domain (30 scenarios, Section 6.5, synthetic Social Security Regulations 2025 modelled on UC Regulations 2013); Finding 2 updated (first consistent false positive from frontier models); Finding 4 updated (no frontier model 100% across all five domains); scenario count 225→255 throughout. v3.6 — GPT-5.3 corrected from 27% to 64% (token-limit bug in benchmark harness); GPT-5.4 low reasoning effort added; Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (temporal instability). v3.5 — GPT-5.3 added to benchmark; evaluation coverage matrix added; editorial tightening throughout. v3.4 — provenance chain overhaul (two-stage verification pipeline). v3.3 — codebase audit; test-driven validation methodology added; guidance hint system expanded. v3.2 — benchmark rerun with corrected enhanced-prompt data; iterative authoring loop expanded. v3.1 — reviewer pass; title revised; scope qualifiers; benchmark philosophy made explicit. v3.0 — arXiv submission.*
+*Changelog: v3.7 — added benefits entitlement domain (30 scenarios, Section 6.5, synthetic Social Security Regulations 2025 modelled on UC Regulations 2013); construction domain expanded from 58→74 scenarios (negation stacking, multi-failure, contradictory surface cues, cross-clause interaction added); Table 8 updated to 2026-04-12 74-scenario evaluation; Table 9 added (exception chain subset for reasoning-compute analysis); Finding 2 updated (first consistent false positive from frontier models); Finding 4 updated (GPT-5.4 100% on construction as of Apr 12, benefits entitlement now primary discriminating domain); evaluation coverage matrix updated (Opus added for construction); scenario count 225→271 throughout. v3.6 — GPT-5.3 corrected from 27% to 64% (token-limit bug in benchmark harness); GPT-5.4 low reasoning effort added; Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (temporal instability). v3.5 — GPT-5.3 added to benchmark; evaluation coverage matrix added; editorial tightening throughout. v3.4 — provenance chain overhaul (two-stage verification pipeline). v3.3 — codebase audit; test-driven validation methodology added; guidance hint system expanded. v3.2 — benchmark rerun with corrected enhanced-prompt data; iterative authoring loop expanded. v3.1 — reviewer pass; title revised; scope qualifiers; benchmark philosophy made explicit. v3.0 — arXiv submission.*

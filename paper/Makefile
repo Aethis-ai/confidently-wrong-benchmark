@@ -5,7 +5,7 @@
 .PHONY: pdf clean
 
 pdf:
-	./render-pdf.sh confidently-wrong-v3.6.md confidently-wrong-v3.6.pdf
+	./render-pdf.sh confidently-wrong-v3.7.md confidently-wrong-v3.7.pdf
 
 clean:
-	rm -f confidently-wrong-v3.6.pdf
+	rm -f confidently-wrong-v3.7.pdf

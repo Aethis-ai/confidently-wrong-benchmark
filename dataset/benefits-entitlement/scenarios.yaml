@@ -1,0 +1,489 @@
+tests:
+
+# === BASELINE: golden path ===
+
+- name: golden_path_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - baseline
+
+# === PRESENCE: early termination (Reg 4) ===
+
+- name: not_present_in_gb
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: false
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - presence
+    - early_termination
+
+# === AGE: boundary values (Reg 3) ===
+
+- name: age_17_under_minimum
+  inputs:
+    ben.claimant.age: 17
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - age
+    - boundary
+
+- name: age_18_minimum_eligible
+  inputs:
+    ben.claimant.age: 18
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - age
+    - boundary
+
+- name: age_66_maximum_eligible
+  inputs:
+    ben.claimant.age: 66
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - age
+    - boundary
+
+- name: age_67_over_maximum
+  inputs:
+    ben.claimant.age: 67
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - age
+    - boundary
+
+# === HABITUAL RESIDENCE: both conditions required (Reg 5) ===
+
+- name: right_to_reside_but_not_habitually_resident
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - habitual_residence
+
+- name: habitually_resident_but_no_right_to_reside
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - habitual_residence
+
+- name: neither_right_nor_habitually_resident
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - habitual_residence
+
+# === IMMIGRATION EXEMPTION: bypasses habitual residence (Reg 6) ===
+
+- name: refugee_bypasses_habitual_residence
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: refugee
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - immigration_exemption
+    - contradictory_cue
+
+- name: humanitarian_protection_bypasses
+  inputs:
+    ben.claimant.age: 40
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: humanitarian_protection
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 100
+    ben.capital.total_gbp: 2000
+  expect:
+    outcome: eligible
+  tags:
+    - immigration_exemption
+
+- name: domestic_violence_leave_bypasses
+  inputs:
+    ben.claimant.age: 30
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: domestic_violence_leave
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 150
+    ben.capital.total_gbp: 3000
+  expect:
+    outcome: eligible
+  tags:
+    - immigration_exemption
+
+- name: eea_worker_bypasses
+  inputs:
+    ben.claimant.age: 28
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: eea_worker
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 300
+    ben.capital.total_gbp: 10000
+  expect:
+    outcome: eligible
+  tags:
+    - immigration_exemption
+
+- name: no_exemption_no_residence_not_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - immigration_exemption
+
+- name: refugee_with_habitual_residence_also_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: refugee
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - immigration_exemption
+
+# === EXCLUSIONARY BENEFIT: absolute bar (Reg 7) ===
+
+- name: receiving_exclusionary_benefit
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: true
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - exclusionary_benefit
+    - absolute_bar
+
+- name: refugee_receiving_exclusionary_still_barred
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: refugee
+    ben.benefit.receiving_exclusionary: true
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - exclusionary_benefit
+    - absolute_bar
+    - cross_clause
+
+# === INCOME: threshold boundary (Reg 8) ===
+
+- name: income_at_threshold_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 350
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: eligible
+  tags:
+    - income
+    - boundary
+
+- name: income_one_over_threshold
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 351
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - income
+    - boundary
+
+- name: income_well_over_threshold
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 600
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - income
+
+# === CAPITAL: threshold boundary (Reg 8) ===
+
+- name: capital_at_limit_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 16000
+  expect:
+    outcome: eligible
+  tags:
+    - capital
+    - boundary
+
+- name: capital_one_over_limit
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 16001
+  expect:
+    outcome: not_eligible
+  tags:
+    - capital
+    - boundary
+
+# === MULTI-FAILURE: multiple disqualifiers simultaneously ===
+
+- name: multi_failure_age_and_income
+  inputs:
+    ben.claimant.age: 17
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 500
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - multi_failure
+
+- name: multi_failure_not_present_and_no_residence
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: false
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 200
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - multi_failure
+
+- name: everything_wrong
+  inputs:
+    ben.claimant.age: 70
+    ben.claimant.present_in_gb: false
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: true
+    ben.income.weekly_gbp: 600
+    ben.capital.total_gbp: 20000
+  expect:
+    outcome: not_eligible
+  tags:
+    - multi_failure
+
+# === ADVERSARIAL: contradictory surface cues ===
+
+- name: refugee_no_residence_low_income_eligible
+  inputs:
+    ben.claimant.age: 25
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: refugee
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 0
+    ben.capital.total_gbp: 0
+  expect:
+    outcome: eligible
+  tags:
+    - adversarial
+    - contradictory_cue
+
+- name: perfect_profile_but_capital_one_over
+  inputs:
+    ben.claimant.age: 40
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 100
+    ben.capital.total_gbp: 16001
+  expect:
+    outcome: not_eligible
+  tags:
+    - adversarial
+    - minimal_pair
+
+- name: refugee_high_income_not_eligible
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: false
+    ben.residence.habitually_resident: false
+    ben.residence.immigration_status: refugee
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 400
+    ben.capital.total_gbp: 5000
+  expect:
+    outcome: not_eligible
+  tags:
+    - adversarial
+    - cross_clause
+
+# === MINIMAL PAIRS: single field flips outcome ===
+
+- name: minimal_pair_presence_on
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: true
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 350
+    ben.capital.total_gbp: 16000
+  expect:
+    outcome: eligible
+  tags:
+    - minimal_pair
+
+- name: minimal_pair_presence_off
+  inputs:
+    ben.claimant.age: 35
+    ben.claimant.present_in_gb: false
+    ben.residence.right_to_reside: true
+    ben.residence.habitually_resident: true
+    ben.residence.immigration_status: none
+    ben.benefit.receiving_exclusionary: false
+    ben.income.weekly_gbp: 350
+    ben.capital.total_gbp: 16000
+  expect:
+    outcome: not_eligible
+  tags:
+    - minimal_pair

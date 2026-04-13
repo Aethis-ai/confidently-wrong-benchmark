@@ -1,0 +1,21 @@
+domain: Construction All Risks
+section_id: construction_car
+scenarios: 74
+fields: 14
+source_authenticity: synthetic
+source_reference: "CAR defect exclusion endorsement (synthetic wording modelled on London market DE3/DE5 clauses)"
+difficulty: high
+exception_chain_depth: 5
+patterns:
+  - five-level exception chain (exclusion -> carve-back -> re-exclusion -> enhanced cover -> design limit -> pioneer override)
+  - known defect limitation (depth 4-5)
+  - engineer assessment unblock
+  - early termination (policy period)
+  - enum matching (property category)
+  - threshold comparisons (project value)
+  - absolute exclusion (rectification)
+  - negation stacking (double/triple negation reasoning)
+  - multi-failure stacking (multiple simultaneous disqualifiers)
+  - contradictory surface cues (appearance vs reality)
+  - minimal-pair flips (single field changes outcome)
+  - cross-clause interaction (parallel constraint threads)

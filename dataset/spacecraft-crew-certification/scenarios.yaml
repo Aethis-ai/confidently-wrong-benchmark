@@ -1,0 +1,1167 @@
+tests:
+- name: vogon_rejected
+  inputs:
+    space.crew.species: Vogon
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - species
+- name: human_baseline
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - species
+- name: dolphin_eligible
+  inputs:
+    space.crew.species: Dolphin
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - species
+- name: magrathean_eligible
+  inputs:
+    space.crew.species: Magrathean
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - species
+- name: betelgeusian_eligible
+  inputs:
+    space.crew.species: Betelgeusian
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - species
+- name: flight_hours_499
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 499
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - flight
+- name: flight_hours_500
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 500
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - flight
+- name: no_pilot_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - flight
+- name: no_hours_no_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 0
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - flight
+- name: medical_gaa_only
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - medical
+- name: medical_provider_only
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - medical
+- name: medical_both
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - medical
+- name: medical_neither
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - medical
+- name: medical_cert_expired
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: false
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - medical_validity
+- name: age_60_suborbital_no_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 100
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: age_60_lunar_no_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 100
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: lunar
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: age_59_suborbital_no_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 100
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 59
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: age_60_orbital_no_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 100
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - exception_chain
+- name: age_70_orbital_no_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 200
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 70
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - exception_chain
+- name: age_60_orbital_flight_ready
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: veteran_1000hrs_orbital_no_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: veteran_999hrs_orbital_no_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 999
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: age_60_orbital_veteran_1000hrs
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: age_25_veteran_1500hrs_suborbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1500
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 25
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: age_59_veteran_1000hrs
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 59
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: age_60_orbital_999hrs_no_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 999
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: orbital_with_radiation_cert
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - radiation
+- name: orbital_without_radiation_cert
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - radiation
+- name: suborbital_without_radiation_cert
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - radiation
+- name: lunar_without_radiation_cert
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: lunar
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - radiation
+- name: propulsion_conventional
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Conventional
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - equipment
+- name: propulsion_bistromathics
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Bistromathics
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - equipment
+- name: propulsion_heart_of_gold
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Heart of Gold Special
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - equipment
+- name: no_towel
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - towel
+- name: vogon_perfect_applicant
+  inputs:
+    space.crew.species: Vogon
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - compound
+- name: everything_except_towel
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - compound
+- name: everything_except_medical_validity
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: false
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - compound
+- name: everything_except_propulsion
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Conventional
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - compound
+- name: age_exempt_saves_no_flight
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 50
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 62
+    space.mission.type: lunar
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - compound
+- name: veteran_saves_orbital_old
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1500
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 65
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - compound
+- name: age_60_orbital_999hrs_licensed
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 999
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - compound
+- name: dolphin_veteran_orbital_no_license_bistro
+  inputs:
+    space.crew.species: Dolphin
+    space.crew.flight_hours: 1200
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Bistromathics
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - compound
+- name: betelgeusian_age_60_suborbital_no_flight_heart_of_gold
+  inputs:
+    space.crew.species: Betelgeusian
+    space.crew.flight_hours: 50
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Heart of Gold Special
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - compound
+- name: ultimate_trap_1
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 999
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_2
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_3
+  inputs:
+    space.crew.species: Vogon
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_4
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 999
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 59
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_5
+  inputs:
+    space.crew.species: Magrathean
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 61
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: false
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: adv_young_veteran_lunar
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1200
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 20
+    space.mission.type: lunar
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_young_veteran_orbital_rad
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1001
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 22
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_young_veteran_orbital_no_rad
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1001
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 22
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_direct_satisfy_500hrs_licensed_orbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 500
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 30
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - adversarial
+- name: adv_direct_satisfy_overqualified
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 65
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_no_license_499hrs_age60_orbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 499
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_suborbital_no_rad_no_license_veteran
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1500
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 30
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_lunar_no_rad_age_exempt
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 100
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 62
+    space.mission.type: lunar
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_everything_but_species
+  inputs:
+    space.crew.species: Vogon
+    space.crew.flight_hours: 3000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 25
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Bistromathics
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_everything_but_towel_veteran
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_everything_but_propulsion_veteran
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 2000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Conventional
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_triple_chain_pass
+  inputs:
+    space.crew.species: Dolphin
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 61
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Heart of Gold Special
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_triple_chain_fail_medical
+  inputs:
+    space.crew.species: Dolphin
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 61
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_all_boundaries_pass
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 60
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - adversarial
+- name: adv_all_boundaries_fail
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 499
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 59
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - adversarial
+- name: adv_minimum_viable_suborbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 500
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: false
+    space.crew.has_approved_provider_cert: true
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: false
+    space.vessel.propulsion_type: Bistromathics
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_minimum_viable_orbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 500
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_minimum_viable_veteran_orbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1000
+    space.crew.has_pilot_license: false
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_red_herring_rad_cert_on_suborbital
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 600
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: suborbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_red_herring_veteran_with_license
+  inputs:
+    space.crew.species: Human
+    space.crew.flight_hours: 1500
+    space.crew.has_pilot_license: true
+    space.crew.has_gaa_exam: true
+    space.crew.has_approved_provider_cert: false
+    space.crew.age: 35
+    space.mission.type: orbital
+    space.crew.has_radiation_cert: true
+    space.vessel.propulsion_type: Infinite Improbability Drive
+    space.medical.cert_valid: true
+    space.crew.has_towel: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial

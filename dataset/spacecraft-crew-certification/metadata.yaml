@@ -1,0 +1,17 @@
+domain: Spacecraft Crew Certification
+section_id: spacecraft
+scenarios: 68
+fields: 11
+source_authenticity: synthetic
+source_reference: "Spacecraft Crew Certification Act 2049 (synthetic statute modelled on UK legislative structure)"
+difficulty: high
+exception_chain_depth: 3
+patterns:
+  - multi-field AND (flight readiness)
+  - multi-route OR (medical certification)
+  - conditional requirement (age exemption)
+  - nested conditional (mission type -> radiation)
+  - early termination (species check)
+  - enum matching (equipment compliance)
+  - three-level exception chain (flight readiness -> age exemption -> orbital revocation -> veteran override)
+  - adversarial scenarios (veteran age-independence, vacuous truth)

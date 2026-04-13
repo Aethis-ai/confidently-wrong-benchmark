@@ -1,0 +1,1341 @@
+tests:
+- name: outside_period_rejected
+  inputs:
+    car.policy.period_valid: false
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - policy_period
+- name: within_period_baseline
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - policy_period
+- name: both_physical_and_defect
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - insuring_clause
+- name: no_physical_loss
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: false
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - insuring_clause
+- name: no_defect
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: false
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - insuring_clause
+- name: neither_physical_nor_defect
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: false
+    car.component.is_defective: false
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - insuring_clause
+- name: category_permanent_works
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - insured_category
+- name: category_temporary_works
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - insured_category
+- name: category_existing_structures
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - insured_category
+- name: category_materials_on_site
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: materials_on_site
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - insured_category
+- name: category_plant_equipment
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: plant_equipment
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - insured_category
+- name: rectification_basic
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - rectification
+- name: rectification_with_consequence
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - rectification
+- name: rectification_on_pioneer_500m
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - rectification
+- name: rectification_all_carvebacks
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - rectification
+- name: carveback_leg3_only
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - carveback
+- name: carveback_de3_only
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - carveback
+- name: carveback_both_routes
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - carveback
+- name: carveback_neither_route
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - carveback
+- name: notification_timely
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - notification
+- name: notification_late
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: false
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - notification
+- name: existing_structures_with_jct
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - existing_structures
+- name: existing_structures_no_jct
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - existing_structures
+- name: permanent_works_no_jct
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: eligible
+  tags:
+  - existing_structures
+- name: temporary_works_no_jct
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: eligible
+  tags:
+  - existing_structures
+- name: access_small_project_not_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - exception_chain
+- name: access_100m_workmanship_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 100
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: access_99m_workmanship_not_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 99
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: access_200m_materials_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: materials
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: access_200m_specification_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: specification
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: access_100m_design_not_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 100
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - exception_chain
+- name: access_200m_design_not_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - exception_chain
+- name: access_499m_design_not_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 499
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: access_500m_design_pioneer_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - exception_chain
+- name: access_800m_design_pioneer_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: access_500m_workmanship_covered
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - exception_chain
+- name: brief_case_a_bracket_rectification
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - brief
+- name: brief_case_b_consequential_damage
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - brief
+- name: brief_case_c_access_damage
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - brief
+- name: adv_rectification_pioneer_all_certs
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_plant_equipment_pioneer
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: plant_equipment
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_outside_period_perfect_claim
+  inputs:
+    car.policy.period_valid: false
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_case_c_at_200m_workmanship
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_case_c_at_200m_design
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_case_c_at_500m_design
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_de3_leg3_gap
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_existing_structures_jct_saves
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_existing_structures_no_jct_kills
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_money_doesnt_help_rectification
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - adversarial
+- name: adv_red_herring_jct_on_permanent
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_red_herring_jct_false_on_permanent
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: eligible
+  tags:
+  - adversarial
+- name: adv_all_boundaries_pass
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 100
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - adversarial
+- name: adv_all_boundaries_fail
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 99
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - adversarial
+- name: ultimate_trap_1
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 499
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_2
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_3
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_4
+  inputs:
+    car.policy.period_valid: false
+    car.property.category: plant_equipment
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+- name: ultimate_trap_5
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: false
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - ultimate
+
+# ============================================================================
+# Negation stacking
+# Double/triple negation reasoning — LLMs struggle with stacked negations
+# ============================================================================
+
+- name: neg_de3_double_negative
+  # NOT access damage + NOT consequence → DE3 carve-back (Route B) applies.
+  # "Not caused solely to gain access" is a double negative in the source text.
+  # Small project, no enhanced cover — but irrelevant because no access exclusion.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - negation_stacking
+
+- name: neg_access_without_consequence_no_enhanced
+  # IS access + NOT consequence + small project → access exclusion blocks.
+  # LLMs may confuse "not consequence of failure" with a mitigating factor,
+  # but it only matters for Route A (LEG3) — not for the access exclusion.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - negation_stacking
+
+- name: neg_triple_not_de3_pass
+  # NOT rectification, NOT access, NOT consequence → eligible via DE3.
+  # Three negated fields, all of which are necessary conditions for exclusion.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: materials
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - negation_stacking
+
+# ============================================================================
+# Multi-failure stacking
+# Multiple clauses fail simultaneously — LLMs may fixate on one and
+# hallucinate the overall outcome direction
+# ============================================================================
+
+- name: multi_fail_period_and_notification
+  # Two independent failures: outside period AND late notification
+  inputs:
+    car.policy.period_valid: false
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: false
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - multi_failure
+
+- name: multi_fail_rectification_and_plant
+  # Rectification on plant equipment — two independent exclusions
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: plant_equipment
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - multi_failure
+
+- name: multi_fail_insuring_and_notification
+  # No physical loss + no defect + late notification — triple failure
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: false
+    car.component.is_defective: false
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: false
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - multi_failure
+
+- name: multi_fail_existing_no_jct_rectification
+  # Existing structures without JCT + rectification — two independent kills
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - multi_failure
+
+# ============================================================================
+# Contradictory surface cues
+# Appearance contradicts outcome — designed to trigger confident wrong answers
+# ============================================================================
+
+- name: surface_eligible_design_access_blocks
+  # 10 of 11 fields favour eligibility. Pioneer-scale project (£800M),
+  # all certs, timely notification, JCT compliant. But: access damage +
+  # design defect at only £200M → design exclusion blocks enhanced cover.
+  # LLMs see the "mostly eligible" pattern and anchor to it.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 150
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - contradictory_cue
+
+- name: surface_ineligible_pioneer_saves
+  # Looks bad: access damage, design defect — but £600M pioneer override
+  # AND consequence of failure proven (LEG3 carve-back). Pioneer rescues the
+  # access exclusion, LEG3 satisfies carve-back. LLMs see "access + design"
+  # and anchor to ineligible.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 600
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - contradictory_cue
+
+- name: surface_eligible_rectification_kills
+  # Everything maxed: £800M pioneer, existing structures, JCT, all certs.
+  # But rectification is absolute — Clause 6 cannot be overridden.
+  # LLMs see the overwhelming positive signals and miss the one absolute bar.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - contradictory_cue
+
+- name: surface_ineligible_de3_saves
+  # Small project (£30M), design defect, materials on site, no JCT, no
+  # consequence of failure. Looks weak. But: not access damage → DE3
+  # carve-back applies, property is insured category, not rectification.
+  # JCT irrelevant (not existing structures). Eligible.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: materials_on_site
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 30
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: eligible
+  tags:
+  - contradictory_cue
+
+# ============================================================================
+# Cross-clause interaction
+# Multiple clause threads active simultaneously — tests whether LLMs can
+# track parallel constraints through the exception chain
+# ============================================================================
+
+- name: cross_existing_access_design_200m
+  # Existing structures (JCT required) + access damage + design defect + £200M.
+  # JCT is in place → existing structures OK. But design at £200M blocks
+  # enhanced cover for access damage → not eligible.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - cross_clause
+
+- name: cross_existing_access_design_pioneer
+  # Same as above BUT £500M → pioneer override saves access damage claim.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - cross_clause
+
+- name: cross_existing_no_jct_kills_despite_pioneer
+  # Existing structures without JCT — fails regardless of pioneer status.
+  # JCT requirement (Cl.10) is independent of access damage chain (Cl.8-9).
+  # LLMs conflate the two threads and think £500M overrides everything.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - cross_clause
+
+- name: cross_temporary_access_design_200m
+  # Temporary works + access + design + £200M → design exclusion blocks.
+  # No JCT requirement for temporary works (only existing structures).
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags:
+  - cross_clause
+
+- name: cross_temporary_access_design_pioneer
+  # £500M + consequence proven → pioneer saves access exclusion,
+  # LEG3 satisfies carve-back. Both constraint threads resolve.
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags:
+  - cross_clause

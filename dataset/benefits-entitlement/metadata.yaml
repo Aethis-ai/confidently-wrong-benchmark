@@ -1,0 +1,28 @@
+domain: Benefits Entitlement
+section_id: benefits_entitlement
+scenarios: 30
+fields: 8
+source_authenticity: synthetic
+source_reference: "Social Security (Composite Entitlement) Regulations 2025 (synthetic SI modelled on UC Regulations 2013 and Income Support (General) Regulations 1987)"
+difficulty: medium-high
+exception_chain_depth: 2
+patterns:
+  - cross-clause scope confusion (immigration exemption scoped to habitual residence, not income)
+  - early termination (presence in GB)
+  - integer boundary (age range 18-66 inclusive)
+  - integer threshold (income <= 350, capital <= 16000)
+  - enum matching (immigration status)
+  - absolute exclusion (exclusionary benefit)
+  - multi-failure stacking (multiple simultaneous disqualifiers)
+  - contradictory surface cues (refugee without right to reside)
+  - minimal-pair flips (single field changes outcome)
+  - boundary values (age 17/18, age 66/67, income 350/351, capital 16000/16001)
+field_types:
+  - {key: "ben.claimant.age", type: int, description: "Age in years on date of claim"}
+  - {key: "ben.claimant.present_in_gb", type: bool, description: "Present in Great Britain on date of claim"}
+  - {key: "ben.residence.right_to_reside", type: bool, description: "Has right to reside in the UK"}
+  - {key: "ben.residence.habitually_resident", type: bool, description: "Habitually resident in the Common Travel Area"}
+  - {key: "ben.residence.immigration_status", type: enum, description: "Immigration status", values: ["refugee", "humanitarian_protection", "domestic_violence_leave", "eea_worker", "none"]}
+  - {key: "ben.benefit.receiving_exclusionary", type: bool, description: "Currently receiving State Pension Credit, income-based JSA, or income-related ESA"}
+  - {key: "ben.income.weekly_gbp", type: int, description: "Weekly income in GBP"}
+  - {key: "ben.capital.total_gbp", type: int, description: "Total capital in GBP"}

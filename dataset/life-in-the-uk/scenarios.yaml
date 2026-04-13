@@ -1,0 +1,513 @@
+tests:
+- name: combo_t1_m1_d1_age15
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 15
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m1_d1_age17
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 17
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d1_age18
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 18
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d1_age30
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 30
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m1_d1_age64
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 64
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d1_age65
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 65
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d1_age70
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 70
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m1_d0_age15
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 15
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t1_m1_d0_age17
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 17
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d0_age18
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 18
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d0_age30
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 30
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t1_m1_d0_age64
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 64
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d0_age65
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 65
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m1_d0_age70
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 70
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d1_age15
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 15
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d1_age17
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 17
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d1_age18
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 18
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d1_age30
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 30
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d1_age64
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 64
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d1_age65
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 65
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d1_age70
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 70
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d0_age15
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 15
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d0_age17
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 17
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d0_age18
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 18
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d0_age30
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 30
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t1_m0_d0_age64
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 64
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d0_age65
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 65
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t1_m0_d0_age70
+  inputs:
+    life_uk.test_passed: true
+    life_uk.age: 70
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d1_age15
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 15
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d1_age17
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 17
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d1_age18
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 18
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d1_age30
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 30
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d1_age64
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 64
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d1_age65
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 65
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d1_age70
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 70
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d0_age15
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 15
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d0_age17
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 17
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d0_age18
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 18
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d0_age30
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 30
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t0_m1_d0_age64
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 64
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d0_age65
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 65
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m1_d0_age70
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 70
+    life_uk.medical_exempt: true
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t0_m0_d1_age15
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 15
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m0_d1_age17
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 17
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d1_age18
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 18
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d1_age30
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 30
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m0_d1_age64
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 64
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d1_age65
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 65
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d1_age70
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 70
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: true
+  expect:
+    outcome: eligible
+- name: combo_t0_m0_d0_age15
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 15
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+- name: combo_t0_m0_d0_age17
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 17
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d0_age18
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 18
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d0_age30
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 30
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: not_eligible
+- name: combo_t0_m0_d0_age64
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 64
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d0_age65
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 65
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+- name: combo_t0_m0_d0_age70
+  inputs:
+    life_uk.test_passed: false
+    life_uk.age: 70
+    life_uk.medical_exempt: false
+    life_uk.discretion_applied: false
+  expect:
+    outcome: eligible

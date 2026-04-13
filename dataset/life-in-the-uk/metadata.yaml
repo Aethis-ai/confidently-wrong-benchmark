@@ -1,0 +1,18 @@
+domain: Life in the UK
+section_id: life_uk
+scenarios: 56
+fields: 4
+source_authenticity: real
+source_reference: "British Nationality Act 1981, Schedule 1, Para 1(1)(c)"
+difficulty: low
+exception_chain_depth: 1
+patterns:
+  - boolean check
+  - integer boundary (age < 18, age >= 65)
+  - boolean exemptions (medical, discretion)
+  - flat OR outcome logic
+field_types:
+  - {key: "life_uk.test_passed", type: bool, description: "Passed the Life in the UK test"}
+  - {key: "life_uk.age", type: int, description: "Age in years"}
+  - {key: "life_uk.medical_exempt", type: bool, description: "Medical exemption"}
+  - {key: "life_uk.discretion_applied", type: bool, description: "Secretary of State discretionary waiver"}

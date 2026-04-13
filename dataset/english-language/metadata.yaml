@@ -1,0 +1,14 @@
+domain: English Language
+section_id: english_language
+scenarios: 43
+fields: 12
+source_authenticity: real
+source_reference: "British Nationality Act 1981, Schedule 1 + Form AN guidance"
+difficulty: medium
+exception_chain_depth: 2
+patterns:
+  - enum with 17-value MESC nationality list
+  - multi-route OR (academic degree group)
+  - multi-route OR (SELT test group)
+  - integer boundary (age < 18, age >= 65)
+  - Canada bilingual special case

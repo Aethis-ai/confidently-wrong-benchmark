@@ -1,0 +1,782 @@
+tests:
+- name: mesc_australian
+  inputs:
+    eng.nationality: Australia
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - mesc
+- name: mesc_canadian_nationality
+  inputs:
+    eng.nationality: Canada
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - mesc
+- name: mesc_maltese
+  inputs:
+    eng.nationality: Malta
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - mesc
+- name: mesc_irish
+  inputs:
+    eng.nationality: Ireland
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - mesc
+- name: non_mesc_french
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - mesc
+- name: uk_degree
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_uk
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - academic
+- name: mesc_degree_aquals
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_mesc
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - academic
+- name: mesc_degree_no_aquals
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_mesc
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - academic
+- name: canada_degree_aquals_only
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_canada
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - canada
+- name: canada_degree_aquals_elps
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_canada
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: true
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - canada
+- name: german_degree_aquals_only
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - non_mesc_degree
+- name: german_degree_aquals_elps
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: true
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - non_mesc_degree
+- name: selt_b1_settlement
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B1
+    eng.settlement_selt_used: true
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - selt
+- name: selt_c1_recent
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: C1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - selt
+- name: selt_b1_expired_no_settlement
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - selt
+- name: selt_a2_level
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - selt
+- name: age_exempt_65
+  inputs:
+    eng.nationality: Other
+    eng.age: 65
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - age
+- name: age_not_exempt_64
+  inputs:
+    eng.nationality: Other
+    eng.age: 64
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - age
+- name: age_exempt_under_18
+  inputs:
+    eng.nationality: Other
+    eng.age: 17
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - age
+- name: age_not_exempt_18
+  inputs:
+    eng.nationality: Other
+    eng.age: 18
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - age
+- name: medical_exempt
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: true
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - medical
+- name: discretion_waiver
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: true
+  expect:
+    outcome: eligible
+  tags:
+  - discretion
+- name: no_routes_satisfied
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - none
+- name: multiple_routes
+  inputs:
+    eng.nationality: Australia
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_uk
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - multiple
+- name: canada_nationality_but_other_degree
+  inputs:
+    eng.nationality: Canada
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: true
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - canada_complex
+- name: canada_degree_elps_only
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_canada
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: true
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - canada_complex
+- name: canada_nationality_no_degree_no_selt
+  inputs:
+    eng.nationality: Canada
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - canada_complex
+- name: near_miss_everything
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_canada
+    eng.ecctis_aquals: true
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - near_miss
+- name: near_miss_selt_level
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - near_miss
+- name: near_miss_degree_no_has_academic
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_uk
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - near_miss
+- name: selt_b2_settlement_old
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B2
+    eng.settlement_selt_used: true
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - selt_complex
+- name: selt_c2_not_recent_not_settlement
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: C2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - selt_complex
+- name: selt_a1_recent
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - selt_complex
+- name: selt_b1_recent_and_settlement
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B1
+    eng.settlement_selt_used: true
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - selt_complex
+- name: mesc_with_failed_selt
+  inputs:
+    eng.nationality: New Zealand
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - multi_field
+- name: uk_degree_plus_expired_selt_plus_age_64
+  inputs:
+    eng.nationality: Other
+    eng.age: 64
+    eng.has_academic: true
+    eng.degree_country: deg_uk
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: B1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - multi_field
+- name: non_mesc_all_evidence_but_no_degree
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: C1
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - multi_field
+- name: triple_near_miss
+  inputs:
+    eng.nationality: Other
+    eng.age: 64
+    eng.has_academic: true
+    eng.degree_country: deg_mesc
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - multi_field
+- name: age_65_with_everything_else_failing
+  inputs:
+    eng.nationality: Other
+    eng.age: 65
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - age_complex
+- name: age_17_french_no_evidence
+  inputs:
+    eng.nationality: Other
+    eng.age: 17
+    eng.has_academic: false
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - boundary
+  - age_complex
+- name: age_18_with_mesc_degree_no_aquals
+  inputs:
+    eng.nationality: Other
+    eng.age: 18
+    eng.has_academic: true
+    eng.degree_country: deg_mesc
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: false
+    eng.selt_level: none
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: false
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - boundary
+  - age_complex
+- name: mesc_with_all_extras
+  inputs:
+    eng.nationality: Australia
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_uk
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: C2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: true
+    eng.discretion_applied: false
+  expect:
+    outcome: eligible
+  tags:
+  - distractor
+- name: rejection_with_distractors
+  inputs:
+    eng.nationality: Other
+    eng.age: 30
+    eng.has_academic: true
+    eng.degree_country: deg_other
+    eng.ecctis_aquals: false
+    eng.ecctis_elps: false
+    eng.has_selt: true
+    eng.selt_level: A2
+    eng.settlement_selt_used: false
+    eng.selt_within_two_years: true
+    eng.medical_exempt: false
+    eng.discretion_applied: false
+  expect:
+    outcome: not_eligible
+  tags:
+  - distractor

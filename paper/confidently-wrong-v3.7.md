@@ -441,7 +441,7 @@ The benefits entitlement benchmark introduces a failure pattern distinct from ex
 
 The critical design element is Regulation 6: refugees, humanitarian protection recipients, domestic violence leave holders, and EEA workers are exempt from the habitual residence test (condition 3). This exemption does **not** affect conditions 4, 5, or 6. A refugee with weekly income of £400 fails condition 5 regardless of their immigration status.
 
-**Table 9: Benefits Entitlement Results (30 scenarios)**
+**Table 10: Benefits Entitlement Results (30 scenarios)**
 *Evaluated: 2026-04-12.*
 
 | Model | Accuracy | Boundary | Consistency | FN | FP |
@@ -486,13 +486,13 @@ Seven findings emerge from the multi-model benchmark:
 | Regulatory defensibility | Execution semantics defined | Statistical accuracy |
 | Model deprecation risk | None | Version-dependent |
 
-GPT-5.4 does not achieve 100% accuracy across all benchmark domains: it drops to 93% on benefits entitlement (and dropped to 96.6% on construction insurance in the 2026-04-06 evaluation, though the model improved to 100% by 2026-04-12). A production system cannot guarantee that empirical accuracy on any benchmark extends to all possible inputs — it is an observation, not an execution-level guarantee.
+GPT-5.4 does not achieve 100% accuracy across all benchmark domains: it drops to 93% on benefits entitlement. On construction insurance it also fell short — 96.6% on 2026-04-06 — before recovering to 100% by 2026-04-12, an instance of the temporal instability documented in Finding 6. A production system cannot guarantee that empirical accuracy on any benchmark extends to all possible inputs — it is an observation, not an execution-level guarantee.
 
 ## 6.8 Robustness Analysis
 
 This section addresses the key question: whether the observed failures are prompt-sensitive or structurally robust. The central question is not "what is the best possible LLM score after bespoke optimisation?" but "when models fail on exception chains, is that a prompting artefact - fixable with better instructions - or a deeper reliability issue?"
 
-**Table 10: Robustness Analysis (spacecraft section, 68 scenarios)**
+**Table 11: Robustness Analysis (spacecraft section, 68 scenarios)**
 *Evaluated: 2026-04-06.*
 
 | Condition | Claude Opus 4.6 | GPT-5.4 |
@@ -848,4 +848,4 @@ All rules, fields, and rule sets are stored immutably with versioning and supers
 
 *Version 3.7 · Working paper · April 2026*
 
-*Changelog: v3.7 — added benefits entitlement domain (30 scenarios, Section 6.5, synthetic Social Security Regulations 2025 modelled on UC Regulations 2013); construction domain expanded from 58→74 scenarios (negation stacking, multi-failure, contradictory surface cues, cross-clause interaction added); Table 8 updated to 2026-04-12 74-scenario evaluation; Table 9 added (exception chain subset for reasoning-compute analysis); Finding 2 updated (first consistent false positive from frontier models); Finding 4 updated (GPT-5.4 100% on construction as of Apr 12, benefits entitlement now primary discriminating domain); evaluation coverage matrix updated (Opus added for construction); scenario count 225→271 throughout. v3.6 — GPT-5.3 corrected from 27% to 64% (token-limit bug in benchmark harness); GPT-5.4 low reasoning effort added; Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (temporal instability). v3.5 — GPT-5.3 added to benchmark; evaluation coverage matrix added; editorial tightening throughout. v3.4 — provenance chain overhaul (two-stage verification pipeline). v3.3 — codebase audit; test-driven validation methodology added; guidance hint system expanded. v3.2 — benchmark rerun with corrected enhanced-prompt data; iterative authoring loop expanded. v3.1 — reviewer pass; title revised; scope qualifiers; benchmark philosophy made explicit. v3.0 — arXiv submission.*
+*Changelog: v3.7 — added benefits entitlement domain (30 scenarios, Section 6.5, synthetic Social Security Regulations 2025 modelled on UC Regulations 2013); construction domain expanded from 58→74 scenarios (negation stacking, multi-failure, contradictory surface cues, cross-clause interaction added); Table 8 updated to 2026-04-12 74-scenario evaluation; Table 9 added (exception chain subset for reasoning-compute analysis); Table 10 added (benefits entitlement results); Table 11 renumbered from Table 10 (robustness analysis); Finding 2 updated (first consistent false positive from frontier models); Finding 4 updated (GPT-5.4 100% on construction as of Apr 12, benefits entitlement now primary discriminating domain); evaluation coverage matrix updated (Opus added for construction); scenario count 225→271 throughout. v3.6 — GPT-5.3 corrected from 27% to 64% (token-limit bug in benchmark harness); GPT-5.4 low reasoning effort added; Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (temporal instability). v3.5 — GPT-5.3 added to benchmark; evaluation coverage matrix added; editorial tightening throughout. v3.4 — provenance chain overhaul (two-stage verification pipeline). v3.3 — codebase audit; test-driven validation methodology added; guidance hint system expanded. v3.2 — benchmark rerun with corrected enhanced-prompt data; iterative authoring loop expanded. v3.1 — reviewer pass; title revised; scope qualifiers; benchmark philosophy made explicit. v3.0 — arXiv submission.*

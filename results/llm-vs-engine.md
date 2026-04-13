@@ -4,7 +4,9 @@
 
 ## Evaluation: 2026-04-12
 
-Rerun with expanded dataset (241 scenarios, up from 225) and current model versions.
+LLM evaluation covers 172 scenarios across three domains (spacecraft 68, construction 74, benefits entitlement 30).
+The remaining 99 scenarios (life_uk 56, english_language 43) are engine-only — LLM comparison not run on depth ≤ 2 domains.
+Total benchmark: 271 scenarios across 5 domains (up from 225 across 4 in v3.6).
 All models tested with full source text, no truncation, no pattern hints.
 Engine bundle: gold-standard fixture (hand-authored, not LLM-generated).
 
@@ -32,6 +34,19 @@ Opus gets 1 wrong but gives the same wrong answer every time (confidently wrong)
 
 GPT-5.4-mini drops to 85% on the 5-level exception chain — 11 failures concentrated
 on the access damage / enhanced cover / pioneer override logic.
+
+### Benefits Entitlement — 30 scenarios, depth 3
+
+| Model | Accuracy | Boundary (8) | Consistent (3 runs) |
+|-------|:--------:|:------------:|:-------------------:|
+| **Aethis Engine** | **30/30 (100%)** | **8/8 (100%)** | **100%** |
+| Claude Opus 4.6 | 29/30 (97%) | 8/8 (100%) | 100% |
+| GPT-5.4 | 28/30 (93%) | 7/8 (88%) | 29/30 (97%) |
+
+Both frontier models fail `refugee_high_income_not_eligible`: a refugee (exempt from
+habitual residence only) with weekly income of £400 above the £350 threshold.
+Both confidently return eligible — 0/3 correct across all runs — treating the
+immigration exemption as a general override rather than one scoped to condition 3.
 
 ## Temporal stability note
 

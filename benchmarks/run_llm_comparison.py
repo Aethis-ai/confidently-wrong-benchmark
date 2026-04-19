@@ -45,7 +45,7 @@ console = Console()
 DEFAULT_API_URL = "https://api.aethis.ai"
 DEFAULT_CONCURRENCY = 10
 
-DEFAULT_MODELS = ["gpt-5.4", "gpt-5.4-mini", "claude-opus-4-6", "claude-sonnet-4-6"]
+DEFAULT_MODELS = ["gpt-5.4", "gpt-5-mini", "claude-opus-4-6", "claude-sonnet-4-6"]
 
 _ANTHROPIC_PREFIXES = ("claude-",)
 _OPENAI_REASONING = ("gpt-5", "o3", "o4")

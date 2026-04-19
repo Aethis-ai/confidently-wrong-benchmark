@@ -49,7 +49,7 @@ uv run run_llm_comparison.py ../dataset/construction-all-risks/ --runs 3 --shuff
 ```
 
 Options:
-- `--models MODEL [MODEL ...]` — models to test (default: gpt-5.4, gpt-5.4-mini, claude-opus-4-6, claude-sonnet-4-6)
+- `--models MODEL [MODEL ...]` — models to test (default: gpt-5.4, gpt-5-mini, claude-opus-4-6, claude-sonnet-4-6)
 - `--runs N` — runs per test per model (default: 1, try 3 for consistency)
 - `--concurrency N` / `-c N` — max concurrent LLM requests per model (default: 10)
 - `--sequential` — run tests one at a time

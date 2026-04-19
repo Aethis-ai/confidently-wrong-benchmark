@@ -7,7 +7,7 @@
 | **Name** | Confidently Wrong Benchmark |
 | **Version** | 1.0 |
 | **License** | CC-BY-4.0 |
-| **Size** | 271 scenarios across 5 domains |
+| **Size** | 225 scenarios across 4 paper-scope domains (plus 30 out-of-scope supplementary) |
 | **Task** | Binary eligibility classification under nested exception chains |
 | **Format** | YAML |
 
@@ -18,8 +18,15 @@
 | Life in the UK | 56 | 4 | 1 | Real (BNA 1981) | Low |
 | English Language | 43 | 12 | 2 | Real (Form AN) | Medium |
 | Spacecraft Crew Certification | 68 | 11 | 3 | Synthetic | High |
-| Construction All Risks | 74 | 14 | 5 | Synthetic (DE3/DE5) | High |
-| Benefits Entitlement | 30 | 8 | 2 | Synthetic (UC Regs 2013) | Medium-High |
+| Construction All Risks | 58 | 14 | 5 | Synthetic (DE3/DE5) | High |
+
+**Out-of-scope supplementary (not analysed in the paper):**
+
+| Domain | Scenarios | Fields | Exception Depth | Source | Status |
+|--------|:---------:|:------:|:---------------:|--------|--------|
+| Benefits Entitlement | 30 | 8 | 2 | Synthetic (UC Regs 2013) | Included for future work (paper §"Note on repository scope") |
+
+The construction directory contains 74 scenarios on disk; Table 8a of the paper reports on the 58-scenario suite, and the remaining 16 are for the pre-registered replication programme (paper §6.9). The `paper_suite_size` field in `construction-all-risks/metadata.yaml` records this split.
 
 Each domain directory contains:
 
@@ -76,11 +83,11 @@ The benchmark is designed to isolate a specific failure mode: **exception chain 
 
 1. **Adversarial toward LLM reasoning.** Scenarios are constructed to trigger confident incorrect answers, not to be representative of typical case distributions. Edge cases, boundary conditions, and exception-to-exception paths are overrepresented.
 
-2. **Controlled exception depth.** Domains span exception chain depths from 1 through 5 to measure how accuracy degrades as nesting increases. The benefits entitlement domain (depth 2) adds a cross-clause scope dimension: an exemption that applies to one regulation but not another.
+2. **Controlled exception depth.** Domains span exception chain depths from 1 through 5 to measure how accuracy degrades as nesting increases.
 
 3. **Deterministic ground truth.** Every scenario has exactly one correct answer derivable from the rule specification. There are no ambiguous cases.
 
-4. **Mixed provenance.** Two domains (Life in the UK, English Language) use real UK immigration law. Three domains (Spacecraft Crew Certification, Construction All Risks, Benefits Entitlement) use synthetic rules designed to stress-test exception chains and cross-clause reasoning without domain familiarity bias.
+4. **Mixed provenance.** Two paper-scope domains (Life in the UK, English Language) use real UK immigration law. Two paper-scope domains (Spacecraft Crew Certification, Construction All Risks) use synthetic rules designed to stress-test exception chains without domain familiarity bias. The out-of-scope Benefits Entitlement domain uses synthetic rules modelled on UC Regulations 2013.
 
 **Scenario construction process:**
 
@@ -101,7 +108,7 @@ The benchmark is designed to isolate a specific failure mode: **exception chain 
 ```bibtex
 @article{simpson2026confidently,
   title={Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation},
-  author={Simpson, Paul},
+  author={Simpson, Paul and Kozak, John and Doake, Lisa},
   journal={arXiv preprint arXiv:TBD},
   year={2026}
 }

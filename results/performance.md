@@ -32,8 +32,8 @@ Total: 25-35ms
 
 ## Cost at scale
 
-| Evaluations | Aethis Engine | GPT-5.4 | Claude Sonnet | GPT-5.4-mini |
-|------------:|--------------:|--------:|--------------:|-------------:|
+| Evaluations | Aethis Engine | GPT-5.4 | Claude Sonnet 4.6 | GPT-5-mini |
+|------------:|--------------:|--------:|------------------:|-----------:|
 | 1,000 | $0 | ~$50 | ~$10 | ~$5 |
 | 100,000 | $0 | ~$5,000 | ~$1,000 | ~$500 |
 | 1,000,000 | $0 | ~$50,000 | ~$10,000 | ~$5,000 |
@@ -42,5 +42,5 @@ Total: 25-35ms
 
 ```bash
 # See timing per test (include_timing is on by default)
-uv run run_tests.py construction-all-risks/
+uv run run_engine_tests.py ../dataset/construction-all-risks/
 ```

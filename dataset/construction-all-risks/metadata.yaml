@@ -2,6 +2,12 @@ domain: Construction All Risks
 section_id: construction_car
 bundle_id: "construction-all-risks:20260412-gold"
 scenarios: 74
+paper_suite_size: 58
+notes: >
+  The Simpson 2026 paper (Table 8a) reports on the original 58-scenario suite.
+  This directory contains 74 scenarios: the original 58 plus 16 additional
+  scenarios included for the pre-registered exception-chain replication
+  programme described in Section 6.9 of the paper.
 fields: 14
 source_authenticity: synthetic
 source_reference: "CAR defect exclusion endorsement (synthetic wording modelled on London market DE3/DE5 clauses)"

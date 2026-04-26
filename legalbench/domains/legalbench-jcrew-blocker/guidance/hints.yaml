@@ -1,0 +1,65 @@
+# Rule-authoring guidance hints for the J.Crew Blocker rule.
+#
+# IMPORTANT: These hints were attached to the project (proj_ciQaWGeczdIa5WzI)
+# server-side via mcp__aethis__aethis_add_guidance during authoring of
+# bundle legalbench_jcrew_blocker_v3:20260425-177c0ba6. They flow into
+# aethis-core's rule-generation step (NOT the runtime extractor — for
+# runtime extractor guidance see guidance/extractor_hints.md).
+#
+# This file mirrors what the project's `aethis_list_guidance` returns,
+# so the local repo is the source of truth for what's authored. If
+# you re-author from `aethis-cli` it will read this file; if you author
+# via MCP the server is the source of truth, and this file should be
+# updated to match.
+#
+# The hints encode finance-practitioner consensus that the prohibition
+# on IP transfer to unrestricted subsidiaries is the defining feature
+# of a J.Crew Blocker; the lender-consent requirement is a typical
+# companion control but not strictly required. They are written in
+# plain English, contain no DSL syntax or pseudo-code, and reflect
+# practitioner knowledge (LSTA Model Credit Agreement conventions,
+# leveraged-finance treatises, the structure of the original 2016
+# J.Crew amendment) that exists independently of the LegalBench
+# dataset.
+
+hints:
+  - text: |
+      The defining feature of a J.Crew Blocker is the prohibition (or
+      equivalent restriction) on the borrower transferring intellectual
+      property — particularly material IP — to an unrestricted subsidiary.
+      A clause that contains this prohibition should be classified as a
+      J.Crew Blocker even if it does not separately require lender consent
+      for IP transfers.
+    adherence: guided
+    server_hint_id: c349dee7-9e82-42ad-addd-78b79b4d9b2c
+
+  - text: |
+      Treat the lender-consent requirement as a typical companion control
+      to the prohibition, not a strict prerequisite. In practice, many
+      J.Crew Blocker provisions in real loan documents include both, but
+      the prohibition alone is the operative restriction. A clause that
+      ONLY requires lender consent (without an outright prohibition on
+      transfers to unrestricted subsidiaries) is generally not, by itself,
+      a J.Crew Blocker.
+    adherence: guided
+    server_hint_id: 90c2374a-b273-492c-90de-1616b21b012c
+
+  - text: |
+      A clause that prohibits transferring 'material' intellectual
+      property — even if narrower than 'all' intellectual property — still
+      qualifies as a J.Crew Blocker, because the original J.Crew workaround
+      in 2016 specifically targeted material IP. Carve-outs and materiality
+      thresholds are common in real provisions and do not defeat the
+      classification.
+    adherence: guided
+    server_hint_id: 12994c7a-88b0-4e94-b02e-181784703b8c
+
+  - text: |
+      Watch for synonymous phrasings of the prohibition prong. The
+      prohibition may be expressed as 'shall not transfer', 'is prohibited
+      from designating as an unrestricted subsidiary', 'no Intellectual
+      Property shall be transferred', 'the borrower shall not assign', or
+      as a negative covenant phrased around restricted subsidiaries' assets.
+      All of these are forms of the prohibition prong.
+    adherence: guided
+    server_hint_id: 02e71d1c-5dd2-4ca3-ad25-d4a50e920300

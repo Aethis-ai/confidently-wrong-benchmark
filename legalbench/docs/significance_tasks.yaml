@@ -1,0 +1,103 @@
+# Task spec for tools/significance.py.
+# Each task lists where the engine's per-case JSON lives, where each
+# LLM baseline's per-case JSON lives, and whether the engine result
+# was on the full test set (in which case we filter to the holdout
+# half retroactively for fair comparison) or already on a held-out
+# split.
+#
+# This is the source of truth for which numbers feed the headline
+# statistical analysis.
+
+tasks:
+  # === Curated multi-prong tasks (Phase 2 — retroactively filter to holdout) ===
+  - task_name: hearsay
+    task_label: hearsay (FRE 801)
+    engine_path: domains/legalbench-hearsay/results/full_v3.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-hearsay/results/llm_sonnet_v2.json
+      claude-opus-4-7:   domains/legalbench-hearsay/results/llm_opus.json
+      gpt-5.4:           domains/legalbench-hearsay/results/llm_gpt5.json
+
+  - task_name: personal_jurisdiction
+    task_label: personal_jurisdiction (28 USC §1332(a))
+    engine_path: domains/legalbench-personal-jurisdiction/results/full_v3.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-personal-jurisdiction/results/llm_sonnet.json
+      claude-opus-4-7:   domains/legalbench-personal-jurisdiction/results/llm_opus.json
+      gpt-5.4:           domains/legalbench-personal-jurisdiction/results/llm_gpt5.json
+
+  - task_name: jcrew_blocker
+    task_label: jcrew_blocker
+    engine_path: domains/legalbench-jcrew-blocker/results/full_v4.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-jcrew-blocker/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-jcrew-blocker/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-jcrew-blocker/results/llm_gpt5.json
+
+  # === Random-sample tasks (already on held-out by construction) ===
+  - task_name: cuad_covenant_not_to_sue
+    task_label: cuad_covenant_not_to_sue (random-sample, seed=42, holdout)
+    engine_path: domains/legalbench-cuad-covenant-not-to-sue/results/holdout.json
+    filter_to_holdout: true   # engine ran on holdout already; LLMs ran full, filter
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-cuad-covenant-not-to-sue/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-cuad-covenant-not-to-sue/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-cuad-covenant-not-to-sue/results/llm_gpt_5_4.json
+
+  - task_name: contract_nli_explicit_identification
+    task_label: contract_nli_explicit_identification (random-sample, seed=42, holdout)
+    engine_path: domains/legalbench-contract-nli-explicit-identification/results/holdout.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-contract-nli-explicit-identification/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-contract-nli-explicit-identification/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-contract-nli-explicit-identification/results/llm_gpt_5_4.json
+
+  # === Phase 3 random-sample (seed=43) — added when results land ===
+  - task_name: contract_nli_notice_on_compelled_disclosure
+    task_label: contract_nli_notice_on_compelled_disclosure (random-sample, seed=43, holdout)
+    engine_path: domains/legalbench-contract-nli-notice-on-compelled-disclosure/results/holdout.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-contract-nli-notice-on-compelled-disclosure/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-contract-nli-notice-on-compelled-disclosure/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-contract-nli-notice-on-compelled-disclosure/results/llm_gpt_5_4.json
+
+  - task_name: learned_hands_health
+    task_label: learned_hands_health (random-sample, seed=43, holdout)
+    engine_path: domains/legalbench-learned-hands-health/results/holdout.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-learned-hands-health/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-learned-hands-health/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-learned-hands-health/results/llm_gpt_5_4.json
+
+  - task_name: cuad_liquidated_damages
+    task_label: cuad_liquidated_damages (random-sample, seed=43, holdout)
+    engine_path: domains/legalbench-cuad-liquidated-damages/results/holdout.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-cuad-liquidated-damages/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-cuad-liquidated-damages/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-cuad-liquidated-damages/results/llm_gpt_5_4.json
+
+  - task_name: opp115_international_and_specific_audiences
+    task_label: opp115_international_and_specific_audiences (random-sample, seed=43, holdout)
+    engine_path: domains/legalbench-opp115-international-and-specific-audiences/results/holdout.json
+    filter_to_holdout: true
+    split_seed: 7
+    llm_paths:
+      claude-sonnet-4-6: domains/legalbench-opp115-international-and-specific-audiences/results/llm_claude_sonnet_4_6.json
+      claude-opus-4-7:   domains/legalbench-opp115-international-and-specific-audiences/results/llm_claude_opus_4_7.json
+      gpt-5.4:           domains/legalbench-opp115-international-and-specific-audiences/results/llm_gpt_5_4.json

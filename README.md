@@ -73,9 +73,13 @@ dataset/                         # Benchmark scenarios (YAML)
   spacecraft-crew-certification/ # 68 scenarios, depth 3 (paper scope)
   construction-all-risks/        # 58 paper scenarios + 16 replication extras
   benefits-entitlement/          # 30 scenarios — out of scope for paper
-benchmarks/                      # Reproduction scripts
+benchmarks/                      # Reproduction scripts (225-scenario harness)
 results/                         # Raw results and analysis
 paper/                           # Paper source (markdown + rendered PDF)
+legalbench/                      # External validation on LegalBench (§6.10, v3.8)
+                                 #   9 tasks, 949 held-out cases, combined
+                                 #   paired-binomial p<0.001 vs Sonnet/GPT-5.4,
+                                 #   p=0.003 vs Opus 4.7. See legalbench/README.md.
 ```
 
 ## Paper

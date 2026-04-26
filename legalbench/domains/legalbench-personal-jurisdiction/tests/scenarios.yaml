@@ -1,0 +1,56 @@
+tests:
+  - name: "domicile path only"
+    inputs:
+      defendant_domiciled_in_forum: true
+      defendant_has_sufficient_contacts_with_forum: false
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: eligible}
+
+  - name: "domicile path with contacts and nexus also satisfied"
+    inputs:
+      defendant_domiciled_in_forum: true
+      defendant_has_sufficient_contacts_with_forum: true
+      claim_arises_from_contacts_with_forum: true
+    expect: {outcome: eligible}
+
+  - name: "domicile path, contacts present but no nexus"
+    inputs:
+      defendant_domiciled_in_forum: true
+      defendant_has_sufficient_contacts_with_forum: true
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: eligible}
+
+  - name: "contacts path satisfied, not domiciled"
+    inputs:
+      defendant_domiciled_in_forum: false
+      defendant_has_sufficient_contacts_with_forum: true
+      claim_arises_from_contacts_with_forum: true
+    expect: {outcome: eligible}
+
+  - name: "contacts present but no nexus, not domiciled"
+    inputs:
+      defendant_domiciled_in_forum: false
+      defendant_has_sufficient_contacts_with_forum: true
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: not_eligible}
+
+  - name: "no contacts and not domiciled"
+    inputs:
+      defendant_domiciled_in_forum: false
+      defendant_has_sufficient_contacts_with_forum: false
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: not_eligible}
+
+  - name: "domicile alone, no contacts at all"
+    inputs:
+      defendant_domiciled_in_forum: true
+      defendant_has_sufficient_contacts_with_forum: false
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: eligible}
+
+  - name: "all three false"
+    inputs:
+      defendant_domiciled_in_forum: false
+      defendant_has_sufficient_contacts_with_forum: false
+      claim_arises_from_contacts_with_forum: false
+    expect: {outcome: not_eligible}

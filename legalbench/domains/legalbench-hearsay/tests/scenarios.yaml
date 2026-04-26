@@ -1,0 +1,61 @@
+# Statute-derived test cases for FRE 801(a)–(c).
+# Authored from sources/rule.md ONLY — no LegalBench cases are referenced here.
+# Each scenario states whether the three prongs of the rule are satisfied;
+# the bundle's job is to apply the conjunction.
+
+tests:
+  - name: "all three prongs met — out-of-court oral assertion offered for truth"
+    inputs:
+      is_assertion: true
+      made_in_current_testimony: false
+      offered_for_truth_of_matter_asserted: true
+    expect: {outcome: eligible}
+
+  - name: "fails 'statement' element — non-assertive conduct"
+    inputs:
+      is_assertion: false
+      made_in_current_testimony: false
+      offered_for_truth_of_matter_asserted: true
+    expect: {outcome: not_eligible}
+
+  - name: "fails 'out-of-court' element — said while testifying at current trial"
+    inputs:
+      is_assertion: true
+      made_in_current_testimony: true
+      offered_for_truth_of_matter_asserted: true
+    expect: {outcome: not_eligible}
+
+  - name: "fails 'truth-of-matter-asserted' element — offered for non-truth purpose"
+    inputs:
+      is_assertion: true
+      made_in_current_testimony: false
+      offered_for_truth_of_matter_asserted: false
+    expect: {outcome: not_eligible}
+
+  - name: "non-verbal conduct intended as assertion, out-of-court, offered for truth"
+    inputs:
+      is_assertion: true
+      made_in_current_testimony: false
+      offered_for_truth_of_matter_asserted: true
+    expect: {outcome: eligible}
+
+  - name: "two prongs fail — non-assertive AND not offered for truth"
+    inputs:
+      is_assertion: false
+      made_in_current_testimony: false
+      offered_for_truth_of_matter_asserted: false
+    expect: {outcome: not_eligible}
+
+  - name: "all three prongs fail"
+    inputs:
+      is_assertion: false
+      made_in_current_testimony: true
+      offered_for_truth_of_matter_asserted: false
+    expect: {outcome: not_eligible}
+
+  - name: "in-court statement repeating an earlier remark — in-court testimony, so not out-of-court"
+    inputs:
+      is_assertion: true
+      made_in_current_testimony: true
+      offered_for_truth_of_matter_asserted: true
+    expect: {outcome: not_eligible}

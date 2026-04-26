@@ -1,0 +1,96 @@
+tests:
+  - name: "all four distinct, both per-defendant sums above threshold"
+    inputs:
+      plaintiff_1_state: California
+      plaintiff_2_state: Texas
+      defendant_1_state: New York
+      defendant_2_state: Florida
+      d1_claim_a_amount_usd: 50000
+      d1_claim_b_amount_usd: 60000
+      d2_claim_a_amount_usd: 40000
+      d2_claim_b_amount_usd: 70000
+    expect: {outcome: eligible}
+
+  - name: "all four distinct, d1 sum exactly threshold"
+    inputs:
+      plaintiff_1_state: Illinois
+      plaintiff_2_state: Indiana
+      defendant_1_state: Wisconsin
+      defendant_2_state: Ohio
+      d1_claim_a_amount_usd: 40000
+      d1_claim_b_amount_usd: 35000
+      d2_claim_a_amount_usd: 100000
+      d2_claim_b_amount_usd: 100000
+    expect: {outcome: not_eligible}
+
+  - name: "all four distinct, d1 above threshold but d2 below"
+    inputs:
+      plaintiff_1_state: Vermont
+      plaintiff_2_state: Maine
+      defendant_1_state: New Hampshire
+      defendant_2_state: Massachusetts
+      d1_claim_a_amount_usd: 60000
+      d1_claim_b_amount_usd: 60000
+      d2_claim_a_amount_usd: 30000
+      d2_claim_b_amount_usd: 24000
+    expect: {outcome: not_eligible}
+
+  - name: "all four distinct, both sums one dollar above threshold"
+    inputs:
+      plaintiff_1_state: Wyoming
+      plaintiff_2_state: Montana
+      defendant_1_state: Idaho
+      defendant_2_state: Utah
+      d1_claim_a_amount_usd: 50000
+      d1_claim_b_amount_usd: 25001
+      d2_claim_a_amount_usd: 40000
+      d2_claim_b_amount_usd: 35001
+    expect: {outcome: eligible}
+
+  - name: "plaintiff_1 shares state with defendant_2 — diversity fails"
+    inputs:
+      plaintiff_1_state: Florida
+      plaintiff_2_state: Georgia
+      defendant_1_state: Alabama
+      defendant_2_state: Florida
+      d1_claim_a_amount_usd: 100000
+      d1_claim_b_amount_usd: 100000
+      d2_claim_a_amount_usd: 100000
+      d2_claim_b_amount_usd: 100000
+    expect: {outcome: not_eligible}
+
+  - name: "plaintiffs share each other state, all four still produce diversity"
+    inputs:
+      plaintiff_1_state: Arizona
+      plaintiff_2_state: Arizona
+      defendant_1_state: Nevada
+      defendant_2_state: Oregon
+      d1_claim_a_amount_usd: 50000
+      d1_claim_b_amount_usd: 50000
+      d2_claim_a_amount_usd: 50000
+      d2_claim_b_amount_usd: 50000
+    expect: {outcome: eligible}
+
+  - name: "all four same state"
+    inputs:
+      plaintiff_1_state: Texas
+      plaintiff_2_state: Texas
+      defendant_1_state: Texas
+      defendant_2_state: Texas
+      d1_claim_a_amount_usd: 1000000
+      d1_claim_b_amount_usd: 1000000
+      d2_claim_a_amount_usd: 1000000
+      d2_claim_b_amount_usd: 1000000
+    expect: {outcome: not_eligible}
+
+  - name: "all four distinct, both sums well below threshold"
+    inputs:
+      plaintiff_1_state: Alaska
+      plaintiff_2_state: Hawaii
+      defendant_1_state: Washington
+      defendant_2_state: Oregon
+      d1_claim_a_amount_usd: 10000
+      d1_claim_b_amount_usd: 20000
+      d2_claim_a_amount_usd: 5000
+      d2_claim_b_amount_usd: 15000
+    expect: {outcome: not_eligible}

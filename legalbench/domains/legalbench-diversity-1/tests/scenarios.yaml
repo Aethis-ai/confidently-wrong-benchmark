@@ -1,0 +1,68 @@
+# Statute-derived test cases for the diversity-jurisdiction rule.
+# Format matches `aethis-cli` canonical layout.
+# Authored from sources/rule.md ONLY — no LegalBench cases are referenced here.
+
+tests:
+  - name: "different states, amount well above threshold"
+    inputs:
+      plaintiff_state: California
+      defendant_state: Texas
+      amount_in_controversy_usd: 100000
+    expect:
+      outcome: eligible
+
+  - name: "different states, amount exactly at threshold (not strictly greater)"
+    inputs:
+      plaintiff_state: New York
+      defendant_state: Florida
+      amount_in_controversy_usd: 75000
+    expect:
+      outcome: not_eligible
+
+  - name: "different states, amount one dollar above threshold"
+    inputs:
+      plaintiff_state: Ohio
+      defendant_state: Michigan
+      amount_in_controversy_usd: 75001
+    expect:
+      outcome: eligible
+
+  - name: "different states, amount well below threshold"
+    inputs:
+      plaintiff_state: Illinois
+      defendant_state: Indiana
+      amount_in_controversy_usd: 20000
+    expect:
+      outcome: not_eligible
+
+  - name: "same state, large amount — diversity fails on parties alone"
+    inputs:
+      plaintiff_state: California
+      defendant_state: California
+      amount_in_controversy_usd: 500000
+    expect:
+      outcome: not_eligible
+
+  - name: "same state, small amount — both prongs fail"
+    inputs:
+      plaintiff_state: Texas
+      defendant_state: Texas
+      amount_in_controversy_usd: 5000
+    expect:
+      outcome: not_eligible
+
+  - name: "different states, amount zero"
+    inputs:
+      plaintiff_state: Alaska
+      defendant_state: Hawaii
+      amount_in_controversy_usd: 0
+    expect:
+      outcome: not_eligible
+
+  - name: "different states, amount very large"
+    inputs:
+      plaintiff_state: Wyoming
+      defendant_state: Vermont
+      amount_in_controversy_usd: 10000000
+    expect:
+      outcome: eligible

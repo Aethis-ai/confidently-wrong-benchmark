@@ -1,0 +1,4 @@
+hints:
+  # No domain-specific hints needed — the rule in sources/rule.md is fully
+  # self-contained. Add hints here only if generation produces logic the
+  # statute does not justify.

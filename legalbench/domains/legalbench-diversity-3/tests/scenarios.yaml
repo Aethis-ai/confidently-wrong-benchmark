@@ -1,0 +1,32 @@
+tests:
+  - name: "different states, sum well above threshold"
+    inputs: {plaintiff_state: California, defendant_state: Texas, claim_a_amount_usd: 50000, claim_b_amount_usd: 80000}
+    expect: {outcome: eligible}
+
+  - name: "different states, sum exactly at threshold"
+    inputs: {plaintiff_state: New York, defendant_state: Florida, claim_a_amount_usd: 40000, claim_b_amount_usd: 35000}
+    expect: {outcome: not_eligible}
+
+  - name: "different states, sum one dollar above threshold"
+    inputs: {plaintiff_state: Ohio, defendant_state: Michigan, claim_a_amount_usd: 50000, claim_b_amount_usd: 25001}
+    expect: {outcome: eligible}
+
+  - name: "different states, both claims small but sum above threshold"
+    inputs: {plaintiff_state: Vermont, defendant_state: Maine, claim_a_amount_usd: 60000, claim_b_amount_usd: 20000}
+    expect: {outcome: eligible}
+
+  - name: "different states, sum well below threshold"
+    inputs: {plaintiff_state: Illinois, defendant_state: Indiana, claim_a_amount_usd: 10000, claim_b_amount_usd: 20000}
+    expect: {outcome: not_eligible}
+
+  - name: "same state, sum very large"
+    inputs: {plaintiff_state: Texas, defendant_state: Texas, claim_a_amount_usd: 500000, claim_b_amount_usd: 800000}
+    expect: {outcome: not_eligible}
+
+  - name: "different states, single big claim, second claim zero"
+    inputs: {plaintiff_state: Wyoming, defendant_state: Montana, claim_a_amount_usd: 75001, claim_b_amount_usd: 0}
+    expect: {outcome: eligible}
+
+  - name: "different states, both claims zero"
+    inputs: {plaintiff_state: Alaska, defendant_state: Hawaii, claim_a_amount_usd: 0, claim_b_amount_usd: 0}
+    expect: {outcome: not_eligible}

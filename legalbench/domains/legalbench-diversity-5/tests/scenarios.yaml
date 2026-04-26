@@ -1,0 +1,32 @@
+tests:
+  - name: "all different states, sum well above threshold"
+    inputs: {plaintiff_1_state: California, plaintiff_2_state: Texas, defendant_state: New York, claim_a_amount_usd: 50000, claim_b_amount_usd: 80000}
+    expect: {outcome: eligible}
+
+  - name: "all different states, sum exactly at threshold"
+    inputs: {plaintiff_1_state: Illinois, plaintiff_2_state: Indiana, defendant_state: Wisconsin, claim_a_amount_usd: 40000, claim_b_amount_usd: 35000}
+    expect: {outcome: not_eligible}
+
+  - name: "all different states, sum $1 above threshold"
+    inputs: {plaintiff_1_state: Vermont, plaintiff_2_state: Maine, defendant_state: New Hampshire, claim_a_amount_usd: 50000, claim_b_amount_usd: 25001}
+    expect: {outcome: eligible}
+
+  - name: "all different states, sum well below threshold"
+    inputs: {plaintiff_1_state: Alaska, plaintiff_2_state: Hawaii, defendant_state: Oregon, claim_a_amount_usd: 10000, claim_b_amount_usd: 20000}
+    expect: {outcome: not_eligible}
+
+  - name: "plaintiff_1 shares defendant state, large amounts"
+    inputs: {plaintiff_1_state: Florida, plaintiff_2_state: Georgia, defendant_state: Florida, claim_a_amount_usd: 500000, claim_b_amount_usd: 400000}
+    expect: {outcome: not_eligible}
+
+  - name: "plaintiff_2 shares defendant state, large amounts"
+    inputs: {plaintiff_1_state: Ohio, plaintiff_2_state: Michigan, defendant_state: Michigan, claim_a_amount_usd: 500000, claim_b_amount_usd: 400000}
+    expect: {outcome: not_eligible}
+
+  - name: "plaintiffs share each other's state, defendant different, amounts above"
+    inputs: {plaintiff_1_state: Wyoming, plaintiff_2_state: Wyoming, defendant_state: Montana, claim_a_amount_usd: 50000, claim_b_amount_usd: 50000}
+    expect: {outcome: eligible}
+
+  - name: "all same state"
+    inputs: {plaintiff_1_state: Texas, plaintiff_2_state: Texas, defendant_state: Texas, claim_a_amount_usd: 500000, claim_b_amount_usd: 500000}
+    expect: {outcome: not_eligible}

@@ -1,0 +1,21 @@
+tests:
+  - name: "both prongs present"
+    inputs:
+      prohibits_transfer_ip_to_unrestricted_subsidiary: true
+      requires_lender_consent_for_ip_transfer: true
+    expect: {outcome: eligible}
+  - name: "only prohibition prong, no consent requirement"
+    inputs:
+      prohibits_transfer_ip_to_unrestricted_subsidiary: true
+      requires_lender_consent_for_ip_transfer: false
+    expect: {outcome: not_eligible}
+  - name: "only consent prong, no prohibition"
+    inputs:
+      prohibits_transfer_ip_to_unrestricted_subsidiary: false
+      requires_lender_consent_for_ip_transfer: true
+    expect: {outcome: not_eligible}
+  - name: "neither prong"
+    inputs:
+      prohibits_transfer_ip_to_unrestricted_subsidiary: false
+      requires_lender_consent_for_ip_transfer: false
+    expect: {outcome: not_eligible}

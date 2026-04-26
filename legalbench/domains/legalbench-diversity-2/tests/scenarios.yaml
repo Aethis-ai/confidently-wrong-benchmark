@@ -1,0 +1,64 @@
+tests:
+  - name: "all three different states, amount well above threshold"
+    inputs:
+      plaintiff_state: California
+      defendant_1_state: Texas
+      defendant_2_state: New York
+      amount_per_defendant_usd: 200000
+    expect: {outcome: eligible}
+
+  - name: "plaintiff shares state with defendant_1 — diversity fails"
+    inputs:
+      plaintiff_state: Florida
+      defendant_1_state: Florida
+      defendant_2_state: Georgia
+      amount_per_defendant_usd: 500000
+    expect: {outcome: not_eligible}
+
+  - name: "plaintiff shares state with defendant_2 — diversity fails"
+    inputs:
+      plaintiff_state: Ohio
+      defendant_1_state: Michigan
+      defendant_2_state: Ohio
+      amount_per_defendant_usd: 500000
+    expect: {outcome: not_eligible}
+
+  - name: "all different states, amount exactly at threshold"
+    inputs:
+      plaintiff_state: Illinois
+      defendant_1_state: Indiana
+      defendant_2_state: Wisconsin
+      amount_per_defendant_usd: 75000
+    expect: {outcome: not_eligible}
+
+  - name: "all different states, amount $1 above threshold"
+    inputs:
+      plaintiff_state: Vermont
+      defendant_1_state: Maine
+      defendant_2_state: New Hampshire
+      amount_per_defendant_usd: 75001
+    expect: {outcome: eligible}
+
+  - name: "all different states, amount well below threshold"
+    inputs:
+      plaintiff_state: Alaska
+      defendant_1_state: Hawaii
+      defendant_2_state: Oregon
+      amount_per_defendant_usd: 20000
+    expect: {outcome: not_eligible}
+
+  - name: "two defendants share a state, plaintiff distinct, amount above threshold"
+    inputs:
+      plaintiff_state: Wyoming
+      defendant_1_state: Montana
+      defendant_2_state: Montana
+      amount_per_defendant_usd: 500000
+    expect: {outcome: eligible}
+
+  - name: "all three same state, amount large"
+    inputs:
+      plaintiff_state: Texas
+      defendant_1_state: Texas
+      defendant_2_state: Texas
+      amount_per_defendant_usd: 1000000
+    expect: {outcome: not_eligible}

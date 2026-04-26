@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+title: "Confidently Wrong: LegalBench external-validation harness for the Aethis Eligibility Module"
+message: "If you use this harness or cite the §6.10 LegalBench results, please cite the companion paper."
+type: software
+authors:
+  - family-names: Simpson
+    given-names: Paul
+    affiliation: Aethis
+    orcid: ""
+  - family-names: Kozak
+    given-names: John
+    affiliation: Aethis
+    orcid: ""
+  - family-names: Doake
+    given-names: Lisa
+    affiliation: Aethis
+    orcid: ""
+version: "3.8"
+date-released: "2026-04-26"
+url: "https://github.com/Aethis-ai/confidently-wrong-benchmark/tree/main/legalbench"
+repository-code: "https://github.com/Aethis-ai/confidently-wrong-benchmark"
+license: MIT
+keywords:
+  - LLM evaluation
+  - LegalBench
+  - neuro-symbolic AI
+  - rule evaluation
+  - legal reasoning
+  - benchmark
+  - external validation
+preferred-citation:
+  type: article
+  title: "Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation"
+  authors:
+    - family-names: Simpson
+      given-names: Paul
+      affiliation: Aethis
+    - family-names: Kozak
+      given-names: John
+      affiliation: Aethis
+    - family-names: Doake
+      given-names: Lisa
+      affiliation: Aethis
+  year: 2026
+  url: "https://github.com/Aethis-ai/confidently-wrong-benchmark"
+  identifiers:
+    - type: other
+      value: "arXiv:TBD"
+      description: "arXiv preprint (placeholder; updated after submission)"
+identifiers:
+  - type: other
+    value: "arXiv:TBD"
+    description: "arXiv preprint of companion paper (placeholder)"

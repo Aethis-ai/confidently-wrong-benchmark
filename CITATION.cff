@@ -7,7 +7,7 @@ authors:
     given-names: Paul
     affiliation: Aethis
     orcid: ""
-version: "3.7"
+version: "3.8"
 date-released: "2026-04-13"
 url: "https://github.com/Aethis-ai/confidently-wrong-benchmark"
 repository-code: "https://github.com/Aethis-ai/confidently-wrong-benchmark"

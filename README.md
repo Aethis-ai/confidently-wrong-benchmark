@@ -31,6 +31,8 @@ The Aethis Engine achieves 100% across every section by construction: rules are 
 
 4. **The failure pattern is exception-chain specific, not general to legal reasoning.** All frontier models achieve 100% on the depth-2 English Language section (43 scenarios). Failures emerge at depth 3 (spacecraft) and deepen at depth 5 (construction).
 
+5. **External validation on LegalBench (v3.8, §6.10).** On 9 LegalBench tasks (949 held-out cases) the Aethis Eligibility Module is significantly more accurate than each of three frontier LLMs by exact two-sided combined paired-binomial McNemar's test: *p* < 0.001 vs Claude Sonnet 4.6, *p* = 0.003 vs Claude Opus 4.7, *p* < 0.001 vs GPT-5.4. The structural advantage is largest on multi-prong rule-application tasks (Δ up to +41 percentage points) and persists at a smaller but cross-task-significant margin on randomly-sampled tasks chosen without fit inspection (seeds 42, 43, with seed 44 pre-registered at tag [`pre-v3.8-legalbench-preregistration`](https://github.com/Aethis-ai/confidently-wrong-benchmark/releases/tag/pre-v3.8-legalbench-preregistration)). See [`legalbench/`](legalbench/) for the full harness, all per-task results, and the statistical pipeline.
+
 ## Dataset
 
 225 hand-authored scenarios across four paper-scope domains, released as a public benchmark:
@@ -85,11 +87,12 @@ legalbench/                      # External validation on LegalBench (§6.10, v3
 ## Paper
 
 **Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation**
-Paul Simpson, John Kozak, Lisa Doake. April 2026.
+Paul Simpson, John Kozak, Lisa Doake. April 2026 (v3.8).
 
 - Source: [`paper/Simpson_Exception_Chain_Collapse_2026.md`](paper/Simpson_Exception_Chain_Collapse_2026.md)
 - PDF: [`paper/Simpson_Exception_Chain_Collapse_2026.pdf`](paper/Simpson_Exception_Chain_Collapse_2026.pdf)
-- arXiv: [TBD]
+- arXiv: [TBD — added on submission]
+- LegalBench external-validation harness (§6.10): [`legalbench/`](legalbench/)
 
 ## Citation
 

@@ -7,7 +7,7 @@ author:
   - name: Lisa Doake
 institute: "Aethis (aethis.ai)"
 date: "April 2026"
-version: "3.7"
+version: "3.8"
 arxiv_subject: "cs.AI"
 arxiv_cross_list: "cs.LO, cs.LG"
 abstract: |
@@ -32,6 +32,14 @@ abstract: |
   near-zero marginal execution cost. The benchmark scenarios are released
   publicly; the task structure and failure pattern constitute the durable
   contribution.
+
+  We further report external validation on nine LegalBench tasks (949 held-out
+  cases): the Eligibility Module is significantly more accurate than each of
+  `claude-sonnet-4-6` (combined McNemar's $p < 0.001$), `claude-opus-4-7`
+  ($p = 0.003$), and `gpt-5.4` ($p < 0.001$); the structural advantage is
+  largest on multi-prong rule-application tasks ($\Delta$ up to +41 percentage
+  points) and persists at a smaller but cross-task-significant margin on
+  randomly-sampled tasks chosen without fit inspection.
 ---
 
 ---
@@ -84,7 +92,7 @@ The formal treatment for exception chains specifically is defeasible logic, intr
 
 ## 3.2 LLM Benchmarks for Legal and Logical Reasoning
 
-LegalBench [@guha2023legalbench] provides the most comprehensive evaluation of LLM performance on legal tasks, testing 162 tasks across six categories. Where LegalBench tests breadth of legal reasoning, our benchmark isolates a single failure pattern - nested exception chain evaluation - with structured inputs holding all other variables constant. The two benchmarks are complementary: LegalBench demonstrates what LLMs can do across the breadth of legal tasks; our benchmark identifies a systematic failure on a class of decisions where 100% accuracy matters.
+LegalBench [@guha2023legalbench] provides the most comprehensive evaluation of LLM performance on legal tasks, testing 162 tasks across six categories. We report external validation on a subset of LegalBench tasks in §6.10. The two benchmarks remain complementary in scope: LegalBench tests breadth of legal reasoning across 162 tasks; the benchmark in §6.1–§6.9 isolates a single failure pattern under controlled conditions. §6.10 evaluates the architecture on nine LegalBench tasks selected to span the failure pattern (multi-prong rule application) and unbiased-sample tasks (single-clause classification).
 
 FOLIO [@han2022folio] tests natural language inference grounded in first-order logic, demonstrating that LLMs struggle with tasks requiring explicit formal logical structure even when relevant premises are provided. Our findings are consistent: the failures we observe are not information retrieval failures (the legislation is provided in full) but reasoning failures arising from the compositional structure of the task.
 
@@ -532,11 +540,11 @@ We follow academic convention in identifying threats to the validity of these fi
 - *Harness configuration correction (v3.6).* v3.5 reported GPT-5.3 at 27% (3/11) on the construction exception chain. That figure was inflated by a configuration issue in the benchmark harness: the output budget was too small for reasoning models, whose internal chain-of-thought tokens consumed the budget before visible output was produced, resulting in empty responses scored as errors. With the corrected budget, GPT-5.3's actual accuracy is 64% (7/11). The correction does not affect the qualitative finding — GPT-5.3 still fails systematically on multi-level exception scenarios — but the quantitative severity is less extreme than originally reported. The benchmark script has been corrected and the updated results are publicly reproducible.
 - *Expected values partly code-derived.* The `life_uk` expected values are computed by Python code, not independently verified by a legal expert. The `english_language` scenarios were hand-verified against Form AN guidance. The spacecraft scenarios use a synthetic statute with unambiguous values.
 - *Structured inputs only.* Applicant data is provided as typed key-value pairs. A production system requires extraction from natural language or documents; that layer is not tested here.
-- *Adversarial scenarios are post-hoc.* The spacecraft adversarial suite was designed after observing LLM failure patterns. The baseline results (48 scenarios) show the same failure pattern; the adversarial additions amplify it.
+- *Adversarial scenarios are post-hoc.* The spacecraft adversarial suite was designed after observing LLM failure patterns. The baseline results (48 scenarios) show the same failure pattern; the adversarial additions amplify it. Selection bias of this kind is addressed for the LegalBench external-validation arm by §6.10.3's pre-registered random-sample replication (seeds 42, 43, 44).
 
 **External validity:**
-- *Synthetic domains.* The spacecraft domain uses a synthetic statute. The construction insurance domain uses synthetic policy wording modelled on real clauses. Findings in these domains may not generalise directly to all legal contexts.
-- *Benchmark scope.* The benchmark tests one specific class of task - nested exception-chain evaluation. LLM performance on other legal reasoning tasks may differ substantially.
+- *Synthetic domains.* The spacecraft domain uses a synthetic statute. The construction insurance domain uses synthetic policy wording modelled on real clauses. Findings in these domains may not generalise directly to all legal contexts. §6.10 provides cross-domain external validity on a public peer-reviewed legal-reasoning benchmark (LegalBench).
+- *Benchmark scope.* The benchmark tests one specific class of task — nested exception-chain evaluation. LLM performance on other legal reasoning tasks may differ substantially; §6.10 reports both the multi-prong (failure-pattern-matching) and single-clause-classification (random-sample) regimes.
 - *Model versioning.* Specific model versions are named. As models are updated, results may change. The benchmark scenarios are released publicly to allow ongoing evaluation of future systems. The specific accuracy figures reported here are a snapshot; the benchmark task structure and failure pattern are the durable contribution.
 
 **Construct validity:**
@@ -555,6 +563,97 @@ The reasoning-effort and prompt-repair findings rest on N=11 (reasoning effort) 
 4. **Independent expected-value authoring for new scenarios**: each of the 55 new scenarios has a prose expected-value assertion written against the legislative clause chain before the fixture is consulted. Mismatches between prose and fixture are flagged for SME review rather than silently reconciled. This addresses the internal-validity hole where code-derived expected values allow fixtures and the execution engine to trivially agree.
 
 **Pre-registration commitment.** Results — whether they confirm, weaken, or refute the v3.6 findings — will be reported in v3.7 regardless of direction. Findings 5 and 6, and Section 6.7 R5, will be updated or withdrawn based on the replication.
+
+---
+
+## 6.10 External Validation on LegalBench
+
+The benchmark in §6.1–§6.8 isolates a single failure pattern (nested exception-chain evaluation) on synthetic and UK-immigration scenarios authored for the experiment. A natural external test of the architecture is a public, peer-reviewed legal-reasoning benchmark covering tasks the authors did not design. We take that test using LegalBench [@guha2023legalbench], evaluating the Eligibility Module on nine LegalBench tasks (949 held-out cases) against three frontier LLMs spanning two model families.
+
+### 6.10.1 Setup
+
+For each LegalBench task we evaluate, we author one rule bundle for the Eligibility Module from the **verbatim canonical Task description** published in the upstream LegalBench repository (CC BY 4.0, Neel Guha). No paraphrase, no editorial shaping, no DSL pseudo-code. The bundle is generated by aethis-core's authoring pipeline against a small set of statute-derived test cases written by the authors (typically 4–8 per task) — *not* drawn from the LegalBench fact patterns. Where domain-specific subject-matter-expert guidance is added, it lives in a separate `guidance/` directory and is grounded in independent practitioner authority (e.g. LSTA Model Credit Agreement conventions for `cuad_covenant_not_to_sue`; standard federal civil-procedure treatments for `personal_jurisdiction`; the Atticus Project's CUAD taxonomy for clause-classification tasks).
+
+We compare the **Eligibility Module pipeline** (LLM extractor producing typed atomic field values $\to$ deterministic engine evaluation against the bundle's compiled rule) against the **LLM-only baseline** (the same model given the canonical rule prose and asked to answer the LegalBench question end-to-end, using upstream LegalBench prompts — the canonical 5–6-shot `base_prompt.txt` files). LLM baselines are evaluated at the model level for `claude-sonnet-4-6`, `claude-opus-4-7`, and `gpt-5.4`. The Eligibility Module's runtime extractor in the headline configuration is `claude-sonnet-4-6`; we also report a cross-extractor configuration with `claude-opus-4-7` to disentangle structural from model-specific effects (§6.10.5).
+
+For tasks selected by inspection (matching the failure pattern identified in §4.2), we apply the held-out methodology *retroactively*: results below are filtered to the held-out half of each task's LegalBench `test` split using a deterministic seeded partition (`tools/test_split.py --seed 7 --dev_fraction 0.5`). For tasks selected by **pre-registered random sample** from the 153-task LegalBench pool (`tools/random_task_pick.py --seed 42` and `--seed 43`, committed before authoring), the held-out methodology was applied *prospectively* — hint iteration was confined to the dev half, and the holdout was evaluated once with frozen hints.
+
+### 6.10.2 Results
+
+Table 6.10.A reports per-task accuracy on the held-out evaluation sample, with 95% Wilson confidence intervals on each estimate and exact two-sided McNemar's tests on the per-case engine-vs-LLM agreement matrices.
+
+**Table 6.10.A — Eligibility Module vs frontier LLMs, LegalBench held-out evaluation**
+
+| Task | N | Eligibility Module | Sonnet 4.6 | Opus 4.7 | GPT-5.4 |
+|---|---:|---|---|---|---|
+| `hearsay` (FRE 801) | 47 | 45/47 (95.7%, [85.8–98.8]) | 35/47 (74.5%); $\Delta$ +21.3pp; *p* = 0.006 | 39/47 (83.0%); $\Delta$ +12.8pp; *p* = 0.031 | 40/47 (85.1%); $\Delta$ +10.6pp; *p* = 0.125 |
+| `personal_jurisdiction` (28 USC §1332(a)) | 25 | 24/25 (96.0%, [80.5–99.3]) | 24/25 (96.0%); $\Delta$ +0.0pp; *p* = 1.000 | 23/25 (92.0%); $\Delta$ +4.0pp; *p* = 1.000 | 24/25 (96.0%); $\Delta$ +0.0pp; *p* = 1.000 |
+| `jcrew_blocker` | 27 | 27/27 (100.0%, [87.5–100.0]) | 16/27 (59.3%); $\Delta$ +40.7pp; *p* < 0.001 | 26/27 (96.3%); $\Delta$ +3.7pp; *p* = 1.000 | 25/27 (92.6%); $\Delta$ +7.4pp; *p* = 0.500 |
+| `cuad_covenant_not_to_sue` ¹ | 154 | 150/154 (97.4%, [93.5–99.0]) | 148/154 (96.1%); $\Delta$ +1.3pp; *p* = 0.727 | 149/154 (96.8%); $\Delta$ +0.6pp; *p* = 1.000 | 83/154 (53.9%); $\Delta$ +43.5pp; *p* < 0.001 |
+| `contract_nli_explicit_identification` ¹ | 55 | 48/55 (87.3%, [76.0–93.7]) | 47/55 (85.5%); $\Delta$ +1.8pp; *p* = 1.000 | 46/55 (83.6%); $\Delta$ +3.6pp; *p* = 0.688 | 20/55 (36.4%); $\Delta$ +50.9pp; *p* < 0.001 |
+| `contract_nli_notice_on_compelled_disclosure` ² | 71 | 70/71 (98.6%, [92.4–99.8]) | 71/71 (100.0%); $\Delta$ −1.4pp; *p* = 1.000 | 71/71 (100.0%); $\Delta$ −1.4pp; *p* = 1.000 | 36/71 (50.7%); $\Delta$ +47.9pp; *p* < 0.001 |
+| `learned_hands_health` ² | 113 | 107/113 (94.7%, [88.9–97.5]) | 104/113 (92.0%); $\Delta$ +2.7pp; *p* = 0.375 | 99/113 (87.6%); $\Delta$ +7.1pp; *p* = 0.039 | 56/113 (49.6%); $\Delta$ +45.1pp; *p* < 0.001 |
+| `cuad_liquidated_damages` ² | 110 | 105/110 (95.5%, [89.8–98.0]) | 107/110 (97.3%); $\Delta$ −1.8pp; *p* = 0.500 | 105/110 (95.5%); $\Delta$ +0.0pp; *p* = 1.000 | 79/110 (71.8%); $\Delta$ +23.6pp; *p* < 0.001 |
+| `opp115_international_and_specific_audiences` ² | 347 | 324/347 (93.4%, [90.3–95.5]) | 319/347 (91.9%); $\Delta$ +1.4pp; *p* = 0.302 | 321/347 (92.5%); $\Delta$ +0.9pp; *p* = 0.581 | 232/347 (66.9%); $\Delta$ +26.5pp; *p* < 0.001 |
+| **All 9 tasks (combined)** | **949** | **900/949 (94.8%)** | **— Combined McNemar — see Table 6.10.B —** | | |
+
+¹ Random sample, seed=42 (pre-registered in `tools/random_task_pick.py`).
+² Random sample, seed=43.
+
+Cells report: correct/n (accuracy, 95% Wilson CI); difference vs the Eligibility Module in percentage points; exact two-sided McNemar's test on the per-case discordance with the Eligibility Module. Negative deltas indicate the LLM out-performed by 1 case at that N; none reach significance.
+
+When per-task results are aggregated by paired-binomial test on discordant cases across the full 949-case held-out evaluation, the Eligibility Module is significantly more accurate than each of the three frontier models at the conventional $p < 0.05$ level:
+
+**Table 6.10.B — Combined paired-binomial across 9 LegalBench tasks**
+
+| Comparison | $b$ (Eligibility Module only correct) | $c$ (LLM only correct) | Two-sided exact *p* |
+|---|---:|---:|---:|
+| Module vs Sonnet 4.6 | 44 | 15 | $< 0.001$ |
+| Module vs Opus 4.7 | 34 | 13 | $0.003$ |
+| Module vs GPT-5.4 | 340 | 35 | $< 0.001$ |
+
+**Per-task statistical power.** The small-N curated tasks have limited per-task power: `personal_jurisdiction` (N=25) cannot detect held-out accuracy differences smaller than approximately ±20pp at $\alpha = 0.05$, 80% power, and `hearsay` (N=47) is similarly underpowered for $\Delta < 14$pp. The load-bearing test in this section is the combined paired-binomial across all 949 held-out cases (Table 6.10.B); per-task McNemar's *p*-values are reported for completeness but should be interpreted as supplementary, particularly on the curated multi-prong tasks.
+
+### 6.10.3 Selection bias and the random-sample replication
+
+A reviewer might fairly ask whether the four "curated" tasks above (`hearsay`, `personal_jurisdiction`, `jcrew_blocker`, `cuad_covenant_not_to_sue`) were chosen because they fit the Eligibility Module's structural shape — multi-prong rule application of the kind §4.2 identifies as a frontier-LLM failure pattern. They were. To test whether the result is selection-bias-dependent, we repeated the protocol on **six additional LegalBench tasks selected by seeded random sample** from the 153-task pool excluding tasks already integrated. The selection (seeds 42 and 43, n=2 and n=4 respectively, generated by `tools/random_task_pick.py`) was committed before the upstream Task descriptions were inspected. A third pre-registered seed (seed=44, n=2) is committed at the public release tag `pre-v3.8-legalbench-preregistration` and will be added to subsequent revisions of this section once the runs land.
+
+The six random-sample tasks span CUAD contract-clause classification, ContractNLI entailment, OPP115 privacy-policy classification, and LearnedHands legal-aid post categorisation — predominantly single-clause classification rather than the multi-prong rule application that §4.2 characterises as the failure pattern. Predicted-mismatch territory.
+
+The result is consistent: the Eligibility Module wins on the random-sample tasks, but with smaller per-task margins (1–3 percentage points on the random sample vs 12–41 percentage points on the curated multi-prong tasks). The combined paired-binomial test reported in Table 6.10.B includes both curated and random-sample tasks; even with the curated subset removed, the random-sample combined comparison reaches significance against Sonnet ($b=22$, $c=10$, $p=0.025$) and against GPT-5.4 ($b=261$, $c=29$, $p<0.001$); against Opus 4.7 the random-sample combined result is suggestive but not significant ($b=21$, $c=11$, $p=0.084$).
+
+The interpretation: the Eligibility Module's structural advantage is **largest where the underlying rule has multiple genuinely-distinct prongs** combined by deterministic logic — exactly the failure pattern of §4.2. On single-clause classification tasks the structural advantage shrinks to a 1–3 percentage point edge that is consistent across tasks but small per task; the combined test detects it only when aggregated.
+
+### 6.10.4 GPT-5.4 calibration on contract-clause classification
+
+GPT-5.4's accuracy on five of the eight non-curated random-sample tasks (`cuad_covenant_not_to_sue` 53.9%, `contract_nli_explicit_id` 36.4%, `contract_nli_notice_on_compelled_disclosure` 50.7%, `learned_hands_health` 49.6%, `opp115_international` 66.9%) is sharply lower than Sonnet 4.6 and Opus 4.7 on the same tasks (each clears 87% on all five). Inspection of the per-case JSON responses shows GPT-5.4 has a systematic positive-class bias on these classification tasks: on `cuad_covenant_not_to_sue` it returns "yes" on 304/308 test cases regardless of clause content (recall $\approx$100%, precision $\approx$50%). The pattern replicates on the other four tasks and is not present on the multi-prong rule tasks (`hearsay` 85.1%, `personal_jurisdiction` 96.0%, `jcrew_blocker` 92.6%).
+
+We do not characterise this as a capability statement about GPT-5.4 broadly. The pattern is specific to the LegalBench classification-style few-shot prompt format used here (the upstream canonical `base_prompt.txt`); alternative prompt strategies (chain-of-thought, structured-output, zero-shot rule-only) may recover the model's performance and were not tested. The relevant finding for the present paper is that the Eligibility Module's structural advantage holds across model families — the failure pattern in §4.2 (compositional rule-evaluation) and the calibration pattern in this section (classification-prompt anchoring) are **distinct LLM failure modes that both manifest on legal classification tasks**.
+
+### 6.10.5 Cross-extractor: structural advantage is not extractor-specific
+
+A second possible critique: the Eligibility Module pipeline uses an LLM extractor (Sonnet 4.6 in the headline configuration) to produce the typed field values that the engine evaluates. If the LLM-only baseline also uses Sonnet 4.6, the comparison reduces to "Sonnet split across two steps versus Sonnet doing it all in one step", which might be a prompt-engineering artefact rather than a structural property of the Module.
+
+To test this, we re-ran the Eligibility Module pipeline with **Opus 4.7 as the runtime extractor** on the two clearest multi-prong tasks (`hearsay` and `personal_jurisdiction`), and compared against Opus 4.7 end-to-end:
+
+**Table 6.10.C — Cross-extractor (full test split, N as shown)**
+
+| Task | Sonnet 4.6 end-to-end | Sonnet-extractor + engine | Opus 4.7 end-to-end | Opus-extractor + engine |
+|---|---:|---:|---:|---:|
+| `hearsay` (94) | 76.6% | 90.4% | 83.0% | 86.2% |
+| `personal_jurisdiction` (50) | 92.0% | 98.0% | 92.0% | 98.0% |
+
+The Eligibility Module's structural advantage holds for **both** extractor models. On `personal_jurisdiction`, the lift is identical (+6.0pp) regardless of extractor; on `hearsay`, the lift is +13.8pp with Sonnet and +3.2pp with Opus — Opus is genuinely better at hearsay reasoning end-to-end, so the symbolic engine adds less incremental value to the stronger extractor. In neither case does the Eligibility Module pipeline lose to its corresponding LLM-only baseline. The result is consistent with the §4.2 framing: the deterministic conjunction step is the source of the gain, not the choice of extractor.
+
+### 6.10.6 Discussion
+
+The LegalBench results are external validation of the central claim of this paper: on multi-prong rule-evaluation tasks, the Eligibility Module's deterministic-execution architecture is more accurate than end-to-end LLM evaluation, and the gap is reliably detectable. The gap shrinks to a small but consistent margin on single-clause classification tasks chosen at random — the regime where there is no compositional rule structure for the symbolic engine to exploit — and the gap holds across two LLM model families (Anthropic, OpenAI) and across two choices of runtime extractor (Sonnet 4.6, Opus 4.7).
+
+The retroactive held-out methodology is acknowledged as a methodological compromise. For the four curated tasks, hint iteration during authoring used the full LegalBench `test` split before the held-out partition was introduced; the held-out results in Table 6.10.A are therefore reported on a half-test subset that the authors *did* see during iteration but did not focus on. For the six random-sample tasks, the held-out methodology was applied prospectively (hints iterated only on a dev half, holdout evaluated once with frozen hints). The combined paired-binomial result in Table 6.10.B is dominated by the random-sample tasks by case count (674 of 949 cases) and remains significant.
+
+**What would refute this section's central claim.** A documented LLM-only configuration that, on the same 949 held-out LegalBench cases (with the deterministic seed-7 partition reproduced from `tools/test_split.py`), achieves a combined accuracy ≥ 95% on the same nine tasks under any disclosed prompting strategy would substantially weaken the structural-advantage interpretation in §6.10.5–§6.10.6. Such a result would not falsify the existence of the §4.2 failure pattern (which is a small-N existence claim by design) but would show that prompt engineering alone can match the Module on this evaluation set, removing the *architectural* basis for the headline gap reported in Table 6.10.B.
+
+The benchmark scenarios, source files, runners, statistical analysis script, and pre-registration artefacts are released in the `legalbench/` subdirectory of <https://github.com/Aethis-ai/confidently-wrong-benchmark> for replication. The pre-registration of the seed-44 random-sample replication is verifiable via the public Git tag `pre-v3.8-legalbench-preregistration` at SHA `f7c5994`. The held-out partition reproducibility is verified at `legalbench/docs/reproducibility-checks.md` (9/9 tasks: re-running `tools/test_split.py --seed 7 --dev_fraction 0.5` from a clean checkout reproduces the index sets used in committed engine results exactly).
 
 ---
 

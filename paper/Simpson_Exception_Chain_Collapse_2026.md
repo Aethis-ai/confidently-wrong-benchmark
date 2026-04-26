@@ -584,23 +584,28 @@ Table 6.10.A reports per-task accuracy on the held-out evaluation sample, with 9
 
 **Table 6.10.A — Eligibility Module vs frontier LLMs, LegalBench held-out evaluation**
 
+\small
+
 | Task | N | Eligibility Module | Sonnet 4.6 | Opus 4.7 | GPT-5.4 |
 |---|---:|---|---|---|---|
-| `hearsay` (FRE 801) | 47 | 45/47 (95.7%, [85.8–98.8]) | 35/47 (74.5%); $\Delta$ +21.3pp; *p* = 0.006 | 39/47 (83.0%); $\Delta$ +12.8pp; *p* = 0.031 | 40/47 (85.1%); $\Delta$ +10.6pp; *p* = 0.125 |
-| `personal_jurisdiction` (28 USC §1332(a)) | 25 | 24/25 (96.0%, [80.5–99.3]) | 24/25 (96.0%); $\Delta$ +0.0pp; *p* = 1.000 | 23/25 (92.0%); $\Delta$ +4.0pp; *p* = 1.000 | 24/25 (96.0%); $\Delta$ +0.0pp; *p* = 1.000 |
-| `jcrew_blocker` | 27 | 27/27 (100.0%, [87.5–100.0]) | 16/27 (59.3%); $\Delta$ +40.7pp; *p* < 0.001 | 26/27 (96.3%); $\Delta$ +3.7pp; *p* = 1.000 | 25/27 (92.6%); $\Delta$ +7.4pp; *p* = 0.500 |
-| `cuad_covenant_not_to_sue` ¹ | 154 | 150/154 (97.4%, [93.5–99.0]) | 148/154 (96.1%); $\Delta$ +1.3pp; *p* = 0.727 | 149/154 (96.8%); $\Delta$ +0.6pp; *p* = 1.000 | 83/154 (53.9%); $\Delta$ +43.5pp; *p* < 0.001 |
-| `contract_nli_explicit_identification` ¹ | 55 | 48/55 (87.3%, [76.0–93.7]) | 47/55 (85.5%); $\Delta$ +1.8pp; *p* = 1.000 | 46/55 (83.6%); $\Delta$ +3.6pp; *p* = 0.688 | 20/55 (36.4%); $\Delta$ +50.9pp; *p* < 0.001 |
-| `contract_nli_notice_on_compelled_disclosure` ² | 71 | 70/71 (98.6%, [92.4–99.8]) | 71/71 (100.0%); $\Delta$ −1.4pp; *p* = 1.000 | 71/71 (100.0%); $\Delta$ −1.4pp; *p* = 1.000 | 36/71 (50.7%); $\Delta$ +47.9pp; *p* < 0.001 |
-| `learned_hands_health` ² | 113 | 107/113 (94.7%, [88.9–97.5]) | 104/113 (92.0%); $\Delta$ +2.7pp; *p* = 0.375 | 99/113 (87.6%); $\Delta$ +7.1pp; *p* = 0.039 | 56/113 (49.6%); $\Delta$ +45.1pp; *p* < 0.001 |
-| `cuad_liquidated_damages` ² | 110 | 105/110 (95.5%, [89.8–98.0]) | 107/110 (97.3%); $\Delta$ −1.8pp; *p* = 0.500 | 105/110 (95.5%); $\Delta$ +0.0pp; *p* = 1.000 | 79/110 (71.8%); $\Delta$ +23.6pp; *p* < 0.001 |
-| `opp115_international_and_specific_audiences` ² | 347 | 324/347 (93.4%, [90.3–95.5]) | 319/347 (91.9%); $\Delta$ +1.4pp; *p* = 0.302 | 321/347 (92.5%); $\Delta$ +0.9pp; *p* = 0.581 | 232/347 (66.9%); $\Delta$ +26.5pp; *p* < 0.001 |
-| **All 9 tasks (combined)** | **949** | **900/949 (94.8%)** | **— Combined McNemar — see Table 6.10.B —** | | |
+| `hearsay` (FRE 801) | 47 | 45/47 (95.7%) [85.8–98.8] | 35/47 (74.5%); +21.3 / 0.006 | 39/47 (83.0%); +12.8 / 0.031 | 40/47 (85.1%); +10.6 / 0.125 |
+| `personal_jurisdiction` | 25 | 24/25 (96.0%) [80.5–99.3] | 24/25 (96.0%); +0.0 / 1.000 | 23/25 (92.0%); +4.0 / 1.000 | 24/25 (96.0%); +0.0 / 1.000 |
+| `jcrew_blocker` | 27 | 27/27 (100%) [87.5–100] | 16/27 (59.3%); +40.7 / <0.001 | 26/27 (96.3%); +3.7 / 1.000 | 25/27 (92.6%); +7.4 / 0.500 |
+| `cuad_covenant_not_to_sue` ¹ | 154 | 150/154 (97.4%) [93.5–99.0] | 148/154 (96.1%); +1.3 / 0.727 | 149/154 (96.8%); +0.6 / 1.000 | 83/154 (53.9%); +43.5 / <0.001 |
+| `contract_nli_explicit_id` ¹ | 55 | 48/55 (87.3%) [76.0–93.7] | 47/55 (85.5%); +1.8 / 1.000 | 46/55 (83.6%); +3.6 / 0.688 | 20/55 (36.4%); +50.9 / <0.001 |
+| `contract_nli_notice_on_disclosure` ² | 71 | 70/71 (98.6%) [92.4–99.8] | 71/71 (100%); −1.4 / 1.000 | 71/71 (100%); −1.4 / 1.000 | 36/71 (50.7%); +47.9 / <0.001 |
+| `learned_hands_health` ² | 113 | 107/113 (94.7%) [88.9–97.5] | 104/113 (92.0%); +2.7 / 0.375 | 99/113 (87.6%); +7.1 / 0.039 | 56/113 (49.6%); +45.1 / <0.001 |
+| `cuad_liquidated_damages` ² | 110 | 105/110 (95.5%) [89.8–98.0] | 107/110 (97.3%); −1.8 / 0.500 | 105/110 (95.5%); +0.0 / 1.000 | 79/110 (71.8%); +23.6 / <0.001 |
+| `opp115_int_and_specific_audiences` ² | 347 | 324/347 (93.4%) [90.3–95.5] | 319/347 (91.9%); +1.4 / 0.302 | 321/347 (92.5%); +0.9 / 0.581 | 232/347 (66.9%); +26.5 / <0.001 |
+| **All 9 tasks (combined)** | **949** | **900/949 (94.8%)** | *combined: see Table 6.10.B* | | |
 
-¹ Random sample, seed=42 (pre-registered in `tools/random_task_pick.py`).
+\normalsize
+
+¹ Random sample, seed=42 (pre-registered in `tools/random_task_pick.py`). Personal jurisdiction is 28 USC §1332(a). Notice-on-compelled-disclosure full task name: `contract_nli_notice_on_compelled_disclosure`. Explicit-id full name: `contract_nli_explicit_identification`. Opp115 full name: `opp115_international_and_specific_audiences`.
+
 ² Random sample, seed=43.
 
-Cells report: correct/n (accuracy, 95% Wilson CI); difference vs the Eligibility Module in percentage points; exact two-sided McNemar's test on the per-case discordance with the Eligibility Module. Negative deltas indicate the LLM out-performed by 1 case at that N; none reach significance.
+**Cell legend.** Engine column: correct/n (accuracy, 95% Wilson CI). LLM columns: correct/n (accuracy); Δ vs Engine in percentage points / exact two-sided McNemar's *p* on per-case discordance with the Engine. Negative Δ indicates the LLM out-performed by 1 case at that N; none reach significance.
 
 When per-task results are aggregated by paired-binomial test on discordant cases across the full 949-case held-out evaluation, the Eligibility Module is significantly more accurate than each of the three frontier models at the conventional $p < 0.05$ level:
 

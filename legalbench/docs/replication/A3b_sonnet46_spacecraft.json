@@ -1,0 +1,978 @@
+{
+  "model": "claude-sonnet-4-6",
+  "reasoning_effort": null,
+  "scenarios_yaml": "/Users/paulsimpson/aethis-workspace/confidently-wrong-benchmark/dataset/spacecraft-crew-certification/scenarios.yaml",
+  "n": 68,
+  "summary": {
+    "correct": 60,
+    "empty": 0,
+    "truncated": 0,
+    "parse_err": 0,
+    "api_err": 0,
+    "elapsed_s": 81.21902275085449,
+    "wrong_scenarios": [
+      "age_60_suborbital_no_flight_ready",
+      "age_60_lunar_no_flight_ready",
+      "veteran_1000hrs_orbital_no_license",
+      "age_25_veteran_1500hrs_suborbital",
+      "age_exempt_saves_no_flight",
+      "adv_young_veteran_lunar",
+      "adv_suborbital_no_rad_no_license_veteran",
+      "adv_minimum_viable_veteran_orbital"
+    ]
+  },
+  "per_scenario": [
+    {
+      "scenario": "vogon_rejected",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3421,
+        "completion_tokens": 6,
+        "total_tokens": 3427
+      },
+      "elapsed_s": 1.1370608806610107
+    },
+    {
+      "scenario": "human_baseline",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.8205242156982422
+    },
+    {
+      "scenario": "dolphin_eligible",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3420,
+        "completion_tokens": 4,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 1.3003630638122559
+    },
+    {
+      "scenario": "magrathean_eligible",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3422,
+        "completion_tokens": 4,
+        "total_tokens": 3426
+      },
+      "elapsed_s": 1.1565451622009277
+    },
+    {
+      "scenario": "betelgeusian_eligible",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3423,
+        "completion_tokens": 4,
+        "total_tokens": 3427
+      },
+      "elapsed_s": 1.4566431045532227
+    },
+    {
+      "scenario": "flight_hours_499",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.8332059383392334
+    },
+    {
+      "scenario": "flight_hours_500",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.8084828853607178
+    },
+    {
+      "scenario": "no_pilot_license",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.995812177658081
+    },
+    {
+      "scenario": "no_hours_no_license",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 1.381659984588623
+    },
+    {
+      "scenario": "medical_gaa_only",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.9126889705657959
+    },
+    {
+      "scenario": "medical_provider_only",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.1020100116729736
+    },
+    {
+      "scenario": "medical_both",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.2949960231781006
+    },
+    {
+      "scenario": "medical_neither",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 1.1850640773773193
+    },
+    {
+      "scenario": "medical_cert_expired",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.8815808296203613
+    },
+    {
+      "scenario": "age_60_suborbital_no_flight_ready",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 2.414135217666626
+    },
+    {
+      "scenario": "age_60_lunar_no_flight_ready",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.1014368534088135
+    },
+    {
+      "scenario": "age_59_suborbital_no_flight_ready",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.6894118785858154
+    },
+    {
+      "scenario": "age_60_orbital_no_flight_ready",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.7543742656707764
+    },
+    {
+      "scenario": "age_70_orbital_no_flight_ready",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.0255470275878906
+    },
+    {
+      "scenario": "age_60_orbital_flight_ready",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 0.9166731834411621
+    },
+    {
+      "scenario": "veteran_1000hrs_orbital_no_license",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 1.5666499137878418
+    },
+    {
+      "scenario": "veteran_999hrs_orbital_no_license",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.9003171920776367
+    },
+    {
+      "scenario": "age_60_orbital_veteran_1000hrs",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 0.7773969173431396
+    },
+    {
+      "scenario": "age_25_veteran_1500hrs_suborbital",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 0.9996709823608398
+    },
+    {
+      "scenario": "age_59_veteran_1000hrs",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 4,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 0.8513820171356201
+    },
+    {
+      "scenario": "age_60_orbital_999hrs_no_license",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.5128729343414307
+    },
+    {
+      "scenario": "orbital_with_radiation_cert",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 0.7455379962921143
+    },
+    {
+      "scenario": "orbital_without_radiation_cert",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 2.855903148651123
+    },
+    {
+      "scenario": "suborbital_without_radiation_cert",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.8051357269287109
+    },
+    {
+      "scenario": "lunar_without_radiation_cert",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.1784858703613281
+    },
+    {
+      "scenario": "propulsion_conventional",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3413,
+        "completion_tokens": 6,
+        "total_tokens": 3419
+      },
+      "elapsed_s": 0.9926860332489014
+    },
+    {
+      "scenario": "propulsion_bistromathics",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.0296669006347656
+    },
+    {
+      "scenario": "propulsion_heart_of_gold",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3415,
+        "completion_tokens": 4,
+        "total_tokens": 3419
+      },
+      "elapsed_s": 1.1460239887237549
+    },
+    {
+      "scenario": "no_towel",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.9251210689544678
+    },
+    {
+      "scenario": "vogon_perfect_applicant",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 1.1629729270935059
+    },
+    {
+      "scenario": "everything_except_towel",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 1.234241008758545
+    },
+    {
+      "scenario": "everything_except_medical_validity",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 6,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 0.7642250061035156
+    },
+    {
+      "scenario": "everything_except_propulsion",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3413,
+        "completion_tokens": 6,
+        "total_tokens": 3419
+      },
+      "elapsed_s": 1.1999340057373047
+    },
+    {
+      "scenario": "age_exempt_saves_no_flight",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.1481280326843262
+    },
+    {
+      "scenario": "veteran_saves_orbital_old",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 2.6907100677490234
+    },
+    {
+      "scenario": "age_60_orbital_999hrs_licensed",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 0.9640989303588867
+    },
+    {
+      "scenario": "dolphin_veteran_orbital_no_license_bistro",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 1.093209981918335
+    },
+    {
+      "scenario": "betelgeusian_age_60_suborbital_no_flight_heart_of_gold",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3420,
+        "completion_tokens": 4,
+        "total_tokens": 3424
+      },
+      "elapsed_s": 1.0354719161987305
+    },
+    {
+      "scenario": "ultimate_trap_1",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.008462905883789
+    },
+    {
+      "scenario": "ultimate_trap_2",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 0.7244179248809814
+    },
+    {
+      "scenario": "ultimate_trap_3",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 0.7073042392730713
+    },
+    {
+      "scenario": "ultimate_trap_4",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 1.3601131439208984
+    },
+    {
+      "scenario": "ultimate_trap_5",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3421,
+        "completion_tokens": 6,
+        "total_tokens": 3427
+      },
+      "elapsed_s": 1.2279980182647705
+    },
+    {
+      "scenario": "adv_young_veteran_lunar",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 1.1718688011169434
+    },
+    {
+      "scenario": "adv_young_veteran_orbital_rad",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 1.1722419261932373
+    },
+    {
+      "scenario": "adv_young_veteran_orbital_no_rad",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 0.8954992294311523
+    },
+    {
+      "scenario": "adv_direct_satisfy_500hrs_licensed_orbital",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.2061119079589844
+    },
+    {
+      "scenario": "adv_direct_satisfy_overqualified",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 0.8154277801513672
+    },
+    {
+      "scenario": "adv_no_license_499hrs_age60_orbital",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.7482542991638184
+    },
+    {
+      "scenario": "adv_suborbital_no_rad_no_license_veteran",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 0.7302780151367188
+    },
+    {
+      "scenario": "adv_lunar_no_rad_age_exempt",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 4.633271217346191
+    },
+    {
+      "scenario": "adv_everything_but_species",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 1.852971076965332
+    },
+    {
+      "scenario": "adv_everything_but_towel_veteran",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 0.7477869987487793
+    },
+    {
+      "scenario": "adv_everything_but_propulsion_veteran",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3412,
+        "completion_tokens": 6,
+        "total_tokens": 3418
+      },
+      "elapsed_s": 1.2148518562316895
+    },
+    {
+      "scenario": "adv_triple_chain_pass",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.2284250259399414
+    },
+    {
+      "scenario": "adv_triple_chain_fail_medical",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3419,
+        "completion_tokens": 6,
+        "total_tokens": 3425
+      },
+      "elapsed_s": 1.2566850185394287
+    },
+    {
+      "scenario": "adv_all_boundaries_pass",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 1.037245273590088
+    },
+    {
+      "scenario": "adv_all_boundaries_fail",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 6,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.9463269710540771
+    },
+    {
+      "scenario": "adv_minimum_viable_suborbital",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.3252842426300049
+    },
+    {
+      "scenario": "adv_minimum_viable_orbital",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3416,
+        "completion_tokens": 4,
+        "total_tokens": 3420
+      },
+      "elapsed_s": 1.2707579135894775
+    },
+    {
+      "scenario": "adv_minimum_viable_veteran_orbital",
+      "expected": "eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 6,
+        "total_tokens": 3423
+      },
+      "elapsed_s": 1.0614500045776367
+    },
+    {
+      "scenario": "adv_red_herring_rad_cert_on_suborbital",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3418,
+        "completion_tokens": 4,
+        "total_tokens": 3422
+      },
+      "elapsed_s": 0.7381670475006104
+    },
+    {
+      "scenario": "adv_red_herring_veteran_with_license",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "end_turn",
+      "usage": {
+        "prompt_tokens": 3417,
+        "completion_tokens": 4,
+        "total_tokens": 3421
+      },
+      "elapsed_s": 1.0354552268981934
+    }
+  ]
+}

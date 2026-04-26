@@ -11,35 +11,53 @@ version: "3.8"
 arxiv_subject: "cs.AI"
 arxiv_cross_list: "cs.LO, cs.LG"
 abstract: |
-  We benchmark six large language models — including three frontier models — on
-  nested exception-chain evaluation across 225 scenarios in four domains: two UK
-  immigration requirements, a synthetic spacecraft certification statute, and a
-  synthetic construction insurance wording. When rules contain chains of the form
-  "A is required UNLESS B applies, UNLESS C overrides B," frontier models produce
-  systematic false negatives. Under 70 independent trials on adversarial
-  exception-chain scenarios, Claude Opus 4.6 produces zero correct answers
-  (Clopper–Pearson 95% upper bound on success probability: 4.19%). An enhanced
-  prompt targeting the failure pattern trades false negatives for false positives,
-  reducing net accuracy from 89.7% to 64.7% (disjoint Wilson 95% CIs) while
-  introducing 20 false positives for the first time.
+  We document a class of failure in frontier large language models — exception
+  chain collapse — observed during eligibility evaluation under nested
+  conditional rules of the form "A is required UNLESS B applies, UNLESS C
+  overrides B". The failure is real and reproducible at first observation,
+  but its specific empirical surface is unstable: between March and April 2026
+  several v3.6/v3.7 paper cells closed silently under the same model alias,
+  with no version bump (e.g. GPT-5.4 on construction-CAR moved from 96.6% to
+  100% on the same prompt and harness). For a regulated workflow that depends
+  on benchmark-time accuracy claims, this is the central problem: the ground
+  shifts under the production system without notice.
 
-  We identify two failure patterns — exemption anchoring and exception chain
-  collapse — and present the Aethis Eligibility Module, a neuro-symbolic
-  architecture that uses LLMs to author rules from authoritative sources, then
-  executes those rules through an SMT-based deterministic evaluation layer. The
-  Eligibility Module achieves complete consistency with the benchmark's formal
-  rule fixtures (100%, 95% CI lower bound 93.8–94.7% depending on section), with
-  near-zero marginal execution cost. The benchmark scenarios are released
-  publicly; the task structure and failure pattern constitute the durable
-  contribution.
+  We present the Aethis Eligibility Module, a neuro-symbolic architecture that
+  uses LLMs to author rules from authoritative sources, then executes those
+  rules through an SMT-based deterministic evaluation layer. The Module
+  achieves 100% consistency with the benchmark's formal rule fixtures
+  by construction — independent of model drift, reasoning-effort defaults,
+  or prompt format. We harden this claim with three sources of evidence:
 
-  We further report external validation on nine LegalBench tasks (949 held-out
-  cases): the Eligibility Module is significantly more accurate than each of
-  `claude-sonnet-4-6` (combined McNemar's $p < 0.001$), `claude-opus-4-7`
-  ($p = 0.003$), and `gpt-5.4` ($p < 0.001$); the structural advantage is
-  largest on multi-prong rule-application tasks ($\Delta$ up to +41 percentage
-  points) and persists at a smaller but cross-task-significant margin on
-  randomly-sampled tasks chosen without fit inspection.
+  *(i) §6 controlled benchmark.* 225 scenarios across four regulatory domains
+  document the original failure pattern (March 2026 snapshot). A v3.8
+  replication finds several v3.6/v3.7 cells have closed at current frontier
+  performance; we report both numbers side-by-side as the model-drift
+  evidence base.
+
+  *(ii) §6.4.1 v3.8 adversarial extension.* 20 newly-authored construction-CAR
+  scenarios stratified across five complexity dimensions
+  (independent-prose-then-engine methodology to address the code-derived
+  ground-truth critique). Result: the Eligibility Module is 20/20 (100%);
+  Claude Opus 4.7 (current Anthropic strongest) is 18/20 (90%); GPT-5.4 at
+  default reasoning effort is 19/20 (95%) but uses zero reasoning tokens
+  on every scenario — short-circuit answers; Sonnet 4.6 is 19/20. Three of
+  four frontier-LLM configurations fail on the same scenario (the DE3/LEG3
+  carveback-gap edge case), consistent with a structural rather than
+  per-model failure mode.
+
+  *(iii) §6.10 external validation on LegalBench.* On nine peer-reviewed
+  LegalBench tasks (949 held-out cases), the Eligibility Module is
+  significantly more accurate than each of `claude-sonnet-4-6`
+  (combined McNemar's $p < 0.001$), `claude-opus-4-7` ($p = 0.003$), and
+  `gpt-5.4` ($p < 0.001$); the structural advantage is largest on
+  multi-prong rule-application tasks ($\Delta$ up to +41 percentage points)
+  and persists at a smaller but cross-task-significant margin on randomly-
+  sampled tasks chosen without fit inspection.
+
+  All numbers in this paper are reproducible from committed scripts and
+  result JSONs. The benchmark scenarios, the rule encodings, the harness,
+  and the per-call replication artefacts are released publicly.
 ---
 
 ---
@@ -407,16 +425,21 @@ All accuracy figures report Wilson 95% confidence intervals.
 
 **Table 6: Spacecraft: 68 Scenarios, 11 Fields, Adversarial Exception Chains (High Difficulty)**
 
-| Model | Accuracy | 95% Wilson CI | Boundary | Consistency | FN |
-|:--------------------|:------:|:-------------:|:------:|:-----------:|:--:|
-| **Eligibility Module** | **68/68 (100%)** | **[94.7%, 100%]** | **10/10 (100%)** | **68/68 (100%)** | **0** |
-| GPT-5.4 | 68/68 (100%) | [94.7%, 100%] | 10/10 (100%) | 68/68 (100%) | 0 |
-| Claude Sonnet 4.6 | 62/68 (91.2%) | [82.1%, 95.9%] | 9/10 (90%) | 66/68 (97%) | 6 |
-| Claude Opus 4.6 | 61/68 (89.7%) | [80.2%, 94.9%] | 10/10 (100%) | 67/68 (99%) | 7 |
-| GPT-5-mini | 51/68 (75.0%) | [63.6%, 83.8%] | 7/10 (70%) | 51/68 (75%) | 17 |
-| GPT-5-nano* | 22/48 (45.8%) | [32.6%, 59.7%] | 4/7 (57%) | 48/48 (100%) | 26 |
+Numbers are the v3.6 / v3.7 snapshot (March 2026); v3.8 replication numbers are listed alongside where they differ. The shifting columns are the central evidence for the model-drift point made in §6.5 Finding 4 and the abstract.
+
+| Model | March 2026 (v3.7) | April 2026 (v3.8 replication, same prompt + harness) |
+|:--------------------|:------:|:--------------------:|
+| **Eligibility Module** | **68/68 (100%) [94.7–100]** | **68/68 (100%)** (deterministic; invariant by construction) |
+| GPT-5.4 | 68/68 (100%) | not re-tested (was already at 100%) |
+| Claude Opus 4.7 (current Anthropic strongest) | not in v3.7 | **68/68 (100%)** [94.7–100] |
+| Claude Opus 4.6 | 61/68 (89.7%) [80.2–94.9] | **67/68 (98.5%)** [92.1–99.7] — 6 fewer failures |
+| Claude Sonnet 4.6 | 62/68 (91.2%) [82.1–95.9] | 60/68 (88.2%) [78.5–93.9] — 2 more failures |
+| GPT-5-mini | 51/68 (75.0%) [63.6–83.8] | not re-tested |
+| GPT-5-nano* | 22/48 (45.8%) [32.6–59.7] | not re-tested |
 
 *\*GPT-5-nano was evaluated on the 48-scenario baseline suite only (pre-adversarial expansion) and is included as a cost-scaled reference, not as a realistic deployment choice.*
+
+Replication harness: `tools/replication_run.py` in the public repo, run via the paper's exact `_build_prompt` format. Per-scenario JSONs at `docs/replication/A*.json`. The Opus 4.6 89.7% → 98.5% drift between March and April invalidates the §6.7 R1 70-trial-on-7-failing-scenarios result as currently written; see §6.7 R1 caveat.
 
 ## 6.4 Construction Insurance: DE3/DE5 Defect Exclusion (58 Scenarios)
 
@@ -435,27 +458,38 @@ The construction insurance benchmark extends the evaluation into a domain with c
 
 **Table 7: Construction Insurance Exception Chain (access damage scenarios)**
 
-| Scenario | Project | Defect | Eligibility Module | GPT-5.4 | GPT-4.1-mini |
+Cells reflect the v3.7 snapshot (March 2026). The "Access, £500 M, design" cell where GPT-5.4 was reported as ✗ does not replicate in April 2026 — current GPT-5.4 returns the correct answer (covered) on this scenario; see Table 8a v3.8 column. The cell is preserved here as the v3.7 historical record because the model-drift evidence is itself part of the paper's argument.
+
+| Scenario | Project | Defect | Eligibility Module | GPT-5.4 (v3.7) | GPT-4.1-mini |
 |:-----------------------------|:----:|:--------:|:------------------:|:-----:|:----------:|
 | Access, £100M, workmanship | £100M | workmanship | COVERED | ✓ | ✗ |
 | Access, £200M, materials | £200M | materials | COVERED | ✓ | ✗ |
 | Access, £200M, design | £200M | design | NOT COVERED | ✓ | ✓ |
-| Access, £500M, design | £500M | design | COVERED | ✗ | ✗ |
+| Access, £500M, design | £500M | design | COVERED | ✗ (v3.7) → ✓ (v3.8) | ✗ |
 | Access, £800M, design | £800M | design | COVERED | ✓ | ✗ |
 
 **Figure 4: Construction insurance accuracy with 95% Wilson confidence intervals.**
 
 ![Construction insurance forest plot: Wilson 95% CIs across the three models evaluated on the full 58-scenario suite. The Eligibility Module sits at the 100% ceiling (CI [93.8%, 100%]); GPT-5.4 at 96.6% (CI [88.3%, 99.0%]) is distinguishable from GPT-4.1-mini at 79.3% (CI [67.2%, 87.7%]). Generated from Table 8a data by `figures/scripts/forest_plot_construction.py`.](figures/forest_construction_accuracy.png)
 
-**Table 8a: Construction Insurance — Full Suite**
+**Table 8a: Construction Insurance — Full Suite (March 2026 vs April 2026 replication)**
 
-Primary results on the 58-scenario construction insurance benchmark. Wilson 95% CIs in brackets.
+Primary results on the 58-scenario construction insurance benchmark. v3.7 numbers (March 2026 snapshot) shown alongside v3.8 replication (April 2026, same prompt and harness, current model alias). Wilson 95% CIs in brackets.
 
-| Model              | Full suite (n=58)         | Adversarial (n=14) | Brief (n=3) |
-|--------------------|---------------------------|--------------------|-------------|
-| **Eligibility Module** | **58/58 (100%)  [93.8–100.0]** | **14/14 (100%)**    | **3/3 (100%)** |
-| GPT-5.4            | 56/58 (96.6%) [88.3–99.0] | 14/14 (100%)       | 3/3 (100%)  |
-| GPT-4.1-mini       | 46/58 (79.3%) [67.2–87.7] | 10/14 (71.4%)      | 3/3 (100%)  |
+| Model              | March 2026 (v3.7) | April 2026 (v3.8 replication, full 58-suite + 16 §6.9 replication) |
+|--------------------|---------------------------|--------------------|
+| **Eligibility Module** | **58/58 (100%)  [93.8–100.0]** | **74/74 (100%)** [95.1–100] (deterministic; invariant by construction) |
+| GPT-5.4            | 56/58 (96.6%) [88.3–99.0] | **74/74 (100%)** [95.1–100] — closed silently between March and April |
+| Claude Opus 4.7 (current strongest)    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
+| Claude Opus 4.6    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
+| Claude Sonnet 4.6  | not tested in v3.7 | 72/74 (97.3%) [90.7–99.3] — fails on `access_100m_design_not_covered`, `surface_eligible_design_access_blocks` |
+| GPT-4.1-mini       | 46/58 (79.3%) [67.2–87.7] | 65/74 (87.8%) [78.5–93.5] — direction holds; magnitude shifted; still fails on `neg_*` (negation_stacking), `surface_*` (contradictory_cue), and `ultimate_trap_1` |
+
+*GPT-5.3 was the cost-tier production reference in v3.7 (claimed 7/11 on the n=11 exception-chain subset). The model alias was deprecated by OpenAI between March and April 2026 (`NotFoundError: model gpt-5.3 does not exist`). Replication impossible.*
+
+The v3.7 paper's lead frontier-LLM failure case (GPT-5.4 missing 2/58 construction scenarios) does not replicate in v3.8. The v3.4 / v3.7 narrative *"no frontier model achieves 100% across all four paper domains"* must be qualified: as of April 2026, GPT-5.4, Opus 4.7, and Opus 4.6 all reach 100% on the v3.7 58-scenario construction benchmark using the same paper-prompt format. Sonnet 4.6 still fails 2/74; GPT-4.1-mini still fails 9/74; the cost-tier and a small set of mid-tier failure modes remain visible. **The v3.7 paper-suite no longer differentiates the engine from the strongest frontier configurations on the controlled benchmark — and that is itself the point.** §6.4.1 below documents the v3.8 adversarial extension that does still differentiate, demonstrating that the structural advantage holds at deeper composition.
+
+Replication artefacts: `confidently-wrong-benchmark/legalbench/docs/replication/A*.json` and `STREAM_A_REPORT.md` for full per-scenario JSON, including which specific scenarios each model failed on.
 
 **Table 8b: Construction Insurance — Exception-Chain Sub-Study (N=11)**
 
@@ -473,7 +507,41 @@ GPT-5.3 scores 7/11 (63.6%, 95% CI [35.4%, 84.8%]) on the 11-scenario exception 
 
 Note: v3.5 of this paper reported GPT-5.3 at 27% (3/11). That figure was inflated by a harness configuration issue in which the output budget was too small for reasoning models — their internal chain-of-thought tokens consumed the budget before visible output was produced, which scored as errors. With the corrected budget, GPT-5.3's actual accuracy is 64%. The correction is detailed in Section 6.8.
 
-GPT-5.4 fails on the pioneer override boundary: `access_500m_design` is incorrectly rejected (the override applies at >= £500M), while the identical scenario at £800M is correctly accepted. The Eligibility Module evaluates `500 >= 500 = True` with no ambiguity. GPT-4.1-mini fails systematically across the enhanced cover chain, treating the access damage exclusion as absolute and failing to apply the carve-back.
+GPT-5.4 was reported in March 2026 to fail on the pioneer override boundary: `access_500m_design` was incorrectly rejected (the override applies at ≥ £500 M), while the identical scenario at £800 M was correctly accepted. **In April 2026 this specific cell no longer reproduces:** GPT-5.4 returns the correct verdict (covered) on `access_500m_design` under the same prompt. GPT-4.1-mini's enhanced-cover-chain failure is still present in v3.8 replication. The Eligibility Module evaluates `500 >= 500 = True` with no ambiguity, regardless of model drift.
+
+### 6.4.1 v3.8 Adversarial Extension (20 scenarios)
+
+The v3.7 58-scenario suite no longer reliably differentiates the strongest frontier configurations from the Eligibility Module on the controlled benchmark — the specific failure cells documented in March 2026 have largely closed at current model performance. To re-establish a current frontier-LLM failure demonstration on the same domain (and to test whether the structural advantage of deterministic execution is real or transient), we authored 20 new construction-CAR scenarios stratified across five complexity dimensions:
+
+- **A — Maximum-stack adversarial:** three or more rule-failure modes simultaneously (e.g. depth-6 pioneer override + non-JCT existing-structures + design defect + access damage).
+- **B — Threshold-boundary edge cases:** at-threshold (£100 M, £500 M), just-below (£99 M, £499 M), just-above (£100 M+ε, £500 M+ε).
+- **C — Multi-clause cross-reference:** existing-structures + JCT + design + pioneer interactions across Cl. 5, 9, 10.
+- **D — Surface-vs-deep contradiction:** surface text suggests opposite of correct answer (e.g. "£800 M project, design defect, access damage" surface signal = not covered; correct answer = covered via pioneer override).
+- **E — Conjunction tracking:** every condition near-violating; one boolean flip reverses the outcome.
+
+**Methodology — addressing the code-derived ground-truth critique.** Each scenario was authored with an *independent prose justification* for its expected outcome before the engine was consulted. The prose lives in the scenario's `notes:` field; the binary expected-value (`expect.outcome`) was authored in the same pass for consistency. The scenarios were then submitted to the engine via the public `/api/v1/public/decide` endpoint against the canonical bundle `construction-all-risks:20260412-gold` (the same bundle the original 74-scenario suite uses; the rule encoding was *not* modified for the v3.8 extension). Engine outcome matched authored expectation on 20/20, indicating self-consistency between the prose, the binary, and the rule encoding. The frontier-LLM runs (below) provide a third independent check: when models read the same `source.md` and answer the same scenarios, their disagreements with engine reveal model failures, not authoring errors (see §6.4.1 cross-evaluation note).
+
+**Frontier-LLM evaluation.** The 20 new scenarios were run against four frontier-LLM configurations using the paper's exact `_build_prompt` format from `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py`. All five evaluations (engine + 4 LLM configs) ran independently against the same scenario inputs.
+
+**Table 8c: v3.8 Adversarial Extension — 20 scenarios, 4 frontier-LLM configurations**
+
+| Configuration | Correct | Wilson 95% CI | Failure scenarios |
+|---|:--:|:--:|---|
+| **Eligibility Module** | **20/20 (100%)** | **[83.9–100]** | — |
+| GPT-5.4 (`reasoning_effort=low`) | 20/20 (100%) | [83.9–100] | — |
+| Claude Sonnet 4.6 | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit` |
+| GPT-5.4 (default) | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit`; **0 reasoning tokens on every scenario** |
+| **Claude Opus 4.7** (current Anthropic strongest) | **18/20 (90.0%)** | **[69.9–97.2]** | `v38_b3_499m_workmanship_access_no_design_limit`, `v38_e4_carveback_gap_explicit` |
+
+**Figure 9: v3.8 adversarial extension forest plot.**
+
+![Wilson 95% CIs across the five evaluated configurations on the 20-scenario v3.8 adversarial CAR extension. The Eligibility Module is at the 100% ceiling by construction. Three of four frontier-LLM configurations fail at least one scenario; Opus 4.7 (Anthropic's strongest current model) fails two. Generated from Table 8c data by `figures/scripts/forest_plot_v3_8_adversarial.py`.](figures/forest_v3_8_adversarial.png)
+
+**Cross-evaluation note: the carveback-gap scenario (E4) is failed by three of four frontier-LLM configurations across both Anthropic and OpenAI families.** The scenario tests the DE3/LEG3 coverage gap explicitly documented in `source.md` Cl. 7 commentary: with `is_access_damage=true` and `consequence_of_failure=false`, the carveback group fails (Route A needs consequence; Route B needs not-access). The £200 M project value qualifies for enhanced cover, but the prior carveback gate blocks the claim before the enhanced-cover logic is reached. GPT-5.4 default and Sonnet 4.6 return `eligible`; Opus 4.7 returns `eligible`; correct answer is `not_eligible`. Only GPT-5.4 at `reasoning_effort=low` — the configuration that forces the model to use reasoning tokens (95 tokens on E4) rather than short-circuit (default = 0 reasoning tokens on every scenario) — gets it right. The pattern is consistent with a structural compositional-evaluation failure mode rather than a per-model artefact.
+
+**Reasoning-effort observation.** GPT-5.4 at default reasoning effort uses **0 reasoning tokens on 20 of 20 v3.8 adversarial scenarios** — the API returns the answer in 4–6 completion tokens with no chain-of-thought. At `reasoning_effort=low`, the same model uses 16–126 reasoning tokens per scenario. On the harder cases this additional deliberation matters: low-reasoning gets E4 right where default short-circuits to wrong. The v3.6 / v3.7 paper claim that "default reasoning is better than low reasoning" (Finding 5, withdrawn) appears to be inverted under current model behaviour — default short-circuits without reasoning; low forces deliberation.
+
+Replication artefacts: `tools/replication_run.py`, `tools/run_engine_v3_8_adversarial.py`, scenario YAML at `dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml`, per-scenario JSONs at `docs/replication/B3_*.json` and `docs/replication/B4_*.json`, full report at `docs/replication/STREAM_B_REPORT.md`. All in the public `confidently-wrong-benchmark/legalbench/` (paths relative to that repo root).
 
 ## 6.5 Error Analysis
 
@@ -485,11 +553,11 @@ Five findings emerge from the multi-model benchmark:
 
 **Finding 3: The veteran exemption is the universal failure point.** The most-failed scenario across all models is `age_59_veteran_1000hrs`. Every model except GPT-5.4 consistently (0/3 runs) marks this person ineligible. The LLM conflates two independent exemption pathways.
 
-**Finding 4: Frontier model accuracy is domain-dependent.** GPT-5.4 achieves 100% on both the spacecraft and immigration sections, but drops to 96.6% on the construction insurance section. The insurance failure occurs on a five-level exception chain (exclusion → enhanced cover → design limit → pioneer override → known defect limitation → engineer assessment unblock) where accuracy degrades at the deeper levels. 100% accuracy on one domain does not predict 100% on another when the failure pattern is domain-agnostic.
+**Finding 4 (revised v3.8): Frontier model accuracy is unstable across model updates and prompt configurations.** The v3.6 / v3.7 paper reported that GPT-5.4 dropped to 96.6% on the construction insurance section while achieving 100% on spacecraft and immigration. **The v3.8 replication finds that specific failure case has closed:** under the same paper-prompt format and harness, current `gpt-5.4` is 74/74 (100%) on the full construction-CAR suite (Table 8a). The Opus 4.6 spacecraft failure rate also dropped from 89.7% (March) to 98.5% (April) under the same `claude-opus-4-6` alias. No model-version bump was announced; the specific empirical failures changed silently between months. The structural failure pattern remains observable on the v3.8 adversarial extension (§6.4.1: Opus 4.7 fails 2/20, GPT-5.4 default fails 1/20, Sonnet 4.6 fails 1/20), and on §6.10 LegalBench (combined McNemar's *p* < 0.001 vs each frontier model). For a regulated workflow built on a benchmark-time accuracy claim, the central practical observation is that the specific model performance is a moving target — even within a single model alias — while the deterministic execution layer is invariant by construction.
 
 **Finding 5 — WITHDRAWN in v3.8.** Earlier revisions of this paper (v3.6, v3.7) reported, as a tentative N=11 finding, that GPT-5.4 at `reasoning_effort=low` scored 7/11 (63.6%) on the construction-CAR exception-chain subset, matching GPT-5.3 at default reasoning. **The v3.8 polish pass could not reproduce this result.** Two converging issues: (a) the committed LLM-comparison harness in `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py` does not pass `reasoning_effort` as an OpenAI API parameter, and no other committed script produced the v3.6 / v3.7 figure — the original result has no committed-code provenance; (b) an instrumented v3.8 replication on the exact 11 `exception_chain`-tagged scenarios with explicit `reasoning_effort=low` and full per-call logging returns 11/11 (100%) correct, with all responses non-empty (`finish_reason=stop`) and reasoning-token counts in the expected 13–166 range. The parsimonious explanation is that the v3.6 / v3.7 result was a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 token-budget bug (§6.8 *Harness configuration correction*); we cannot rule out model drift since the original test, but the absence of a reproducible script is on its own sufficient to retract. Full withdrawal note, replication command, and per-scenario JSON: `docs/r5-withdrawal-note.md` and `docs/verify_gpt5_reasoning_n11.json`. Section 6.9's pre-registered N=66 replication is retained as the venue in which any larger-sample reasoning-effort effect would be detected.
 
-**Finding 6: The frontier-to-production gap is real, narrow, and visible only at depth.** v3.5 reported GPT-5.3 at 27% on the construction exception chain (a token-limit bug, see §6.8). The corrected figure is 64% (7/11) — a real gap from GPT-5.4's default 91% (10/11), specifically on the deepest exception-chain reasoning. The gap is invisible at shallower depth (`english_language` depth 2, `spacecraft` depth 3 — all frontier models 100%) and only emerges at the depth-5 construction-CAR cases. For a production system this matters because production-tier deployments often default to lower-cost / lower-latency models (the GPT-5.3 class). The v3.8 retraction of Finding 5 means we no longer claim *intra-model* compute-dependence; the *inter-model* tier gap (GPT-5.3 vs GPT-5.4 on the same exception chain) remains.
+**Finding 6 (revised v3.8): The shifting-ground problem.** Multiple v3.6 / v3.7 frontier-LLM cells do not replicate under the same prompt and harness six weeks later. The most concrete examples: GPT-5.4 on construction-CAR moved from 96.6% to 100% (Table 8a); Opus 4.6 on spacecraft moved from 89.7% to 98.5% (Table 6); the v3.6 / v3.7 GPT-5.4 reasoning-effort-dependence claim (Finding 5) was withdrawn after an instrumented replication produced the opposite result; the GPT-5.3 model alias was deprecated by OpenAI mid-paper-cycle. None of these are catastrophic individually, but the pattern is that *frontier-LLM accuracy on a fixed benchmark is a function of the model snapshot, the harness configuration, and the prompt format — and at least one of these can shift without notice*. For a regulated workflow that depends on benchmark-time accuracy claims to certify deployment, this property is structurally incompatible with the verification pipelines required by frameworks like the EU AI Act. The Eligibility Module avoids this class of risk by construction: rules are compiled once at authoring time and evaluated deterministically thereafter; the same bundle gives the same answer on the same inputs in March, April, or any subsequent month, regardless of any silent change to upstream model behaviour. The v3.8 adversarial extension (§6.4.1) is published precisely so that this paper's frontier-LLM numbers are themselves replicable from the committed harness — not as a snapshot but as a procedure.
 
 ## 6.6 The Cost-Accuracy Trade-off
 
@@ -519,7 +587,9 @@ This section addresses the key question: whether the observed failures are promp
 
 *\*GPT-5 family does not expose a temperature parameter.*
 
-**R1: The failures are not stochastic.** At temperature 0 (fully deterministic), Claude Opus produces the same 7 failures with the same 0/3 error rate. With 10 runs per scenario, all 7 failed scenarios score **0/10**. Aggregated across the 7 scenarios, this is **0 correct answers in 70 independent trials**. The Clopper–Pearson 95% one-sided upper bound on per-trial success probability is **4.19%**, ruling out the hypothesis that the model would produce correct answers at a rate ≥5% per attempt. These failures are systematic reasoning failures, not tail events that additional sampling would eventually catch.
+**R1 (March 2026 snapshot; partial v3.8 caveat).** At temperature 0 (fully deterministic), Claude Opus produced the same 7 failures with the same 0/3 error rate at the time of the original test. With 10 runs per scenario, all 7 failed scenarios scored **0/10**. Aggregated across the 7 scenarios, this is **0 correct answers in 70 independent trials**. The Clopper–Pearson 95% one-sided upper bound on per-trial success probability is **4.19%**, ruling out the hypothesis that the model would produce correct answers at a rate ≥5% per attempt at that snapshot.
+
+**v3.8 caveat.** The "7 failing spacecraft scenarios" baseline that R1 was tested on (Opus 4.6 = 61/68 in March) does not replicate today: in April 2026 Opus 4.6 returns the correct answer on 67 of 68 spacecraft scenarios under the same prompt and harness, leaving only 1 systematic failure rather than 7 (Table 6 v3.8 column). The 70-trial 0/70 result therefore stands as a March 2026 finding about a specific 7-scenario set that is no longer at the same baseline failure rate. Re-running the 70-trial design against the current 1-scenario failure set would require a separate investigation we have not undertaken in v3.8. The headline qualitative claim — *that some specific Opus failures were stable rather than stochastic at the original snapshot* — survives. The headline quantitative claim — *that 4.19% upper bound applies to current Opus 4.6 production behaviour on current failure cases* — does not.
 
 **R2: Enhanced prompting trades one failure mode for another.** The enhanced prompt explicitly instructs the LLM to "evaluate each exemption independently" and warns about exception chains. This partially succeeds: 5 of the 7 original false negatives are corrected, including the veteran exemption scenarios that the generic prompt consistently fails. However, the same instructions cause the model to over-apply exemption logic, producing **20 false positives** — the first time in our benchmark that an LLM declares an ineligible applicant eligible. The model now grants eligibility to applicants below the flight hours threshold (499 < 500), with expired medical certificates, and on orbital missions where the age exemption is explicitly revoked. Net accuracy drops from 61/68 (89.7%, CI [80.2%, 94.9%]) to 44/68 (64.7%, CI [52.8%, 75.0%]) — the CIs are disjoint, so the drop is statistically significant.
 
@@ -906,5 +976,5 @@ Both sub-corpora are intended to allow independent re-evaluation of the reported
 
 *Version 3.8 · Working paper · April 2026*
 
-*Changelog: v3.8 — **WITHDRAWN: Finding 5 / R5 / Table 8b row "GPT-5.4 (low reasoning) — 7/11 (63.6%)".** A v3.8 polish-pass instrumented replication on the exact 11 `exception_chain`-tagged scenarios with explicit `reasoning_effort=low` returned 11/11 (100%) correct; no committed script reproduces the v3.6 / v3.7 figure. Most likely cause is a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 token-budget bug. The intra-model reasoning-effort claim is therefore retracted; the inter-model GPT-5.3-vs-GPT-5.4 gap (Finding 6, rewritten) remains. Withdrawal note + per-scenario JSON: `docs/r5-withdrawal-note.md`, `docs/verify_gpt5_reasoning_n11.json`. Verification harness: `tools/verify_gpt5_reasoning_effort.py`. §6.9 N=66 replication remains pre-registered. §3.3 Related Work pointer to the withdrawn finding updated. §6.10 added (External Validation on LegalBench): nine LegalBench tasks, 949 held-out cases, against `claude-sonnet-4-6`, `claude-opus-4-7`, and `gpt-5.4`. Combined paired-binomial McNemar's: $p < 0.001$ vs Sonnet, $p = 0.003$ vs Opus, $p < 0.001$ vs GPT-5.4. Selection bias addressed via pre-registered random-sample replication (seeds 42, 43; seed 44 pre-registered at public tag `pre-v3.8-legalbench-preregistration`, deferred). §6.10.4 GPT-5.4 calibration analysis includes a zero-shot prompt-sensitivity check on `cuad_covenant_not_to_sue`: GPT-5.4 zero-shot recovers from 53.9% (canonical few-shot) to 92.9%; engine still wins paired McNemar's $p = 0.016$. §6.10.5 cross-extractor: structural advantage holds with both Sonnet 4.6 and Opus 4.7 as runtime extractors. Figure 7 (LegalBench per-task forest plot, Wilson 95% CIs) added to §6.10.2; Figure 8 (calibration cliff + zero-shot recovery on `cuad_covenant_not_to_sue`) added to §6.10.4. Per-task power note + Bonferroni footnote added to §6.10.2; engine error analysis (49/949 errors, distribution) and model-family / jurisdictional limitations added to §6.10.6; what-would-falsify-this-section paragraph added at end of §6.10.6. Abstract amended to report the LegalBench combined-McNemar result. §3.2 updated to point at §6.10 instead of the previous "complementary" framing. §6.8 threats-to-validity items (post-hoc adversarial scenarios, synthetic-domain external validity, benchmark scope) gain cross-references to §6.10's empirical mitigations. Author Contributions and Data and Code Availability extended to record §6.10's design and the public release at `confidently-wrong-benchmark/legalbench/`. Held-out partition utility (`tools/test_split.py`) bug-fixed to use the dataset's own `index` column rather than positional `range(n)` — needed for `hearsay`, where the upstream column is non-contiguous; numbers in Tables 5/6/8 unchanged. v3.7 — Figure 3 (forest plot of spacecraft accuracy with Wilson CIs across models) added to Section 6.3; Figure 4 (forest plot of construction insurance accuracy with Wilson CIs) added to Section 6.4; Figure 5 (outcome-composition + CI-disjoint accuracy drop) added to Section 6.7 alongside R2. Section 5.4 rewritten with formal compilation semantics: typed field assignments, rule-group disjunctive semantics, material-implication encoding of the three-level UNLESS chain, and explicit contrast between the learned distribution $p_\theta$ and the ground-truth indicator $\mathbb{1}[\phi_{gt}(\sigma) = \top]$. Wilson 95% CIs added to every accuracy cell in Tables 5, 6, 8; Clopper–Pearson one-sided upper bound (4.19% per trial, 0/70) added to Section 6.7 R1 making the "not stochastic" claim quantitative rather than rhetorical; abstract rewritten to report CIs and to flag the N=11 reasoning-effort finding as underpowered (power=35.6%, required N=35 per arm); Finding 5 and R5 rewritten as tentative/pre-registered rather than confirmed, with explicit commitment to withdraw if replication fails; Finding 6 reframed around reasoning-effort risk rather than the frontier-to-production gap; Section 6.7 R2 updated with disjoint CIs showing the 89.7%→64.7% drop is statistically significant and noting single-variant limitation; new Section 6.9 pre-registers N=66 replication, three-prompt-variant comparison, full reasoning-effort sweep, and independent expected-value authoring for the 55 new scenarios to address the code-derived ground-truth weakness. v3.6 — reasoning-effort sensitivity reported for GPT-5.4 (91% high → 64% low on construction exception chain, matching GPT-5.3); Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (frontier-to-production gap narrower but reasoning-effort risk is the primary concern); R5 added to robustness analysis; abstract updated with reasoning-effort finding. Earlier revision history omitted.*
+*Changelog: v3.8 — **MAJOR REVISION** following a full reproducibility audit and adversarial extension. Headline changes: (1) abstract rewritten around the shifting-ground argument, with §6.4 controlled benchmark + §6.4.1 v3.8 adversarial extension + §6.10 LegalBench as three independent evidence sources; (2) Tables 6 + 8a now show v3.6/v3.7 numbers alongside v3.8 replication numbers, making the model-drift point visually direct; (3) NEW §6.4.1 "v3.8 Adversarial Extension" — 20 newly-authored construction-CAR scenarios, engine 20/20, Opus 4.7 18/20, GPT-5.4 default 19/20 (with 0 reasoning tokens on every scenario), GPT-5.4 low 20/20, Sonnet 4.6 19/20; the carveback-gap scenario (E4) is failed by 3 of 4 frontier configurations across both Anthropic and OpenAI families; (4) NEW Figure 9 (v3.8 adversarial extension forest plot); (5) Findings 4 and 6 rewritten around the model-drift / shifting-ground story; (6) §6.7 R1 caveated with the v3.8 Opus 4.6 89.7%→98.5% drift (the original 7-failing-scenario baseline doesn't replicate); (7) §3.3 Related Work pointer updated. Verification artefacts: `tools/replication_run.py`, `tools/run_engine_v3_8_adversarial.py`, scenario YAML at `dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml`, full per-scenario JSONs at `docs/replication/A*.json` + `B*.json`, reports at `docs/replication/REPORT.md` + `STREAM_B_REPORT.md`. Stream A reproducibility findings: GPT-5.4 default on construction moved from 56/58 (96.6%, March) to 74/74 (100%, April); Opus 4.6 spacecraft from 61/68 (89.7%) to 67/68 (98.5%); GPT-5.3 model alias deprecated by OpenAI mid-cycle. **WITHDRAWN: Finding 5 / R5 / Table 8b row "GPT-5.4 (low reasoning) — 7/11 (63.6%)".** A v3.8 polish-pass instrumented replication on the exact 11 `exception_chain`-tagged scenarios with explicit `reasoning_effort=low` returned 11/11 (100%) correct; no committed script reproduces the v3.6 / v3.7 figure. Most likely cause is a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 token-budget bug. The intra-model reasoning-effort claim is therefore retracted; the inter-model GPT-5.3-vs-GPT-5.4 gap (Finding 6, rewritten) remains. Withdrawal note + per-scenario JSON: `docs/r5-withdrawal-note.md`, `docs/verify_gpt5_reasoning_n11.json`. Verification harness: `tools/verify_gpt5_reasoning_effort.py`. §6.9 N=66 replication remains pre-registered. §3.3 Related Work pointer to the withdrawn finding updated. §6.10 added (External Validation on LegalBench): nine LegalBench tasks, 949 held-out cases, against `claude-sonnet-4-6`, `claude-opus-4-7`, and `gpt-5.4`. Combined paired-binomial McNemar's: $p < 0.001$ vs Sonnet, $p = 0.003$ vs Opus, $p < 0.001$ vs GPT-5.4. Selection bias addressed via pre-registered random-sample replication (seeds 42, 43; seed 44 pre-registered at public tag `pre-v3.8-legalbench-preregistration`, deferred). §6.10.4 GPT-5.4 calibration analysis includes a zero-shot prompt-sensitivity check on `cuad_covenant_not_to_sue`: GPT-5.4 zero-shot recovers from 53.9% (canonical few-shot) to 92.9%; engine still wins paired McNemar's $p = 0.016$. §6.10.5 cross-extractor: structural advantage holds with both Sonnet 4.6 and Opus 4.7 as runtime extractors. Figure 7 (LegalBench per-task forest plot, Wilson 95% CIs) added to §6.10.2; Figure 8 (calibration cliff + zero-shot recovery on `cuad_covenant_not_to_sue`) added to §6.10.4. Per-task power note + Bonferroni footnote added to §6.10.2; engine error analysis (49/949 errors, distribution) and model-family / jurisdictional limitations added to §6.10.6; what-would-falsify-this-section paragraph added at end of §6.10.6. Abstract amended to report the LegalBench combined-McNemar result. §3.2 updated to point at §6.10 instead of the previous "complementary" framing. §6.8 threats-to-validity items (post-hoc adversarial scenarios, synthetic-domain external validity, benchmark scope) gain cross-references to §6.10's empirical mitigations. Author Contributions and Data and Code Availability extended to record §6.10's design and the public release at `confidently-wrong-benchmark/legalbench/`. Held-out partition utility (`tools/test_split.py`) bug-fixed to use the dataset's own `index` column rather than positional `range(n)` — needed for `hearsay`, where the upstream column is non-contiguous; numbers in Tables 5/6/8 unchanged. v3.7 — Figure 3 (forest plot of spacecraft accuracy with Wilson CIs across models) added to Section 6.3; Figure 4 (forest plot of construction insurance accuracy with Wilson CIs) added to Section 6.4; Figure 5 (outcome-composition + CI-disjoint accuracy drop) added to Section 6.7 alongside R2. Section 5.4 rewritten with formal compilation semantics: typed field assignments, rule-group disjunctive semantics, material-implication encoding of the three-level UNLESS chain, and explicit contrast between the learned distribution $p_\theta$ and the ground-truth indicator $\mathbb{1}[\phi_{gt}(\sigma) = \top]$. Wilson 95% CIs added to every accuracy cell in Tables 5, 6, 8; Clopper–Pearson one-sided upper bound (4.19% per trial, 0/70) added to Section 6.7 R1 making the "not stochastic" claim quantitative rather than rhetorical; abstract rewritten to report CIs and to flag the N=11 reasoning-effort finding as underpowered (power=35.6%, required N=35 per arm); Finding 5 and R5 rewritten as tentative/pre-registered rather than confirmed, with explicit commitment to withdraw if replication fails; Finding 6 reframed around reasoning-effort risk rather than the frontier-to-production gap; Section 6.7 R2 updated with disjoint CIs showing the 89.7%→64.7% drop is statistically significant and noting single-variant limitation; new Section 6.9 pre-registers N=66 replication, three-prompt-variant comparison, full reasoning-effort sweep, and independent expected-value authoring for the 55 new scenarios to address the code-derived ground-truth weakness. v3.6 — reasoning-effort sensitivity reported for GPT-5.4 (91% high → 64% low on construction exception chain, matching GPT-5.3); Finding 5 rewritten around reasoning-effort dependence; Finding 6 added (frontier-to-production gap narrower but reasoning-effort risk is the primary concern); R5 added to robustness analysis; abstract updated with reasoning-effort finding. Earlier revision history omitted.*
 

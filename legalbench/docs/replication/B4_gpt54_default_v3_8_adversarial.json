@@ -1,0 +1,319 @@
+{
+  "model": "gpt-5.4",
+  "reasoning_effort": null,
+  "scenarios_yaml": "/Users/paulsimpson/aethis-workspace/confidently-wrong-benchmark/dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml",
+  "n": 20,
+  "summary": {
+    "correct": 19,
+    "empty": 0,
+    "truncated": 0,
+    "parse_err": 0,
+    "api_err": 0,
+    "elapsed_s": 19.183866024017334,
+    "wrong_scenarios": [
+      "v38_e4_carveback_gap_explicit"
+    ]
+  },
+  "per_scenario": [
+    {
+      "scenario": "v38_a1_pioneer_killed_by_jct",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 1.3500518798828125
+    },
+    {
+      "scenario": "v38_a2_499m_design_chain_kills",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 1.026710033416748
+    },
+    {
+      "scenario": "v38_a3_pioneer_at_exact_threshold",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.9735472202301025
+    },
+    {
+      "scenario": "v38_a4_rectification_kills_despite_pioneer",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3931,
+        "completion_tokens": 6,
+        "total_tokens": 3937,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.8605020046234131
+    },
+    {
+      "scenario": "v38_b1_99m_workmanship_access_just_below",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.879065752029419
+    },
+    {
+      "scenario": "v38_b2_100m_at_threshold_workmanship_access",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.8877871036529541
+    },
+    {
+      "scenario": "v38_b3_499m_workmanship_access_no_design_limit",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.8908519744873047
+    },
+    {
+      "scenario": "v38_b4_50m_no_access_consequence_carveback",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.9250609874725342
+    },
+    {
+      "scenario": "v38_c1_existing_struct_no_jct_pioneer_dies",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.9586338996887207
+    },
+    {
+      "scenario": "v38_c2_existing_struct_with_jct_design_pioneer",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 1.0737578868865967
+    },
+    {
+      "scenario": "v38_c3_temporary_no_jct_irrelevant",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.847783088684082
+    },
+    {
+      "scenario": "v38_c4_plant_equipment_excluded_category",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 1.0380492210388184
+    },
+    {
+      "scenario": "v38_d1_design_defect_red_herring_at_pioneer",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.8908751010894775
+    },
+    {
+      "scenario": "v38_d2_pioneer_with_consequence_no_access",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 1.022892713546753
+    },
+    {
+      "scenario": "v38_d3_late_notification_pioneer",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3931,
+        "completion_tokens": 6,
+        "total_tokens": 3937,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.7651309967041016
+    },
+    {
+      "scenario": "v38_d4_outside_period_workmanship_eligible_pattern",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.80448317527771
+    },
+    {
+      "scenario": "v38_e1_all_near_failing_eligible",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.7979779243469238
+    },
+    {
+      "scenario": "v38_e2_all_near_failing_kicked_by_one",
+      "expected": "not_eligible",
+      "answer": "not_eligible",
+      "content": "not_eligible",
+      "content_length": 12,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 6,
+        "total_tokens": 3936,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.8015921115875244
+    },
+    {
+      "scenario": "v38_e3_negation_double_carveback",
+      "expected": "eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.7446691989898682
+    },
+    {
+      "scenario": "v38_e4_carveback_gap_explicit",
+      "expected": "not_eligible",
+      "answer": "eligible",
+      "content": "eligible",
+      "content_length": 8,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3930,
+        "completion_tokens": 4,
+        "total_tokens": 3934,
+        "reasoning_tokens": 0
+      },
+      "elapsed_s": 0.9345188140869141
+    }
+  ]
+}

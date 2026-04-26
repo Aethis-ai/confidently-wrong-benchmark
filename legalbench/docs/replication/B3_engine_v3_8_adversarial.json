@@ -1,0 +1,168 @@
+{
+  "bundle_id": "construction-all-risks:20260412-gold",
+  "scenarios_yaml": "/Users/paulsimpson/aethis-workspace/confidently-wrong-benchmark/dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml",
+  "n": 20,
+  "correct": 20,
+  "per_scenario": [
+    {
+      "name": "v38_a1_pioneer_killed_by_jct",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 2832
+    },
+    {
+      "name": "v38_a2_499m_design_chain_kills",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "v38_a3_pioneer_at_exact_threshold",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 22
+    },
+    {
+      "name": "v38_a4_rectification_kills_despite_pioneer",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 20
+    },
+    {
+      "name": "v38_b1_99m_workmanship_access_just_below",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 21
+    },
+    {
+      "name": "v38_b2_100m_at_threshold_workmanship_access",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 20
+    },
+    {
+      "name": "v38_b3_499m_workmanship_access_no_design_limit",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 21
+    },
+    {
+      "name": "v38_b4_50m_no_access_consequence_carveback",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 21
+    },
+    {
+      "name": "v38_c1_existing_struct_no_jct_pioneer_dies",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 21
+    },
+    {
+      "name": "v38_c2_existing_struct_with_jct_design_pioneer",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 21
+    },
+    {
+      "name": "v38_c3_temporary_no_jct_irrelevant",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 20
+    },
+    {
+      "name": "v38_c4_plant_equipment_excluded_category",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 20
+    },
+    {
+      "name": "v38_d1_design_defect_red_herring_at_pioneer",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 25
+    },
+    {
+      "name": "v38_d2_pioneer_with_consequence_no_access",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 30
+    },
+    {
+      "name": "v38_d3_late_notification_pioneer",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 31
+    },
+    {
+      "name": "v38_d4_outside_period_workmanship_eligible_pattern",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 26
+    },
+    {
+      "name": "v38_e1_all_near_failing_eligible",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 39
+    },
+    {
+      "name": "v38_e2_all_near_failing_kicked_by_one",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 35
+    },
+    {
+      "name": "v38_e3_negation_double_carveback",
+      "expected": "eligible",
+      "got": "eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 30
+    },
+    {
+      "name": "v38_e4_carveback_gap_explicit",
+      "expected": "not_eligible",
+      "got": "not_eligible",
+      "ok": true,
+      "detail": null,
+      "elapsed_ms": 28
+    }
+  ]
+}

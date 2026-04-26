@@ -1,37 +1,60 @@
 # Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation
 
-Frontier LLMs achieve near-perfect accuracy on flat eligibility checks but degrade sharply on nested exception chains — the pattern that dominates real-world regulatory and insurance logic. This repository contains the benchmark dataset, reproduction scripts, and the accompanying paper.
+Frontier LLMs collapse on nested conditional rules of the form "A is required UNLESS B applies, UNLESS C overrides B" — the pattern that dominates real-world regulatory and insurance logic. *And* the specific empirical surface of the failure is unstable: between March and April 2026 several v3.7 paper cells closed silently under the same model alias, with no version bump. For a regulated workflow that depends on benchmark-time accuracy claims, this is the central problem: the ground shifts under the production system without notice.
 
-When rules contain exceptions-to-exceptions with depth ≥ 3, and when reasoning compute is constrained, every tested model exhibits *exception chain collapse*: confidently returning incorrect verdicts rather than signalling uncertainty.
+This repository contains the benchmark dataset, the v3.8 adversarial extension, the LegalBench external-validation harness, full per-call replication artefacts, and the accompanying paper.
 
-## Headline Results
+## Headline Results (v3.8, April 2026)
 
-All numbers below are from the paper ([Simpson, Kozak, Doake, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Wilson 95% confidence intervals where shown.
+All numbers from the paper ([Simpson, Kozak, Doake, v3.8, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
 
-| Model | english_language (n=43) | spacecraft (n=68) | construction (n=58) | construction exception chain @ low reasoning (n=11) |
-|-------|:-----------------------:|:-----------------:|:-------------------:|:---------------------------------------------------:|
-| **Aethis Engine** | **100%** | **100%** | **100%** | **100%** |
-| GPT-5.4 | 100% | 100% | **96.6%** | **63.6%** |
-| Claude Opus 4.6 | 100% | 89.7% | — | — |
-| Claude Sonnet 4.6 | 100% | 91.2% | — | — |
-| GPT-5-mini | 97.7% | 75.0% | — | — |
-| GPT-4.1-mini | — | — | 79.3% | 45.5% |
+### 1. v3.8 Adversarial Construction-CAR Extension (paper §6.4.1)
 
-**No frontier model achieves 100% across all four domains.** GPT-5.4 is the strongest frontier model tested; it drops to 96.6% on the construction insurance benchmark and to 63.6% on the same domain when reasoning compute is reduced to `reasoning_effort=low`. On the spacecraft benchmark Claude Opus 4.6 returns the wrong answer on 7/68 scenarios, and under 70 independent trials on those 7 failing scenarios produces **zero** correct answers (Clopper–Pearson 95% upper bound on per-trial success: 4.19%).
+20 newly-authored adversarial scenarios stratified across five complexity dimensions (independent-prose-then-engine methodology). The 11 GPT-5.4-failed scenarios from v3.7 have closed under model drift; these 20 are the v3.8 demonstration that the failure pattern remains observable on the same domain at deeper composition.
 
-The Aethis Engine achieves 100% across every section by construction: rules are compiled ahead of time and evaluated deterministically. Same bundle, same result, any date, any compute budget.
+| Configuration | Accuracy on N=20 | Notes |
+|---|:--:|---|
+| **Aethis Engine** | **20/20 (100%)** | deterministic by construction |
+| GPT-5.4 (`reasoning_effort=low`) | 20/20 (100%) | 16–126 reasoning tokens per scenario |
+| Claude Sonnet 4.6 | 19/20 (95%) | fails E4 (DE3/LEG3 carveback gap) |
+| GPT-5.4 (default) | 19/20 (95%) | fails E4; **0 reasoning tokens on every scenario** |
+| **Claude Opus 4.7** (current Anthropic strongest) | **18/20 (90%)** | fails B3 (£499 M boundary) + E4 |
 
-## Key Findings
+Three of four frontier-LLM configurations fail on the same scenario (the DE3/LEG3 carveback gap) across both Anthropic and OpenAI. Reproducible from `tools/replication_run.py` against `dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml`.
 
-1. **Failures are systematic, not stochastic.** Under 10 independent runs on 7 failing spacecraft scenarios (70 trials total), Claude Opus 4.6 produces zero correct answers. The failures are not noise that can be averaged away.
+### 2. v3.7 controlled-benchmark replication (paper §6.3 / §6.4)
 
-2. **Prompt repair trades false negatives for false positives.** An enhanced prompt targeting the failure pattern fixes 5 of 7 false negatives on spacecraft but introduces 20 new false positives, dropping net accuracy from 89.7% to 64.7% (disjoint Wilson 95% CIs). The trade-off is structural, not fixable through better wording.
+The v3.7 paper documented LLM failures in March 2026 across 225 scenarios in four domains. A v3.8 reproducibility pass found that several specific cells have closed:
 
-3. **Reasoning-effort dependence (tentative, N=11, pre-registered for replication at N=66).** GPT-5.4 at `reasoning_effort=low` scores 63.6% on the construction exception-chain subset — matching GPT-5.3 at default reasoning effort exactly. The paper treats this as hypothesis-generating, not confirmatory, and pre-registers a higher-power replication.
+| Cell | March 2026 (v3.7) | April 2026 (v3.8 replication) |
+|---|---|---|
+| GPT-5.4 on construction-CAR | 56/58 (96.6%) | **74/74 (100%)** |
+| Opus 4.6 on spacecraft | 61/68 (89.7%) | **67/68 (98.5%)** |
+| Sonnet 4.6 on spacecraft | 62/68 (91.2%) | 60/68 (88.2%) |
+| GPT-4.1-mini on construction | 46/58 (79.3%) | 65/74 (87.8%) |
+| GPT-5.3 (production-tier ref) | 7/11 on n=11 | **model alias deprecated by OpenAI** |
 
-4. **The failure pattern is exception-chain specific, not general to legal reasoning.** All frontier models achieve 100% on the depth-2 English Language section (43 scenarios). Failures emerge at depth 3 (spacecraft) and deepen at depth 5 (construction).
+The Aethis Engine remains 100% on every cell, in both March and April, by construction. Same bundle, same answer, regardless of upstream model behaviour. **The fact that the v3.7 cells moved silently is itself the central evidence** — a regulated system cannot rely on benchmark-time accuracy claims that can be invalidated by an opaque model update.
 
-5. **External validation on LegalBench (v3.8, §6.10).** On 9 LegalBench tasks (949 held-out cases) the Aethis Eligibility Module is significantly more accurate than each of three frontier LLMs by exact two-sided combined paired-binomial McNemar's test: *p* < 0.001 vs Claude Sonnet 4.6, *p* = 0.003 vs Claude Opus 4.7, *p* < 0.001 vs GPT-5.4. The structural advantage is largest on multi-prong rule-application tasks (Δ up to +41 percentage points) and persists at a smaller but cross-task-significant margin on randomly-sampled tasks chosen without fit inspection (seeds 42, 43, with seed 44 pre-registered at tag [`pre-v3.8-legalbench-preregistration`](https://github.com/Aethis-ai/confidently-wrong-benchmark/releases/tag/pre-v3.8-legalbench-preregistration)). See [`legalbench/`](legalbench/) for the full harness, all per-task results, and the statistical pipeline.
+Full replication artefacts: `legalbench/docs/replication/A*.json`, `legalbench/docs/replication/REPORT.md`.
+
+### 3. External validation on LegalBench (paper §6.10)
+
+On 9 peer-reviewed LegalBench tasks (949 held-out cases authored by Stanford researchers, not by Aethis), the Eligibility Module is significantly more accurate than each of three frontier LLMs by exact combined paired-binomial McNemar's test: *p* < 0.001 vs Claude Sonnet 4.6, *p* = 0.003 vs Claude Opus 4.7, *p* < 0.001 vs GPT-5.4. The structural advantage is largest on multi-prong rule-application tasks (Δ up to +41 pp) and persists at a smaller but cross-task-significant margin on randomly-sampled tasks chosen without fit inspection (seeds 42 + 43; seed 44 pre-registered at tag [`pre-v3.8-legalbench-preregistration`](https://github.com/Aethis-ai/confidently-wrong-benchmark/releases/tag/pre-v3.8-legalbench-preregistration)).
+
+See [`legalbench/`](legalbench/) for the full harness, all per-task results, the statistical pipeline, and the v3.8 reproducibility / adversarial-extension artefacts.
+
+## Key Findings (v3.8)
+
+1. **The structural advantage of deterministic execution holds across model drift.** Even when specific v3.7 frontier-LLM failure cells close under model updates, the engine remains 100%. The §6.4.1 adversarial extension and §6.10 LegalBench results both demonstrate that current frontier models still fail; the engine still wins. The architectural argument is independent of any specific empirical snapshot.
+
+2. **GPT-5.4 default reasoning is essentially "no reasoning".** On the 20 v3.8 adversarial scenarios, GPT-5.4 at default reasoning effort uses 0 reasoning tokens per call — the API short-circuits to a 4–6 token answer. Switching to `reasoning_effort=low` invokes the reasoning channel (16–126 tokens per scenario) and catches the carveback-gap edge case that default misses. The v3.7 paper claim that "default reasoning is better than low" was withdrawn in v3.8 after instrumented replication produced the opposite.
+
+3. **The DE3/LEG3 carveback gap is a structural failure mode across both major model families.** Three of four frontier-LLM configurations (GPT-5.4 default, Opus 4.7, Sonnet 4.6) return the wrong verdict on the explicit carveback-gap scenario (where `is_access_damage=true` and `consequence_of_failure=false` causes the carveback group to fail before enhanced-cover logic is reached). Pattern is consistent with compositional-evaluation limits of transformer-based LLMs documented in §3.3 (Dziri et al., Valmeekam et al.).
+
+4. **External validation on LegalBench replicates the structural-advantage finding cross-model-family, with statistical significance.** §6.10 combined McNemar's *p* < 0.001 against Sonnet 4.6 and GPT-5.4; *p* = 0.003 against Opus 4.7. Reproducible from `legalbench/tools/significance.py`.
+
+5. **The shifting-ground problem is the central practical implication.** Frontier-LLM accuracy on a fixed benchmark is a function of the model snapshot, the harness configuration, and the prompt format — at least one of which can shift without notice. For regulated workflows, this is structurally incompatible with verification pipelines required by frameworks like the EU AI Act. Deterministic execution avoids this class of risk by construction.
 
 ## Dataset
 

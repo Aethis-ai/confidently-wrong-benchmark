@@ -1,0 +1,94 @@
+{
+  "model": "gpt-5.3",
+  "reasoning_effort": null,
+  "scenarios_yaml": "/Users/paulsimpson/aethis-workspace/confidently-wrong-benchmark/dataset/construction-all-risks/scenarios.yaml",
+  "n": 11,
+  "summary": {
+    "correct": 0,
+    "empty": 11,
+    "truncated": 0,
+    "parse_err": 0,
+    "api_err": 11,
+    "elapsed_s": 5.132370948791504,
+    "wrong_scenarios": []
+  },
+  "per_scenario": [
+    {
+      "scenario": "access_small_project_not_covered",
+      "expected": "not_eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 1.2413251399993896
+    },
+    {
+      "scenario": "access_100m_workmanship_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.3277139663696289
+    },
+    {
+      "scenario": "access_99m_workmanship_not_covered",
+      "expected": "not_eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.8209779262542725
+    },
+    {
+      "scenario": "access_200m_materials_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.1698589324951172
+    },
+    {
+      "scenario": "access_200m_specification_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.20528793334960938
+    },
+    {
+      "scenario": "access_100m_design_not_covered",
+      "expected": "not_eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.19529199600219727
+    },
+    {
+      "scenario": "access_200m_design_not_covered",
+      "expected": "not_eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.4345262050628662
+    },
+    {
+      "scenario": "access_499m_design_not_covered",
+      "expected": "not_eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.17385196685791016
+    },
+    {
+      "scenario": "access_500m_design_pioneer_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.20259690284729004
+    },
+    {
+      "scenario": "access_800m_design_pioneer_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.1679542064666748
+    },
+    {
+      "scenario": "access_500m_workmanship_covered",
+      "expected": "eligible",
+      "answer": "API_ERROR",
+      "error": "NotFoundError: Error code: 404 - {'error': {'message': 'The model `gpt-5.3` does not exist or you do not have access to it.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}",
+      "elapsed_s": 0.35843873023986816
+    }
+  ]
+}

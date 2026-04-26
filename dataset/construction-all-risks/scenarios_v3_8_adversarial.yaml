@@ -1,0 +1,523 @@
+# Construction-CAR v3.8 adversarial extension
+#
+# Author: Paul Simpson, 2026-04-26.
+# Purpose: 20 scenarios designed to push beyond the existing 74 in
+# adversarial composition. Each combines 3+ rule dimensions and is
+# designed to trip composition-tracking failures in current frontier
+# LLMs (Opus 4.7, GPT-5.4) that have closed the simpler v3.6/v3.7
+# failure cases.
+#
+# Methodology: each scenario authored with an independent prose
+# expected-value (the `notes:` field) BEFORE engine verification.
+# Engine output is then checked against the prose. Disagreements
+# resolved before frontier-LLM testing.
+#
+# Five categories × 4 scenarios each = 20 total.
+# A: Maximum-stack adversarial (3+ failure modes simultaneously)
+# B: Threshold-boundary edge cases (just-at, just-below, just-above)
+# C: Multi-clause cross-reference (existing_structures + JCT + design)
+# D: Surface-vs-deep contradiction (surface text suggests opposite)
+# E: Conjunction tracking (every condition near-violating)
+
+tests:
+
+# =============================================================
+# Category A: Maximum-stack adversarial
+# =============================================================
+
+- name: v38_a1_pioneer_killed_by_jct
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 600
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, multi_failure, contradictory_cue]
+  notes: >
+    A £600M pioneer infrastructure project (well above £500M pioneer
+    threshold) with a design defect and access damage. Pioneer override
+    DOES reinstate cover under Cl.9(3) for design + access at this scale.
+    Carveback passes (Route A, consequence=true). Notification compliant.
+    BUT property is an existing structure and the contract is NOT
+    JCT-compliant, so Cl.10 fails. Result: not_eligible. Adversarial
+    because the pioneer/design/access reasoning is the dominant signal;
+    the JCT fact is buried among 11 fields.
+
+- name: v38_a2_499m_design_chain_kills
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 499
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, boundary, multi_failure]
+  notes: >
+    £499M (one million below pioneer threshold). Design defect, access
+    damage, consequence_of_failure=true. Carveback passes (Route A).
+    Enhanced cover applies (≥£100M). But design_defect_check triggers
+    Cl.9(2) and pioneer_override DOES NOT apply (£499M < £500M).
+    Therefore access damage from a design defect is NOT covered.
+    Result: not_eligible. The £499M-vs-£500M boundary is sharp.
+
+- name: v38_a3_pioneer_at_exact_threshold
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, boundary]
+  notes: >
+    £500M exactly. Design defect, access damage, consequence=true.
+    Pioneer threshold is "≥ £500M" so £500M qualifies (Cl.9(3)).
+    Pioneer overrides design limit. Enhanced cover applies. All other
+    conditions met. Result: eligible. The boundary IS inclusive.
+
+- name: v38_a4_rectification_kills_despite_pioneer
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: true
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 1000
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, multi_failure, ultimate]
+  notes: >
+    £1B mega-project, workmanship defect (most-permissive origin), with
+    consequence_of_failure=true. BUT the claim is for rectification of
+    the defective component itself. Cl.6 is absolute: rectification is
+    excluded "regardless of project value, enhanced cover or pioneer
+    infrastructure provisions, defect origin, or any carve-back".
+    No reinstatement. Result: not_eligible. Adversarial: every other
+    signal points to eligible.
+
+# =============================================================
+# Category B: Threshold-boundary edge cases
+# =============================================================
+
+- name: v38_b1_99m_workmanship_access_just_below
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 99
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, boundary]
+  notes: >
+    £99M project, just below £100M enhanced-cover threshold. Workmanship
+    defect (not design — would otherwise help). Access damage. Below
+    threshold means enhanced_cover is FALSE, so access exclusion stands
+    despite workmanship origin. Result: not_eligible. Sharp boundary.
+
+- name: v38_b2_100m_at_threshold_workmanship_access
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 100
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, boundary]
+  notes: >
+    £100M exactly. Workmanship + access damage. Enhanced cover applies
+    at the boundary. Workmanship is not design, so design limit doesn't
+    kick in. Result: eligible. Mirrors B1 with a £1M difference.
+
+- name: v38_b3_499m_workmanship_access_no_design_limit
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 499
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, boundary, contradictory_cue]
+  notes: >
+    £499M, workmanship, access damage. Below pioneer threshold but
+    ABOVE enhanced cover threshold. Workmanship not design, so design
+    limit doesn't apply, so pioneer override isn't needed. Enhanced
+    cover at £499M reinstates access damage cover for non-design
+    defects. Result: eligible. Contradictory cue: "below £500M
+    pioneer" suggests not-eligible to a model fixated on the
+    pioneer threshold.
+
+- name: v38_b4_50m_no_access_consequence_carveback
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: materials_on_site
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 50
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, boundary, contradictory_cue]
+  notes: >
+    £50M (well below ALL enhanced cover/pioneer thresholds). Design
+    defect (the most-restrictive origin). BUT NOT access damage and
+    consequence_of_failure=true. This is consequential damage to
+    non-defective property — Carveback Route A. Cl.8 access exclusion
+    doesn't trigger because is_access_damage=false. So all gates pass:
+    not rectification, carveback (consequence), not access damage.
+    Result: eligible. Strongly contradictory cue: "£50M small project +
+    design defect" looks like a clear no, but the access vs consequence
+    distinction is what matters.
+
+# =============================================================
+# Category C: Multi-clause cross-reference
+# =============================================================
+
+- name: v38_c1_existing_struct_no_jct_pioneer_dies
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, cross_clause, multi_failure]
+  notes: >
+    £800M pioneer-bracket project, workmanship (mildest origin), NOT
+    access damage, consequence=true. Carveback passes (consequence).
+    Enhanced cover applies. Pioneer override available but not needed
+    (workmanship). BUT property is existing_structures and JCT
+    non-compliant. Cl.10 implication fails. Result: not_eligible.
+    Adversarial: most signals say eligible.
+
+- name: v38_c2_existing_struct_with_jct_design_pioneer
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 700
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, cross_clause]
+  notes: >
+    £700M pioneer-bracket existing structure with design defect and
+    access damage. JCT-compliant (so Cl.10 satisfied). Pioneer overrides
+    design limit. Carveback via consequence. Result: eligible. Tests
+    that the model tracks BOTH the existing-structures+JCT path AND
+    the pioneer+design path simultaneously.
+
+- name: v38_c3_temporary_no_jct_irrelevant
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: temporary_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 75
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, cross_clause, contradictory_cue]
+  notes: >
+    £75M (below enhanced cover) temporary works, workmanship, NOT
+    access damage, consequence=true, JCT-compliant=false. Cl.10 only
+    requires JCT for existing_structures; temporary_works is exempt.
+    No access damage means Cl.9 chain irrelevant. All other gates
+    pass. Result: eligible. Adversarial: "JCT non-compliant + small
+    project" feels like multiple disqualifiers, but neither matters.
+
+- name: v38_c4_plant_equipment_excluded_category
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: plant_equipment
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, cross_clause]
+  notes: >
+    Pioneer £500M project with otherwise-perfect coverage profile
+    (workmanship, not access, consequence, notification, JCT). BUT
+    property category is plant_equipment, which Cl.5(2) explicitly
+    excludes. Result: not_eligible. The category exclusion is a quiet
+    short-circuit; LLMs that focus on the deeper exception chain may
+    miss it.
+
+# =============================================================
+# Category D: Surface-vs-deep contradiction
+# =============================================================
+
+- name: v38_d1_design_defect_red_herring_at_pioneer
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, contradictory_cue]
+  notes: >
+    £800M pioneer project, design defect, access damage. Surface signal
+    "design defect + access damage" looks like a clear no. But pioneer
+    override at £500M+ reinstates exactly this case (Cl.9(3) example
+    (c)). Carveback via consequence. All other gates pass.
+    Result: eligible.
+
+- name: v38_d2_pioneer_with_consequence_no_access
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 800
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, contradictory_cue]
+  notes: >
+    £800M, design defect, NOT access damage, consequence=true.
+    Surface: "design defect" feels like a no. But this is consequential
+    damage to non-defective property (Carveback Route A). Cl.8 doesn't
+    trigger (not access). Cl.9 chain doesn't apply (gated on access
+    exclusion). Result: eligible. Strong contradictory cue.
+
+- name: v38_d3_late_notification_pioneer
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 1500
+    car.notification.within_period: false
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, contradictory_cue, multi_failure]
+  notes: >
+    £1.5B mega-project, design defect, access damage. Pioneer override
+    applies. JCT compliant. Carveback via consequence. Surface: every
+    headline signal says "covered". BUT notification was outside the
+    30-day window. Cl.11 voids the claim. Result: not_eligible.
+    Adversarial: late notification is administratively distinct and
+    LLMs that focus on substantive coverage logic miss it.
+
+- name: v38_d4_outside_period_workmanship_eligible_pattern
+  inputs:
+    car.policy.period_valid: false
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, contradictory_cue]
+  notes: >
+    £200M, workmanship (mildest), NOT access damage, consequence=true,
+    notification compliant — every substantive signal says eligible.
+    BUT loss occurred outside the policy period (Cl.3(2)). UNSAT early
+    termination. Result: not_eligible. Adversarial: it's tempting to
+    overlook period_valid because the claim is otherwise clean.
+
+# =============================================================
+# Category E: Conjunction tracking — every condition near-violating
+# =============================================================
+
+- name: v38_e1_all_near_failing_eligible
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, ultimate]
+  notes: >
+    Every single condition is satisfied at its tightest possible value:
+    period valid, category is existing_structures (most-restrictive
+    valid category, requires JCT), JCT compliant, design defect (most
+    restrictive defect origin, needs pioneer), access damage (triggers
+    Cl.9 chain), exactly £500M (pioneer threshold exactly), consequence
+    (carveback), notification compliant, not rectification. Every gate
+    passes by exactly its minimum. Result: eligible. Adversarial in
+    composition: any single negative flip breaks it.
+
+- name: v38_e2_all_near_failing_kicked_by_one
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: existing_structures
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: design
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: true
+    car.project.value_millions_gbp: 500
+    car.notification.within_period: true
+    car.contract.jct_compliant: false
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, ultimate, multi_failure]
+  notes: >
+    Identical to E1 except JCT=false. Existing_structures category
+    triggers Cl.10 requirement, JCT=false breaks the implication.
+    Result: not_eligible. Tests whether the LLM tracks the JCT
+    requirement specifically when it's the ONLY failing condition
+    in an otherwise minimal-pass scenario.
+
+- name: v38_e3_negation_double_carveback
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: false
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: eligible
+  tags: [v3_8_adversarial, negation_stacking]
+  notes: >
+    NOT access damage AND NOT consequence_of_failure. Carveback
+    qualification = consequence OR NOT(is_access_damage). is_access_damage
+    is false → NOT(is_access_damage) is true → carveback group OR'd to
+    true (Route B passes vacuously). Cl.8 access_exclusion doesn't
+    trigger (not access damage). So Cl.9 chain irrelevant. All other
+    gates pass. Result: eligible. The double-negative carveback is
+    intentionally non-obvious.
+
+- name: v38_e4_carveback_gap_explicit
+  inputs:
+    car.policy.period_valid: true
+    car.property.category: permanent_works
+    car.loss.is_physical: true
+    car.component.is_defective: true
+    car.defect.origin: workmanship
+    car.claim.is_rectification: false
+    car.claim.is_access_damage: true
+    car.damage.consequence_of_failure: false
+    car.project.value_millions_gbp: 200
+    car.notification.within_period: true
+    car.contract.jct_compliant: true
+  expect:
+    outcome: not_eligible
+  tags: [v3_8_adversarial, negation_stacking, ultimate]
+  notes: >
+    Access damage AND NOT consequence_of_failure. Per Cl.7 commentary:
+    "consequence_of_failure=false, is_access_damage=false passes Route B
+    but not Route A — this is the DE3/LEG3 coverage gap." Conversely,
+    is_access_damage=TRUE and consequence=FALSE, the carveback group
+    fails: Route A needs consequence=true, Route B needs NOT(is_access)
+    which is false. Carveback_qualification fails. Result: not_eligible.
+    The DE3/LEG3 gap as an explicit test, with adversarial £200M that
+    suggests enhanced cover should help (it doesn't, because carveback
+    is a required gate before enhanced cover is even reached).

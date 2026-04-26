@@ -1,0 +1,685 @@
+{
+  "task": "personal_jurisdiction",
+  "bundle_id": "legalbench_personal_jurisdiction:20260425-0caf5091",
+  "extractor_model": "claude-sonnet-4-6",
+  "summary": {
+    "correct": 44,
+    "total": 50,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "by_slice": {
+    "Yes contacts, no nexus.": {
+      "correct": 8,
+      "total": 8
+    },
+    "No contacts, no nexus.": {
+      "correct": 19,
+      "total": 20
+    },
+    "Domicile.": {
+      "correct": 8,
+      "total": 9
+    },
+    "Domicile": {
+      "correct": 1,
+      "total": 1
+    },
+    "Yes contacts, yes nexus.": {
+      "correct": 8,
+      "total": 12
+    }
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin returns to Arizona. Laura sues him in Washington. "
+    },
+    {
+      "index": 1,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin returns to Arizona. Laura sues him in Texas. "
+    },
+    {
+      "index": 2,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. Dustin is an avid skier, so his favorite place to go on vacation is Colorado. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin returns to Arizona. Laura sues him in Colorado. "
+    },
+    {
+      "index": 3,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin moves to New York. Laura sues him in New York. "
+    },
+    {
+      "index": 4,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin plans to move to New York. Before he does so however, Laura sues him in Arizona. "
+    },
+    {
+      "index": 5,
+      "slice": "Domicile",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin plans to move to New York. Before he does so however, Laura sues him in New York. "
+    },
+    {
+      "index": 6,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Texas. After the accident, Dustin returns to Arizona. Laura sues him in Texas. "
+    },
+    {
+      "index": 7,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While travelling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Texas. After the accident, Dustin returns to Arizona. Laura sues him in Oregon. "
+    },
+    {
+      "index": 8,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. She buys a bike from him and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Louisiana. "
+    },
+    {
+      "index": 9,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David is actually a citizen of Georgia, but spends a lot of time in Louisiana to run his shop. Ana buys a bike from David and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Louisiana. "
+    },
+    {
+      "index": 10,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David is actually a citizen of Georgia, but spends a lot of time in Louisiana to run his shop. Ana buys a bike from David and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Georgia. "
+    },
+    {
+      "index": 11,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. Ana and David hit it off because both of them like to vacation in Colorado. Ana buys a bike from David and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Colorado. "
+    },
+    {
+      "index": 12,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David tells Ana he is planning on selling his bike shop and moving to Oklahoma in 3 years. Ana buys a bike from David and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Oklahoma. "
+    },
+    {
+      "index": 13,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. Ana buys a bike from David and uses it to bike back to Texas. Immediately after Ana buys the bike, David moves to Oklahoma. Right after Ana crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Oklahoma. "
+    },
+    {
+      "index": 14,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. Ana buys a bike from David and uses it to bike back to Texas. Immediately after Ana buys the bike, David moves to Oklahoma. Right after Ana crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Louisiana. "
+    },
+    {
+      "index": 15,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. She buys a bike from him and uses it to bike back to Texas. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Texas. "
+    },
+    {
+      "index": 16,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. Ana tells David that she's planning on buying a bike, and that she'll use it to ride back home to Texas. David sells her a bike and she starts on her journey. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Texas. "
+    },
+    {
+      "index": 17,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David's bike shop is famous, and he frequently advertises his bikes in Texas newspapers. Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Texas. "
+    },
+    {
+      "index": 18,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David sometimes advertises his bikes in Texas newspapers (the majority of his advertising is in other states). Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Texas. "
+    },
+    {
+      "index": 19,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David's bike shop is famous, and he frequently advertises his bikes in newspapers in Texas, Georgia, and Oklahoma. Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Oklahoma. "
+    },
+    {
+      "index": 20,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David's bike shop is famous, and he frequently advertises his bikes in newspapers in Georgia and Oklahoma. Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana sues David in Texas. "
+    },
+    {
+      "index": 21,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Ana is a lawyer who resides in Texas. While visiting Louisiana, she meets David, who runs a bike shop. David's bike shop is famous, and he frequently advertises his bikes in newspapers in Georgia and Oklahoma. Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Later, Ana moves to Georgia. Ana then sues David in Georgia. "
+    },
+    {
+      "index": 22,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "fact": "Ana is a lawyer who resides in Texas. David, who runs a bike shop in Louisiana, calls Ana and tells her how great his bikes are. While visiting Louisiana, Ana buys a bike from David and rides it back home. Right after she crosses the border, the bike seat explodes, injuring Ana. Ana then sues David in Texas. "
+    },
+    {
+      "index": 23,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Arthur sues Tony in Michigan. "
+    },
+    {
+      "index": 24,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Tony sues Arthur in Michigan. "
+    },
+    {
+      "index": 25,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Tony sues Arthur in California. "
+    },
+    {
+      "index": 26,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Arthur sues Tony in California. "
+    },
+    {
+      "index": 27,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Arthur sues Tony in Indiana. "
+    },
+    {
+      "index": 28,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Arthur sues Tony in Illinois. "
+    },
+    {
+      "index": 29,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Arthur sues Tony in Texas. "
+    },
+    {
+      "index": 30,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Tony sues Arthur in Texas. "
+    },
+    {
+      "index": 31,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from California. Tony and Arthur each blame the other for starting the fight. Tony sues Arthur in California. "
+    },
+    {
+      "index": 32,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Tony (from Texas) is a regional manager for a cookbook company, Tasty Eats Books (incorporated and principal place of business in Delaware). Tony\u2019s job requires him to travel from city to city to show new cookbooks to chefs. In January 2022, he was scheduled to visit restaurants in Illinois, Indiana, and Michigan. While in Michigan, Tony goes to Lake Erie to blow off some steam. He ends up getting into a fight with Arthur, a lawyer from Detroit, Michigan. Tony and Arthur each blame the other for starting the fight. Tony sues Arthur in Illionois. "
+    },
+    {
+      "index": 33,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. Maggie sues David for fraud in New York. "
+    },
+    {
+      "index": 34,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. Maggie sues David for fraud in Rhode Island. "
+    },
+    {
+      "index": 35,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. Maggie sues David for fraud in California. "
+    },
+    {
+      "index": 36,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. After he returns home, Maggie sues David for fraud in Texas. "
+    },
+    {
+      "index": 37,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. After he returns home, Maggie sues David for fraud in Oregon. "
+    },
+    {
+      "index": 38,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. After he returns home, Maggie sues David for fraud in Florida. "
+    },
+    {
+      "index": 39,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. After he returns home, Maggie sues David for fraud in New Mexico. "
+    },
+    {
+      "index": 40,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "David is a citizen of California. He flies to New York for a vacation, where he meets Maggie, who is also visiting from Rhode Island. While they chat, Dave fraudulently tricks Maggie into giving him her savings. David then continues his vacation and visits Texas, Oregon, Florida, and New Mexico. After his vacation, David moves to Kentucky. Maggie sues David for fraud in Kentucky. "
+    },
+    {
+      "index": 41,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats, which she only sells to other residents of her hometown (Salem, Oregon). Through a series of second-hand sales, one of these hats makes it way to Alex, a citizen of Maine. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Maine.  "
+    },
+    {
+      "index": 42,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats, which she only sells to other residents of her hometown (Salem, Oregon). Martha's neighbor purchases a hat, and sells it to her cousin in Texas. This cousin then sells it to  to Alex, a citizen of Maine. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Texas.  "
+    },
+    {
+      "index": 43,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. However, she maintains an extensive online presence, and markets her goods to citizens of all 50 states. Alex, a citizen of Maine, purchases one of the hats. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Maine.  "
+    },
+    {
+      "index": 44,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats, which she only sells to other residents of her hometown (Salem, Oregon). Martha's neighbor purchases a hat, and sells it to her cousin in Texas. This cousin then sells it to  to Alex, a citizen of Maine. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Oregon.  "
+    },
+    {
+      "index": 45,
+      "slice": "Domicile.",
+      "expected": "eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": true,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. However, she maintains an extensive online presence, and markets her goods to citizens of all 50 states. Alex, a citizen of Maine, purchases one of the hats. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Oregon.  "
+    },
+    {
+      "index": 46,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. She only sells hats out of her garage, to people who stop on the street. Alex, a citizen of Maine, purchases one of the hats while visiting Salem. The pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Maine.  "
+    },
+    {
+      "index": 47,
+      "slice": "No contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": false,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. She only sells hats out of her garage, to people who stop on the street. Alex, a citizen of Maine, purchases one of the hats while visiting Salem. Alex and Martha bond over the fact that Martha was born in Maine, and lived there until very recently. When Alex returns home, the pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Maine.  "
+    },
+    {
+      "index": 48,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. She only markets her hats on the west coast (California, Oregon, and Washington). Alex, a citizen of Maine, purchases one of the hats while visiting Salem. When Alex returns to Maine, the pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in California.  "
+    },
+    {
+      "index": 49,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "not_eligible",
+      "field_values": {
+        "defendant_domiciled_in_forum": false,
+        "defendant_has_sufficient_contacts_with_forum": true,
+        "claim_arises_from_contacts_with_forum": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "fact": "Martha makes special pinwheel hats in her home in Salem, Oregon. She only markets her hats on the west coast (California, Oregon, and Washington). Alex, a citizen of Maine, purchases one of the hats while visiting Salem. When Alex returns to Maine, the pinwheel comes off and seriously cuts Alex. Alex sues Martha for damages in Washington.  "
+    }
+  ]
+}

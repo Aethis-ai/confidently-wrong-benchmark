@@ -1,0 +1,680 @@
+{
+  "task": "contract_nli_explicit_identification",
+  "bundle_id": "legalbench_contract_nli_explicit_identification:20260425-e49a51b6",
+  "extractor_model": "claude-sonnet-4-6",
+  "split": {
+    "method": "tools/test_split.py",
+    "seed": 7,
+    "dev_fraction": 0.5,
+    "evaluated_on": "holdout",
+    "n_total": 55
+  },
+  "summary": {
+    "correct": 48,
+    "total": 55,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 3,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Confidential Information provided by Disclosing Party must be expressly marked or designated in writing by the Disclosing Party in a manner to indicate its confidential, proprietary or otherwise non-public nature. "
+    },
+    {
+      "index": 4,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "1.1 \u201cConfidential Information\u201d refers to: 1.1.1  In respect of Information provided in documentary form or in other electronic form, Information which at the time of provision is marked or otherwise designated to show expressly or by necessary implication that is imparted in confidence; 1.1.2  In respect of Information that is imparted orally, any Information that the Discloser or its representatives informed the Recipient at the time of disclosure was imparted in confidence; "
+    },
+    {
+      "index": 5,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "2. All the information that  (i) is written and marked as CONFIDENTIAL, or  (ii) is disclosed verbally, and at the time of its disclosure, the Disclosing Party's identify such information to be protected in accordance with this Agreement (\"Confidential Information\"), shall be considered confidential and restricted property of the Disclosing Party. 5. The Receiving Party agrees for the period specified in Section 13 that it will: a. Restrict disclosure of the Confidential Information to the minimum required number of people (such as employees, directors, officers, legal counsels, accountants or consultants who shall also be personally bound to maintain the Information in confidence); "
+    },
+    {
+      "index": 6,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If Sensitive Information is in a physical or electronic form, the Disclosing Party shall label or stamp the materials with the words OFFICIAL-SENSITIVE, or some similar warning, in line with HMG\u2019s protective marking scheme.  If Sensitive Information is transmitted orally, the Disclosing Party shall promptly provide a writing indicating that such oral communication constituted Sensitive Information. "
+    },
+    {
+      "index": 7,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Confidential Information means any information disclosed by one party (the \u2018Discloser\u2019) to the other (the \u2018Recipient\u2019) relating directly or indirectly to Name of Technology/Project, file # which is identified by the Discloser, either orally or in writing, as confidential, either at the time of disclosure or, if disclosed orally, confirmed in writing within thirty (30) days following the original disclosure. "
+    },
+    {
+      "index": 8,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Tangible materials that disclose or embody Confidential Information shall be marked, to the extent practicable, by Discloser as \"Confidential,\" \"Proprietary\" or the substantial equivalent thereof. "
+    },
+    {
+      "index": 9,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "As used in this Agreement, the terms \"CompuCom's Confidential Information\" means proprietary or confidential information concerning the Business including, without limitation, information regarding prices charged for Products, the assets, liabilities, and financial condition of the Business, names and identities of customers and analyses of the amount and types of Products purchased by each such customer. As used in this Agreement, the terms \"Seller's Confidential Information\" means proprietary or confidential information and business secrets of Seller pertaining to its Services Business including, without limitation, information regarding prices charged for Services, copies of existing Services contracts to which Seller is a party (other than any such contracts provided to CompuCom pursuant to the provisions of the Asset Purchase Agreement) and analyses of the amount and types of Services purchased by customers. "
+    },
+    {
+      "index": 11,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The term \"Confidential Information\", as used herein, means all information or material not generally known by non-Company personnel constituting Assets and acquired by Buyer under the Purchase Agreement which  (i) gives the Company some competitive business advantage or the opportunity of obtaining such advantage or the disclosure of which could be detrimental to the interests of the Company;  (ii) which is owned by the Company or in which the Company has an interest and  (iii) which is either  (A) marked \"Confidential Information,\" \"Proprietary Information\" or other similar marking,  (B) known by Covenantor to be considered confidential and proprietary by the Company as of the date hereof or  (C) from all the relevant circumstances should reasonably be assumed by Covenantor to be confidential and proprietary to the Company.  "
+    },
+    {
+      "index": 12,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The confidential, proprietary and trade secret information of the disclosing party (hereinafter \"Confidential Information\") provided hereunder, is that information described in the Confidential Information Transmittal Record (CITR) form executed from time to time hereafter.  CITR's are subject to the terms of this Agreement and shall be executed by the parties prior to the disclosure of Confidential Information.  All information described in a CITR and marked with a \"confidential,\" \"proprietary,\" or similar legend shall be deemed Confidential Information.  Any copies which are made shall be identified as belonging to the disclosing party and marked \"confidential,\" \"proprietary,\" or with a similar legend. "
+    },
+    {
+      "index": 13,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The confidential, proprietary and made secret information of the disclosing party (\"Confidential Information\") to be disclosed hereunder is that information which  (i) is described in the Confidential Information Transmittal Record (\"CITR\") executed from time to time hereafter and  (ii) is marked with a \"confidential\", \"proprietary\", or similar legend. Any copies which are made will be identified as belonging to the disclosing party and marked \"confidential\", \"proprietary\", or with a similar legend. "
+    },
+    {
+      "index": 15,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "1.1 \"Confidential Information\" means any information, whether written or oral, which ANUBIS learns about SCAM or the Products and which is not generally available to the public or which is labeled by SCAM as confidential. This Agreement will apply to all confidential and proprietary information disclosed by one party to the other party, including information listed in Exhibit A and other information which the disclosing party identifies in writing as confidential before or within thirty days after disclosure to the receiving party (\"CONFIDENTIAL INFORMATION\") "
+    },
+    {
+      "index": 17,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "A. \"Confidential Information\" of a party shall mean any trade secrets, know-how, inventions, products, designs, methods, techniques, systems, processes, software programs, works of authorship, business plans, customer lists, projects, plans, pricing, proposals and any other information which a party discloses to the Recipient Party that:  (i) if disclosed in writing is clearly marked as confidential or carries a similar legend; or  (ii) if disclosed verbally or in tangible form is identified as confidential at the time of disclosure, then summarized in a writing so marked by the Disclosing Party and delivered to the Recipient Party with fifteen (15) days.  "
+    },
+    {
+      "index": 18,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "(a) \"Confidential Information\" means nonpublic information that a party to this Agreement (\"Disclosing Party\") designates as being confidential to the party that receives such information (\"Receiving Party\") or which, under the circumstances surrounding disclosure ought to be treated as confidential by the Receiving Party.  "
+    },
+    {
+      "index": 19,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "1. As used herein, the term \u201cProprietary Information\u201d refers to any and all Information of a confidential, proprietary, or secret nature which is applicable to or related  In any way to  (i) the business, present or future, of the Disclosing Party,  (ii) the research and development or investigations of the Disclosing Party or  (iii) the business of any customer of the Disclosing Party; provided, in each case, that such information is delivered to the Receiving Party by the Disclosing Party and  (a) is marked or identified in writing as \u201cConfidential\u201d,  (b) if verbal or visual disclosure, is identified as \u201cConfidential\u201d in a writing within ten (10) business days of such disclosure, or  "
+    },
+    {
+      "index": 23,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "\u201cConfidential Information\u201d means any information disclosed to the Contractor by the CAO or the House, including, but not limited to:  (b) any other information designated (orally or in writing) as \u201cconfidential,\u201d \u201cproprietary\u201d or of such nature that a reasonable person would understand such information to be confidential to the CAO or the House. "
+    },
+    {
+      "index": 24,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. Regardless of the form, format, or media on or in which the Confidential Information is provided and regardless of whether any such Confidential Information is marked as such, \u201cConfidential Information\u201d means  (1) any and all information provided by or made available by the State to the Contractor in connection with the Contract and  (2) any and all personally identifiable information (PII) (including but not limited to personal information as defined in Md. Ann.  Code, General Provisions \u00a74-101(h) and Md. Ann. Code, State Govt. \u00a7 10-1301(c)) and protected health information (PHI) as defined in 45 CFR 160.103 that is provided by a person or entity to the Contractor in connection with this Contract.  "
+    },
+    {
+      "index": 27,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "2. Every contract party can disclose confidential information to the other contract party orally or in writing.  If the disclosure is in writing, the disclosing party will mark the confidential documents with the additional terms \u201cConfidential\u201d or \u201cLiable to Secrecy\u201d so that it is apparent to the other party which information is especially in need to protection. "
+    },
+    {
+      "index": 28,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. The Receiving Party agrees to treat all information provided by the Providing Party in connection with the Business Under Discussion to the Receiving Partner and/or any of its partners, directors, officers, employees, affiliates, insurers, agents, advisors or auditors (the \u201cRepresentatives\u201d), regardless of the manner in which it is so furnished, together with any analyses, compilations, data, studies or other documents or records, whether of an oral, written or electronically retrievable nature (collectively the \u201cInformation\u201d), as strictly confidential. "
+    },
+    {
+      "index": 30,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "\"Confidential Information\" of a disclosing party (\"Discloser\") means the following, regardless of its form and including copies made by the receiving party (\"Recipient\"), whether the Recipient becomes aware of it before or after the date of this Agreement: \uf0b7 all information treated by the Discloser as confidential; and \uf0b7 disclosed by the Discloser to the Recipient or of which the Recipient becomes aware, including but not limited to, the information specified in Schedule 1; "
+    },
+    {
+      "index": 35,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The term \"Confidential Information\" as used herein means all trade secrets or confidential or proprietary information of either party, whether or not marked \u201cConfidential\u201d, whether in written or oral form, relating to such party's business or technology, including without limitation, its products, customer data, development and marketing plans, and financial information.  "
+    },
+    {
+      "index": 36,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. Confidential Information is defined as any information, whether written or verbal, of either party hereto, (Disclosing Party) which is disclosed to or observed by the other party (Receiving Party) in connection with or as a result of the evaluation of any possible transaction between the University of Arkansas at Little Rock and ______________________________  and which is, at the time of disclosure, marked as being Confidential or Proprietary, or is reasonably identifiable as confidential, proprietary information of the Disclosing Party pertaining to information in the areas of (subject matter):  _______________________________________________  ___________________________.  "
+    },
+    {
+      "index": 37,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "For purposes of this agreement, CI shall mean any confidential, proprietary or trade secret information that is owned or controlled, or is specifically marked or identified as \u201cConfidential\u201d, by VELCO prior to disclosure to Recipient.  "
+    },
+    {
+      "index": 39,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": true,
+        "duty_assigned_to_disclosing_party": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "Confidential Information may be disclosed in oral/verbal or tangible form.  Discloser shall mark all Confidential Information disclosed in tangible form with a restrictive legend.  "
+    },
+    {
+      "index": 41,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. \"Confidential Information\" shall mean all non-public proprietary information provided by the Furnishing Party to the Receiving Party, whether or not marked or otherwise specifically designated as confidential.  "
+    },
+    {
+      "index": 45,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. For purposes of this Agreement, \u201cConfidential Information\u201d means, with respect to either party, any and all information in written, representational, electronic, verbal or other form relating directly or indirectly to the present or potential business, operation or financial condition of or relating to the disclosing party (including, but not limited to, information identified as being proprietary and/or confidential or pertaining to, pricing, marketing plans or strategy, volumes, services rendered, customers and suppliers lists, financial or technical or service matters or data, employee/agent/ consultant/officer/director related personal or sensitive data and any information which might reasonably be presumed to be proprietary or confidential in nature) excluding any such information which  "
+    },
+    {
+      "index": 46,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. \u201cConfidential Information\u201d shall mean the Purpose (including the contemplated transaction), identity of, and any discussions or negotiations between, the Parties, existence of this Agreement, and any and all information whether in oral, written, graphic or electronic form, including but not limited to, data, know-how and any and all subject matter (whether patentable or not, including without limitation any derivatives thereof) pertaining to Verenium\u2019s research, financial data, sales information, inventions, development, materials, technology, trade secrets, work in process, marketing, business plans, regulatory information and strategies, scientific, engineering and/or manufacturing processes or equipment, protocols, assays, strains, compounds, genes, gene pathways, enzymes, peptides, the commercial applications of genes, gene pathways, enzymes, peptides, accessing microbial diversity, manipulating and modifying genes and gene pathways, identifying bioactive compounds through recombinant techniques and any other elements of Verenium\u2019s business which Verenium considers to be of value, including its present or future products, projections, sales, pricing, customers, employees, investors and contractual relationships. "
+    },
+    {
+      "index": 50,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2. As used herein, \u201cConfidential Information\u201d shall mean all information furnished by the Disclosing Party or its Representatives (defined below) to the Receiving Party or its Representatives, whether orally, in writing, electronically or in other tangible form, and identified as confidential or proprietary at the time of disclosure by the Disclosing Party or otherwise disclosed in a manner such that a reasonable person would understand its confidential nature, including but not limited to, information that is related to:  "
+    },
+    {
+      "index": 53,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "3. In consideration of each and every disclosure of CONFIDENTIAL INFORMATION, the Parties agree to: (c) make no disclosures of any CONFIDENTIAL INFORMATION to any party other than officers and employees of a Party to this IRA; (d) limit access to CONFIDENTIAL INFORMATION to those officers and employees having a reasonable need for such INFORMATION and being boUnd by a written obligation to maintain the confidentiality of such INFORMATION; and "
+    },
+    {
+      "index": 54,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "c. \u201cRepresentatives\u201d shall mean as to any Person, its directors, officers, employees, agents and advisors (including, without limitation, financial advisors, attorneys and accountants). a. The Receiving Party shall hold confidential and not disclose to any Person, without the prior written consent of the Disclosing Party, all Confidential Information and any information about the Proposed Transaction, or the terms or conditions or any other facts relating thereto, including, without limitation, the fact that discussions are taking place with respect thereto or the status thereof, or the fact that Confidential Information has been made available to the Receiving Party or its Representatives; provided, however, that the Receiving Party may disclose such Confidential Information to its Representatives who are actively and directly participating in its evaluation of the Proposed Transaction or who otherwise need to know the Confidential Information for the purpose of evaluating the Proposed Transaction; "
+    },
+    {
+      "index": 55,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The receiving party will not disclose any of the disclosing party's Confidential Information to any employees or to any third parties except to the receiving party's employees, parent company and majority-owned subsidiaries who have a need to know and who agree to abide by nondisclosure terms at least as comprehensive as those set forth herein: provided that the receiving party will be liable for breach by any such entity.  "
+    },
+    {
+      "index": 64,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Disclosee will procure that prior to the disclosure to any other person (including any professional advisor) of any Confidential Information, such other person is made aware of the provisions of this Agreement and the fact that the Disclosee will be liable. "
+    },
+    {
+      "index": 65,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Each Party shall be responsible for any breach of this Agreement by such Party, its employees, agents, officials, representatives or consultants acting within the scope of their engagement or employment. "
+    },
+    {
+      "index": 66,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(i) \u201cRepresentatives\u201d means  (i) with respect to the Potential Relationship Party, the Potential Relationship Party\u2019s officers, managers, directors, general partners, employees, outside counsel, accountants, consultants, financial advisors, and potential sources of equity or debt financing (and their respective counsel), and  (ii) with respect to the Company, will include its officers, directors, employees, agents, partners and advisors and those of its subsidiaries, Affiliates and/or divisions (including attorneys, accountants, consultants and financial advisors). The Receiving Party further agrees that it will and will cause its Representatives to take those steps the Receiving Party takes to protect its own similar proprietary and confidential information (which will not be less than a reasonable standard of care) to keep the Confidential Information of the Disclosing Party confidential; provided, however, that  (ii) any of the Confidential Information may be disclosed to the Receiving Party\u2019s Representatives who need to know such information for the purpose of evaluating a Possible Transaction, who are provided with a copy of this Agreement and who agree to be bound by the terms this Agreement.  "
+    },
+    {
+      "index": 68,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "VENDOR, its employees, agents, contractors, and subcontractors shall use the Confidential Information solely in connection with performance by VENDOR of the services provided to UNIVERSITY and for no other purpose.  "
+    },
+    {
+      "index": 70,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Notwithstanding the foregoing,  (a) the Receiving Party\u2019s legal department and/or outside counsel may keep one copy of the Confidential Information (in electronic or paper form) and, with respect to the Receiving Party\u2019s Representatives who are accounting firms, such firms may keep one copy of the Confidential Information, in each case, if required to comply with applicable law or regulation and  (b) the Receiving Party and its Representatives may retain Confidential Information to the extent it is \u201cbacked-up\u201d on its or their (as the case may be) electronic information management and communications systems or servers, is not available to an end user and cannot be expunged without considerable effort; provided, that any such information so retained pursuant to clauses  (a) and  (b) of this Section 7 shall be held in compliance with the terms of this Agreement for a period of eighteen months from the date hereof. "
+    },
+    {
+      "index": 71,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Recipient agrees to destroy all documents, memoranda, notes and other writings whatsoever prepared by the Recipient or its employees or representatives based on the information contained in the Confidential Information (except for references or summaries appearing in minutes or corporate records). "
+    },
+    {
+      "index": 72,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(iii) either Party will be free to use for any purpose the residuals resulting from access to or work with Confidential Information disclosed hereunder.  "
+    },
+    {
+      "index": 73,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon the Company's request, we shall promptly deliver to the Company or destroy all written Evaluation Materials and any other written materials without retaining, in whole or in part, any copies, extracts or other reproductions (whatever the form or storage medium) of such materials. "
+    },
+    {
+      "index": 74,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(c) Each Party agrees that, without the prior written consent of the other Party, neither it nor its Representatives will disclose to any other person the fact that the other Party or its Representative have received Confidential Information or that Confidential Information has been made available to the other Party or its Representatives, that investigations, discussions or negotiations are taking place concerning a Possible Transaction or any of the terms, conditions or other facts with respect to any Possible Transaction, including the status this Agreement and the identity of the parties hereto (collectively, the \u201cDiscussion Information\u201d), provided that the Receiving Party may make such disclosure if required by law or the applicable rules of any securities exchange or interdealer quotation system.  "
+    },
+    {
+      "index": 75,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2.2 Confidential Information shall not include: iv) information developed or created by one Party independently of the other, without any part thereof having been developed or created with assistance or information received from the other Party; and "
+    },
+    {
+      "index": 80,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Recipient\u2019s obligations under Section 2 hereof shall survive the return of such tangible embodiments of Confidential Information until termination of this Agreement.  "
+    },
+    {
+      "index": 81,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Recipient shall:  (a) only disclose the Confidential Information to those employees and contractors with a need to know; provided that Recipient binds those employees and contractors to terms at least as restrictive as those stated in this Agreement (or, with respect to professional advisors, advises them of its obligations with respect to the Confidential Information);  "
+    },
+    {
+      "index": 82,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "5. All confidential information remains the property of the disclosing contract party. "
+    },
+    {
+      "index": 83,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The definition of Information shall not include information that: (e) is developed by the Receiving Party independently of Information disclosed by the Disclosing Party and without breach of this Agreement. "
+    },
+    {
+      "index": 84,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except as specifically provided for herein, this Agreement does not confer any right, license, interest or title in, to or under the Disclosing Party's Confidential Information to the Receiving Party.  No license is hereby granted to the Receiving Party, by estoppel or otherwise, under any patent, trademark, copyright, trade secret or other proprietary rights of the Disclosing Party.  Title to the Disclosing Party's Confidential Information shall remain solely in the Disclosing Party. "
+    },
+    {
+      "index": 86,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "3. All right title and interest in and to the Confidential Information shall remain with Disclosing Party or its licensors.  Nothing in this Agreement is intended to grant any rights to Recipient under any patents, copyrights, trademarks, or trade secrets of Disclosing Party.  "
+    },
+    {
+      "index": 92,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "3.1. In consideration of the Disclosing Party disclosing Confidential Information to the Receiving Party, the Receiving Party undertakes that it shall: b) not use or exploit the Confidential Information in any way except for the Purpose; "
+    },
+    {
+      "index": 94,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Recipient shall use the Confidential Information exclusively for HySafe purposes, especially to advice the Governing Board of HySafe. "
+    },
+    {
+      "index": 95,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The term \u201cRepresentative\u201d means, as to any person, such person\u2019s affiliates, officers, directors, general partners, members, employees, consultants, investment bankers, financial advisors, accountants, legal counsel, consultants and potential lenders.  (b) Except as otherwise permitted under this Agreement or as required by applicable law, regulation, stock exchange rule or by legal, judicial, regulatory or administrative process (by oral questions, interrogatories, requests for information or documents in legal proceedings, subpoena, civil investigative demand or other similar process) (\u201cLegally Required\u201d),  (a) the Receiving Party shall, and shall cause its Representatives to, keep all Proprietary Information confidential and not disclose or reveal any Proprietary Information to any person other than its Representatives who are participating in evaluating, negotiating, advising or financing with respect to the Possible Transaction or who otherwise need to know the Proprietary Information for the purpose of evaluating, negotiating, advising or financing with respect to the Possible Transaction (all of whom shall be informed of the confidential nature of such Proprietary Information) and shall cause its Representatives to treat such Proprietary Information in a confidential manner and in accordance with the terms hereof, provided that each party shall be responsible for any breach of this Agreement by any of its respective Representatives,  "
+    },
+    {
+      "index": 97,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except as expressly authorized by prior written consent of the Disclosing Party, the Receiving Party shall: (e) use all Confidential Information received by it for the purposes described in subsection  (a) of this Section 2 and for no other purpose whatsoever. "
+    },
+    {
+      "index": 98,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Confidential Information means all information relating to the Project or the Contractor\u2019s proposal for the Project and all information relating to the nature of either Party\u2019s business, affairs or trade secrets, which either Party directly or indirectly receives or acquires from the other Party, or the other Party\u2019s representative, either in writing or verbally (but in the case of verbal information, only that which is reduced to writing by the Disclosing Party and delivered to the Receiving Party within 10 days of the verbal disclosure), or through observation of the Project, except information falling into any one or more of the following categories: "
+    },
+    {
+      "index": 99,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "YOU AGREE WITH US: G) to destroy immediately on our written request all Confidential Information in your possession including any copies made (save where we are required pursuant to some law or enactment or regulation or the rules of any Stock Exchange to retain originals or copies of any of the Confidential Information). "
+    },
+    {
+      "index": 104,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "5.5 Confidential Information will not include information which: (iv) is information which the receiving party can document was independently developed by the receiving party; "
+    },
+    {
+      "index": 105,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": false,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In that case, or at any time upon the request of the Disclosing Party in its sole discretion and for any reason, the Receiving Party will as directed by the Disclosing Party promptly deliver, at the Receiving Party\u2019s expense, to the Disclosing Party or destroy all Confidential Information furnished to the Receiving Party or the Receiving Party\u2019s Representatives by or on behalf of the Disclosing Party pursuant hereto.  In the event of such a decision or request, all other Confidential Information prepared by the Receiving Party or on the Receiving Party\u2019s behalf will be returned or destroyed and, upon the Disclosing Party\u2019s request, the Receiving Party will provide the Disclosing Party with prompt written confirmation of the Receiving Party\u2019s compliance with this paragraph; provided, however, that (a) if a legal proceeding has been instituted to seek disclosure of the Confidential Information, such material will not be destroyed until the proceeding is settled or a final judgment with respect thereto has been rendered; (b) the Receiving Party will not, in connection with the foregoing obligations, be required to identify or delete Confidential Information held electronically in archive or back-up systems in accordance with general systems archiving or backup policies and further provided that the Receiving Party will not, and the Receiving Party will use reasonable measures to cause its employees not to, access such Confidential Information so archived or backed-up; (c) the Receiving Party will not be obligated to return or destroy Confidential Information of the Disclosing Party to the extent the Receiving Party is required to retain a copy pursuant to applicable law; and (d) one copy of all Confidential Information may be kept by the Receiving Party\u2019s outside counsel, if any, and such Confidential Information shall be fully protected by attorney-client privilege. "
+    },
+    {
+      "index": 106,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_confidential_information": true,
+        "clause_requires_explicit_identification": false,
+        "duty_assigned_to_disclosing_party": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Seller/s and/or the Business/es shall retain ownership of all their Confidential Information and/or Confidential Materials, which shall be deemed to be lent to the Buyer for the Purpose only. "
+    }
+  ]
+}

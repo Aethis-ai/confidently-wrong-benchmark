@@ -1,0 +1,2103 @@
+{
+  "task": "diversity_3",
+  "split": "test",
+  "model": "claude-sonnet-4-6",
+  "summary": {
+    "correct": 243,
+    "total": 300,
+    "parse_err": 10,
+    "api_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 1,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 2,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 3,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 4,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 5,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 6,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 7,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 8,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 9,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 10,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 11,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 12,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 13,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 14,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 15,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 16,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 17,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 18,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 19,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 20,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 21,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 22,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 23,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 24,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 25,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 26,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 27,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 28,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 29,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 30,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 31,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 32,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 33,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 34,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 35,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 36,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 37,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 38,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 39,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 40,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 41,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 42,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 43,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 44,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 45,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 46,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 47,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 48,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 49,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 50,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 51,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 52,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 53,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 54,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 55,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 56,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 57,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 58,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 59,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 60,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 61,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 62,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 63,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 64,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 65,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 66,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 67,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 68,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 69,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 70,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 71,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 72,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 73,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 74,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 75,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 76,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 77,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 78,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 79,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 80,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 81,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 82,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 83,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 84,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 85,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 86,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 87,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 88,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 89,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 90,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 91,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 92,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 93,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 94,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 95,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 96,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 97,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 98,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 99,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 100,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 101,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 102,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 103,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 104,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 105,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 106,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 107,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 108,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "Looking at the two requirements for diversity jurisdiction:\n\n1. **Complete diver"
+    },
+    {
+      "index": 109,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 110,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 111,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 112,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 113,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 114,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 115,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 116,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 117,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 118,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 119,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 120,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 121,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 122,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 123,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 124,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 125,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 126,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 127,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 128,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 129,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 130,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 131,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 132,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 133,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 134,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 135,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 136,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 137,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 138,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 139,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 140,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 141,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 142,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 143,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 144,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 145,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 146,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 147,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 148,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 149,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 150,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 151,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 152,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 153,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 154,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 155,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 156,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 157,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 158,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 159,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 160,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 161,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 162,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 163,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 164,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 165,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 166,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 167,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 168,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 169,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 170,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 171,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 172,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 173,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 174,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 175,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 176,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 177,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 178,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 179,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 180,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 181,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 182,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 183,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 184,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 185,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 186,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 187,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 188,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 189,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 190,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 191,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 192,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 193,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 194,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 195,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 196,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 197,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 198,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 199,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 200,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 201,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 202,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 203,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 204,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 205,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 206,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 207,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 208,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 209,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 210,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 211,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 212,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 213,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 214,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 215,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 216,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 217,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 218,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 219,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 220,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 221,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 222,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 223,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 224,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 225,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 226,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 227,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 228,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 229,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 230,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 231,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 232,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 233,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 234,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 235,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 236,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 237,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 238,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 239,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 240,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 241,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 242,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 243,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 244,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 245,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 246,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 247,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 248,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 249,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 250,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 251,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 252,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 253,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 254,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 255,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 256,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 257,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 258,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 259,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 260,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 261,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 262,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 263,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 264,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 265,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 266,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 267,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 268,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 269,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 270,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 271,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "Looking at the two requirements:\n\n1. **Complete diversity**: Benjamin (plaintiff"
+    },
+    {
+      "index": 272,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 273,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 274,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 275,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 276,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 277,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 278,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 279,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 280,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 281,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 282,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 283,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 284,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 285,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 286,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 287,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 288,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 289,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 290,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 291,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 292,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 293,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 294,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 295,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 296,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 297,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 298,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 299,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    }
+  ]
+}

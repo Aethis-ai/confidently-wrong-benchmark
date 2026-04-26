@@ -1,0 +1,1230 @@
+{
+  "task": "cuad_liquidated_damages",
+  "bundle_id": "legalbench_cuad_liquidated_damages:20260426-2690b810",
+  "extractor_model": "claude-sonnet-4-6",
+  "split": {
+    "method": "tools/test_split.py",
+    "seed": 7,
+    "dev_fraction": 0.5,
+    "evaluated_on": "dev",
+    "n_total": 110
+  },
+  "summary": {
+    "correct": 101,
+    "total": 110,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "In the case where any specific Product, shipped to IBM from MSL within any [*] month experiences a defect rate of [*]% or greater, resulting from a common cause due to MSL's non-conformance to specifications, drawings, other descriptions furnished or adopted by IBM, or due to workmanship, MSL will accept the cost of a Product Recall."
+    },
+    {
+      "index": 1,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event a Party has, in any twelve (12) month period, more than three (3) Monthly Performance Failures, then the defaulting Party shall pay a penalty to the Party not in default, which the Parties acknowledge is a pre-estimation of damages suffered by the non-defaulting Party due to the current month's Monthly Performance Failure (\"Default Month\")."
+    },
+    {
+      "index": 2,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event Duval does not meet the Minimum Annual Performance Requirements for a Contract Year, $375,000 of the Additional License Fee will be deemed to be unearned."
+    },
+    {
+      "index": 3,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "Any unearned Additional License Fee is fully &bbsp; refundable and due Company no later then January 31st of the following year."
+    },
+    {
+      "index": 4,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "FOR THE AVOIDANCE OF DOUBT, THE PARTIES HEREBY ACKNOWLEDGE AND AGREE THAT NOTHING IN THIS SECTION 8.2 [No Consequential Damages] IS INTENDED TO LIMIT ANY RIGHT OF ACSI TO RECEIVE LIQUIDATED DAMAGES AS SET FORTH IN SECTION 10.5.2 [Effect of Termination]."
+    },
+    {
+      "index": 5,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Exit Fee shall be paid by Affiliate immediately prior to the assignment or Transfer of Merchants and/or its net revenue. The amount of the Exit Fee during and following the termination of this Agreement shall be defined as the following: (1) the aggregate sum, per transferring merchant, equal to eighteen (18) months net recurring revenue normally paid to Affiliate under the compensation terms of this Agreement to a maximum of $250,000."
+    },
+    {
+      "index": 6,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Unless otherwise approved by Party A, in the event of parcel transfer due to Party B's vehicle delay, Party B shall pay liquidated damages to Party A at the standard rate of RMB500 per trip on the first working day, RMB1,000 per trip on the second working day and RMB2,000 per trip on the third working day (based on the time records on the parcel transfer documents) and such liquidated damages will be deducted from the current month's freight."
+    },
+    {
+      "index": 13,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The payments called for in Section 16.4 [Liquidated Damages] above constitute liquidated damages for causing the premature termination of this Agreement and not a penalty."
+    },
+    {
+      "index": 21,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You will pay us Liquidated Damages in the amount of Five Thousand Dollars ($5,000) per day if you open the Hotel before the Opening Date to compensate us for the damage caused by such breach."
+    },
+    {
+      "index": 25,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If this Agreement is terminated due to your default, you must, upon written demand, pay us a lump-sum payment in an amount calculated as follows: (a) the average of your Royalty fees and Advertising Contributions due for the last 60 months before our delivery of notice of default (or, if lesser, the months you had been operating before our delivery of notice of default), (b) multiplied by the lesser of 60 or the number of months remaining in the term of this Agreement."
+    },
+    {
+      "index": 27,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Should ADMA fail to supply a minimum of [***] Batches of Product (the \"Minimum Volume\") of Product during the time period as specified in this Amendment #3, ADMA agrees that Sanofi Pasteur shall be entitled to obtain from ADMA as liquidated damages, and not a penalty, amounting to $[***] ([***]) USD."
+    },
+    {
+      "index": 28,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Investor, the Agent and the Lenders hereby acknowledge and agree that (a) an amount equal to the lesser of (i) the full amount of each Required Capital Contribution that has not been made by the Investor and (ii) the then-outstanding balance of the Obligations, represents a reasonable estimate of the damages which the Agent and the Lenders will sustain upon the occurrence of an Maintenance Event of Default hereunder, and (b) such lesser amount will be the full, agreed and liquidated damages resulting from the occurrence of any Maintenance Event of Default hereunder."
+    },
+    {
+      "index": 29,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "THE PARTIES ACKNOWLEDGE THAT LIQUIDATED DAMAGES PAYABLE BY YOU UNDER THIS AGREEMENT (WHETHER PRE-OPENING LIQUIDATED DAMAGES OR LIQUIDATED DAMAGES FOR EARLY TERMINATION) ARE NOT PUNITIVE OR EXEMPLARY DAMAGES."
+    },
+    {
+      "index": 32,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that SFJ terminates this Agreement pursuant to this Section 14.2.1 then in exchange for purchasing the Trial Data Package including the Research Results included therein as set forth in Section 11.1.1.4, PB will pay SFJ, within [***] of the date of termination, an amount equal to three hundred percent (300%) of Development Costs paid or incurred by SFJ prior to such termination."
+    },
+    {
+      "index": 33,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Notwithstanding anything contained herein to the contrary, should Microsoft exercise its termination right pursuant to this Section 10.2, then Inktomi will have the right to elect, in writing within fifteen (15) days after receipt of Microsoft's notice of termination hereunder, either one of the following two options for a early termination penalty: (a) Inktomi may require Microsoft to pay to Inktomi, in [*] immediately following the effective termination date, an amount equal to [*] ([*]) of all outstanding principal, interest and other amounts owed or owing to Microsoft by Inktomi on the date of termination under the Loan Agreement (and outstanding Promissory Notes issued thereunder); or (b) Inktomi may deliver that portion of the Collateral (as defined in the Loan Agreement) which was purchased with Advances evidenced by the then-outstanding Promissory Notes (as defined in the Loan Agreement) (the \"Returned Collateral\") to Microsoft, and assign all right, title and interest in and to said Returned Collateral to Microsoft, and promptly upon such delivery and assignment Inktomi may require Microsoft to pay to Inktomi, in [*] immediately following the effective date of termination, an amount equal to [*] ([*]) of all outstanding principal, interest and other amounts owed or owing to Microsoft by Inktomi on the date of termination under the Loan Agreement (and outstanding Promissory Notes issued thereunder)"
+    },
+    {
+      "index": 35,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You specifically acknowledge that our designated representative may take over, control, and operate the Franchised Restaurant, and that you will pay us a service fee of not less than TWO HUNDRED Dollars ($200) per day plus all travel expenses, room and board and other expenses reasonably incurred by such representative so long as it shall be required by the representative to enforce compliance herewith."
+    },
+    {
+      "index": 37,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that following the delay, Contractor is in compliance with the Due Dates for two immediately consecutive Quarters and there is no delay whatsoever, Contractor will be reimbursed by NICE for liquidated damages already paid for delay in the previous Quarter (before the said 2 Quarters), if paid, without derogating from the previous delay being regarded as a breach hereunder."
+    },
+    {
+      "index": 39,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "In the event the Company terminates the Agreement in accordance with Section 16, any unearned Additional License Fee will be fully refundable and due the Company as set forth in Section 16."
+    },
+    {
+      "index": 40,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The parties acknowledge that the foregoing payments constitute reasonable and commercial liquidated damages."
+    },
+    {
+      "index": 41,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Any delay from the Due Date of a certain Product in a certain Quarter, not due to a specific written request by NICE or otherwise deriving from a breach of NICE' undertakings hereunder and only to the extent deriving from such breach by NICE, or caused by an event of Force Majeure, and subject to the terms hereof, shall be considered a material breach of Contractor's obligations under this Agreement and shall entitle NICE to the following liquidated damages in addition to any remedy available to NICE under this Agreement or by law: 5.3.1. One percent (1%) of the Product Price for a delay of 3 to 5 Days. 5.3.2. Three percent (3%) of the Product Price for a delay of up to 10 Days. 5.3.3. Five percent (5%) of the Product Price for a delay of 11 Days or more."
+    },
+    {
+      "index": 43,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "If Shipper fails to notify MPL within one hundred and eighty (180) days of the Project's in-service date or if MPL is unsuccessful in obtaining additional volume commitments as provided for in Section 3.8 to<omitted>fully replace Shipper's original volume commitment as submitted in its Capacity Request Form in Exhibit C, Shipper will reimburse MPL for Shipper's pro rata portion of actual and committed Construction Costs, plus, an administrative fee of ten (10) percent of said costs (such reimbursement is hereinafter referred to as the \"Construction Cost Reimbursement\")."
+    },
+    {
+      "index": 45,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If termination occurs after the second anniversary of the Opening Date but before the final five (5) calendar years of the Term, you will pay us Liquidated Damages in an amount calculated by dividing the sum of the Monthly Royalty Fees due to us under this Agreement for the prior twenty-four (24) month period by twenty-four (24) and then multiplying the resulting sum by sixty (60)."
+    },
+    {
+      "index": 47,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "For the second time of the aforementioned violation, the amount of performance bond shall be additionally paid at RMB3,000 per time on the basis of the amount previous paid"
+    },
+    {
+      "index": 49,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The following acts constitute Class D breaches. In the event of any breach below by Party B, Party B shall immediately remedy the breach, and Party A is entitled to request Party B to pay the liquidated damages of not less than RMB50,000 (RMB FIFTY THOUSAND) based on the consequences of the breach, and send the Confirmation Letter on the Breach of the Partner of Xiaoju Online Ride-hailing Marketplace to Party B, and terminate the Agreement."
+    },
+    {
+      "index": 50,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "You and each of your principals agree that the liquidated damages provision does not give us an adequate remedy at law for any default under, or for the enforcement of, any provision of this Agreement other than the Royalty Fee sections."
+    },
+    {
+      "index": 51,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The following acts constitute Class C breaches. In the event of any breach below by Party B, Party B shall immediately remedy the breach, and Party A is entitled to request Party B to pay the liquidated damages of an amount from RMB5,000 (RMB FIVE THOUSAND) to RMB50,000 (RMB FIFTY THOUSAND) based on the consequences of the breach, and send the Confirmation Letter on the Breach of the Partner of Xiaoju Online Ride-hailing Marketplace to Party B."
+    },
+    {
+      "index": 53,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "if the agreement is terminated during the Initial Term by PaperExchange pursuant to Section 8.2 [Termination for Cause], VerticalNet shall pay to PaperExchange, as liquidated damages, an amount equal to the product determined by multiplying (1) a fraction, the numerator of which shall be the number of days between the effective date of termination and the scheduled expiration date of the Initial Term, and the denominator of which shall be the number of days<omitted>between the Effective Date and the scheduled expiration date of the Initial Term, by (2) *****"
+    },
+    {
+      "index": 55,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In addition, CHT may terminate this Agreement and the rights granted hereunder, in whole or in part, and without prejudice to enforcement of any other legal right or remedy (including any express termination right set forth elsewhere in this Agreement), at any time without cause, by providing at least thirty (30) Business Days prior written notice to Ehave, but subject to payment of a termination fee equal to an amount set out in Schedule 6."
+    },
+    {
+      "index": 59,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Monsanto and the Agent stipulate and agree that the injury which will be caused to the Agent by the termination of this Agreement under the circumstances which shall give rise to the payment of the Termination Fee are difficult or impossible of accurate estimation; that by establishing the Termination Fee they intend to provide for the payment of damages and not a penalty; and that the sum stipulated for the Termination Fee is a reasonable pre-estimate of the probable loss which will be suffered by the Agent in the event of such termination."
+    },
+    {
+      "index": 64,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In case of failing to fulfill the obligations of the SENDER as a result of any actions or illegal omissions or deviations from the Contract, the SENDER agrees to pay ECOPETROL as a penalty, an amount equivalent to ten percent (10%) of the final value of the Contract."
+    },
+    {
+      "index": 65,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Each Party agrees that in the event it violates the provisions of this Section 15.9, it will pay to the other Party as liquidated damages, and not as a penalty, an amount equal to one hundred times (100 X) of any such employee's then-current base annual salary."
+    },
+    {
+      "index": 66,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If there are less than sixty (60) months remaining in the Term on the date of termination, you will pay us Liquidated Damages in an amount calculated by dividing the sum of the Monthly Royalty Fees due to us under this Agreement for the prior twenty-four (24) month period by twenty-four (24) and then multiplying the resulting sum by the number of months remaining in the Term."
+    },
+    {
+      "index": 67,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that Oceanic Time Warner Cable removes the above content and or terminates this agreement prior to December 31, 2006, Oceanic Time Warner Cable agrees to pay a cancellation fee of Five Thousand Dollars ($5,000) per month multiplied by the number of months remain on the agreement."
+    },
+    {
+      "index": 68,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Termination Fee shall be an amount equal to a percentage of the Estimated Remaining Value as set forth below."
+    },
+    {
+      "index": 69,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "By electing not to participate in any Completion attempt, or being deemed not to participate in any Completion attempt, Company shall be deemed to have relinquished to BP, and BP shall own and be entitled to receive, all of Company's interest in the Initial Well and share of production therefrom until the proceeds of the sale of such share, calculated at the well, or market value thereof if such share is not sold (after deducting applicable ad valorem, production, severance, windfall profits, and excise taxes, royalty, overriding royalty and other interests payable out of or measured by the production from the Initial Well accruing with respect to such interest until it reverts), shall equal the total of the following: (A) twenty six and one-quarter percent (26.25%) of the Completion Costs associated with the Initial Well and twenty six and one-quarter percent (26.25%) of the cost of any newly acquired surface equipment beyond the wellhead connections (including but not limited to stock tanks, separators, treaters, pumping equipment, piping and metering devices) (i.e., 300% non-consent penalty on a non-promoted basis); and (B) eight and three quarters percent (8.75%) of the cost of operation of the Initial Well commencing with first production and continuing until Company's interest shall revert to it in accordance with this Section 2.4 (i.e., 100% non-consent penalty on a non-promoted basis)."
+    },
+    {
+      "index": 70,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The \"Estimated Remaining Value\" means the mathematical product of (a) the average monthly fee paid by Customer with respect to the Initial Services during the twelve (12) months immediately preceding the Effective Date of Termination, multiplied by (b) the number of unexpired whole months remaining between the Effective Date of Termination and the expiration of the Initial Term."
+    },
+    {
+      "index": 71,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In any event, the total liquidated damages as per this Section shall not exceed 5% of the Product Price."
+    },
+    {
+      "index": 72,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If Party A discovers in its spot checks conducted from time to time that any game, software, business, works, content or service provided by Party B is not in compliance with laws, regulations, industry rules, Party A's management measures or contractual agreement, Party B shall pay Party A additional amount of performance bond at RMB5,000 per violation, or RMB10,000 per business, to be payable to by Party B within 10 working days after the results of copyright spot checks are posted."
+    },
+    {
+      "index": 75,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the case that either company is acquired by, or merges with, another company which has reason to not wish to continue the relationship, that company may make a contract buyout payment [*] for the [*], with a [*] buyout payment amount of [*]."
+    },
+    {
+      "index": 77,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Except as otherwise agreed hereunder, if Party A or its subsidiaries fail to pay the Service Fee in full on schedule according to provisions of Article 4.1 and Article 4.2, then Party A or its subsidiaries shall, in addition to the continuance of the payment of Service Fee in full, it shall pay Party B the liquidated damages at a daily interest rate of 0.03% in respect of the outstanding Service Fee."
+    },
+    {
+      "index": 79,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If the Commencement Date does not occur on or before such date (the \"Scheduled Conversion Date\") solely as a result of Metavante's failure to perform any of its obligations under this Agreement or the Conversion Plan (including the satisfactory completion of the identified Enhancements) and not as a result of any failure by Customer or any Third Party, Customer shall recover liquidated damages equal to the following: 1. Metavante shall pay Customer $10,000.00 for each month or portion thereof that Metavante fails to have the Commencement Date occur on the Scheduled Conversion Date provided that such amount shall be prorated for any partial month. Metavante will establish a new Scheduled Conversion Date if the above date is missed, subject to Customer's approval, which shall not be unreasonably withheld."
+    },
+    {
+      "index": 81,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event of a 'Change of Control' of Company, then if CONSULTANT's services are terminated without cause at any time within a twelve (12) month period following such Change of Control, CONSULTANT shall receive a termination fee equal to twelve (12) months compensation hereunder at the then current monthly rate, including any stock compensation."
+    },
+    {
+      "index": 83,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In such case, Party A is entitled to immediately terminate the Agreement and the cooperation relationship between the Parties, and request Party B to pay the liquidated damages of RMB50,000 (RMB FIFTY THOUSAND) and indemnify for all losses incurred to Party A thereby."
+    },
+    {
+      "index": 84,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the case of a written notice 15 days in advance from either party to the other Party And a payment of the liquidated damages of RMB10,000 (RMB TEN THOUSAND), this Agreement shall terminate as of the date of termination stated in the notice of termination."
+    },
+    {
+      "index": 86,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "Within the Warranty period, LICENSEE may elect to pay D2 a sum of $1,400,000 as a one time paid-up runtime license fees for the Basic Services specified in Exhibit A."
+    },
+    {
+      "index": 90,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Upon termination of this Agreement by the Agent pursuant to Section 10.5(a), Monsanto shall pay to the Agent the Termination Fee applicable pursuant to the Table set forth in Section 10.4(d)."
+    },
+    {
+      "index": 91,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Termination or expiration of this Agreement if by reason of material breach by Co-Host shall not affect any of Co-Host's payment obligations, all of which survive termination of this Agreement; provided that, in (i) the event of termination of this Agreement by Co-Host due to a material default by NAI, NAI shall pay to the Co-Host the Liquidated Damages Amount (as defined in Part 2 of Exhibit \"A"
+    },
+    {
+      "index": 94,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "For each Default Month, the Party in default shall pay a penalty equal to five (5) times the Party not in default's corporate average yield during the Default Month for each shipment below the performance commitment"
+    },
+    {
+      "index": 96,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If any such action occurs and results in an employee accepting employment with the other Party, the Party with whom the employee accepts employment agrees to pay to the other Party as liquidated damages, an amount equal to two times that particular individual's annual salary and bonus."
+    },
+    {
+      "index": 97,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If this Agreement terminates before the Expiration Date, you will pay us Liquidated Damages as follows: 14.4.1.1 If termination occurs before you begin the Hotel Work and before the Opening Date, and you or any Guarantor (or your or any Guarantor's Affiliates) directly or indirectly, enter into a franchise, license, management, lease and/or other similar agreement for or begin construction or commence operation of a hotel, motel, inn, or similar facility at the Hotel Site under a Competitor Brand within one (1) year after termination, then you will pay us Liquidated Damages in an amount equal to $3,600 multiplied by the number of approved Guest Rooms at the Hotel."
+    },
+    {
+      "index": 98,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If HealthGate fails to complete the System development by the System Completion Date, unless such failure results from the Publishers' default in performing its obligations under this Agreement or from an extension of time agreed in writing, the Publishers may in their discretion notify HealthGate accordingly, and if such failure is not remedied within 28 calendar days, HealthGate, recognising the loss caused to the Publishers, will on demand from the Publishers pay to the Publishers a sum calculated at the rate of 1% of the value of the contract in respect of every 28 days which elapse from the System Completion Date to the actual date of completion of the System. Such sums of money will be paid by HealthGate to the Publishers not as a penalty but as and for the ascertained and liquidated damages owing and payable by HealthGate to the Publishers by reason of such failure to meet the System Completion Date."
+    },
+    {
+      "index": 99,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that a Party solicits and then hires an employee of the other Party in violation of this Section 14.4 (Non-Solicit), the hiring Party shall, [***], within [***] ([***]) days of such hire, pay the other Party an amount equal to the [***] cash compensation actually paid to the individual<omitted>([***]) by the non-hiring Party in the immediately prior calendar year and, further, if the individual solicited and then hired in violation of this is a Key Person under Section 5.4.1(b) (Dedicated FTEs; Key Persons), then BLI shall have [***] ([***]) months to identify an employee as the individual to replace such Key Person and any (a) [***] or (b) [***], in each case (a)-(b), to the extent due to the absence of such Key Person performing a Workflow Development Plan upon which the Key Person was engaged, shall be deemed waived for that [***] month period."
+    },
+    {
+      "index": 100,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Parties agree that the Construction Cost Reimbursement shall be deemed liquidated damages and that such amount shall not be deemed a penalty, but rather represents a reasonable amount of liquidated damages in light of the anticipated or actual harm caused by Shipper's termination of this Agreement as stated, the difficulties of proof of loss, and the inconvenience or non- feasibility of otherwise obtaining an adequate remedy, and that the payment of such amount shall be MPL's sole and exclusive remedy for such termination by Shipper."
+    },
+    {
+      "index": 103,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "For the third time of the aforementioned violation, Party A will withhold the full amount of the performance bond already paid by Party B, and terminate the full-range business cooperation for one year."
+    },
+    {
+      "index": 104,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "IBM will give Customer a credit equal to the amount Customer paid IBM for the applicable Materials or for use of the applicable Base Components up to a maximum of twelve (12) months of applicable charges."
+    },
+    {
+      "index": 105,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Any violation of this article by Party B shall be considered as a material breach of the this Agreement, and Party A is entitled to immediately terminate this Agreement and the cooperation relationship between the Parties, and request Party B to pay the liquidated damages of RMB 50,000 (RMB FIFTY THOUSAND) and indemnify for all losses incurred to Party A thereby."
+    },
+    {
+      "index": 106,
+      "expected": "eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": true,
+        "clause_awards_termination_fee": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If Customer breaches the foregoing covenant, the same shall constitute a partial termination of this Agreement, and Customer shall pay Metavante the Termination Fee for the affected Service, as liquidated damages and not as a penalty."
+    },
+    {
+      "index": 110,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Effective Date of this Agreement shall be the later of the dates shown by the signatures below."
+    },
+    {
+      "index": 112,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Pretzel Time will not, as long as this Agreement is in effect and Franchisee is not in default, enfranchise or operate any other Pretzel Time Franchise within the following enclosed mall or building except as otherwise provided herein (hereinafter referred to as \"Territory\"): none."
+    },
+    {
+      "index": 113,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except as otherwise set forth herein, neither party shall transfer, assign or cede any rights or delegate any obligations hereunder, in whole or in part, whether voluntarily or by operation of law, without the prior written consent of the other party, which consent may be withheld at the other party's reasonable business discretion; provided, however, that either party may transfer this Agreement without prior written consent of the other party to an Affiliate or in connection with a merger or sale of all or substantially all of the stock or assets of such party."
+    },
+    {
+      "index": 115,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Channel Partner may not assign the Agreement, the use of any Licensed Software or Services or its rights and obligations under the Agreement without the prior written consent of iPass."
+    },
+    {
+      "index": 117,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "NCM hereby grants to Network Affiliate at no cost a limited, non-exclusive, non-transferable, non-sublicenseable, royalty-free license in the Territory during the Term only to receive, store, convert or otherwise manage, display and exhibit the Service on the Equipment at Theatres solely in connection with its performance of and subject to all of the terms and conditions of this Agreement."
+    },
+    {
+      "index": 118,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Provided that COMWARE purchases a minimum of $45,420.00 worth of Products, in any combination, during the Initial Distribution Period, this Agreement will automatically renew for an additional 6 months (the Renewal Period)."
+    },
+    {
+      "index": 120,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement shall be binding upon and inure to the benefit of the parties and their respective successors and permitted assigns; provided that this Agreement shall not be assignable or otherwise transferable by any party without the prior written consent of the other party (which consent shall not be unreasonably withheld or delayed) and any purported assignment or transfer without such consent shall be null and void."
+    },
+    {
+      "index": 121,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "No part of the minimum royalty for the first License Year shall in any event be repayable to Diplomat."
+    },
+    {
+      "index": 122,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "IAC shall cooperate fully with Sonos and execute such further instruments, documents and agreements and give such further written assurances, as may be reasonably requested by Sonos, at Sonos' expense, to perfect the foregoing assignment and obtain and enforce assigned Intellectual Property Rights."
+    },
+    {
+      "index": 123,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Such rights to Investor Improvements shall be solely for use by the Company and its Affiliates and shall not be transferable to any Third Party, except in connection with a merger, consolidation, or the sale or transfer of substantially all of Company's assets associated with performance under this IP Agreement."
+    },
+    {
+      "index": 124,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Licensee shall have the non-exclusive right and license to develop and distribute ICE AGE 2 Wireless Products during the Term of the Agreement for all Wireless Products set forth in this Paragraph 2(c) except the Game, for which Licensee shall have the exclusive right and license to develop and distribute until December 31, 2006."
+    },
+    {
+      "index": 128,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Supplier shall at its own expense secure and continuously maintain, and shall require its Subcontractors to secure and continuously maintain, throughout the Term, the following insurance with companies qualified to do business in the jurisdiction in which the services will be performed and rating A-VII or better in the current Best's Insurance Reports published by A M. Best Company and shall, upon Bank of America's request, be furnished to Bank of America certificates and required endorsements evidencing such insurance."
+    },
+    {
+      "index": 130,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Consultant will not, during the Term, and for a period of one (1) year thereafter, directly or indirectly: (i) solicit, recruit or promote the solicitation or recruitment of any employee or consultant of the Company for the purpose of encouraging that employee or consultant to leave the Company's employ or sever an agreement for services"
+    },
+    {
+      "index": 132,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Rights Notice shall specify sufficient information regarding the particulars of the issuance or sale of the Additional Securities to allow HOC to make a reasoned decision in respect of making the investment, including to the extent any such terms are determinable at such time: (i) the total number of equity securities outstanding as of the date thereof; (ii) the total number of Additional Securities which are being offered; (iii) the rights, privileges, restrictions, terms and conditions of such Additional Securities; (iv) the amount payable by HOC for the Additional Securities to which it is entitled pursuant to Section 4.1(a); and (v) the proposed closing date, and thereafter, to the extent it is not included in the Rights Notice, the Company shall immediately provide notice to HOC of such information as it is determined."
+    },
+    {
+      "index": 133,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Sponsor hereby agrees to and does (a) waive any and all suits, actions, claims, losses, demands, damages, liabilities, costs and reasonable expenses of every kind (including consequential, incidental or punitive damages, or lost profits), including court costs and reasonable attorneys' fees (collectively, \"Claims\") Sponsor may have now or in the future against Forty Niners SC, its Affiliates, the National Football League, SCSA and any of their respective officers, directors, employees, agents, insurers, and assigns (collectively, the \"Indemnitees\") for damage to or destruction of Sponsor's property, excepting only claims caused by the gross negligence or willful misconduct of an Indemnitee;"
+    },
+    {
+      "index": 135,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subject to the terms and conditions of this Agreement, Todos hereby grants the Reseller a non-sublicensable, non-transferable, exclusive right to distribute and sell the Products to Customers in the Territory; provided, however, that Reseller may sub-license or transfer its distribution rights to a subsidiary or affiliate of the Reseller."
+    },
+    {
+      "index": 139,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon the expiration of the Term or termination of this Supply Agreement, in its entirety or with respect to one or more Products, this Supply Agreement shall, except as otherwise provided in this Section 10.3 or Section 10.5, be of no further force or effect; provided, however, that (a) in the event this Supply Agreement is terminated by SutroVax pursuant to Section 10.2.3 and there are outstanding Work Orders or other purchase orders accepted by Sutro that would not be fulfilled as a result of such termination, SutroVax shall reimburse Sutro for all supplies and materials purchased by Sutro and time incurred by Sutro personnel (to the extent incurred solely for manufacture of Product for SutroVax) for the manufacture, or preparation for the manufacture, of Products for any Work Orders placed by SutroVax and any other purchase orders accepted by Sutro prior to such expiration or termination, in each case to the extent Sutro cannot otherwise reasonably mitigate such the costs and expenses of such supplies, materials and time (e.g., by use of resulting supplies, materials and work-in-progress Product for other purposes); provided that to the extent SutroVax pays for any supplies or materials, upon SutroVax's request Sutro shall promptly transfer and deliver such supplies and materials to SutroVax; and (b) if this Supply Agreement is terminated with respect to one or more Products, but not all Products, then this Supply Agreement shall continue in full force and effect with respect to the applicable Product(s) for which it is not terminated."
+    },
+    {
+      "index": 151,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "All policies of such insurance shall be written by a carrier or carriers rated \"A\" or above by Best, shall contain a clause requiring the carrier to give Customer at least thirty (30) days' prior written notice of any material change or cancellation of coverage for any reason, and simultaneously with M&I's execution of this Agreement, and annually thereafter, at Customer's request, M&I shall deliver to Customer original Certificates of Insurance evidencing the coverage required by this Section."
+    },
+    {
+      "index": 152,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Company may, at its option, terminate the exclusivity provisions set forth in this Section 3(d) [Exclusivity] upon the occurrence of any of the following events:<omitted>(B) MBE ceases to own at least [***]* shares of<omitted>common stock of the Company (calculated on an as-converted basis and as adjusted for any stock split, stock dividend, recapitalization or similar transaction)."
+    },
+    {
+      "index": 156,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon the expiration or termination of either the Lease or the Franchise Agreement, Landlord will cooperate with and assist us in gaining possession of premises and if bw-3 does not elect to take an assignment of the Lessee's interest, Lessor will allow bw-3 to enter the Premises, without being guilty of trespass and without incurring any liability to Lessor, to remove all signs, awnings, and all other items identifying the Premises as a Franchised Restaurant and to make such other modifications (such as repainting) as are reasonably necessary to protect the bw-3 marks and system, and to distinguish the Premises from Franchised Restaurants."
+    },
+    {
+      "index": 159,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "ALFA AESAR agrees not to manufacture, buy, sell, distribute, deal in or be the agent for any products with the specifications of any of the Products, excluding any preexisting ALFA AESAR products."
+    },
+    {
+      "index": 164,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except in accordance with Subparagraph 30.2, no Party may assign the whole of its rights under this Agreement without the written consent of all the other Parties, such consent shall not be unreasonably withheld."
+    },
+    {
+      "index": 165,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "For any Product or Solution sold to any perspective clients introduced by Bravatek registered with COMPANY via email to COMPANY's CEO and delivered through Bravatek or a COMPANY-designated distribution affiliate(s) or sales channel(s), Bravatek will receive a lead-finder fee, to be mutually discussed and finally decided by COMPANY at the range of minimum of 10% to maximum of 20% of project revenue, with an exact fee to be depending upon the overall project sales margin and cost of development and delivery of each project, payable NET 30 days after each client payment on delivered products received at COMPANY's bank account."
+    },
+    {
+      "index": 167,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement shall be renewed automatically for another five (5) years upon the expiration unless the Parties confirm, in writing, the termination of this Agreement."
+    },
+    {
+      "index": 168,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Any Product Customizations made by IAC or an IAC Subcontractor shall be on a \"work for hire\" (using the meaning given to such term under United States copyright law) basis to the maximum extent permissible under applicable law, and all Intellectual Property Rights therein shall be owned solely by Sonos."
+    },
+    {
+      "index": 169,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In the event that CAPSUGEL reasonably determines that the development of the Compound Formulation is not feasible with Commercially Reasonable Efforts in accordance with the Development Plan, with such changes as reasonably requested by CAPSUGEL, then CAPSUGEL may discontinue the development of the Compound Formulation and Product and terminate this Agreement, in which case, CARDAX shall have the right to license the Intellectual Property Rights as provided in Section 4."
+    },
+    {
+      "index": 170,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "With respect to any Patent applications and Patents claiming or covering any [***] Products, the Parties shall meet to determine in what countries, if any, Patent applications claiming such [***] Products should be filed and the appropriate filing Party (a \"Joint Patent\")."
+    },
+    {
+      "index": 171,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Throughout the term, Boxlot shall have an agreement in place with its Internet connectivity provider which requires such provider to automatically increase bandwidth capacity if such capacity exceeds 25% utilization."
+    },
+    {
+      "index": 173,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Berkshire may not assign this Agreement, in whole or in part, without Auriemma's written consent."
+    },
+    {
+      "index": 174,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "ENVISION warrants that it carries general liability insurance of $1 million per occurrence and product liability insurance of not less than $2 million per occurrence and that, upon execution of this Agreement, it will name SIERRA as an additional insured on such policies."
+    },
+    {
+      "index": 177,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "During the term of this agreement NVOS shall have the right to assign, transfer or sell all or part of its interest in the agreement upon the terms and conditions herein, subject only to prior written notice to HGF."
+    },
+    {
+      "index": 178,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement may be terminated at any time without cause by either party upon ninety (90) days written notice to the other party."
+    },
+    {
+      "index": 184,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Neither party will solicit for employment any employee of the other party during the active term of this Agreement and further, where applicable, the term of any active Work Order."
+    },
+    {
+      "index": 185,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "FSL and AFSL may not exercise the Put Option prior to the Option Starting Date nor more than one hundred eighty (180) days after the Option Starting Date."
+    },
+    {
+      "index": 186,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Schoolpop shall have the exclusive right to resell Cards in the NPO Marketplace."
+    },
+    {
+      "index": 188,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Pretzel Time shall have the unrestricted right to assign this option to purchase."
+    },
+    {
+      "index": 191,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Customer is responsible for obtaining and maintaining personal property insurance sufficient to cover the value of Customer Components;"
+    },
+    {
+      "index": 192,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "IN NO EVENT SHALL JRVS'S LIABILITY ARISING OUT OF THIS AGREEMENT EXCEED THE AMOUNT RECEIVED BY JRVS FROM THE DISTRIBUTOR HEREUNDER FOR THE PRODUCT GIVING RISE TO THE LIABILITY."
+    },
+    {
+      "index": 193,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "VOTOCAST will give Licensee at least thirty (30) days prior written notice of any rate changes during any Renewal Term."
+    },
+    {
+      "index": 194,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Nothing in this Agreement shall require Manufacturer to provide more than 75 hours per calendar year per Product in connection with any Technical Support."
+    },
+    {
+      "index": 197,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "We reserve the right to reinspect the facilities and products of any approved supplier and to revoke approval if we find that the supplier fails to meet any of our then-current criteria."
+    },
+    {
+      "index": 198,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "If any item of Software fails to so perform during its warranty period, as the sole remedy NETGEAR of NETGEAR's supplier will at its discretion provide a suitable fix, patch or workaround for the problem which may be included in a future revision of the Software."
+    },
+    {
+      "index": 199,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In the event that Vendor is forced to allocate the distribution of the Products due to limited supply, Distributor shall be treated no less favorably than any other distributor and shall receive its pro rata allocation of the Products."
+    },
+    {
+      "index": 200,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The foregoing shall not apply to operation of an El Pollo Loco\u00ae restaurant by Developer pursuant to a Franchise Agreement with Franchisor or the ownership by Developer of less than five percent (5%) of the issued or outstanding stock of any company whose shares are listed for trading on any public exchange or on the over-the-counter market, provided that Developer does not control or become involved in the operations of any such company."
+    },
+    {
+      "index": 201,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The term of this Agreement shall be one (1) year unless terminated earlier in accordance with the terms of this Agreement (the \"Term\")."
+    },
+    {
+      "index": 203,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Calm's representatives may, from time to time during regular business hours on reasonable advance notice, during the Term of this Agreement and for a period of six (6) months thereafter, inspect and audit such books and records and examine and copy all other documents and material in the possession or under the control of XSPA with respect to the subject matter and the terms of this Agreement."
+    },
+    {
+      "index": 204,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Unless earlier terminated as provided below, the term of this Agreement shall begin on the Effective Date and shall continue for a period of five (5) years from the Effective Date (the \"Initial Term\") after which this Agreement may be extended on mutual agreement of the parties (a \"Renewal Term,\" and together with the Initial Term, the \"Term\")."
+    },
+    {
+      "index": 205,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Either party may terminate this Agreement without cause upon sixty (60) days prior written notice to the other party."
+    },
+    {
+      "index": 206,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Fox grants to Licensee a limited, non-exclusive right and license to distribute the following Wireless Products in connection with the Property \"ICE AGE: THE MELTDOWN\" in the United States: (A) 2 Scrat voicetones; (B) 2 John Leguizamo voicetones; and (C) 3 premium videos."
+    },
+    {
+      "index": 207,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Additionally, VS shall assist PPD (or Sponsor), at PPD's (or Sponsor's) sole cost and expense, in obtaining or extending protection therefor."
+    },
+    {
+      "index": 208,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Notwithstanding the foregoing, no assignment or attempted assignment by Sponsor shall be valid except to a party which intends to continue the business of Sponsor as presently conducted."
+    },
+    {
+      "index": 216,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Licensee shall pay to Licensor for each Licensed Product licensed to a Redistributor or a Customer a royalty equal to the Specified Royalty Percentage of all revenues received (without deduction for value added tax, if any, but excluding any revenues for maintenance and support or upgrade services, which revenues are covered in paragraph (b) below) by Licensee under the Redistributor Agreement or Sublicense applicable to such Licensed Product."
+    },
+    {
+      "index": 219,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_awards_liquidated_damages": false,
+        "clause_awards_termination_fee": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "If DIALOG decides to discontinue Sales of any Product, it will notify ENERGOUS at least [***] prior to such discontinuance, and following such notification, the exclusivity rights, if any, associated with that Product will cease; provided, however, this provision will not apply in the event that DIALOG continues Sales of Product Updates, repackaged Product Dies or MCMs."
+    }
+  ]
+}

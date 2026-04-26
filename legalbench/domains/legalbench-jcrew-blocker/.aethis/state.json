@@ -1,0 +1,11 @@
+{
+  "project_id": "proj_ciQaWGeczdIa5WzI",
+  "bundle_id": "legalbench_jcrew_blocker_v3:20260425-177c0ba6",
+  "last_test_passed": 4,
+  "last_test_total": 4,
+  "previous": {
+    "project_id": "proj_TgCBk8Mqzp-Q44WX",
+    "bundle_id": "legalbench_jcrew_blocker:20260425-e3ddac6d",
+    "note": "v1 bundle without SME guidance — encoded AND semantics from canonical prose, scored 9/54 (16.7%) on test set; superseded by v3 with 4 SME guidance hints clarifying prohibition is the defining feature"
+  }
+}

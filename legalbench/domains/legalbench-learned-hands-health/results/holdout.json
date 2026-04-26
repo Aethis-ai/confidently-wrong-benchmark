@@ -1,0 +1,1150 @@
+{
+  "task": "learned_hands_health",
+  "bundle_id": "legalbench_learned_hands_health:20260426-81ff1d8d",
+  "extractor_model": "claude-sonnet-4-6",
+  "split": {
+    "method": "tools/test_split.py",
+    "seed": 7,
+    "dev_fraction": 0.5,
+    "evaluated_on": "holdout",
+    "n_total": 113
+  },
+  "summary": {
+    "correct": 107,
+    "total": 113,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 7,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello I am an Expat living in Germany and am legally unable to work due to illness. My doctor here is willing to certify the disability and work with a doctor in the US to help me with getting the TPD Discharge of my student loans. But I don't know any US doctors and I haven't the slightest clue who I can ask. Does anyone have any recommendations for doctors who would be willing to help me? This doctor would have to be willing to communicate to my GP long distance. He or she does not need to be practicing at the moment, just needs to be licensed to practice in the US. Would appreciate any advice on this. Thx."
+    },
+    {
+      "index": 8,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello everyone I'm in a bit of a bind. I called a doctor's office to set up an appointment in January. I made an appointment and they told me I needed a referral. I told them to cancel the appointment and call me when they received the referral. This was all in the same phone conversation.  Here it is 6 months later and after sending two referrals, they never called. I received this bill last week for $50 for a no show appointment. I cancelled that appointment and even if it was still an active appointment there was no reminder call/text/email which I opted for.  So, I call the office and get an answering service. She directs my call to the office manager who does not answer. Her answering machine clearly stated that of the call was for a no show bill to submit in writing. So these people send out these bills so often that she needed to put that on her message. I left her a message stating who I was, why I was calling, and asked for the address to send this letter to. No call back. I've called several more times and still nothing.  I've really had it with this office. I looked at their review on Google and it seems I'm not the only one with this issue. They have horrible reviews and some very similar to my experience.  So, what is your advice?   Thank you so much!"
+    },
+    {
+      "index": 9,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Sorry this is going to be a long post. I'm not sure if this is actionable at all but I thought I'd post here and see what people think. I'm a 30 year old male that lives in British Columbia, Canada.  I have been very sick for the past seven years and have officially been diagnosed with an insulinoma. It is a rare pancreatic tumor on the pancreas. This is my story.  In 2010 I started becoming quite ill and went to my family doctor multiple times for a year.  He misdiagnosed me with celiac disease and then after that was ruled out by a specialist, my GP gave up on me.  I decided to take matters into my own hands and in less than an hour of researching online I discovered that I most likely was having multiple hypoglycemic attacks a day.  I went back to him and got several requisitions for blood work checking my glucose levels, and sure enough I was right.  My blood sugars were ranging from 2.7-4.1 mmol/L after meals and throughout the day, which is dangerously low. The most common form of hypoglycemia is reactive hypoglycemia.  The treatment for this is eating healthy and exercising, which I was already doing.  At the time I was a personal trainer studying kinesiology and extremely fit with about 8% body fat.  Because of this my GP ruled out reactive hypoglycemia and his diagnosis was insulinoma, an insulin secreting tumor on my pancreas which made perfect sense to me.  I was then referred to an endocrinologist for further help.  The endo did standard tests to check my liver and kidney function and to make sure I didn't have cancer, and then diagnosed me with reactive hypoglycemia without doing a single blood glucose test.  I had gone to a dietitian at my local hospital who said my diet was perfect.  I even wrote out my diet for the endo but all he said was to eat better. He said there was no way it could be insulinoma but never really gave a reason why. I then took his advice and ate even healthier by almost eliminating all carbs from my diet except for some veggies, and I got immensely worse and my blood glucose was even lower than before.    I tried to go back to the endo but he refused to see me.  I then went to endo #2 for a second opinion.  Endo #2 saw me for 5 minutes and said it was reactive hypoglycemia, but on the off chance it was an insulinoma he told me to do a 12 hour fasting blood glucose test. The test turned out negative. He told me this would rule out insulinoma, but now that i know more about the condition a 12 hour fast has never been given to diagnose insulinoma. Even when it was first discovered in the early 1900's.  There was always a 48hr supervised fast test in a hospital with strict protocols, which turned into a 72hr fast test, and today basically any blood tests with blood glucose under 3.0 and high insulin, c-peptide or pro insulin is enough to diagnose insulinoma.   Shortly after that I tried every healthy diet i could find, and the only thing I found was that the healthier i ate the worse i got. So I preformed an experiment where I only ate junk food.  The diet was less than 30g of protein a day and over 600 grams of fast acting carbs like pizza, mcdonalds, apple pie, soft drinks, candy, pasta and garlic bread.  For the first time in almost 3 years my blood glucose was normal and i felt relief of all my symptoms for two weeks.  However this was not a reasonable diet, I gained over 10 lbs in a short amount of time and still become hypoglycemic when i exercised.  I demanded endo #1 see me again with this new information and he agreed.  I saw him and told him the healthier i ate the worse i got, but the worse i ate the better my blood sugars were, which is consistent with insulinoma.  He admitted that it made absolutely no sense.  I asked him what do we do now, and he said \"i don't know\".  I asked if he could refer me to someone who could help and he said, no. If i wanted another referral for another opinion i would have to go to my GP and ask him.   Upset and confused by this endo, I returned to my GP and asked for another referral to someone new.  He did so, but endo #3 refused to see me saying that he agreed with endo #1 and there was nothing out of the ordinary about my case. I then luckily got referred to a wonderful internist who saw me right away and told me there was no way this is reactive hypoglycemia. He forced endo #3 to see me.  I then saw endo #3 and he explained to me what reactive hypoglycemia was and how i have it.  He said it couldn't be insulinoma because when my blood sugars were 2.7, my insulin levels weren't high enough.  He was wrong on multiple accounts here.  My insulin level was in fact high enough, and even if it weren't he should have tested my c-peptide during a hypoglycemic event to rule out insulinoma.  C-peptide actually gives a more accurate indicator of how much insulin is being released in the body and is crucial in diagnosing insulinomas. So i asked to go to the diabetes clinic to see if they can help me with my diet, since he was so sure it was reactive hypoglycemia.  I went to the clinic and they immediately said this is not reactive hypoglycemia.  They sent a letter to endo #3 telling him that he has to help me figure out what's going on.  So i go back to my internist who spoke with endo #3 and apparently he reluctantly said there may be something else going on here.  So then I was referred to endo #4 in a different city.  Endo #4 saw me and immediately said that there is no way this is reactive hypoglycemia.  She suspected and confirmed insulinoma after having me induce a hypoglycemic attack and having glucose, insulin, and c-peptide levels taken. I saw her in 2015, and the test only took one day.   She then sent me to endo #5 in my own city to do the appropriate image testing to locate the tumor.  Endo #5 decided to do a 72hr fast to confirm that i in fact have insulinoma.  I spoke to endo #4 who said this was unnecessary, but if she wanted to have it done then i had to do it. It took 8 months for her to do the test and get the results and she sent me a letter saying i passed the test and nothing was wrong with me.  So either i'm the first person in recorded history with an insulinoma to pass this test, or she did it incorrectly.     So i go back to endo #4 and she tells me, if she doesn't think i have an insulinoma then she thinks im drugging myself.  She told me that's the only way I could be lowering my blood glucose so low.  So I induced a hypo with high insulin and high c-peptide with a negative drug screen.  After that endo #4 and endo #3 agreed i had an insulinoma.  The interesting thing is that for this test, my insulin was actually lower than the test endo #3 used as evidence to say my insulin wasn't high enough.  This makes no sense to me how he says this confirms insulinoma when previously he said that my insulin levels weren't high enough.   So then after all that I have been undergoing imaging studies and other fun tests for the past several months and they have 100% found the tumor in the tail of my pancreas.  I'm currently waiting for a surgery date to have it removed.    I feel very outraged and angry that it has taken 7 years to figure this out, when my GP and I have told them this is what it was 6 years ago.  Over the past 7 years i've barely been able to work.  I had to quit school and stopped being a personal trainer.  In fact when I saw my internist 2 years ago, he told me my blood sugar levels were way too low to function as a normal human being let alone work, and put me on disability for the past 2 years while we figured this out.  I also ended up having blood sugar readings of less than 2.2 mmol/L, which is considered life threatening.  I don't know if this is worth pursuing legally but I've got time to kill until my surgery so i might as well look into it, thanks!"
+    },
+    {
+      "index": 10,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello,  As the title says, I am on my ex (husband's) insurance plan as a dependent. I am not able to get onto a different health insurance plan without cancelling this one. They say that only the primary account holder can have me removed from the plan, but my ex and I are not on speaking terms. Is this legal? Do I really have no say in this? I live in Canada, btw.  Thanks in advance..."
+    },
+    {
+      "index": 11,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My sister is pregnant and she wants to get an abortion. In our home state (Texas) after talking to an abortion clinic it seems like they require one parent to be notified and consented. Our parents do not know about the pregnancy and will not consent, not in a million years.  So I guess the question is how much of a legal trouble would we be in if I took her to an abortion clinic in New Mexico? Which doesn't seem to require parental consent or notification. There is one less than two hours away, I can take her and being her back the same day, tell our parents that we were hanging at my place or went to a zoo or something.  Ideally they wouldn't ever know about it but let's assume they figure it out somehow, can I (or her) be in any legal trouble here?"
+    },
+    {
+      "index": 12,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "A couple days ago, my mother went to the doc for a bump in her eye that seemed to be infected. The eye doctor examined it and said everything would be fine if she just rinsed it with warm water for two weeks. However, my mom didn't like this advice as she has been misdiagnosed before (years ago). Upon getting another eye doctor's opinion the next day, her fear was confirmed- the bump on her eye was infected and she needed surgery within 72 hours.  My question is: what can be done from a legal standpoint? I am sure that a complaint to the hospital will just be a slap in the wrist for the first eye doctor and I would hate for the same thing to happen to another person. I believe it to be utter unprofessionalism to say \"wash with warm water and rinse,\" and so I've came here to ask for advice.  Is this medical negligence, malpractice?"
+    },
+    {
+      "index": 14,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I'm trying to get some advice for my roommates sister, and I only have the basic run down. Her sisters son died from Bacterial Meningitis, and was sick for about 2 weeks before it happened. They were controlling it with Motrin, but his fever got worse and they took him into the ER after a couple days of him not improving. He had a 103 fever upon arrival, and they just told him to keep giving him Motrin and released him. They never ran any further tests finding out that he had that, and the next day he continued to just not really wake up, and continued to look in bad shape. They took him into another hospital the next morning after being released from the ER, and they wound up admitting him and had to put him on life support that same night. 24 hours later, they pronounced him brain dead.   I just don't see any way the ER should NOT have admitted him, and possibly been able to save his life. Would they potentially be on the hook for this?"
+    },
+    {
+      "index": 15,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Problem 1:  My cousin has cancer. It was at one point treatable, but because of her mental health issues she was not able follow the plan established by her doctors. She is now terminally ill. Last week (Wednesday, the 44th day of her stay), we were notified by the hospital  that they planned to discharge her the next day. We were generally not happy with the treatment she received there (they would forget to feed her and administer her medication), but the nursing home she came from was worse, and we had yet to find better alternatives.  The next afternoon (Thursday) they returned her to the nursing home after saying she had consented to leave. She has  schizophrenia,  has not consistently received her medication, and is unable to make these kinds of decisions. I, her power of attorney,  did not discuss her discharge with anyone at the hospital (I was unable to return their call in time), and did not consent to her return to this nursing home. After speaking with my cousin about the incident later, she denies saying she was prepared to leave. Friday, around noon, less than 24 hours after she returned to the nursing home, she was readmitted to a different hospital for breathing problems. She was diagnosed with Pneumonia, and doctors noted spots on her lungs.   We are appalled by the way they have treated her, but aren\u2019t sure who to contact, or what we can do about it. Should we contact the medical board? Do we need a lawyer? What kind of lawyer do we need?  Problem 2:  My cousin has siblings who so far, have not participated in her care, but seem very interested in her assets, and the possibility of acquiring them after her death (she has no children, a nice home, and over $150,000 cash). Though we haven\u2019t mentioned it to her, she has said she suspects they are \u201conly coming around now because they\u2019ve figured out how much money i\u2019ve got\u201d.  One sibling is particularly intent on using her in any way possible. After meeting with her doctor to discuss her prognosis, his first thought was to search her house for life insurance policies. He has asked my husband and I to purchase bonds with her money, and a number of other \u201csmall\u201d horrible things.   This weekend we found out that he broke into her house and changed  her locks. We do not know when it happened, or if he took anything, but my cousin says she did not want him in her house, and did not ask him to change her locks. He says he did so because he needed to find her insurance policy. He doesn\u2019t want to be responsible for her funeral expenses after she passes, and didn\u2019t trust me (the power of attorney) or her other sister to go to her home. He claims to be trying to do what\u2019s best for her.   He has also been very adamant that she not return to her house (we\u2019ve considered placing her there with an in-home nurse for her final days). We now believe it is because when he was there he stole something.   I am not sure how to protect her property from him while she is still alive, and I am wondering if I should call the police, and seek a  restraining order.  Thanks for any advice you can provide."
+    },
+    {
+      "index": 16,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I really need help, please. I don't have insurance and I visited a new doctor May 17 because I have hypothyroidism and needed a new prescription. Upon meeting the doctor (mom as my witness) I explained to him I had surgery years ago and I need a new prescription to balance out my thyroid hormone. I told him I was diagnosed in February. I explained how I had a thyroidectomy and I would need medicine the rest of my life. I also said I just need the proper blood work to determine what MG of Levothyroxine I should take, and a prescription to make it happen. I even wrote all of this on my new patient sheet. I take what I thought was the proper blood test and now I must wait. A few days pass and I get a call from a nurse or receptionist saying my blood work came back normal.. I tell her there is no way seeing that I only had one month of Levothyroxine treatment and before that my levels were dangerously low. She insists I'm fine so I hang up very confused. I call my last doctors office and they also say that is impossible and they must have tested wrong. I call the new doctors office and they tell me I was administered a General blood test. I get a little upset because I specifically told the doctor what I needed and he didn't listen. It cost me about $115 out of my own pockets, no insurance. The nurse goes on to say the thyroid blood test is about $200. I demand the $115 I paid get credited to that, the accountants response is that they already paid the outsourced lab and cannot get the money back. I say it isn't my problem they did that because I told the doctor what I needed and what disease I have and he chose to ignore me. The accountant goes on to say that the doctor doesn't have to listen to me. I wanted to speak to my doctor but the three receptionists and accountant were all I got. I reported this to the Texas Medical Board and they said the doctor referred me to an endocrinologist which is completely false and dishonest. I never spoke to him after the initial appointment, and the nurses or receptionists were insisting I was fine.   Please somebody help me. I don't know what to do at this point. I am untreated and I feel extremely weary, I have no energy because I was left undiagnosed and untreated. I can't help but think of the other people this doctor left untreated, without their knowledge. He must be stopped."
+    },
+    {
+      "index": 17,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I had 3 teeth extracted yesterday by a local oral surgeon, and after I got home and the numbness began to wear off, I realized that one of the 3 was not one I had asked them to pull. I had a referral list with x rays from my dentist that reccomended 5 for extraction, but included a note that said \"per patient which ones\". I had opted to only do 3 for now since they were patially broken and painful, was going to ask my dentist about options to save the other 2 since they hadn't been painful. Before they started I was showing the assistant which ones I wanted done, and I opened my mouth and pointed to each one. I explained also that I had no clue which teeth the numbers on the list corresponded to, and my dentist had told me to just show them which ones that they would know the numbers. I thought she seemed to understand which ones I meant, but later I realized they pulled the one in front of one I had asked them to pull. It was on the list, but as I said, I wanted to try to save it. I called the office up, but they were already closed and the best I could do was leave a message with the answering service explaining what happened. What are my options for dealing with this? \"I'm sorry\" clearly won't bring my tooth back, and I'm less interested in money than I am in being able to eat as normally as possible again."
+    },
+    {
+      "index": 18,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "We live in a more remote region of Canada that has a full sized hospital. Our family doctor routinely cancels appointments on us and wait times to see them are upwards of 6-8 weeks. My wife was victim of a massive infection after the birth of our child that was apparently very easily treated had she been seen 3 months after the birth as intended. Her doctor cancelled and rescheduled every 3 months for a full year, causing the infection to grow to the point where she was bleeding for a month straight.  Our doctors have cancelled and rescheduled almost every single appointment we've made for the last 2 years often resulting in wait times of 2-18 months to be seen for potentially time sensitive issues.  I was told to wait 2 months to see my family doctor for surgery follow up while I was actively bleeding from my jewels. Do we have any kind of legal recourse here? We're tired of getting constantly dicked around by the terrible healthcare services here.  Do we have any recourse? Is there anything we can do short of contacting elected representatives who are actively slashing healthcare budgets in our province and likely not to care about this anyways?"
+    },
+    {
+      "index": 19,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello, my name is Amelia and I was hospitalized after a suicide attempt more than two years ago. I live in the twin cities metropolitan area of Minnesota. I won't specifically state what hospital because I don't want to give myself away, but I can tell you that it was supposed to be a good one.   As part of the treatment there I had a team of psychiatrists including a psychiatry resident who was the main doctor that talked to me. The head psychiatrist, who was also the head of the psychiatry residency program was a bitch to say the least. She was rude and she never talked directly to me. She talked to me in the third person. \"Well, if Amelia is good, we'll let her participate in the activity today.\" \"If Amelia can keep herself safe she can go to pet therapy tomorrow.\" Her terrible attitude wasn't the worst of it, however I believe that she was the one responsible for what everyone did. It all came down to her.   I was deemed suicidal by the on-call resident one night because I was displaying unsafe behaviors, and he ordered me to seclusion for the entire night. He said if I didn't go willingly I would be forced in. Confused and upset, I went into that room (because i willingly went they didn't lock it), and only a minute later, my nurse at the time, Chris (he was an asshole, didn't even treat me like a human being) was talking with that resident and some other nurses about moving all of my personal belongings to a different room that had a camera. Confused, I offered to help and opened the door. A couple nurses shoved me back into the corner and ordered that my shoes and jacket were taken off. They ripped that off and left me in the room crying with the door locked.   When I get stressed, I have problems urinating. And they did let me use the bathroom about an hour after they locked the door, but they would stare at me the whole time. And each time I couldn't void. Chris thought I was just doing this to be oppositional (I was misdiagnosed with oppositional defiant disorder) and he told me he wouldn't let me go to the bathroom anymore. The door to leave seclusion was unlocked at the time (the bathroom door always locked) but if I even touched the door they told me they'd lock it again. I was crying because I was in so much pain because I couldn't urinate, but they brushed it off because I was diagnosed with ODD, I was just being oppositional. Luckily, Chris eventually went on break, and this one aide, bless her heart, let me go to the bathroom after she gave me a lot of water, and I finally went. I think she was the only one that believed me.   Well, that wasn't even the worst of it. They made me spend the whole night in the seclusion room with the light on, no blanket and just a mattress and my pillow. The room was dirty. They never cleaned it. I could see peeled off fingernails in the corner from the last person in there (or maybe a few people before) and I told them but no one would clean it up for me. It was just me and the fingernails for the entire night. I never got to shower, wash my face, or even brush my teeth the previous night. I asked but they said no. I couldn't even brush my hair. And the worst part is, none of this was in my medical record. They didn't write that I spent the night there. They kept it vague, saying the plan was that I sit there for a few minutes.   and that's not even the worst. Because the next night I had the same nurse, Chris again. And he wanted me to sit on my bed around bed time, and when i woukdn't he threatened to send me to seclusion. I told he couldn't do that, that it's not right, but he did it anyway. When I refused to go, he ordered a couple nurses to come in while he carried my mattress to that room again. When the nurses couldn't get me to go willingly (\"Come on Amelia, be a big girl and take my hand!\" mind you i was sixteen at the time) Chris and another guy named Eric came back. Then one of them suggested that instead of calling security they would just carry me there. So you know what they did? They grabbed my my arms and legs and carried me like I was an animal. I was struggling, trying to break free, and my pants were falling down because they were too big, but they kept bringing me down the hall. And they brought me into that room and dropped me on the mattress, walked out, and locked the door. And I spent my second night in a row in that room. That incident was never recorded in my record.   There's even more littler things, but that's the major stuff. I still suffer with flashbacks and nightmares among other things today. And I'm not necessarily looking for money, I just want those who were involved to pay for this. I want this on their record, so hopefully this doesn't happen to someone else. I want to feel okay again. So all I need to know, is do I have a chance to win this lawsuit? If I do, how do I go about it? Where do I start? I'm not super hopeful because it's a psych case, but I feel like I have to do something.  Thank you. TL;DR I was treated poorly by numerous psychiatric staff during a hospitalization and I was traumatized from it."
+    },
+    {
+      "index": 20,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I live in Washington. I have bipolar disorder and I had a severe manic episode that started around the 20th of June. On June 28th, I bought a 2013 Subaru WRX STI. I love Subaru, but I'm in my early 20s and don't need or want a car of that value. They sold it to me for 31k, after taxes it was ~35k.    Two days after the car purchase I was admitted to a mental hospital to help me get back on track. While I was in the hospital, my uncle (an attorney in IN) helped draft a letter to send to the dealership. My Mom emailed the dealership the letter on 7/2 or 7/3 when I was in the hospital.  After coming out of the hospital on 7/4, I cleaned up the car and dropped it back to the dealership.   I was hoping they would take the mental health episode into account and have some sympathy, and maybe charge a restocking fee and make me pay for the miles I put on the car (I also was willing to wait until it sold again and pay them any difference in selling price). They took the other route and had their lawyer send an email basically just saying there's no 3 day grace period or anything like that in Washington.   I know I'm definitely knee-deep in shit for this, but does anyone have any suggestions? I'm debating just leaving it there and taking the credit hit from a default. I make pretty good money for my age but I don't want to be stuck with those ridiculous payments. Even just seeing the car gives me anxiety and reminds me of all the bad decisions I made during that manic episode."
+    },
+    {
+      "index": 22,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I had a very, very bad experience with a dental  surgery the other day. Woke up during surgery, surgeon held me down and finished procedure with me wide awake, no pain meds, and left the room. No other interaction with him afterward. Is this information I'm allowed to share in an online review of the dental practice?"
+    },
+    {
+      "index": 23,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I was at a friend's party when the deck collapsed and I along with 2 others had to be taken to the hospital. My injuries are a severe scalp laceration on my forehead and up through my hair line. Another girl broke her back.   The house was a rental and from what I know they had the deck looked at/repaired twice. What is my best course of action?"
+    },
+    {
+      "index": 24,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "I have been taking care of her, charging her phone, making her eat (because she will not go to the doctor and we decided that she was very lucid and all we can do is hold her hand at this point and give her her wishes (She is 85).  Her ex-DIL called tonight and started yelling and screaming at her to move to Utah or she would be there in 2 days with a gun.  I heard this.  This woman was so beserk screaming she would call police on ME saying I was scamming her ex-MIL.  She had my friend so hysterical crying that I took the phone and hung up and for the next 2 hours she called every 5 minutes.  My friend can't walk right now and her right arm \"lets her down\" as she says, but she is perfectly mentally clear, singing me old pub songs and hymns in Latin, challenging me to mathematical equations and Suduko.  She is fine mentally, but is this elder abuse?  I would think maybe an ex-wife isn't really part of the family anymore.  She has been doing this for 2 months and my friend is scared of her and doesn't want to move to Utah.  She wants to stay put and maybe have someone move in as she is being reasonable about her situation.  I am going in the morning to write down and report the frequency of the crazy ex-in-law's phone calls every night, but should she hire an attorney?  She's very scared of this woman."
+    },
+    {
+      "index": 26,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Husband had been ill for a few weeks and went to see Dr. Did chest X-ray and confirmed pneumonia-prescribed one week round of antibiotics. Husband went back in 2 weeks later for follow up, not any better. Dr did not repeat X-ray, blood work was abnormal so he was sent for ultrasounds of thyroid and kidneys. Doc never followed up on anything - actually he has never called ever. Husband called and made another appt - still feeling ill and coughing up horrible stuff and wanted to go over ultrasound and repeat blood work results. Came into office coughing up foul smelling phlegm. Repeated chest X-ray and was sent to hospital. Received antibiotics in hospital and was told he would have surgery. Was in hospital for 36 hours-no surgery. Dr came in and husband confronted him about his care and how he felt that he had been ignored. Dr admitted husband was patient profiled as a drug user by appearance. (Husband had lost 15 lbs before he saw dr and told him of weight loss, then lost an additional 10 before last appt. He had also lost a tooth in his 20s due to trauma.) Husband was transferred to another hospital on request. Underwent 4 hour surgery for empyema and then sent to icu. We are still in the hospital.  This all happened in Texas."
+    },
+    {
+      "index": 30,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Last year i went into the hospital and was misdiagnosed with the stomach flu, i went home and a week later ended up taking myself back to the emergency room after my appendix ruptured. I ended up needing emergency surgery after the drains didn't work and spent three weeks as an inpatient. I had to drop out of school for the semester and am still having problems. is this worth a law suit? or even a consultation?"
+    },
+    {
+      "index": 31,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "(suicide tw throughout this post) Background: I have struggled with depression/bipolar for a number of years, and just over a year ago it caused me to be unemployed for 3 months as I was doing outpatient and recovering.  Found a new job that I love in many ways and really care about, but it didn't stop the number of suicide attempts.  I had to take multiple leaves of absences and numerous sick days for my mental well-being.  At the same time I have struggled with mismanagement at my job.  One situation was due to higher ups not respecting my confidentiality and they dragged me through the mud, forcing me to get union involvement.  Coworkers have also been getting away with a lot of things to the detriment of my health.  I've been yelled at, I've been subjected to repeated oppressive statements, I've dealt with a coworker assuming more authority than they're given and giving everyone and attitude.  They also sexually harassed another coworker.  One person is plainly abusive and toxic, another dangerously incompetent. Despite my efforts to bring this to HR and to my bosses nothing has happened.  The main person in question triggered one suicide attempt.  I had gone to HR a couple months ago and when they once again yelled at me in front of everyone and gave me attitude I once again brought it to management.  I was told nothing was going to happen.  I ended up asking management to at least have remediation.  They got weird about it because I ended up calling out sick because a number of factors, including work, had triggered a mixed state episode.  The exchange wasn't great but the most I really said was \"I'll talk to you when I get back\" and unprofessionally disclosing over text that the person was continuing to sexually harass the other coworker.  I almost died that night due to suicide. 7th time since early 2016.  I felt so hopeless and that nothing would improve. Because of this incident I ended up having to move further away to be taken care of by friends.  This interferes with my schedule on Sundays because the bus nearby doesn't run and I can't get there until an hour later than my schedule.   Long story short, manager flipped his attitude 180 after talking to his boss (who doesn't like me) and won't budge on my schedule and was *rude* about it.  They have made these accommodations before for people and I very much believe that I'm facing my employer trying to edge me out because I don't keep quiet about BS that happens there.   This BS severely impacts me because I do care about this job and I can't handle the lack of care or the things they put everyone through.  Amazingly the news about my schedule didn't induce suicidal thinking again because I actually was already planning to kill myself but then got righteously angry about this situation and looked forward to quitting.   But anyways here's the problem:  I go back to work on Tuesday, I am losing my medicaid health insurance at the end of the month, and I only have this week to apply for employer provided health insurance. I have to wait until Monday to contact Union person and I have an HR person on my back asking to schedule a time to sign up for the insurance.  I also cannot have a lapse in insurance or I might die (no exaggeration).  If I quit as soon as possible I can probably keep it without coverage lapsing. It seems off to sign up for this insurance if I'm about to quit, but if I want to go on disability (which would take years apparently) I need my doctor or nurse practitioner to state that I am unable to work, which will take time.  I also am unsure if me saying \"I'm too sick to work\" contradicts \"The way you run this place is inhospitable for me\".  The latter implies that I can work elsewhere when I really can't, but the former makes it sound like it's my own problem that I'm too sensitive to work there.   What steps outside of contacting Union person asap is there? Do I put in my two weeks asap? Can I get unemployment if I quit before a doctor orders me to stop work? Do I apply for that insurance?  Can I delay ending my OHP with minimal trouble (I don't have the capacity to fight so many things at once). Do I bow out peacefully or do I point my finger at them?"
+    },
+    {
+      "index": 34,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I want to note that the hospital is in VA and we are living in NC.. don't know if that makes a difference.   My father had a procedure to remove kidney due to cancer. When they got in there they found his kidney was stuck to his small intestines, turning a 4-5 hour surgery into an 8-9 hour surgery.    Upon waking up my fathers only complaint was hip pain and he complained through the night. They said it was due to laying on that hip so long, because he's a big guy. Next morning the doctor comes in and he complains to doctor that did testing and found that his muscle in the hip/rear was dead /dying.. similar to a crush injury. From lying on it so long. They rolled him into surgery and removed a large chunk. Later that week they removed more .   This muscle dying released proteins or toxins that damaged his other *only* kidney and he is now on dialysis, and we are hoping for a good recovery   At this time we are not sure of the long term effects on his mobility etc from losing so much muscle in his rear. We also do not know if the kidney damage is permanent.   We feel that the positioning during surgery should have been evaluated when they realized it was going to be a far longer surgery and the inaction of the care providers after he complained about major hip pain should have raised red flags and been attended to sooner thus preventing so much proteins and toxins from damaging his kidney so bad.   Please excuse my lack of medical jargon and let me know if you need any more details to give me an idea if we have something to pursue here ."
+    },
+    {
+      "index": 36,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My spouse is currently in the psych ward on voluntary status. A nurse who is caring for them has repetatedly verbally abused them. We made a report to an outside party who has informed the director of nursing at the hospital.   The nursing director informed the nurse who was the abuser of the report and who made it. Is that legal? We are afraid of retaliation by the nurse  as they were not sent home or repremanded in any way.  Is that legal? I thought reports were to remain anonymous."
+    },
+    {
+      "index": 38,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hey everyone. I'm in a bit of a predicament and I'm not sure how to proceed. My mother is seriously mentally ill and has been refusing treatment for as long as I can remember. I beg her to get help because at this point she's extremely paranoid, terrified of touching things (germ situation), repeats herself 100x times, and has pulled out all her hair, and sadly, there's even more :( I've tried pretty much everything, but she's ALWAYS been this way. It even had a huge effect on my upbringing and due to that I have CPTSD. She once tried to burn me alive as an infant, and would regularly slam my head into concrete and the tub for things as simple as knocking over my juicebox. I'm afraid that at the rate she's going, she's just going to crash and burn... hard. I have a 16 year old sister too, and I fear that if my mom really gets out of hand, we'll be evicted. She honestly screams 24/7 so I'm not even sure how we haven't gotten kicked out. Due to my cptsd and a slew of other conditions, I'm disabled and can only work a job from home, but that's not enough for me to move my sister and myself out... I was wondering if there was any way the section 8 could be transferred to me or my sister, as my mother isn't stable or responsible enough for this kind of thing and always submits their paperwork MONTHS late. It's like she's trying to go out of her way to get us kicked out. Anyway, I'd like to keep my little sister safe, more importantly. Is there any way we could protect ourselves and our housing as my mother continues to self destruct ??  Thank you, and sorry for the essay... It's just been a LOT :/"
+    },
+    {
+      "index": 39,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hey everyone~ using a throwaway account for this. Please let me know if this is the right place to post or if there's a similar post I may reference.   So I became disabled recently (off the clock) and found out I'll need surgery which would leave me immobile for the next 2-3 months, and won't return to an active lifestyle for another 8 months. Because my job is high physical activity I am in the process of claiming disability and my employer has been extremely helpful. Since I also live in a walk-up in an urban area I can't access my apartment safely without supervision so I decided to stay with my mom in a different state until I can have the surgery.   The problem is I didn't have insurance at the time of the disability so I've been having to pay out of pocket for MRI/X ray and Doctors visits to make sure I would really need surgery, out of the state I live in. My insurance kicks in next month so I'll have to wait until then to get the surgery, unless I want to pay over 10k out of pocket. I can't yet make an appointment for the surgery because I'm not insured yet, even though I will be at the time of the appointment. I get it, it's a legal issue. There are a lot of 'should haves' in this scenario and I am to blame for why this is spiraling. I'm gaining back control of the situation but it's going to be a longer process now. However, this is not where my issue is.  I went to urgent care and paid out of pocket so I could get referred for an MRI and specialist. Okay. Did that. When I saw the specialist I asked specifically if I would be able to work and how long would it be. He said absolutely not and that it would take up to 8 months to recover, post-op, back to my high activity level. My employer then suggested I file for disability. When I spoke to the office again they said they wouldn't fill out my claim because I'm not getting the surgery with them and that it could be a legal issue, however when I pressed them on why they didn't really give me a lot of information. When I spoke with my employer's insurance company they said they just needed the word on whether I could work or not, and that the surgery dates could be figured out later.   Then, I tried going to the urgent care to see if that first Doctor could fill out my disability form (since he was the one who referred me and scheduled the MRI etc). His receptionist said that it would take up to 2-3 visits, possibly more to get the claim filled out ($150 per visit!). It's literally one sheet of paper asking if I can work. That's it. The MRI is proof enough I can't and I have my medical forms from the hospital. When I asked why she wouldn't give me an explanation, all she said was it would take time to fill out the paperwork (but doesn't know exactly how much time) and that we could see a specialist if I needed it that badly. I am at a loss. I'm in the process of finding my own specialist and surgeon in my state and that's become a wholly different issue otherwise I could've had that provider help (and will if none of this gets figured out but time is a factor with paperwork) ...  Can the hospital refuse to sign the disability papers because I'm not having the surgery with them even though they told me I will absolutely need surgery and won't be able to work?  Can the urgent care doctor ask for an unknown amount of medical visits just to fill out one piece of paper? I feel like I'm being price gouged.  I know this is my fault, yes I should've had insurance and yes I should've seen a doctor in my state immediately to start the process of finding a specialist. I really did not think my injury was  going to need surgery at the time and thought I could just heal my way out of it. I'm learning a hard lesson this month and paying out of pocket for it. Any help would be much appreciated. Thank you"
+    },
+    {
+      "index": 42,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I lived in and worked as an RA in a very old building when I was at university. There's one very uneven staircase and one day I fell from the top of it, hit my head, and fell down the rest of the staircase. I had all of the normal concussions symptoms and was diagnosed with one.   I haven't really been the same since then. I've always had bad headaches on a daily basis but I starts sleeping poorly and had more really bad headaches after this. About a year after this happened I basically had a migraine for three months, had to stop school, and developed an eye droop.   No one could figure out what was the matter, I had scans, blood work, etc. They still couldn't figure it out so said it was likely complications from severe headaches for too long. I was put on pills and Botox injections.   A few months after that I began having neurological problems, confusion, memory problems, my handwriting got really small, and I had to stop university for the second time. Once again nothing could be figured out. I had more MRIs and even a spinal tap and nothing was found. Thy said it may have partially been a complication from one of the headache drugs.   I live in pain everyday. I take pills at breakfast, supper and night, I'm just now attempting to finish the degree o should have over a year ago. My life has changed completely. Even though I'm in Canada the medication still costs a lot. I don't get to be young anymore.  A disability lawyer said I might have a case and I'm not sure if it's something I should pursue."
+    },
+    {
+      "index": 46,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My plan is getting cut off in a few weeks. I have ordered a brace that is covered by my insurance due to an injury, however it might take around a month to arrive. In order for it to be covered, the pickup date must be before the date my policy ends. The admin person at the medical office told me that if necessary, she can change the pickup date on the receipt to ensure that I can successfully file it to be claimed if my brace arrives at the office past the policy end date.   I asked him if it was OK , he said no problem. I don't want to commit fraud. Is this considered fraud and how likely would it be that I get caught?"
+    },
+    {
+      "index": 48,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I am not from America so I apologize for my bad English. I used google translator  The other day I was in the pharmacy picking up my painkillers, and in the box says how many to take, but I took the biggest route and now I'm out of pills and I can not get high, and I feel very sick. Is there any way I can sue the pharmacy? Also, my province is Michoac\u00e1n"
+    },
+    {
+      "index": 52,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Went to a court hearing, where it was vital that the doctor send the medical records to prove my case, but the clinic sends a blank disc to the court.  I was give the blank disc from the court that day.  I was told in court that because the disc was blank with no records on it that I was going to lose my case in court that day. I was to recover no reward for my case.  So the doctor or the clinic messed me out of thousands.  No justice for me at that time.  Well I haven't given up hope that I will fix this."
+    },
+    {
+      "index": 54,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello,  I was terminated from my job on April 24th this year.  I knew my health insurance was good through June 1st in which case I used it.  Since then, I thought my family was uninsured while I wait for benefits from my new job but I've received an updated insurance card from a new insurance company (Aetna switched to United Health Care) and my wife called them and they did, in fact, say that all of my benefits are active.  I have also never received any termination paperwork or COBRA information in the mail to this day.  My question is can I still use these benefits even though I think the company has no idea that they are paying for them?  (They are an extremely unorganized company with nobody looking over financial matters, so I think I may be slipping through the cracks.)"
+    },
+    {
+      "index": 56,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I was coming home from a local bar about a mile from my house at around midnight, I got to my place but realized I had forgot my key and the door was locked. I decided to climb up to the roof of my house and in order to go down a ladder that was on the back side of my house, because the sliding door on the back porch is always unlocked. This was in San Francisco, where all the houses are connected to each other basically, which is why I had to climb over the house instead of just going around to the back. Someone apparently thought I was a burglar and called the police. A bunch of cop cars show up while I'm on top of the roof, so I decide to climb back down and talk to them. As soon as I got down from the roof I was tackled to the sidewalk by one of the cops and held down and cuffed. Being tackled onto the sidewalk scraped my forehead and it was bleeding a little.(tiny amount, not dripping blood, more like a scrape than a cut) They called an ambulance because of this. After explaining everything to the police and showing proof that it was indeed my address, they uncuffed me and apologized and told me to remember my keys next time. By this point the ambulance had arrived, and the EMTs insisted that I needed to be taken to the hospital. I told them I was perfectly fine and had a small scrape on my head that could be taken care of with some neosporin and a bandaid. I insisted that I was fine and that all I wanted to do was go into my house that was 20 feet away and that I was refusing an ambulance ride to the hospital. They told me they were legally required to take me and I was basically physically strapped to a gurney and put in the ambulance. The hospital was less than 5 minutes away, and as soon as I saw a doctor they told me I was perfectly fine and could go home, and didn't even charge me anything. I ended up getting a $3000 ambulance bill. The ambulance company is privately owned, and googling it shows tons of people with similar stories about being forced into taking ambulance rides against their will and then charged ridiculous amounts. Is there anything I can do to dispute this bill? How can I be forced into an ambulance for a minor scratch?"
+    },
+    {
+      "index": 57,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "As stated I'm having to go in tomorrow at 5 am for an emergency procedure. I had today off, and just left the doctors where I found out. I haven't told my job yet. I'm a front office manager at a hotel.   Normally I wouldn't be too worried, but I'm concerned due to the fact we've just gotten a new general manager, who for lack of better words is a complete idiot. He can't do ANYTHING by himself. He's only been at our property for less than a week. No one on the property really knows how to do what I do on a daily basis. This is what I'm concerned about. I'm concerned since I will be out for a minimum of two weeks- they will replace me. Especially seeing as this is going to make everyone's lives really difficult.  How should I handle this situation with my employer and do I have any rights? All our handbook states is if you require more than three days off you need a doctors note."
+    },
+    {
+      "index": 60,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I don't think she has a case but now that's she's of more sound mind she's annoyed she was fired because of a hospital visit related to her PTSD.  Basically she was a contract employee for a company when she had an issue that ended up with her in the hospital.  They held her for 4 days but couldn't find a bed for her in a ward better suited for her so eventually released her to my care.  (Ultimately a mistake because she ended up in the hospital again for worse symptoms for a whole two weeks but I digress).    I never contacted her work during those 4 days, I honestly didn't even think of it, I was spending those 4 days sitting in a chair in her hospital room. Upon her release I do contact them and let them know what happened, she still wasn't really in the shape to talk to them but since her job was basically ticket assigning and chat moderation she agreed to go back to work right away since it was simple and done from home at that time anyway. They ask for a picture of her release paper work showing the days spent in the hospital and leave it at that.  I let her know she said she'd handle it, sent them a picture and that was the end of it for a few hours.  A few hours later they contact us saying she sent a picture of the wrong thing, I look and curse myself for not double checking her because in her addled state she did send the wrong thing.  She sent the picture of the paperwork that basically just said they set her up with an appointment with her normal doctor to follow up about the issues with her PTSD and the hospital stay.  I grab her normal paperwork and see that since she transferred hospitals at some point they only had the 2 days at the second hospital listed not the first two.  So we head out to the original hospital and get the paperwork showing all the days she spent.  I'm sitting at the gas station outside our house when we get a call from the contracting company and are told that they have ended her contract and she doesn't have a job anymore.  They do kind of have a history of this.  Two or three months prior to this another coworker of hers who was actually employee there for over 4 years had their contract ended the day after it was revealed she was hospitalized for a suicide attempt.  I don't think she has much of a case because I don't think contract employees have much at all in the way of rights.  Also they didn't actually know she had PTSD the only thing that told them was the paperwork she accidentally sent them, she never told them herself at any point.  Either way I said I would ask."
+    },
+    {
+      "index": 61,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hi,  My wife's employer pays for her health insurance. About a month ago, she had a routine doctors appointment. The doctor refused to see her since the insurance was terminated, unless she paid out of pocket. This also delayed her month prescription of medicine. Now she has a sudden sever pain in her neck, and she called her insurance to see what urgent care she should go to. They informed her that her policy was terminated again. This is very frustrating. Is this a legal or employment board issue? Someone told her to just go to the urgent care and send the bill to her boss. I think that is a bad idea.   Her employer has never announced to the overall company that there has been nonpayment of the insurance premiums. For all we know, they have failed to make payments on time other months as well. My big concern is what if she was in a serious accident or had a sudden illness. We could be liable for all the charges and he full bill if that were to happen.   Any advice?"
+    },
+    {
+      "index": 62,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My neighborhood has a Facebook group for the residents. Recently, it has come to light that there is an autistic woman who is being abused by her parents. After some initial hubbub, she made a post to Facebook clearing things up and posting her side of the story.  In it, she clarifies that she is being emotionally abused and financially controlled by her parents. She has been hospitalized because of it. She says all the organizations she has contacted (social workers, adult protective services, police, etc.) have been unable to help her.  My heart breaks for her. People were happy to comment about her situation and bemoan everything about it before she said something, but now that she's actually requesting help, of course no one is commenting or offering help or anything. I feel absolutely awful knowing this is going on and we're all hiding behind closed doors and pretending everything is okay.  Is there anything we can do for her? Truth be told, I've never talked to her before, and I only know things from what she has said, so I do not know the full story. But with the information that is available, what can be done?"
+    },
+    {
+      "index": 63,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Not sure if this is the right thread, off sick due to a very personal issue because of stress (no I'm not bluffing it's real), I originally wanted to go back to work however my GP advised me not to. Now I am undertaking therapy and don't think I am ready for work but knowing the nature of my company they will do everything to get me back. What rights do I have? Can a OH Nurse overturn the sick note?"
+    },
+    {
+      "index": 73,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I was walking at work when my right knee sprained I didn't fall or hit anything. I was told that they couldn't cover it because I was just walking but, the reason it sprained was  from a prior injury that I sustained from work before. The place they sent me to Concentra urgent care facility that handled and cared for my injury told me that I was fine and released me from care. Not too long ago after they let me go I reinjured the same right knee just walking at work. Now am I suppose to act like Concentra wasn't wrong for letting me go the first time? I'm sure they are not perfect so now the people handling my insurance are telling me that Concentra can never be wrong and that it's just a coincidence that the same right knee sprained just walking ? Can I sue ?"
+    },
+    {
+      "index": 74,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "TL;DR: The place I work is gross, and the manager does nothing to prevent it. What do I do?  I work at a local pizza restaurant, and the manager is just awful. I could go on about it, but here's the main concern: I'm pretty sure I got a fungal infection from working with dishes. The area rarely gets cleaned properly (I'm one of the maybe 2 people that uses cleaning products thoroughly), and the proper sanitary supplies are not readily available. Not even gloves. I've been cut working a handful of times, and not even washing/sanitizing has prevented the infection. People clean the dishes they need and sometimes more before the regular dish shift (6 pm to close), and the only sanitary option in the area is hand sanitizer. I'm not sure how effective this is honestly, but I personally spray my hands off, dry them with a paper towel, apply a generous amount of hand sanitizer and rub it in, then wipe off the excess before handling clean dishes. Other people typically use the sprayer and handle dishes doing little more than using paper towels after, and then proceed to wash their hands and continue food prep. This is alarming, because I can only imagine how much bacteria and fungus have spread throughout the restaurant due to the manager's utter disregard for any proper procedures. I will either be going to the clinic today or tomorrow for a check-up for the infection, but I'm wondering who I should contact to fix this. It's gotten to the point that I almost want a doctor's note to limit me from any food or dish contact and stick to driving, but that wouldn't be fair to others. They're unaware of the issue due to inexperience or ignorance. I've had issues with fungus from unsanitary working conditions in a \"high class\" popular Italian chain restaurant before. Any information is greatly appreciated, if you need any other info, let me know."
+    },
+    {
+      "index": 76,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hi everyone.  My father passed away about 5 months ago after suffering a heart attack during surgery to remove colon cancer.  There are a few odd things that happened, however. I've been trying to ignore them, but they've really been bothering me lately.  1) We had all spoken to my father (who was brain dead at the time) and a few of us were in and out of the room. I stayed in the room the whole time, as I didn't want him to be alone. A few of my family members had come back into the room, and as I was sitting there holding his hand, they pulled the plug. It surprised me, as there was no explicit \"Are you ready to pull the plug?\" They just pulled it, and all of a sudden it got quiet. At the time, I figured maybe it just wasn't like the movies and that's how they did it. But now, I'm second-guessing myself.  2) Apparently, I'm the only one in my family who understood that, when we were finally getting to see him after he had stabilized a bit, we were going to say goodbye. The rest of my family understood that we were just going in to tell him to fight through and that we were here for him. So while the plug pulling surprised me, it REALLY surprised them.   3) This could totally be an ICU nurse trying to make my mom feel  better, but the ICU nurse said that while my mom was telling him to fight, he raised his arms and pretended to box. I highly doubt that if he was brain dead, he would've been able to do that.   My dad had leukemia for 10 years and cost his insurance a lot of damn money over the years. I hate to suggest that they were eager to get rid of him, but... I can't help but think that.  Is any of this normal? Is there something odd to this whole scenario?  Thanks so much, and sorry if I rambled or if this is the wrong sub."
+    },
+    {
+      "index": 78,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "[PA] I don't want to give too much away. But doctors messed up and tried to cover their tracks. I need a lawyer but not sure who to go to. Any help is much appreciated. Thanks."
+    },
+    {
+      "index": 80,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My 92 year old grandmother is currently decaying away in her home losing her mind. She has been injured various times but plays it off with insane excuses. She is clearly not mentally fit to be all on her own.  Currently she is in the \"care\" of my aunt, in which her daughter forced her so that she controls all my grandmother's finances. Right now the aunt does nothing at all, and worsens my grandmother's physical state.  In general the aunt is a big obstacle.  What can I do to help this situation? Ideally I'd want my grandmother to move in with me so I can actually take care of her but im unsure if my aunt would let that happen. It's come to the point where the aunt drains her pension each month not even leaving her enough for groceries.  Legally what are my options, alternatively i'd want her in an old folks home."
+    },
+    {
+      "index": 82,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Location: Los Angela's California  I was at a bar last week with some friends and some time during the night I was at the bar getting a drink and when I turned around an extremely drunk man smashed his glass into mine while he wildly gestured about something.   At first I was in shock since he basically smashed a glass in my face but when I looked down my entire right hand was a bloody mess. I shouted and one of the bartenders saw this and called the ambulance. I  was furious with the guy who gave me a fuck of comment before the manager on staff sat me down and helped me until the ambulance got there.   I'm at the hospital and during the exam it was discovered that 3 of the tendons in my hand had been cut and I need surgery to repair them.   The broken career part of the story is that I'm an graphic designer who relies on the use of my hands to do my job. And now that my hand is still recovering I can't work or do anything and I'm concerned about what to do. I don't know who I should call, if there's some way of getting my expanses covered, what I'll do if I can't use my hand well enough in the future and I can't work as a graphic artist anymore.   I'm surviving off the money I have saved and will be okay for about a month and I have medical insurance so that's all taken care of. But I just need advice of if I can get some sort of money to help pay for my expenses and what my options are.   I don't really have the money to pay for a lawyer since al of my savings are paying for everything and I don't have a salaried job since I'm freelance at the moment.   I'm sorry for any grammar mistakes as I'm writing this with my left hand on mobile and I'm kind of dog scared shitless about what to do."
+    },
+    {
+      "index": 85,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I'm considering suing my doctor for medical malpractice. This doctor works out of  \"Clinic Name LLC.\"  What do I need to know in regards to the LLC at the end of the clinic name? Does this mean I cannot sue him for malpractice or is he protected from lawsuits because he works at this clinic?"
+    },
+    {
+      "index": 87,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My mother was diagnosed with early onset Alzheimer's disease at 59, and is now 66.  For the last 3 years she has stayed in an independent living retirement community that didn't necessarily get involved in her day to day life, but generally would let my sisters and I know if she started progressing more quickly, missed meals, etc.  Cut to a few weeks ago, facility contacted my family saying she has started doing some things (nothing violent, just a lot of getting lost, wandering) that will require us to move her and that we should start \"actively looking\" for a new facility, but said there was no large rush and they took our payment for the entirety of this month.  I'll note here that moving any senior into a retirement home with more care requires them take a physical within 30 days of moving and they must have all medical records.  These take a bit of time to get in order.  In short, we felt they were giving us that time.  This morning, my sister receives a call saying that my mother has slapped someone at the facility and they are kicking her out effective immediately.  They told her that because we've already paid through July there is no need to hurry her things out, just her.  I'm out of town for work and the more information I get from my sisters the more pissed I get a this place.  Am I just way out of line with what I think is right vs. what the law is or is there a firm legal footing to protect my mother, sisters and family from one day notice termination and what I see as essentially rent theft?"
+    },
+    {
+      "index": 89,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Briefly...  I make a HIPAA Violation report about my employer.  When you do this, there is a box that you can check that says that you do not want your information revealed to the company you are reporting.  Today I get a call from my employer... basically saying... about that HIPAA report you made about us...  Awkward.  I contact HHS.gov.  They confirmed that they erroneously revealed my information to my employer.  I do understand that my employer cannot legally retaliate against me.  (At least not overtly.  But who knows what my performance reviews are going to look like over the years).  I also understand that at least as of right now... I have no damages.  So I suspect that I answered my own question...  Except that it seems like a pretty big deal that the agency that you are reporting privacy violations to are violating your privacy.  Do you think this is something I should consider pursuing?  Or do I need to just sit back and wait for enumerable damages?"
+    },
+    {
+      "index": 92,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hi all,  so rewind to about a year ago when I began taking some medicine to remove a foot fungus in the. During one of my last treatment visits in January 2017, I saw a different podiatrist for the first time due to my other podiatrist being out of the office. This new podiatrist may have had an issue with my appearance or something because he did not really address me at all and seemed annoyed by my presence. He did not talk much even though I had asked him a lot of questions about my progress. He takes a quick look at my nails and then proceeded to cut my nails very low, despite my painful cries, without warning me or asking me to do so in the first place. After which he writes me a script for some bogus prescription that didn't help and left without saying anything. Fast forward to May 2017, and I start to develop very uncomfortable pain in one of the toes trimmed down low. Apparently, the low cutting of the toenail resulted in an ingrown toe nail in eventually both toes. A preventative measure to this is to soak your foot in salt water to help the nail grow, but my previous podiatrist did not mention anything about that.   The ingrown toenail proceeded to get infected, and resulted in the last couple of months of alot of pain, discomfort, expenses on medical supplies, and many trips to the doctor. I really find this podiatrist culpable of all of these issues, especially since the other podiatrist I saw before him did not think it was necessary to cut the nail so low, and has been coaching me through the entire process.  Can I sue that podiatrist I saw in Jan for cutting my nail too low and not giving me any advice after to prevent ingrown toenails?  Are their lawyers out there willing to see this case considering there won't be a lot of money involved?   Thanks for any legal advice you can provide!"
+    },
+    {
+      "index": 93,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I was diagnosed with a blood clot in my leg in 2013. Medi clinic Doctor didn't prescribe blood thinners or send me for an ultrasound to confirm it or even suggest a follow up afterwards. Ended up almost dieing in the hospital with pulmonary embolisms in both lungs so bad I passed out from lack of oxygen and my stressed out heart couldn't pump enough blood. After my diagnosis (two xrays and CT scan later) I was on clot busters so strong I had to stay in ICU for 24 hours in case my brain started bleeding out. During my stay, the info pamphlet they gave me pretty much stated flat out that PE is caused by deep vein thrombosis (blood clots) in the legs.  Currently on blood thinners right now for the next 6 months and am otherwise healthy. I think the Dr that diagnosed me completely dropped the ball with not prescribing treatment or requesting an ultrasound to gain even basic knowledge about what was going on and to that effect it's probable the clot remained for years and moved to my lungs (been having breathing issues for the last couple of years)...  Thoughts?  I'm not about frivolous lawsuits, but this sounds like negligence at the very least."
+    },
+    {
+      "index": 95,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Hello r/legaladvice and the Reddit community as \u00a0whole. First I want to quickly say thank you for the advice you gave me a few days ago on this subreddit concerning my in-laws and me. You steered us away from something that could've really blown up in our faces. What I ask next of you weighs on my heart and soul so heavy I feel like collapsing from within. I'll do my best to keep it short.  Maybe 36 hour's ago baby Gia (I'll call her Gia since I've not gotten permission to use real names) was born to a mother and father that loved her deeply and have been excited to meet her. She was born with six different conditions that we know of at the moment. I just got off with the father who is my best friend (I'll call him Al for now). Al\u2019s devastated and the nurses and doctors keep telling him they've never seen anything like this before, well at least not all at the same time in one baby. They're both very healthy adults, Al's 30 and his wife's 23. I didn't ask too many questions about her conditions because I felt he needed me to listen more than talk but what I got from it is that she has Leukemia (or some cancer like it, I'm unsure here), a very large blood clot threatening her heart an enlarged kidney, a valve in her heart is closed or obstructed somehow, she can't breathe because the blood vessels to her lungs aren't transferring blood and she has a hole in her heart. My heart is breaking as I write this so I'll just finish as fast I can. Nurses and doctors at Kaiser have told them looking over her charts and medical records that so much of this could've been caught early had they run some standard tests but because his wife was young they assumed it would be ok. Their doctor denied them several tests they asked about throughout the pregnancy and when the first ultrasound was incomplete (they couldn't even determine the sex) they refused to schedule another one. To find out the sex they had to go to one of those private 3d imagining companies. The medical staff has been sympathetic and supporting but the administration has been giving him the run-around. They told him they're doing an internal investigation and I think he's having trouble even getting her medical records from them. He asked for them early on with witnesses from the head the department but when he brings it up now they can't give him an answer as to when he'll get it or how this could've been missed. All this while poor Gia is fighting for her life, he can't even get the info he needs to get a second opinion. I have to stop now, it's hard to even see what I'm typing. Please help Reddit.   Is this grounds for medical malpractice or something like that?   What kind of attorney should Al seek? And when should he seek it?   Should he wait until the investigation is concluded? Does he have a right to read the results?   Is there another subreddit I can post this on for more help in any areas I'm too ignorant to even know I'll m missing? Also what's the best way to do this, I'm new to posting on Reddit, just lurked around on my other handle and I don't want to spam Reddit.   If there's any questions I can ask or information you guys need please let me know and I'll ask Al. This is so early on he's still dealing with the emotional blow. Btw I did ask permission to ask for help on his behalf so long as it was anonymously."
+    },
+    {
+      "index": 101,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "We are located in Alberta, Canada.   Over the course of the past year, my mother has suffered a debilitating illness that has kept her from working.  There have been complications throughout that have significantly impeded recovery. With the prolonged recovery, the insurance company has become increasingly difficult (stopping payments, demanding more paperwork after requested paperwork was supplied, etc).   My mom really does want to go back to work, but she, her doctor, and her employer do not feel that she can fulfill her duties at this time. The job is very hands on and requires snap decisions. Her employer supplied a list of duties that are required and her doctor stated that she could not fulfill them.    We are at the point where a decision needs to be made. If we go through with the lawyers, they will ask for everything up to 65 (retirement age, which she is not too far from). However, that likely means the end of her employment. If we keep fighting with the insurance, we don\u2019t know how long recovery will take and they are constantly looking for ways to stop coverage.   Dealing with insurance and disability is not something we are familiar with, so any thoughts or warnings on which way to go would be helpful.  Thank you."
+    },
+    {
+      "index": 107,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "I have ulcerative colitis and in May I needed a routine colonoscopy with my new GI doctor. I signed all the waivers so I know the doctor is protected on that front but I feel like the way I was treated afterwards was not ethical. When I woke up I was immediately in pain but assumed it was just gas because it\u2019s common after a colonoscopy. As time went on the pain kept intensifying until I couldn't move or speak loud enough to get anyone's attention. Once my mom was allowed into the recovery area around 9 am she notified the staff and they gave me a heating pad while teasing me for being a baby about a little gas. A little before 10 am I realized the pain wasn't getting better (it was a 10 on the pain scale) and asked to go to the hospital for the first time. My mom was told that a.) because it was a medical building they had to be the ones to call an ambulance and that they needed my doctor's permission to call  b.) they couldn't let me leave on my own without my doctor's permission c.) that my doctor was with another patient and I'd need to wait to talk to her.  Unfortunately my mom believed them and went back to the waiting room at their request. I kind of lost track of time but there were a few events that stood out (please keep in mind that during this entire experience I\u2019m frozen in the fetal position, gasping for air, and I can\u2019t speak louder than a whisper). *Someone tried to shove saltines into my mouth and when I spit them out onto the gurney I was called nasty.  *She then shoved a straw in my mouth and when I didn\u2019t drink more than a few sips (I didn\u2019t want any but I was trying to be compliant) she bent down to my face and told me \u201cYou need to stop acting like a brat and let me help you.\u201d *Someone pried my hand off the side of the gurney, forced me onto my back and shoved my legs down flat. I was in too much pain to tell them to stop or make any noise. I quickly ended up back in my original position and was scolded for not working with them. *I asked to go to the hospital repeatedly and was ignored. *I asked for my mom and was told she went to lunch (which wasn\u2019t true, she stayed in the waiting room and was told that I was just resting.) *I asked for my cellphone and was told that they couldn\u2019t open the locker to get it because it was against policy. *My doctor finally came to see me and told me that I was being too dramatic. *My mom demanded to be let in and when I asked her to call an ambulance herself the staff finally said they\u2019d call. When I finally got to the hospital around 2:30 pm my doctor had already called the ER and told them that it was just gas. A few hours later the hospital was getting ready to discharge me without having done any tests (I was told that since my GI was sure it was gas they\u2019d prefer not to expose me to the radiation from an x-ray or CAT scan because I\u2019m a young woman and they didn\u2019t want to affect my reproductive system) when they took my vitals and realized I had started going into severe sepsis. I had an x-ray done that showed I had a bowel perforation and went into emergency surgery. I stayed in the hospital for 13 days, and ended up with a 6 inch incision and an ileostomy. Was any of this illegal? I don\u2019t want to sue I just don\u2019t want it to happen to someone else."
+    },
+    {
+      "index": 108,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Mom in Ohio is a permanent resident of a nursing home but underwent surgery in a hospital and upon her return to the nursing home requires physical therapy to recover. Medicaid has covered her permanent residency but then Medicare Part A steps in to cover the skilled nursing physical therapy she is receiving post-op.  The question about simultaneous status has arisen because we took her to an appointment outside of the facility (unrelated to the surgery) and we were informed that her status as a permanent resident vs skilled nursing patient matters for billing purposes. They explained if she is covered under Medicaid then they would bill them, however if she is currently covered by Medicare then the nursing home should be billed directly or her personally if the nursing home doesn\u2019t deem the appointment vital.  So can you be considered both a permanent resident and a skilled nursing patient by a nursing home? Meaning the nursing home is concurrently receiving payment from Medicare and Medicaid (the per diem and the patient liability amount).  This is my first post! I am sorry if it is not worded well, I have very limited knowledge of Medicaid/Medicare/Nursing Homes and am learning as I go. Also, I am cross-posting in hopes of getting it in the right place!"
+    },
+    {
+      "index": 109,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "My sister is a resident of California, she recently was prescribed some Vicodin after oral surgery on July 6th, 2017.   In pain still; the doctor during a follow up wrote out another prescription today on the 11th for the same medication except now Target/CVS are refusing to fill the prescription because there is a *new law* that \"covers this medication every 8 days only\".   I'm curious; wouldn't the doctor who wrote out the prescription be aware of this or is this not even a true law?   Any help would be appreciated, thank you!"
+    },
+    {
+      "index": 111,
+      "expected": "eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Good Morning,  I'm writing this as a request to find out what I should do with regards to patient abuse. The patient in question is my father, and below I've copied the draft that my mother, a RN nurse of 20+ years, wrote.  Essentially my father's back was messing up and we had to go to the ER at the VA due to urinary incontinence and met Dr. A.  Dr. A was condescending, told them they should not be there because the ER is for people with real problems, (cancer, amputations, etc), and asked if my father had any bowel problems. Dr.A was told no, and then insisted on doing 2 anal exams. He never washed his hands, did not physically help my father orient himself, barked orders at him while my father was struggling to move, and threatened to send him home because sphincter tone was normal.   My mother questioned Dr.A about the urinary incontinence because our primary care physician told us to come in specifically when that occurs. Dr.A ordered a bladder scan, saw the urinary incontinence times 2, then transferred us to the Harborview ER (Seattle).   Below is the draft letter that my mother wrote to file a complaint, and i was hoping I could get some feedback/help with ensuring that it is received with the amount of urgency that it deserves.  Looking for criticisims/edits/review, as well as legal advice for proceeding forward.   We are located in Seattle, Wa.   ***Draft Letter***  \tJuly 12\u2019 2017 Attn:  Medical Center Director \tI am sending this complaint in regards to an ER visit for my husband, Patient, on June 18\u2019 2017.  \tMy husband was being treated at the American Lake VA since late May\u2019 2017 for a back injury.  He\u2019d been to PT with a referral in for Neurology and Sports Medicine d/t quickly progressive symptoms.   During the course of 1 week he went from walking independently to being given a cane and then a rolling walker by PT.  We were instructed at the last MD appointment to go to ER if any difficulty with urination occurred or if pain became intolerable.   \tOn Sunday, June 18\u20192017, we ended up in the Seattle VA ER d/t 2 episodes of incontinence/retention over the past 3 days and intolerable pain.  I arrived with my husband assisting him to ambulate with the rolling walker d/t him being barely able to stand.   \tDr. A was our ER doctor.  His attitude from the moment he stepped into our room was condescending and dismissive.  He showed nothing but disregard for my husband\u2019s condition stating that people usually come into the ER for real problems such as Cancer or Amputations.  My husband had severe progressive numbness, tingling and pain down his right leg, all of which occurred over the course of 1 week.  He asked my husband if he had any bowel incontinence and was told no.  He then decided to perform a sphincter exam x2 with obvious force with both penetrating entries and no handwashing at any time.  Afterwards he did not wipe the gel off either time but left him there on his side struggling to move in severe pain.   Of note, this is for a man who can\u2019t lie straight d/t back pain and can barely move without assistance.  This was all after bowel incontinence had already been denied.  Dr. A was ready to send my husband home until I questioned him about the episodes of urinary incontinence.  He then decided a bladder US would be in order, which should have been done as opposed to a rectal exam for the initial complaint.    After the US showed urinary retention after multiple attempts he transferred us to the Harborview ER.  On the transfer form he noted my husband to be ambulatory as if he was independent, no note of 1 person assist or ambulatory aide needed.    The end result being my husband was admitted and MRI showed a moderate L5-S1 disc herniation with nerve impingement.  He\u2019s since had a microdiscectomy performed and is now healing.   \tI understand many people have back pain, but for Dr. A to be so dismissive of a person is poor practice and abuse of his own perceived power.  He is a bully to the point he is on the line of patient abuse.    I don\u2019t believe this man is fit to work with patients, especially a vulnerable population such as veterans.  My biggest concern are for the patients in the VA system who have no one to speak for them.  Most veterans are not knowledgeable of how patients should be treated.  The treatment and testing from Dr. A for my husband was wrong and abusive.    \t\t\t\t\t\t\t\t\tSincerely,  \t\t\t\t\t\t\t\t\tPatient Wife"
+    },
+    {
+      "index": 114,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I live in Los Angeles, California, the apartment I'm renting IS protected by the RSO.  One day I recieved a text via phone that for the most part read  \"gg no re\"in short a 30 day notice to move out.  In order for it to be legal he HAS to have a just cause.  Which he claims after he texted me a 30 days notice.  He only gave me a reason after I essentially begged him to give me a reason.  The reason is allegedly uncleanliness. Some things have some form of merit to them, but most of them don't, anything that I could possibly have fixed I already have.  Furthermore I have pictures to help prove my case although its a difficult thing to argue I do have several arguements for why I am not unclean like he claims and that they are in fact far worse than I have ever been.  To my knowledge he has not said anything about court.  First he said he was going to call the police, then he said all of my stuff is going to be on the streets when I get back.  Putting my things out on the street without going to court is incredibly illegal.  Right now I suspect if thats the route he wants to take I have allready made plans to stay home so he can't do that, I'm not sure what hes going to attempt to do in this case with me here so I do have my concerns.  For example if he tries to bust down the door or attack me. Additionally they are several roomates, which could testify against me. one is his girlfriend, the other have been friends.  Largely any advice for the inevitable court case would be appreciated, if he ever figures out or decides that he actually wants to take me to court.  Or if he continues to decide to try and force me out through self help means."
+    },
+    {
+      "index": 116,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hey /r/legaladvice, I'm a longtime lurker/occasional poster (this is obviously a throwaway) who is finally finding a need for a bit of advice.  Location: Iowa  I'm an out of state student attending an Iowa public land grant university. A representative of our residency department recently informed my roommate group that our dorm is being downgraded from a four person capacity to a three person capacity, and that one of us must find alternate housing. They've offered one of us a different room in the same building, but that room costs almost two grand more per year. Additionally, they will be raising the rates on our current dorm.  They've told us we have two business days to decide who will move. This is basically no notice, and we're only a week away from our move-in date. Because of this absurdly short notice, I do not believe I can schedule a consult with a legal firm in time. We've also already been billed the cost of the dorm.  It is my limited understanding that my university is just as beholden to our legal contract as I am, but not all of the same tenancy laws/protections apply. I'm trying to negotiate a deal where they split us the difference, but given that they seem to be deliberately railroading us, I'm not convinced that will go anywhere.   ***Misc. Notes ***(these details may or may not be necessary to understand this legal situation)  - Our contract stipulates that the contract is for \"space only\" and preferences are not guaranteed. That is understandable, but we've been under the impression we'd be living here and paying X amount for many months. - If we were to cancel our contract this late we'd be paying a lot of penalties. - I cannot afford any substantial change in cost to my dorm situation. - All communication has been done via university email. I've already printed off a copy of the bill in case they they try to change it on us. - We cannot just find non-university housing last minute like this. Unless we take the universities deal one of us is homeless and still stuck paying tuition. - Student legal services is paid by student government directly through student fees, so they might be able to help despite this being an issue with the university but it's the summer.  - I can provide an MS Paint diagram of the dorm, but it isn't especially relevant."
+    },
+    {
+      "index": 119,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In the final stages of a divorce as the defendant. She has a lawyer but I cannot afford one. Things have been pretty simple. Agreed on most of everything and planned on signing papers out of court. The papers arrived yesterday and there are a few things I don't agree with mostly being taking my son off of my insurance. Thought this was a harmless act but it added $150 to my child support. She won't budge on keeping him on mine. I really just want this all over with but I also want to stand up to this because I feel taken advantage of due to my ignorance. Is there anything I could do? Would I even have a shot if I took this to court without a lawyer?"
+    },
+    {
+      "index": 120,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hello, curious about IP in the US and have a few questions. Whenever you visit a convention (Comiccon etc) there are always a ton of artists selling fan-art.   What's the legality behind that? Is it just a matter of companies not going after small time artists and hoping they don't notice you? Is there a difference between selling a drawing of a companies character in their original costume vs designing a costume with that character in it? Does it matter?  What about accepting commissions to draw a companies IP?  With those out of the way - I plan on selling original artwork of my own design at conventions starting next year. What can I do to protect myself? How would you go about income tax (Specifically MO/KS tax laws regarding artwork sold)or licensing original content? If someone stole artwork from me what would be my best course of action?  Thanks for your help!"
+    },
+    {
+      "index": 121,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "We have a month to month lease and our landlord decided he wanted to go to student housing. So he notified us that we have till Aug 1st to leave (This was on July 2). Now we are moving out the 14th and have notified him via text that we are leaving. I also asked since we already paid rent for the whole month could we get back the money for the days we wont be living here plus security deposit (The place is in great shape no damage or anything).  He has not contacted me since I notified him of us moving out and asking for the money. My question is are we entitled to the money covering days we won't be living here? From my understanding from the day we leave till 30 days after, he has to give us a written review of the property and security deposit.   He has done this all though text also nothing written."
+    },
+    {
+      "index": 125,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I work in an office with one other co-worker. He is male and we have the same position but I am the senior of the two.  I requested a transfer to work in another state to live with my fiance. I worked on detail in the other state who is aware of my interest in transferring and would like to have me. Unfortunately, they can't hire right now.   After this request my supervisor, who is not the authority to determine if the transfer is approved, began treating me much worse. I get that being a jerk is not illegal but I have documented several incidences where my male co-worker was clearly favored.   I then was up for a promotion, which was at the discretion of my supervisor, and which I didn\u2019t get. She said she decided I needed to obtain a job certification first which she hadn\u2019t told me prior. Additionally, part of my supervisor\u2019s job is to help support me in getting certified.   I made an informal complaint to her supervisor about what was going on and the treatment I\u2019d been getting compared to my male peer. He thought she was being fair.   Since this complaint my supervisor has been even worse. Lack of communication, discussing my work with my co-worker and not me, and preventing me from working towards my certification. Other senior staff are aware of this and no one is trying to help me. She has a history of bullying her staff.   So I need the certification to get the promotion, as well as for my job, and I\u2019ve been told to stop working towards requirements for the certification. I think this is considered retaliation and there is a financial loss from this.   Side note: She is still supporting my co-worker in progress towards his certification.  Also, I was told that my informal complaint didn\u2019t impact any decision on approving a transfer. It\u2019s basically political.  There\u2019s a lot of other examples I have documented of unfair treatment but I don\u2019t want to make this post too long.   Ultimately, I have great job security. I like my job and I don\u2019t want to let one supervisor stop me from pursuing what I need to do to advance my career. I also don\u2019t want to jeopardize my chances of working with the other state or anyone to think this is just complaining because I want t to transfer.  Any advice on what to do here? Pursue discrimination case or retaliation case? I was thinking about filing an informal grievance and going from there.   Thanks in advance!"
+    },
+    {
+      "index": 126,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "So I feel like a total idiot, but it has already been done. A couple months ago I had a guy ask tons of questions about a smartphone I was selling, and I answered. After some back and forth he bought it. Once he had received it, he said the Sprint SIM card he had would not work. He formally requested a refund through eBay, then opened a case against me for 'product different from the advertised product'. I was exasperated after he asked me to act as tech support, and I had tried, with no results. I refunded him. He never sent it back.  PayPal and eBay both tell me I shouldn't have refunded it, but the case against me made it sound like I had to refund quickly. I feel like an 80 yr old with her first computer to fall for whatever scam it was.   They also say to report it to my local police. I keep putting it off because I see no hope in doing so. Does anyone know if the police in Iowa could do anything? Thanks for your time."
+    },
+    {
+      "index": 127,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Quick question and I'll delete once answered.  I'm renting a town home from a husband and wife who own a few properties around my town. The lease is the shortest I've ever signed, probably because they're not a huge complex or company. The lease is pretty standard and we've had no issues with anything since moving in. When my fianc\u00e9 went to drop the rent off, he had left a lease for us to take home and sign. It's the same lease we signed when we moved in, with only the dates changed.   One of the clauses (if that's the right word, but basically description)  in the lease is \"deposit:\" then something along the lines of a $650 non-refundable deposit due at the start of the lease. We paid this at move in. I emailed him for clarification and I'm sure he will say we don't have to but here is my question to you:   Is the email sufficient enough as an agreement in the event he tries to charge us and takes us to court as proof we don't need to pay it? (Although i doubt this will happen, I've read horror stories on here so now I'm second guessing everything) or should we go in together, sign it with him, and have him edit that part with initials?   Thanks!   TL;DR - lease renewal mentions paying a deposit already paid. Is an email agreement that we don't need to pay it enough in the event they later say we owe it or should we have them edit the lease?"
+    },
+    {
+      "index": 129,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This happened in Washington, DC in March 2015. I was going to school there and dating a guy. We had been dating for about 18 months when the rape happened. He was very verbally and mentally abusive, and had me completely under his thumb. I was also suffering from depression and untreated anxiety at the time. He penetrated me while I was sleeping. I immediately felt assaulted, but I didn't file a report because I was too depressed to make myself do anything and too afraid of him.  I've been haunted by this ever since it happened. I still feel violated, I still have issues with intimacy, I still have huge issues with distrust. I know he's out there being successful and living his life with no consequences while I deal with nothing but pain. I feel like the only way I can move on is if I get some sort of justice.   But there are problems:  -I don't live in Washington, DC anymore. I ended up transferring colleges.   -It was so long ago. I don't even remember the exact date and time.   -We had consensual sex before he raped me and consensual sex afterwards, because I was in shock and afraid. I know that kind of thing looks bad to police and juries though.   -He asked me if he had raped me several times and I always told him no. I only said no because I still loved him like a fool, and I was terrified. But I know it makes me look really bad.   I would change what I did and said if I could in a heartbeat, but I can't.   Do the lawyers here recommend that I report him anyway? Would I look like a liar or someone who wanted revenge? And how would I go about it since I don't live in the same state that it happened, and I don't remember some vital details?  Thank you"
+    },
+    {
+      "index": 130,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I don't know if there's any recourse here. I forgot to get insurance so I don't have anyone to cover a hotel for a month. I don't have $3000 extra for a hotel for a month (cheapest I could find with a pet is $100 a month). It's estimated apartment repairs will take a month and then I'll be allowed back into my apartment. Thankfully nothing in my unit was destroyed and I did talk to insurance about getting a policy as soon as I do move back in. I understand it was a mistake to not purchase and I usually do. I don't know why I forgot. I don't know what my options are except to be a wilderness man (go camping) as I don't have family in the area."
+    },
+    {
+      "index": 131,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hello,  Exwife and I have been caught in a contentious, nasty divorce for nearly two years now.  Since 2014 I haven't changed the asset allocation of my investments.  She has claimed a much larger share of these as common property.  Her attorney has claimed my separate property became commingled.  I have so far made a partial tracing, which I believe is accurate (because opposing counsel has so far avoided mentioning it).  I was concerned about overexposition to the stock market, and asked my wife in late 2015 to make changes.  She ignored my request.   I made a new declaration of disclosure last february.  I'm becoming increasingly nervous because opposing side is asking for specific quantities, instead of a reasoned request for a specific number of shares or a percentage, as I've asked them.  I would like to convert some of the investments under dispute into cash or at least move them into less risky investments.  My attorney insists I should not do that, as it might look bad before the judge and I'll become liable for any cap gains tax.   I feel overburdened because while my exwife claims a sizeable share of these funds, she has completely ignored anything related to stewardship.  If the stock market makes a downturn, the other side might as well make me responsible for mismanagement and make their demands based on last February's valuation.  Exwife and attorney have successfully delayed the case for a while now, asking for more paperwork every time, pretending to be unavailable, or absent from the country, or that they didn't receive anything, and so on.  Judge so far has done nothing for me other than set up a mandatory conference..., in two months..., just to hear what paperwork the new judge wants to see.  Legal costs just keep mounting and I'm already forced to convert investments into cash to pay for my attorney.  My own expenses, alimony, and attorney fees exceed well over 50% my net pay on a monthly basis.   Any advice appreciated."
+    },
+    {
+      "index": 134,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Background info that you need to know: My dad has physically abused me for basically my entire life, and my mom their entire marriage (has become a lot less frequent in the later years of their marriage, but he still threatens her with a raised hand. Also, she has kind of learned not to speak out against him because she understands the physical threat that he poses to her). Up until recently I just took the abuse and did nothing about it, but over the past year and a half or so I've been standing up for myself and threatening to dial 9-1-1 if he stepped closer (first time I did this was when he was threatening to beat me with a bat because i accidentally lost one of his papers -- locked the door and put the phone up to the window so he could see) and even using my own strength to stop him from hitting me - not hitting back, just using my arms to hold his down.  Also, my dad has been financially abusive his entire life. My mother works 5 days a week and makes almost as much money as he does on top of the countless hours of housework that she does and the abuse that she has to go through from him, and still she is barely ever allowed to spend money on anything for herself. Every penny she spends is policed by my dad and he goes so far as to make her return things that he does not approve of. He barely gives me any money to spend (probably has given me on average like 5 bucks every 2 months -- he hasn't even given me a birthday present or a graduation present or anything), which isn't such a big deal on its own and honestly it may seem like I'm complaining about a first-world problem and sound like a little brat but what makes it awful is that he did not allow my sisters and me to get jobs while each of us were in high school (although with some convincing I managed to get permission to get one near the end of my senior year of high school, but I couldn't find a job all throughout the summer), so basically we all wanted money to spend but he would not let us work nor would he give us money. He's even been known to take money from us that we received from other family members on special occasions, which is why we've learned to hide our money even around our own house.  Also, he makes every decision in the household for both himself and my mother and she plays a very small role in any of those decisions if any at all, even though she is a breadwinner just like he is. He threatens her with physical abuse or raises his voice at her if she doesn't comply with what he chooses to do, and eventually she just gives in like always.  I planned to move into my college dorm (university is in NJ) on the 31st of September to start my freshman year of college. The payment for my first semester costs, including tuition and housing and everything, is due on the 17th of August, and it's not small amount of money that I can pull out of nowhere in 7 days. --------------------------------------  So, over the past few months, things have been getting pretty heated between me and my dad. I don't see him much during the day, but on the occasion that I'd still be awake when he came back from work, we'd usually fight about something, and the fights have been getting more and more frequent.  Tonight, my whole family was in the car on the way back from an event, and he asks me about my roommate, and somehow, like always, one thing leads to another and we're arguing with each other again. He says to me \"Ok, well if this is how it's going to be, then we're not going to be paying for your college. You're on your own.\" I told him to stop using the word \"we\" as if my mom had any choice to make in the first place -- I told him to say what he truly meant and use the word \"I\", because everyone knows it's only him that makes any big decision like that ever and speaks on behalf of both my parents. Even though my mom makes her own money, if she wanted to pay for my college fees, she wouldn't be able to because my dad would not allow her -- or at least she feels too threatened to try anything like that. We usually have this argument and it blows over in a few days, except this time I went even further and told him that he basically ruined my life and called him out for physically, mentally, and emotionally abusing me throughout my entire life and doing the same to my mother throughout their entire marriage. This got him especially upset, and as we were coming out of the car, he rushed to the back, clearly very angry, and I knew straight away what he was about to try and do, so I locked the door and punched in 9-1-1 on my phone and showed him. Eventually, I got out of the car safely, but he would not let me back in.   So yeah, after much threatening over the years, my dad had finally kicked me out of the house for the first time ever. I called up one of my friends but by the time he got to my house (about 2 hours ago) my mom told me she wanted me to come in and just say sorry to my dad, but there was no way I was going back inside there, so I just left for a little and my friend and I hungout and I planned to stay over his house for the night like he had offered, but my mom wanted me back home and had convinced my dad to let me stay, so I just went back. And now here I am, typing all of this that literally just happened and my dad's upstairs and things are extremely heated between us and this is the first time that I'm actually legitimately concerned about what's going to happen in my future after a threat from my dad, because our argument tonight actually went way beyond the level that it usually does.  I still have to get a new phone and laptop for college which my dad had promised me, so that's also a problem, because I doubt he's going to be paying for those things any time soon. I'm going to ask my mom to help me out on her own without my dad but I know it's possible she might not agree because she would not even think of going against my dad's word. As I mentioned before, the payment is due on the 17th of August and I do not think between now and then that my dad will change his mind about paying for it, and even if he does, I do not want to remain under his fiscal control like my sisters have all throughout their college years, because they go through hell whenever they want to make a decision about their lives and I don't want to put myself in that situation. I'm completely lost, I have no clue what to do. Please help.  P.S. sorry if there's a lot of useless information in here, I just wanted to put the stuff about my dad because it seemed to me like a lot of it was illegal and it might help. Also, I'm just a complete mess of emotions and my thoughts are running crazy right now."
+    },
+    {
+      "index": 135,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hi legal advice! This is one of my favorite subs and an old situation has been bugging me on and off for years. At the insistence of my partner at the time I let the situation go but I've always wondered what I might have done.  My partner and I lived in a daylight basement of a split house - we had the entire basement and our neighbors the whole top. When moving in, the landlord mentioned in passing past plumbing issues but said all had been resolved. After a few months, our section flooded with backed up wash and toilet water (approximately 2-3 inches of poop scented water), leading to the damage of some electronics. The culprit was deemed the upstairs neighbors flushing 'flushable' wipes which caught in and blocked a poorly designed section of plumbing, leading to sewage backing up through a floor drain. Upon talking to the plumber, the landlord had been previously advised the system would continue to backup until the bad piping was replaced but he had elected to do nothing. Basically, he lied to us about the plumbing issues being rectified. We confronted him about this and, as he claimed to have insufficient funding to fix actually fix the issue, offered to let us out of our lease early and with only ten days notice. He also offered, via email, to replace the electronics if we provided him with an appraisal of value.  We proceeded to find another home while the apartment filled with sewage water another three times. We literally found floating nuggets of feces at one point. The smell was awful so we stayed with my parents. During this time, the landlord became aggressive, repeatedly telling us that he would hold us fully responsible if he found we had contributed to the clogging in any way. I provided the valuation and the landlord dragged his feet, never giving me a date for which I'd get a check. After a couple of weeks, I demanded an update on the status of the reimbursement. He claimed due to my rudeness he had rescinded his offer to replace my damaged goods. We attempted to get the plumber to provide us with written documentation regarding the landlord's refusal to fix the plumbing. They called the landlord to get his permission, and he promptly called and lambasted us.  Upon finding a new unit, we gave written notice and calculated prorated rent for ten days. After delivering the notice to the landlord, he became extremely aggressive, saying we would pay for the entire month of rent or he would take us to court. I wanted to prorate the amount anyhow, especially since the apartment was uninhabitable, but my ex-partner was spineless and insisted we just give in and forget it. I was a chump and went along with her, despite wanting to take him to court.  After leaving, he refused to perform a post-move walk-through with us but deducted the entirety of our deposit due to the state of the apartment, all caused from backed up sewage, and claimed the window mount air conditioners were all missing, a complete fabrication, and demanded we compensate him for their value. I told him to get bent and he threatened to sue but never did. All in all, we were out about $1200 (~$2500 if you count the electronics), not a lot but a sizable sum at the time.  Oh sages of /r/legaladvice, what sayest ye? Should I have taken it to small claims court or was it not worth the trouble, as my ex-partner insisted? I actually still have everything documented, could I possibly even sue now, four years later?"
+    },
+    {
+      "index": 136,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hi! My question is related to visas/immigration stuff/employment.   I am not a U.S. citizen and as an international student I completed a bachelors degree in education at an american college. I have a valid teaching license from a state. Currently I'm teaching at a private English-speaking school in my home country and I'm thinking about wanting to return to the states and continue my teaching career there.   I'm not looking for some sort of teacher exchange/\"cultural experience\" for myself... I am perfectly fluent in English and fully part of the culture (minus the rodeos; went to one and was terrified #peta). Ideally I'd like some sort of permanent resident situation but I'm not quite sure how to get there. All I've been seeing online is a lot of lists of forms but I have no clue what the actual process looks like.   I'm not sure if this is a common or uncommon thing, but if anyone has any advice please comment below!"
+    },
+    {
+      "index": 137,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I want to make a brand of cat plush toys and coloring books. I was planning on naming it Mushu, but the dragon from the Mulan movie has that name. I searched the trademark website and it said the trademark for that is 'dead.' So would it be okay to use that name for the company and the products?"
+    },
+    {
+      "index": 138,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hey all. Sorry if I come off as a noob when it comes to legal matters.  About 2 months ago, someone left a threatening note on my door. I was pretty certain it was my roommate's friend (let's call him michael) who I got kicked out of the apartment because he was staying there while my roommate wasn't. I filed a police report just to have it on record and notified the private security company that works for the apartment complex I'm staying at.  Just recently, while I was away for the weekend, someone broke in through my window and took my guitar and my speaker (roughly $500 - $600 in combined value). Also some of the walls are slightly damaged. I filed a supplemental police report. I strongly suspected it was Michael.   When I notified the security company, they sent one of their officers over to my unit just to ask me some questions. The officer said that he saw someone who fit Michael's exact description messing with my window and approached him and asked if he lived there. Michael told the officer that he was the one living in my unit. Then the officer just kept making his rounds around the complex.   Just this week, the apartment complex switched to a different security company. Idk if that's relevant or suspicious or anything like that. Just thought it was weird.  Really all I want is to be reimbursed for my losses, and to not be charged for damages to my apartment. Can I do anything about it? Would I have to go after the apartment complex or the security company?  Any input would be appreciated. Cheers!"
+    },
+    {
+      "index": 140,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "We're in Minnesota, USA. My husband had a piece of equipment worth $10,000 stolen from our vehicle in the parking lot of our apartment building. We have cameras facing where our vehicle was parked, and we have an open police report, but our apartment landlords are refusing to look over the tapes because, \"we don't have a two-hour time frame of the crime.\" We have a 6-hour window from parking and realizing the car was burglarized, but that isn't good enough for them. They won't let us review the tapes ourselves, and the officers don't really care about a petty theft case unless the office can see someone with the piece of equipment (it's rather large).   Is there any sort of legal action we can pursue to get our landlord to review the tapes?"
+    },
+    {
+      "index": 141,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "After many years of no contact I reached out to my father in prison. He quickly sent me paperwork to become his POA, which my aunt (his sister) has had up to this point. My dad has legal trouble in both NY and PA and is constantly appealing and transferring between both states.   My father was in his 60s when he went to prison and actually retired from his job, so he gets checks each month. He wants the money put into an account for legal fees and other expenses, and some taken out for commissary. He thinks his sister is taking his money (I highly doubt it) and that he wants me to take over.   I have a general understanding of POA but my dad has a sketchy past financially. I'm in nursing school full time, and financial aid pays for my schooling, and I'm not sure if having this financial POA counts as my income or his own. Do I have to file taxes on it? If it counts as income this might cut my financial aid back which would be devastating. My dad claims he owes nothing, but I know my dad had debt (I watched many cars get towed for non payment growing up) and have gotten phone calls for outstanding bills. Will they/can they come after me if I have POA? Can that effect my credit?  I can't afford to talk to a lawyer about this situation, and I'm not sure of my fathers current credit or debt. His past was always a secret and he lies a lot.   My mom is advising me not to, saying my aunt had problems with other inmates sending her threatening letters wanting his money. My dad talks to \"jail house lawyers\" aka inmates a lot and they wanted compensation from his retirement, so they threatened my aunt apparently via letters.   I'm unsure what to do really. I want to help him but I don't know much about POA, and googling only tells me so much. I'm trying to keep good credit and my debts to a minimum, and I feel like this can come back to bite me. Please help!"
+    },
+    {
+      "index": 142,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "My boyfriend started renting a house in June. He inquired about signing a lease multiple times but the landlord never had him sign a lease. He has been paying all his rent and utilities on time. The house has multiple issues, including a leaking/sinking in roof, walls, clogged pipes, possibly black mold in the bathroom, and overall needs to be deep cleaned. Not a great place, I know. As my bf did his walk through he noted all these issues and since has messaged the landlord multiple times about fixing everything. The landlord response was to do nothing. He's already looked into moving out into a new apartment in August.   Now, my bf and I were supposed to take a road trip out to my home state in June, so I came out to the house so we could get ready to go. After some unexpected expenses, we couldn't go on the trip until the following month. I have been staying with him since.  Today, the other tenet who holds the primary lease (who he has had many issues with, including the landlord telling bf she tried to take money from his overpaying the rent) started yelling at my bf that he needed to pay back rent for me staying here. The landlord never said that I had to leave or that I had to pay anything while I have been here, and when we called to talk to my bf's dad he said that he has never heard of such a thing and he would ask his attorney.  Any advice would be helpful, neither of us have had to deal with all these issues before."
+    },
+    {
+      "index": 143,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I got a speeding ticket about a week ago in Florida. Not my county but next over. Its only $131 and I just want to pay it and get it done with. I called and the lady said give it a few days and told me to check again and I did and its still not there. They use a 3rd party ncourts for payments. They have no record nor the county clerks office! Don't they have to make it available for me to pay? What are my options here? Should I challenge it? I dont mind paying I just need it taken care off to not worry. What should I do, and the officer also did not mention anything about points on my licence, is was doing 79 in a 70. He followed me for 25 min through another county until I entered his just to nail me."
+    },
+    {
+      "index": 144,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I rent a room in a house with two other guys and the owner himself.  On the lease it does not specify how utilities are to be paid only that rent is to be paid by the 5th of each month.  The LL wants each tenant to pay a portion of the utility bill but ALSO pay double that as an advance for the next month.  Example: June came to $100 in utilities. Each person will pay $50 to the LL and get a $25 \"credit\" so if the cost of next month is $125, each person will pay (125/4)*2-25 =$37.5. (Do note that $100 would not be problem but in AZ, air conditioning is driving the monthly electricity cost to about $400/mo.)  Can he do this? I think this is incredibly unreasonable since you get a month to pay your utility bill anyways and I could be using the money during that period of time."
+    },
+    {
+      "index": 146,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hi all,   My mom and dad share joint ownership over a piece of property in the town of Pascagoula, Mississippi. My dad wants to transfer his ownership to me, so he suggested using a Quit Claim Deed to sign over his portion of ownership to me.   Could anyone advise whether this would work?   I understand a Quit Claim Deed transfers ownership with no warranty, but I'm unsure of whether it would apply in this case due to the nature of split ownership.   Thank you all"
+    },
+    {
+      "index": 147,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "[Iowa] She'll sometimes not let me leave the house and take my phone so I have no way to talk to my friends, lately I've just been using my 3ds to message them. If I just left the house could she call the police and make them take me back? She also won't let me ride in friends cars but I can't find anything that says it's illegal for me to do it without her consent even though she says it is."
+    },
+    {
+      "index": 148,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hi. I'm 18 years old and I would prefer to switch from both parents for a week at a time to one parent permanently. Are there any legal repercussions and how should I go about this?"
+    },
+    {
+      "index": 149,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "A neighbor of mine has caused a lot of major neighborhood problems. He's mostly yelled at neighbors, unprovoked (i.e., riding up to them on his bike and calling them names), trespassed after being asked not to, and actually just yesterday assaulted someone with a shovel. I don't know the situation on that last one (whether it was provoked or not, but there was a woman screaming at him that he had raped her daughter. He also happens to have a conviction for child rape. Goody.), but my husband and I got security camera footage of it sent to the cops,so we'll see what happens there.     Anyway, before yesterday's assault incident, a cop who had come out previously for a disruption hinted at, though never outright said, that the disruptive neighbor may have schizophrenia or another severe mental illness, and suggested that we as a neighborhood (not an official HOA or anything but we've all been affected by this guy) write a letter to his parents, who own the house he's in.    Are there legal guidelines for this (i.e., citing each incident we've had), or is it open to interpretation?"
+    },
+    {
+      "index": 155,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Last Thursday my husband and I woke up to our basement flooded with sewage pouring up out of the drains. We called a plumber who managed to stop the backup but said the sewer line was broken on the city's end so they'd have to fix it and that if it wasn't fixed it would back up again soon.  We called the city and were told that they won't even come look at it because they would be able to tell if it was on their end so we need to call a plumber.   We called a 2nd plumber out and were told the same thing. It's a broken city pipe so he can't touch it. We took both reports down to the city building and were still told that it can't be theirs and that they aren't plumbers and don't just come out to look at people's pipes.   I guess I'm looking for advice on who actually is responsible for fixing it? If we can't touch it and the city won't fix it is there someone else we can call? All I want to do is get it taken care of but I'm honestly not sure what to do now and I'm terrified it's going to flood again at this rate."
+    },
+    {
+      "index": 157,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hey everyone, not expecting to get a ton of feedback on this but anything would be appreciated. So let's get started. My mother is currently renting out a house on the property of her landlord and long story short they made a \"verbal agreement\" that her contract would only last six months. Welllllllll the ACTUAL contract says that the lease is terminated when both parties agree on a termination date. So, no set date but seems kind of odd. Six months is approaching as of July 30th but the landlord is stating that my mother cannot move out and must continue to rent from her because she \"needs to protect herself\" by attempting to force my mother to continue to rent. My mother is trying to leave on said date above but is worried that the contract is binding her and she is forced to live here until the landlord deems that she may go. The landlord has since ceased to respond to my mother or attempting to work anything out and is straight up ignoring her now. Any suggestions or insight on how legal any of this is or how stuck my mother actually is? Can the landlord legally obligated her to continue renting because of he contract wording? Thanks in advance."
+    },
+    {
+      "index": 158,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I just heard someone fire 5 to 6 shots and it was very close to my house. I do not want to bring police to my house because if someone just got shot, I'm really not trying to be next.   I'm not experienced with fire arms, but I have used them before. It's that same distinct popping sound. Sounded like it came from a handgun or a low caliber rifle."
+    },
+    {
+      "index": 160,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Me and my friend are two students who enter college this year, and it is rather hard to find an apartment in Berlin where we want to study, since we live 6 hours away from it.  So last friday I find a fitting apartment on one of those websites where you search for apartments etc, and contact the person who put it on there. The text about the rooms sound good, but there is only an email adress at the end without a name to contact him. He replies the same day, telling me some details about the rooms in englisch (not in german, which I rather expected because the description of the rooms also where in german). I reply in englisch and ask for pictures of the rooms because there werent any on the website, and I also tell him that I can talk to him in german if he wants, because I thought he may be only writing in englisch because there are many foreign students who come to Berlin to study.   He then tells me ( still in englisch) that he Is in America until the end of the year, and asks me about details when we want to move in etc. This conversation goes on for a bit, notice that I still dont know his name or anything, but he sends me some pictures, which look good for a student apartment and seem to be connected to each other ( meaning they belong to the same apartment), although He said doesnt have a layout plan of the rooms.  I then agree and say that I like the apartment and ask on how to make it official. His response is:  He will send me a contract which I have to sign and send back to him, then transfer the deposit and the rent of the first month, and then we will send me the keys per mail.   He doesnt want to send the keys to a friend so we can visit the flat at first, because of \"past experiences\".  ----This is where I thought this may be suspicious.  I started to do some research on the Adress of the object, and found out that the same rooms where put on multiple apartment websites, but unlike the one which I found it on, these ones had a name at the contact part. I searched it up and it seemed to be an artist living in Berlin who even said on a website that he makes his rooms available for tourists to live in.   The next day I get the contract after he asked for some of my personal Information. Now this one is finally written in german but there are  obvious grammatical Errors in them which suggests that it is a rather poorly translated contract. It also Turns out that its not the person whose name is on the other websites, but the adress on them and the description text is the exact same as the one i applied for.  I ask him if its possible that we visit the rooms to make sure everything is as we discussed it and then we would sign the contract immediately.  Now he replied with the following:  \"As I told you earlier I only have the keys of the flat with me here so there's no way I can show you. I told you about this things previously and you agreed that I should send the contract to your email. Well, I understand if you cannot proceed but I assure you of safety with your money because the contract is legal from my lawyer.  My suggestion is that if you can pay just the rent alone I will post the keys to you and after you receive the keys and move in you pay the deposit. If this is satusfy with you or not please tell me immediately so I won't keep waiting for you all day as I have other interested applicants too.\"    Is he trying to talk me into making a quick decision by lowering the price I have to transfer? Or is he a maybe a legit person who wants to get this over with?"
+    },
+    {
+      "index": 161,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "My condo unit in Alberta had a leak that affected the unit below me while I was away for the weekend, which prompted a call to an emergency repairman.   The cost to have someone come down from a vendor (Honeywell) to enter the unit cost around $750 to turn off the water line. The invoice described having to wait 3 hours for a locksmith to open the door, and another 30 minutes to locate and close the water valve.  Another $1000 was billed to cover the damage to the ceiling of the unit below me. I'm not sure of the damage extent, but can't imagine it being that expensive to fix.  During the entire time, the condo management company did not contact me. I received the bills totaling to $1750 one year later since the accounting department 'forgot' to send the invoices. Both vendors were already paid the excessive and inflated invoices by the condo management company, without any  investigation if they were reasonably billed.  I know during an emergency, if you're not in your condo unit the condo company has a right to enter your property and try to resolve an issue. But the vendors clearly charged excessive price to do simple tasks. I would imagine or hope there is a law in place to protect condo owners from automatically accepting to pay outrageous prices that they cannot shop around or pre-approve of. Otherwise someone could potentially be billed a million dollars to clean up a very minor spill in a hallway, since that happens to be the condo-approved vendor's going rate.  What right do I have regarding these highly inflated invoices paid already by the condo company? Should I hire a lawyer and/or dispute them in court?"
+    },
+    {
+      "index": 163,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(Virginia) My management company was bought out nearly overnight. We were told that all our leases would be honored. Now that it is the about to be the first of month, we received our bill and it's almost $2,000 more per month for the unit. The management company says they lost our lease (we've emailed them our copies and brought them paper versions). What options do I have?"
+    },
+    {
+      "index": 166,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "So I just was told by by my neighbor that their dog was attacked (badly apparently) by mine, in my backyard. It is not fenced, but has an electric fence. My dog will not leave but it doesn't prevent anything else from coming in obviously. If this is true, am I liable for any injuries? Does homeowners cover this?  Also part 2 of the question: my dog has never shown any aggression to other dogs, she has no scratches or cuts, there is no blood on her at all(she has white fur so it would be super easy to see). Frankly, I'm not convinced she did this at all. But if I didn't see the \"incident\" is it basically just his word against nothing? I took pictures of my dog as soon as he told me but other than that I don't have any proof of anything."
+    },
+    {
+      "index": 167,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "Hi all, obligatory long time lurker, first time poster  A bit of backstory; I'm currently a student at a college in North Carolina. I moved into my apartment the beginning of January 2017. I took over the previous tenant's lease midway through the school year.  I signed a lease renewal for the 2017/2018 school year back in January 2017.   Additionally, I have a Emotional Support Animal (ESA) that I acquired a letter for legitimately through my regular mental health care provider. When I signed my first lease, all the agency required from me was a signed copy of the letter from my health care provider. I was also not asked to provide any other documentation or sign any forms when I signed my new lease (for the August 2017-July 2018 year) back in January.  I received an email today from my leasing agency that included a form they want all residents with \"assistance animals\" to sign. Most of the conditions on this list are reasonable, for example, the tenant will be fined to repair any damages the animal causes and things along those lines. One policy, however, stuck out to me. It said:  &gt; Animals must be kept in the Accommodated Resident\u2019s assigned room and may not be allowed to roam freely within the unit.      According to the form, the penalty for not abiding by the policies is immediate eviction.  My questions are 1) Can they require me to sign this form after I've already signed my lease months ago? 2) Can they legally ban my ESA from the common areas? (living room, bathroom, kitchen) 3) Can they make me or my ESA leave if I don't sign this form?  I went back and checked my lease, and the only thing it says about animals is their pet policy:   &gt; Tenant agrees that at no time shall any animal or pet of any kind, including, but not limited to dogs, cats, birds, and snakes, be kept or harbored in or about the dwelling unit by Tenant or his guest(s) for any period of time. Tenant agrees that he is responsible for paying a fine that can range from a minimum of three hundred seventy-five dollars ($375.00) or more up to one month\u2019s rent and that his occupancy may be terminated for having an unauthorized pet...  Am I correct in thinking that my ESA does not fall under that policy?  My roommates love my ESA, and there have been no issues with her in the common areas in the past. I'm really not comfortable signing this as it says I cannot keep my ESA, or I will be evicted if I don't follow the listed rules.   [Here](http://imgur.com/gallery/lkQiW) is the full list of policies they are requiring me to sign.  TLDR: Leasing agency I signed a lease with months ago is trying to make me sign a form forcing me to keep my legitimate emotional support confined to just the bedroom of my apartment."
+    },
+    {
+      "index": 169,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Manitoba, Canada.  I was in the shower when I heard a knock at my door. I'm not renewing my lease, and the landlord has shown it to several other people, so I just assumed that she was going to show it again. My girlfriend was laying in my bed and I figured she could answer any question if they had any(she doesn't live with me, but is there enough to field most questions)  I got out just as they were leaving, but didn't see my landlord anywhere. I ask my girlfriend if she had see her, and she told me that the landlord didn't accompany them, and that they had unlocked the door. At which point I heard the relock the door as well.  I was pretty weirded out by this, so I went to speak with the landlord and she wasn't home. As far as I know that person still has the keys to my place. The rental agency won't be open until Tuesday for me to call either.  Is this legal? Is there anything I can do to prevent this from happening again?"
+    },
+    {
+      "index": 173,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I'm currently trying to get a divorce in Hawaii. My ex moved back to the mainland back in 2015, so this has been a wild ride. I've pushed for her to sign all the papers since early 2016, and she finally has sent all the documents *except* the appearance and waiver. Now she's gone no contact despite saying she would send the last document. She hasn't replied to any of my emails since June 1st. I'm kind of in a hurry now because I'm gone until September and then leaving to go overseas with the military in October for over 6 months. I'm not able to use the military legal services because she can't, which is a whole other story.  My question is, can a judge grant the divorce without this *one* paper? Do I have to get a lawyer involved? If I do have to get a lawyer and we can't get this figured out before I leave, will I not be able to finish it until I get back?"
+    },
+    {
+      "index": 174,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Hello,  We are 2 months into a 12 month fixed term lease. Our landlord continually emails us stating she wants us to leave so she can move back in due to personal circumstances.   We are aware this is illegal during a fixed term, she can only give us the boot for her to take possession back AFTER the lease, we spoke with the Landlord Tenant Board, and relayed this to our landlord but she CONTINUES to email us alternating between begging us and threatening us.  What can we do to make her stop? Do we have to hire a lawyer to send her something like a cease and desist? Do we call the police? As far as we are aware she has not been entering the unit or showing up - so I don't think trying to get a no trespass order is possible.  We just want to live in peace without constant bombardment and empty threats. She needs to be put into her place but clearly us pointing to the law and how her attempt to evict us contravening it, is not enough to make her stop.  Any suggestions are truly appreciated!"
+    },
+    {
+      "index": 177,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "It's a long story, I'll do my best to keep it short. Back in March, I started renting a room in a house I found on CL (mistake #1). I came to find out from the other roommates that the \"landlord\", we'll call him D, wasn't actually the owner of the house, but the only person who's on the lease. The landlord is our next door neighbor. I also found out that D was in prison for insurance fraud, and has been in trouble for scamming and stealing in the past. I have no problems at all with any of the roommates (there are 5 of us right now), but the rest of them are all having problems with D right now, and a couple of them are threatening to move out. I was talking with one of the roomies roday, and she told me the tenant who had my room before me was evicted by D the same day he paid rent, and wouldn't return the money. This really worried me when I heard this. I know he has to give me a 30 day eviction notice, he can't just kick me out, but my main concern is getting my deposit back. What should I do? Should I lawyer up just in case? This guy is a psycho, I'm starting to get a little freaked out. Thanks for reading."
+    },
+    {
+      "index": 178,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "TLDR; The Mormon church uses deceptive, dishonest, and manipulative tactics to convince people to join the church and solicit donations.  Can the church be sued (possibly for fraud) to recover donations.  First of all, I realize that this is a complete long shot and probably not feasible given the protections religions enjoy in the U.S.  However, if a company in the U.S. convinces consumers to purchase its products by significantly misrepresenting those products, the company could be guilty of fraud and held responsible accordingly.  I see a corollary with the Mormon church in that it has consistently misled its members about key aspects of the religion which affect the ability of members to make an informed decision on whether or not to donate to the church.  Also, to be clear, these donations are considered obligatory by the Mormon church, the minimum acceptable amount is 10% of income, and members are told that they must pay these donations (tithing) before they pay for rent or even food for their children.  The consequence for not paying tithing is that members cannot go to the temple, which means that they cannot go to super awesome Mormon heaven (Celestial Kingdom) and therefore cannot be with their families after they die.  Some of the things not taught by Mormon church leaders in the past and generally disparaged as anti-Mormon lies include the facts that 1) Joseph Smith translated the Book of Mormon by staring at a rock in a hat, 2) Joseph Smith married other men's wives and teenage girls as young as fourteen, 3) Joseph Smith completely botched the translation of an Egyptian papyrus when writing the Book of Abraham, 4) Joseph Smith told contradictory versions of his First Vision experience, 5) Joseph Smith was incarcerated legitimately based on violations of the law (the church teaches that Joseph Smith was arrested on \"trumped up charges\", 6) Polygamy continued to be practiced even after the church publicly declared that it had ceased to practice polygamy, etc.    The list could continue for quite a while, but the point I want to make is that the church has been very dishonest with members in the past.  Additionally, missionaries provide partial and misinformation to investigators so that they will join the church without understanding it.  As a result, many people joined the church and many members paid tithing who would not have otherwise done so if they were fully informed about the church.  In my mind, this constitutes fraud and it seems like the church's victims should be eligible for restitution.  Incidentally, after many decades of trying to cover up the truth, the Mormon church published some essays a couple years ago that acknowledged the six points listed above as well as other issues (www.mormonessays.com).  Consequently, it is quite simple to demonstrate dishonesty and duplicity by church leaders in the past because they deny the very things acknowledged in the essays.   Given the above information, is there any legal angle that might be reasonably successful in the recovery of donations to the Mormon church?"
+    },
+    {
+      "index": 181,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I grew up in this house and have lived here for 19 years. After my parents divorced when I was 18 my dad moved and I moved with him. My mom stayed. Now I'm coming back and she took me to court and evicted me. The judge says the rental agreement I have with my dad (the owner of the same property) doesn't matter and I have to pay my mom $670 and leave in 1 week. How is that even possible if it's a joint property?"
+    },
+    {
+      "index": 182,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "As the title says, I'm about to buy a house with my boyfriend soon.  I'll be the only one on the title and mortgage, and I'm putting down the down payment. I decided to be the only one responsible for it until he and I get married, just to be as smart as possible about it. Other than that, he and I are going to split the monthly costs of the home, split the repairs/upgrades, and split the utilities (the same as we do while living in our apartment).   My question is this: Are there any tax difficulties for me if I just have him do an automatic payment or something into my bank account to cover his half of the cost? I'm not sure if it would legally be considered \"income\" for me. For better or worse, it'd be a bit like rent until we get hitched.  If that way sucks, what's the best way to deal with it?"
+    },
+    {
+      "index": 183,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I am a tenant at will on a month to month lease in LA and have lived in my apartment for 2 months. Recently the lease holder of my apartment had given a 30 day notice to one roommate and has made the living situation uncomfortable for me and my other roommate by sending aggressive texts, asking for bills they won't show us, and more recently taking the modem and router completely out of the apartment and leaving us with no internet.  This all seems extremely petty. Since I'm not on the lease I know I don't have much rights, but I'm worried about paying rent when I'm planning on leaving at the end of the month. At this point, I do t trust her to give back my security deposit.  The landlord is a bit mia and I haven't been able to contact her via phone. Would it be better to send her a certified letter stating my concerns and offering to pay her directly? If I do so can I ask her to sign an agreement that I will get my deposit back  by 9/21/17, which is Los Angeles law for returning a security deposit? Can I just not pay rent and stay until the end of the month? I'm not sure if I'm entitled to the same 30 day notice without a lease? Or do I just cut my losses and try to leave as soon as possible?   Any advice or suggestions would be appreciated.   Tl;dr: lease holder is being extremely petty and trying to make all roommates move out. I moved in 2 months ago and am not sure what's the best way to get my security deposit back."
+    },
+    {
+      "index": 185,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Pulled over yesterday and told I was swerving. I was not drunk, but was pretty tired because it was the end of a long drive. I had a major panic attack during the field sobriety tests, I was shaking too hard to stand, and when the officer did the visual test I almost passed out from locking my legs. There is no way I passed those tests. The attack passed by the 3rd test (balance test) which I was able to do fine, but I was not allowed to retake the previous two.   Officer thought I was on some kind of narcotic, and brought me into the station. The did take a urine sample, which I'm positive will come back clean, I don't do drugs. I did have a few beers earlier that afternoon but this stop happened over 4 hours after I had drinks, and I did not have enough to even get buzzed. I did tell the officer when I had the drinks, and complied with all testing and requests, and I was incredibly polite through the whole ordeal.  This is my first OBI, I have no priors, and I have already spoken to a lawyer and have things in motion to meet before my arraignment hearing. What should I be expecting to happen here? Is it normal for a first time offense to be downgraded into a reckless driving charge? Should I expect the book to get thrown at me and to receive the manditory 72 hours in jail? These questions will obviously be asked to my lawyer, but I was hoping to hear some positives to this before going in because I'm freaking out right now."
+    },
+    {
+      "index": 187,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "So I rented at this somewhat shady apartment complex and I decided I will not renewed this year. The lease was a joint lease between me, Roommate A and Roommate B. Roommate A and I decided that we will no longer rent here and we're moving out meanwhile Roommate B decided that he will stay there and bring in new roommates. I decided that I did not want to renew this lease nor be involved with this apartment unit any more so I will not renew the lease and they can decide what to do on their own.  Fast forward a month, I heard nothing and the lease is almost over so I checked with my roommate. They said that they already renewed without me or my other roommate and then 2 new people signed the lease instead of us. The security deposit will not be given back to me but the 2 new tenants will be responsible for paying us back. I understand that the security deposit is probably binded to the the unit therefore if someone is staying in the unit, it remains. But they also told me that 'legally' the new tenants are required to pay us back. Is this true? What if the new tenants do not pay Roommate A and I our deposit back? Was it legal in the first place to have this apartment unit renewed without 2 of the leaseholders? Thanks!"
+    },
+    {
+      "index": 189,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "My wife served me with divorce papers last weekend. I have 30 days to file a response with the court in the county that she lives in.   My quick question is: when they say 'file a response with the court', does that mean I have to go in person, or can I mail it in? It'd take me three hours each way to get to the courthouse, so I'd rather not go there in person if I can avoid it.   Court is Washington County, Oregon."
+    },
+    {
+      "index": 193,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "For context, my friend turned 18 at the end of October 2016. This drama didn't begin until well after that, around March 2017.   Her mother and step-father are not nice people, nor are they particularly intelligent (I'm putting this very, *very* lightly). For years, she's been told by doctors that she has both depression and anxiety (unmedicated until a couple weeks ago), but due to religious reasons/political differences, her mother insisted she be tested for autism. So she was, and the results came back saying that she has provisional aspergers; this means that she showed some symptoms, but those could just be byproducts of her unmedicated depression/anxiety combo. Her mother does not seem to grasp this at all, and insists that she 100% has autism, treating her as if she's a young child.   During a certain event a month ago (far too long to explain here, as it goes too far off topic), police were intervening, and her mother was howling about how she had paperwork proving that my friend cannot make her own decisions (we were trying to pick her up to take her to a comedy show), so she cannot decide to leave with her friends, and threatened to press charges on us for attempted kidnapping. She merely showed the cops the paper that diagnosed my friend with provisional aspergers and the cops had her go home with her parents, no other arguments permitted.   However, after chatting with someone this week whose parents/younger brother have actually gone through the process of gaining legal guardianship over someone 18+ years old, it came to my attention that her mother might be lying, or that she's forged some documents. We're not sure. I've done some light digging (some of which was very confusing to read), and it seems that, on the basic level, certain paperwork needed to be submitted, court dates needed to be set up/attended, and above all else, my friend should have been informed that all of this was happening (if it actually was). She received no notice whatsoever of anything like this.   So my big question here is: Is it AT ALL possible that her mother was able to sneakily obtain the legal stuff necessary with ZERO consent or knowledge from my friend, since she is not a minor? (And a second less pressing question, which you can ignore if you want since it's not the main focus: Are there any important things we should keep in mind if her mother presses this further, or if there's a confrontation over it?)"
+    },
+    {
+      "index": 194,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "My ex and I were living in North NJ for 4 years, and have been separated for 8 months with a separation agreement that we are both fine with. All our money is currently separate except that he's still on my health insurance.  My ex moved back to NYC, and I've been living here in NJ still, but want to move back to NYC as well. I just got a lead on an amazing deal for an apartment in NYC, but the catch is that I'd have to move in 6 weeks, when I was planning on moving in like 3-4 months after I filed the divorce papers in NJ. Should I go ahead and file in NJ in the next week or so? Is that enough time? I am fine with traveling back for court dates. Or should I wait and file it in NY after we meet the residency requirements (it would be February 2018)?  Are there any legal advantages to file in one state versus the other? Our divorce is super simple so I was planning on just doing the paperwork myself with a lawyer consultation/review. And as far as time from filing to divorce, is there anything that could prevent me from moving? If worse comes to worst, I could keep my mailing address in NJ if necessary.   I'd rather not pay his health premiums for the next 6 months, so if I can file easily in NJ, I'd prefer to do that, unless there are advantages to waiting. Thanks for your advice!"
+    },
+    {
+      "index": 195,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Stockton - California (USA)  Let me just get to the core of the situation. My friend and her husband are sharing an apartment with her husbands Mother and Sister. All costs are 50/50. Mother wants to move out with daughter so she went to turn in a thirty day notice with her (mom's) name and daughters name. She was told the notice wasn't valid unless all names are on the notice, so she promptly put the names of my friend and her husband without their consent on the notice. Now the leasing office is refusing to listen them about how the signatures were put on the notice without consent. The leasing office is now refusing to allow my friend and her husband to bring on another qualified tenant to help pay for the apartment even though they wish to resign a lease. What legal actions does my friend and her husband have since the process that started this was void to begin with? The leasing office is refusing their complaints. My guess is because it is due to rent control and by releasing to new tenants they can raise the price."
+    },
+    {
+      "index": 196,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Got into a car accident with a brand new lease car. I'm at fault and I have no insurance on the car. The leading agreement for my cAr too says I need to have full coverage at all times during the lease. So the contract for the lease has been breached as well and the repairs for the car are too much for me right now. I need help or some type of direction on what to do now. I know I messed up bad"
+    },
+    {
+      "index": 197,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "My parents in California recently got documentation stating that a lawsuit has been filed against them from the distributors of solar panels for a contractor company that we hired to install solar panels on our roof top. The contractors received parts from distributors but apparently haven't paid the distributors for the parts. They have already installed the solar panels on my parents house.   Previously my parents had received a Lien of Mechanics from the same distributors. This was the first contact they had with the distributors. My parents informed the contractor company. The contractors claim that they have paid the distributors already but did receive a second bill which they have not paid because they believe they have been wrongly double charged. They assured my parents they had taken care of this situation with the distributors. The contractors said we would received a letter saying this was resolved from the distributors legal representative. But instead my parents then received notice of the lawsuit.   The contractors have been informed once again and said they will handle this. Is there anything my parents can do in case the contractors do not resolve this issue?"
+    },
+    {
+      "index": 201,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Horribly sad, very young, sweet girl.  What do we do with her final paycheck?  We don't know any of her family, only her BF who she killed herself in front of, and we will definitely not be giving it to him."
+    },
+    {
+      "index": 202,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Location: Indiana, Ohio, Kentucky, and maybe Florida  Background: When my 2nd? cousin went to apply for a credit card, we found they had a number of loans in default from several years ago when they were under 18. We're about 90% sure their biological father stole their identity and have already filed a police report and they frozen their credit. They're on their way back to some semblance of normalcy, but the new issue is they have a large number of half siblings from their biological father, my shitty cousin. We aren't entirely sure how many, but my uncle, his dad, had met 17 of them, though relatives estimate around 25 to 30 altogether scattered through various states.  Problem: We realized if my cousin had stolen his oldest child's identity, it was likely he had done so to his other children as well. Unfortunately, as none of the others lived in that town, there was nothing the police could do to help. He works under the table to dodge child support, and can only be reached at a PO box in Indianapolis. Unfortunately, he would only respond to his dad. (After walking out on his family, he made it clear he wouldn't be around them. We decided to keep inviting them and he never forgave us for wronging him so horribly, but his dad was out of the picture at the time) Unfortunately, his dad was recently arrested  for selling meth and decided to skip town on bail.  Is there any way we could try to track down the other kids to let the mothers know to check? I know this whole thing sounds absurd, and quite frankly I would rather not air out family laundry online, but it would be inexcusable to allow him to rob his kids."
+    },
+    {
+      "index": 207,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "My roommate got caught with so an eighth of marijuana while getting pulled over the other day, he was about to get his medical card this next week. He so far hasn't been charged but was taken to the police station. If he gets put on probation can he still get a medical card without any issues? I saw that the supreme court here passed a law saying that probation can't stop medical patients (http://www.azcentral.com/story/news/arizona/politics/2015/04/07/medical-marijuana-arizona-supreme-court/25416337/) but I can't seem to get anything about getting the card after being caught by the police.   Can anyone help me out on this?"
+    },
+    {
+      "index": 208,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "forgive me if this is a long story. this has been slowly building for seven years. i will try to include only the essential facts. after that, feel free to ask questions.  fact 1 -- my husband has degenerative bone disease and was told eight years ago that he would soon be confined to a wheelchair. so far this hasn't happened, but he is not in good health although he continues to work hard for the little money he can make.  fact 2 -- i suffer from mental illnesses including PTSD from childhood and borderline personality disorder. i have applied for disability and been turned down, although it doesn't change the fact that my last therapist advised that i shouldn't be working.  fact 3 -- our landlady uses and abuses us. when she takes vacations, we watch her cats for free because we feel if we say no, we'll be kicked out. this is how she suckers us into almost everything, including spending an entire day cleaning out a shed on our property full of her stuff.  fact 4 -- her worst offense happened a few months ago. our septic tank overflowed (not maintained for 20+ years) and she didn't fix it for nearly two weeks despite my pleas, which only angered her as she tried to turn my husband against me. she also forced my nearly crippled husband to dig up the septic tank himself.  we were unable to take showers, use the sinks, do laundry, or even use the bathroom in the house. the smell was awful and very unsanitary. i do have video documentation.  fact 5 -- since that happened, i believe it has either caused further PTSD or aggravated what i already had. i have nightmares about poop. i smell phantom sewage smells all the time and very often taste it in my food. i was admitted to a state hospital for thirteen days and my psychiatrist classified what she did to me as abuse.  fact 6 -- while i was trying to recover in the hospital, the refrigerator that came with the house broke and my husband has been eating fast food for three weeks as he begs her to replace the fridge. now she isn't even answering her phone even though she is home. (lives next door to our rental property.)  fact 7 -- we have four cats that have also suffered due to the stress in our household. we can't afford to move and if we did, it might be near a busy road or highway, and i fear for them. i might could give one up for adoption but no more.  fact 8 -- in kentucky there is something called a landlord retaliation law that states she can't kick us out for a year after we have complained about a major repair to the house. if this is true we still have time, however with my mental illnesses i became very angry with her before my hospital stay. because of that, i cannot go to my house at all. i haven't seen my cats in weeks. she is threatening to call the police if i show up, although there is no restraining order or anything of the sort.   -  what would you guys do in my situation? i am finally on the correct antidepressants after twenty-two years, but her behavior is affecting my recovery. i really am better and had gotten over my anger with her, but now it's returning.  any and all advice is appreciated."
+    },
+    {
+      "index": 210,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "First time poster looking to get an answer to a question that I've been having issues figuring out.   I'm trying to file a Paternity case to get a court order for visitation. I reside in Los Angeles county and my daughter resides in San Bernardino county. Which county do I use to file for my paternity case? My daughter has lived outside of Los Angeles since 11/2016. If I file in San Bernardino county, do I have to travel to that courthouse each time I need to go to court or will the Los Angeles courts be able to assist me?"
+    },
+    {
+      "index": 215,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "Posting for a friend. Female was Injured on the job at a grocery store due to constant lifting. Coerced into not filing a workers comp case, but has x-rays and a chiropractic visit on record from that time period. The company continues to schedule her for active shifts after hr filing her into a non active shifts which she is unable to do.     On top of this, she makes 12.80 an hour. Less than 20k a year. I was wondering what public assistance she might be able to take advantage of to help stay afloat and any recommendation on legal routes to obtain a lawyer.      Thank you"
+    },
+    {
+      "index": 216,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "... and I live in Naperville, IL (Will County); and live almost half a mile from the nearest man-made lake. My house was newly built 6 years ago. It first flooded around 18 months after we moved in causing around $3000 of damage. This one wasn't too bad since the water had only seeped into the unfinished parts of our basement and we did not need to replace any of the carpet or the padding. Several other houses in our neighborhood had also flooded at the time and many people were experiencing similar damages (not too extensive, no need to replace their entire carpeting or anything). This didn't really cause too much worry to us so we didn't take any additional action other than draining out the water.  2 years later, our basement was completely flooded with nearly 5 inches of water everywhere. All the carpet was soaked, some of our valuables ruined; over $10,000 in damages. At this point, we hired plumber to re-irrigate our house to ensure that all water that comes near our house would be drained into a set of pipes and pumped into the sewage system. We also had the plumber add two more sump pumps in our basement so that the total pumping capacity is enough for a house more than triple the size of ours. We replaced all of the carpet with tile so that if it ever flooded again, we would not need to replace the floor. Our home insurance company also told us we were too much of a liability and attempted to sever future ties, unless we increased our deductible to $2,500. Though it might not have been the best decision, we went through with it. However, our minds were slightly rested since we re-irrigated and added in the new sump pumps.  They say that the 3rd time is the charm. My house flooded AGAIN. After we installed 3 sump pumps, after we re-irrigated. It somehow managed to flood again. The only explanation I could think of is that my house lies on top of a waterbed. So any time it rains too much, the water level rises under the ground and starts seeping into my house too quickly. When we built this house, on this specific lot, shouldn't it have come with a warning label of some sort? Shouldn't the builders have tested to see if there's too much water in the area to build a house. Or shouldn't the lot have at least been devalued because of this?  I'm just not sure what exactly to do, if our house continues to flood every two years, we can't continue to pay for the damages each time. We have home insurance, but even after last time they threatened to leave us. New insurance companies won't come near us either due to our high risk and liability. Not entirely sure if this was the right subreddit to post on, but I just need a little advice."
+    },
+    {
+      "index": 217,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": true
+      },
+      "decision": "eligible",
+      "correct": false,
+      "text": "My Grandmother died recently and left her home to my Mother. my grandmother had outstanding Medicaid debts so the state filed a claim on here estate. She only had 900 dollars in her checking account at the time of death and her home is only worth 20 grand max. We tried to file an exemption through my mother's(awful) lawyer. And she was denied her hardship claim. So the state took the 900 dollars and put a 4000 dollar lien against the house.   Now here is the thing. My mom is disabled and on SSI. And simply doesn't have a lot of money. Her benefit payment is less than 1200 a month. And she lives by herself. It was my understanding if the child of any age is disabled of the deceased person they are exempt from that law.   We have tried to get another lawyer to look at things and either they don't want to deal with it now that it is already said and done or don't want to deal with it because of the proximity to my others lawyer(i don't understand this one either). It is a small town.   Is there anywe we can get my mother an exemption after the denial. Or can someone point me in the right direction or what to do?  Also the house is payed off, and the state AG hired a local attorney  to do the Estate recover."
+    },
+    {
+      "index": 220,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "To provide some backstory, I moved up to Colorado a few years ago and when I did, my best friend's mother allowed me to stay at her house. I ate their food, and received some gifts from them. I did some chores, as well as assisted with a renovation of the house I leased with her son (again, my best friend). Fast forward to today, I've decided to move out and separate from my best friend for personal reasons. My move out date is August 4th and our landlord has been generous to allow us to stay past the end of lease date while we sort a few things out, presuming we pay another months rent. (no contract has been signed for this month's rent. The landlord could kick us out on the 31st and there is nothing preventing them from doing so.)   Their mother is now threatening to sue me if I do not pay my full half of the August rent, when I feel it's reasonable to leave with paying 1/3 instead. Based on what I've told you folks, does she have any reasonable course of action in a court of law?"
+    },
+    {
+      "index": 221,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I\u2019m in some deep shit.   I asked someone for a rental application. They sent a document which I filled out and signed. This turned out to be a lease agreement which I\u2019m now on the hook for. I just signed a sublease agreement with someone else. Now I\u2019m on the hook at two places. What can I do?"
+    },
+    {
+      "index": 223,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "As stated, My roomates and I each have signed our names to a lease for an apartment. Together we make the required 3x monthly income. However he recently bought a car that makes him unable to move, but is willingly to keep his name on the lease. We can make the payments for the apartment, without his aide.  However, would we be penalized for having his name on it.  If he doesn't live with us? The lease is signed with five people, but only four will be living there."
+    },
+    {
+      "index": 224,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "On last months wireless bill AT&amp;T did not include the amount for my installment plan, and it wasn't even mentioned on the bill. One this months bill, which I'm calling this months bill because the amount due for the billing period is due this month, they included both last months and this months installment payment. The amount per installment is $61.50. Times two, $122 on this months bill.  Now, these also are the final two payments of the the installment agreement. The device is payed off after this periods bill is payed.  I contacted AT&amp;T via chat, phone, and visiting a retail store(who politely informed me everything is done over phone and they don't know why I was sent there), and I asked them if I could have one of the two installments moved to next month.  They refused, and insisted that I pay the entire bill amount. I said I was open to other arrangements to lower this months bill and pay the rest later, and reminded them that it was AT&amp;T who made the mistake by not including it in my bill the previous month. One of the 7 or 8 people I spoke with said that it was a known issue that happened to several of their customers last month, and was resolved.  I don't think I should have to pay the $61.50 that AT&amp;T neglected to include in my bill and then added the next month without notice. However I am willing to pay it if they spread the 2 payments over 2 months as they should be. I did not ask AT&amp;T to forgive the installment, but I did tell them many times that I was willing to do it over two months, inline with what I originally agreed when I bought the device.  First, what organization(s) should I report AT&amp;T to, and how should I do it?  Second, how can I best get out of paying the $61.50 they did not charge me one month? What legal grounds do I have there?  Thank you for your help. I realize the dollar amount here is not that much, but AT&amp;T's absolute refusal to work with me on payment options makes me want to pursue legal options."
+    },
+    {
+      "index": 225,
+      "expected": "not_eligible",
+      "field_values": {
+        "post_discusses_health_issue": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "I apologize if I come frustrated but I am. My landlord threw out, I really mean disposed of, all my belongings from my apartment even though my lease does not end for a good week. I had everything packed and ready to be moved and they all disappeared. The landlord takes full responsibility. So far I have a lawyer and am making a list of inventory for all my belongings. What else should I do. How should I estimate the worth of my items. Thank you."
+    }
+  ]
+}

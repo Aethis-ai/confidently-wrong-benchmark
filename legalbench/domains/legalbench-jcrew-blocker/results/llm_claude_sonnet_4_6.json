@@ -1,0 +1,393 @@
+{
+  "task": "jcrew_blocker",
+  "split": "test",
+  "model": "claude-sonnet-4-6",
+  "prompt_format": "upstream_base_prompt",
+  "summary": {
+    "correct": 36,
+    "total": 54,
+    "parse_err": 2,
+    "api_err": 0
+  },
+  "by_slice": {},
+  "per_case": [
+    {
+      "index": 0,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 4,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 9,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 10,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 18,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 20,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 22,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 23,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 24,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 26,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "slice": "",
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to analyze this provision against the JCrew Blocker definition, which req"
+    },
+    {
+      "index": 28,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 29,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 30,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 31,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 32,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 34,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 35,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 40,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "slice": "",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 42,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 44,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "slice": "",
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze this provision to determine if it contains a JCrew Blocker.\n\nR"
+    },
+    {
+      "index": 47,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 49,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 50,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 51,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 52,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 53,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    }
+  ]
+}

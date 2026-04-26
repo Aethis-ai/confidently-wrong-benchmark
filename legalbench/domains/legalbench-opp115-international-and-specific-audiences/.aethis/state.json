@@ -1,0 +1,6 @@
+{
+  "project_id": "proj_r7QIizu0Td-bCqJF",
+  "bundle_id": "legalbench_opp115_international_and_specific_audiences:20260426-922aa9fb",
+  "task_selection": "random sample (tools/random_task_pick.py --seed 43)",
+  "split_seed": 7
+}

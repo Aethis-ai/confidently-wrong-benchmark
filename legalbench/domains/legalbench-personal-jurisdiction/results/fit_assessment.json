@@ -1,0 +1,40 @@
+{
+  "source_path": "domains/legalbench-personal-jurisdiction/sources/rule.md",
+  "domain": null,
+  "library_loaded": {
+    "source_ambiguity": [
+      "tools/patterns/library/source_ambiguity/en_legal.yaml"
+    ],
+    "domain_glossaries": [
+      "tools/patterns/library/domain_glossaries/us_federal_evidence.yaml",
+      "tools/patterns/library/domain_glossaries/us_leveraged_finance.yaml"
+    ],
+    "doctrinal_risk": [
+      "tools/patterns/library/doctrinal_risk/us_federal_evidence.yaml"
+    ],
+    "question_shapes": [
+      "tools/patterns/library/question_shapes/binary_classification.yaml"
+    ]
+  },
+  "checks": {
+    "source_ambiguity": {
+      "matched": []
+    },
+    "doctrinal_risk": {
+      "matched": []
+    },
+    "question_shape": {
+      "detected": "unknown",
+      "evidence_trigger": null
+    },
+    "domain_glossary": {
+      "loaded_for": null,
+      "synonym_families": []
+    }
+  },
+  "suggested_hints": [],
+  "expected_ceiling": {
+    "value": "100% achievable",
+    "reasons": []
+  }
+}

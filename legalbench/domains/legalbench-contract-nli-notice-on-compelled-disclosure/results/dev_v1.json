@@ -1,0 +1,872 @@
+{
+  "task": "contract_nli_notice_on_compelled_disclosure",
+  "bundle_id": "legalbench_contract_nli_notice_on_compelled_disclosure:20260425-79fb42fa",
+  "extractor_model": "claude-sonnet-4-6",
+  "split": {
+    "method": "tools/test_split.py",
+    "seed": 7,
+    "dev_fraction": 0.5,
+    "evaluated_on": "dev",
+    "n_total": 71
+  },
+  "summary": {
+    "correct": 68,
+    "total": 71,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The Receiving Party shall notify the Disclosing Party immediately if it becomes aware that Confidential Information has been disclosed to or is in the possession of any person who is not authorized by the NDA to receive Confidential Information. "
+    },
+    {
+      "index": 1,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "5.2. The obligations in Clause 5.1 shall not apply for Confidential Information that: 5.2.4. is required to be disclosed by law, regulation or any competent governmental, judicial or regulatory authority, or by a recognized stock exchange, or in response to a request from a regulatory body with a supervisory role over Recipient or any of its Affiliates, in which case Recipient will (or, if Recipient's Representative is subject to the disclosure obligation, Recipient will procure that such Representative will), in each case to the extent permitted by law, regulation or the relevant authority: a) inform  Discloser of the circumstances of the disclosure and the information that will be disclosed as soon as reasonably practicable; "
+    },
+    {
+      "index": 2,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that the RECEIVING PARTY is requested or required (by oral questions, interrogatories, requests for information or documents in legal proceedings, subpoena, civil investigative demand or other similar process) to disclose any of the CONFIDENTIAL INFORMATION, the RECEIVING PARTY shall provide the DISCLOSING PARTY with prompt written notice of any such request or requirement so that the DISCLOSING PARTY may seek a protective order or other appropriate remedy or waive compliance with the provisions of this Agreement.  "
+    },
+    {
+      "index": 3,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The obligations of the Receiving Party pursuant to the provisions of this Agreement shall not apply to any Confidential Information that \u2013 8.4 is disclosed by the Receiving Party to satisfy an order of a court of competent jurisdiction or to comply with the provisions of any law or regulation in force from time to time; provided that in these circumstances, the Receiving Party shall advise the Disclosing Party to take whatever steps it deems necessary to protect its interests in this regard and provided further that the Receiving Party will disclose only that portion of the information which it is legally required to disclose and the Receiving Party will use its reasonable endeavours to protect the confidentiality of such information to the greatest extent possible in the circumstances; "
+    },
+    {
+      "index": 4,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Recipient Party may disclose Confidential Information to the extent required: (a) by any order of any court of competent jurisdiction or any competent judicial, governmental, regulatory or supervisory body; (b) by the rules of any listing authority, stock exchange or any regulatory or supervisory body with which the Recipient Party is bound to comply; or (c) by applicable laws or regulations, provided that before it discloses any Confidential Information the Recipient Party will, to the extent permitted by applicable law and regulation, inform the Disclosing Party of the full circumstances and the information required to be disclosed, consult with the Disclosing Party as to possible steps to avoid or limit disclosure, take such of those steps as the Disclosing Party may reasonably require and, where the disclosure is to be by way of a public announcement, make reasonable efforts to agree the wording of the announcement with the Disclosing Party in advance. "
+    },
+    {
+      "index": 10,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "(b) Nothing in this Agreement will prohibit Receiving Party from disclosing Confidential Information of Disclosing Party if legally required to do so by judicial or governmental order or in a judicial or governmental proceeding (\u201cRequired Disclosure\u201d); provided that Receiving Party shall:  (i) give Disclosing Party reasonable notice of such Required Disclosure prior to disclosure;  "
+    },
+    {
+      "index": 16,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Notwithstanding the foregoing, Recipient may make such disclosure if it is required to do so by law, provided always that Recipient has informed Discloser about such disclosure at least two business days prior to the disclosure. "
+    },
+    {
+      "index": 19,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If either Party due to mandatory law is forced to disclose information which would otherwise be considered as Confidential Information, the Party shall prior to the disclosure inform the other Party hereof and the Parties shall mutually decide how to minimize the negative consequences thereof. "
+    },
+    {
+      "index": 20,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "With regard to the data disclosed to MDHHS under this Agreement, the MDHHS agrees to: 2. Notify Reporting Entity within a reasonable time prior to disclosing data that is required by law so that Reporting Entity may have an opportunity to object to such disclosure if necessary; "
+    },
+    {
+      "index": 21,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "5. In the event that the Receiving Party is required by applicable law or regulation or by legal process to disclose any of the Information, the Receiving Party agrees that it will provide the Providing Party with prompt written notice of such request(s) prior to the required disclosure and the Providing Party shall use reasonable efforts, at its own expense, to seek a protective order or other appropriate remedy.  "
+    },
+    {
+      "index": 25,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The Receiving Party may make disclosures required by law or court order provided the Receiving Party uses diligent reasonable efforts to limit disclosure and has allowed the Disclosing Party to seek a protective order. "
+    },
+    {
+      "index": 27,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Confidential Information shall not, however, include any information which  (vi) is required by law to be disclosed by the receiving party, provided that the receiving party gives the disclosing party prompt written notice of such requirement prior to such disclosure and assistance in obtaining an order protecting the information from public disclosure. "
+    },
+    {
+      "index": 29,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The foregoing shall not prevent either party from disclosing Information which is: vii) required to be disclosed pursuant to a governmental or legal requirement provided that the disclosing party gives to the other party written notice of such requirement prior to any such disclosure. xiii) required to be disclosed pursuant to a governmental or legal requirement provided that the disclosing party gives to the other party written notice of such requirement prior to any such disclosure. "
+    },
+    {
+      "index": 32,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Recipient shall not be in breach of its obligations under this Agreement to the extent that any Confidential Information received by it may be required by law or regulation having force of law; or the rules of any court or other body of competent jurisdiction; or any governmental body to be disclosed, provided in each case the Recipient, to the extent permitted by the foregoing requirement, immediately notifies the Disclosers in writing of any request or requirement for disclosure and of all relevant surrounding circumstances prior to disclosure and takes into account any representations made by the Disclosers in relation to the disclosure.  "
+    },
+    {
+      "index": 33,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "8. If either party becomes legally obligated, or receives a subpoena or other legal demand, to disclose any of the other party's Con\ufb01dential Information, the party subject to the obligation shall notify the other party in writing immediately, shall cooperate with the other party in seeking a prospective order or other appropriate remedy, and shall use its reasonable best e\ufb00orts to protect the con\ufb01dential and proprietary status of any disclosed Con\ufb01dential Information. "
+    },
+    {
+      "index": 34,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Receiving Party shall have no obligation with respect to information which:  (iv) is independently developed by the Receiving Party without use of the Confidential Information; or  (v) is disclosed by the Receiving Party pursuant to a valid order issued by a court or government agency, provided, however, that the Receiving Party provides the Disclosing Party:  (a) prior written notice of such obligation; and  "
+    },
+    {
+      "index": 35,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "7. Confidential Information shall not include information which is: d. If the Receiving Party receives a court order to disclose Confidential Information.  In this case Receiving Party shall  (i) promptly notify the Disclosing Party in order to allow the latter to act and avoid such disclosure, and  "
+    },
+    {
+      "index": 36,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "This Agreement does not apply to information that: v. is required to be disclosed by law, provided that Recipient gives Discloser sufficient prior written notice of any such disclosure to allow Discloser to contest the disclosure.  "
+    },
+    {
+      "index": 41,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "7. In the event that Recipient is ordered to disclose Discloser's Confidential Information pursuant to a judicial or governmental request, requirement or order, Recipient shall promptly notify Discloser and take reasonable steps at Discloser's expense to assist Discloser in contesting such request, requirement or order or otherwise protecting Discloser's rights. "
+    },
+    {
+      "index": 42,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that we or any of our representatives receive a request or are required (by deposition, interrogatory, request for documents, subpoena, civil investigative demand or similar process) to disclose all or any part of the Evaluation Materials, we or our representatives, as the case may be, agree to  (i) immediately notify the Company of the existence, terms and circumstances surrounding such a request,  "
+    },
+    {
+      "index": 43,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Notwithstanding the above, the party to whom Confidential Information was disclosed (the \"RECIPIENT\") shall not be in violation of this Section 3 with regard to a disclosure that was in response to a valid order by a court or other governmental body, provided that the Recipient provides the other party with prior written notice of such disclosure in order to permit the other party to seek confidential treatment of such information.  "
+    },
+    {
+      "index": 44,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "3. In the event that Independent Contractor is required by law or by interrogatories, requests for information or documents, subpoena, Civil Investigative Demand, or similar process to disclose any information supplied to Independent Contractor pursuant to the Agreement, including without limitation the Confidential Information or any other information the disclosure of which is restricted by the terms of this Exhibit B, Independent Contractor will provide the Company with prompt prior written notice of such request or requirement so that the Company may seek an appropriate protective order.  "
+    },
+    {
+      "index": 45,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "5.5 Confidential Information will not include information which: (v) is required to be disclosed pursuant to law, provided the receiving party uses reasonable efforts to give the disclosing party reasonable notice of such required disclosure; or "
+    },
+    {
+      "index": 48,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "3. Each Recipient  Party shall notify the Disclosing Party in the event that any Confidential Information of the Disclosing Party is required to be disclosed by the Recipient Party by judicial, administrative or other govern mental order.  Such notification shall be made reasonably promptly so that the Disclosing Party, at its expense, may seek a protective order or other appropriate remedy.  "
+    },
+    {
+      "index": 49,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "(b) Receiving Party may disclose Confidential Information of Disclosing Party in accordance with a judicial or other governmental order, provided that Receiving Party either  (i) gives the undersigned Disclosing Party reasonable notice prior to such disclosure to allow Disclosing Party a reasonable opportunity to seek a protective order or equivalent, or  "
+    },
+    {
+      "index": 51,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The obligation of confidentiality and restriction on use in Section 2 hereof shall not apply to any Confidential Information that the Receiving Party proves: (d) is requested to be disclosed in a judicial or administrative law, regulation or proceeding after all reasonable legal remedies for maintaining such information in confidence have been exhausted, including, but not limited to, giving the Disclosing Party reasonable advance notice of the potential for such disclosure and allowing the Disclosing Party to seek a protective order concerning such disclosure; or "
+    },
+    {
+      "index": 52,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that the Receiving Party or any of the Receiving Party\u2019s Representatives are requested or required (by oral questions, interrogatories, requests for information or documents in legal proceedings, subpoena, civil investigative demand or other similar process) to disclose any of the Confidential Information or Discussion Information, the Receiving Party will provide the Disclosing Party with prompt written notice of any such request or requirement so that the Disclosing Party may in its sole discretion seek a protective order or other appropriate remedy and/or waive compliance with the provisions of this Agreement.  If, in the absence of a protective order or other remedy or the receipt of a waiver by the Disclosing Party, the Receiving Party or any of the Receiving Party\u2019s Representatives are nonetheless, in the written opinion of outside legal counsel, legally compelled to disclose Confidential Information or Discussion Information to any tribunal, the Receiving Party or the Receiving Party\u2019s Representatives may, without liability hereunder, disclose to such tribunal only that portion of the Confidential Information or Discussion Information which such counsel advises the Receiving Party is legally required to be disclosed, provided that the Receiving Party will use the Receiving Party\u2019s reasonable best efforts to preserve the confidentiality of the Confidential Information and the Discussion Information, including by cooperating with the Disclosing Party to obtain an appropriate protective order or other reliable assurance that confidential treatment will be accorded the Confidential Information and the Discussion Information by such tribunal; and provided further that the Receiving Party will promptly notify the Disclosing Party of  (i) the Receiving Party\u2019s determination to make such disclosure and  (ii) the nature, scope and contents of such disclosure. "
+    },
+    {
+      "index": 55,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that the Receiving Party or anyone to whom it discloses the Confidential Information receives a request to disclose all or any part of the Confidential Information or Discussion Information under the terms of a subpoena or other order issued by a court of competent jurisdiction or by another governmental agency, the Receiving Party shall if permitted pursuant to applicable law  (a) promptly notify the Company of the existence, terms and circumstances surrounding such a request,  "
+    },
+    {
+      "index": 56,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event that a party or its Representatives is required by Law, rule or stock exchange regulation to disclose any of the other party\u2019s Evaluation Material or the fact that discussions between the parties are taking place concerning the Transaction, the party required to make such disclosure shall, to the extent practicable, provide the other party with prior written notice of any such requirement so that the other party may seek a protective order or other appropriate remedy and/or waive compliance with the provisions of this Agreement.  "
+    },
+    {
+      "index": 57,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "(b) If either party is required (by interrogatories, requests for information or documents, subpoena, civil investigative demand or similar process) to disclose any Confidential Information, it is agreed that such party will provide the other party with prompt notice of such request so that such other party may seek an appropriate protective order and/or waive the notifying party's compliance with the provisions of this Agreement.  "
+    },
+    {
+      "index": 60,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "6. If you or your Representatives are requested or required to disclose any Evaluation Material or any of the information referred to in paragraph 4 above under the heading \u201cNon-Disclosure of Transaction Discussions\u201d (or if the Company or its Representatives is requested or required to disclose that you are in discussions or negotiations with the Company concerning a possible Transaction) pursuant to any law or regulation or stock exchange rule or regulation or the terms of a valid and effective subpoena or order issued by a court of competent jurisdiction or a federal, state or local governmental or regulatory body or pursuant to a civil investigative demand or similar judicial process or otherwise, the applicable party will, to the extent not prohibited by applicable law or regulation,  (i) promptly notify the other party of the existence, terms and circumstances surrounding such request or requirement,  "
+    },
+    {
+      "index": 61,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "4. The Company shall have no obligations to Verenium with respect to the use of such information, or disclosure to others not party to this Agreement, of such information which:  (e) is required by applicable law, regulation or bona fide legal process to be disclosed by Company, provided, however, that Company takes all reasonable steps to restrict and maintain the confidentiality of such disclosure (including, without limitation, seeking a protective order or confidential treatment thereof, as the case may be), and provides reasonable prior written notice to Verenium of the requirement to disclose such information and the specific disclosure(s) proposed to satisfy such law(s), regulation(s) or legal process(es). "
+    },
+    {
+      "index": 62,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The Receiving Party and its Representatives may make disclosures required by court order or any legal or judicial process, without any liability hereunder, provided the Receiving Party uses reasonable efforts to limit disclosure and to obtain confidential treatment or a protective order and has allowed the Disclosing Party to participate  "
+    },
+    {
+      "index": 64,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If Investor or its Representatives receive a subpoena or other validly issued administrative or judicial process requesting Evaluation Material, or if Investor or its Representatives are requested or required to disclose any Evaluation Material under law, governmental order, judicial order, regulatory or statutory requirement, discovery request, oral questions, interrogatories, requests for information or documents, subpoena, civil investigative demand or similar process, Investor shall notify the Company reasonably promptly following Investor or its Representatives first becoming aware of such requested disclosure, so that the Company may seek a protective order or other appropriate remedy or, in the Company\u2019s sole discretion, waive compliance with the terms of this Agreement.  "
+    },
+    {
+      "index": 65,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If the Receiving Party or its Representatives are requested or required in any judicial, arbitral or administrative proceeding or by any governmental or regulatory authority to disclose any Evaluation Material (whether by deposition, interrogatory, request for documents, subpoena, civil investigative demand, or otherwise), or the Receiving Party is so requested or required to disclose any of the facts disclosure of which is prohibited under paragraph  (3)(e) of this Agreement, the Receiving Party shall give the Furnishing Party prompt notice of such request so that the Furnishing Party may seek an appropriate protective order or other appropriate remedy and/or waive compliance with the provisions of this Agreement, and, upon the Furnishing Party's request and at the Furnishing Party's expense, shall reasonably cooperate with the Furnishing Party in seeking such an order.  (d) Notice  If either Party proposes to make any disclosure in reliance on clause  (i) above, the disclosing Party shall, to the extent practicable, provide the other Party with the text of the proposed disclosure as far in advance of its disclosure as is practicable and shall in good faith consult with and consider the suggestions of the other Party concerning the nature and scope of the information it proposes to disclose.  Notwithstanding the foregoing, a Party may make such public announcement or public statement if in the opinion of such Party's outside counsel or General Counsel, such public announcement or public statement is necessary to avoid committing a violation of law or of any rule or regulation of any securities association, stock exchange or national securities quotation system on which such Party's securities are listed or trade.  In such event, the disclosing Party shall use its reasonable best efforts to give advance notice to the other Party and to consult with the other Party on the timing and content of any such public announcement or public statement. "
+    },
+    {
+      "index": 66,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In the event the Receiving Party (or any of its Representatives) shall be Legally Required to disclose any Proprietary Information or Transaction Information, the Receiving Party shall, in advance of such disclosure, to the extent legally permissible, provide the Disclosing Party with notice of such requirement and a description of the Proprietary Information and Transaction Information that the Receiving Party or its Representative intends to disclose and to reasonably cooperate with the Disclosing Party to the extent it may seek to limit such disclosure, including, if requested, taking all reasonable steps, at the Disclosing Party\u2019s expense, to resist or avoid any such legal, judicial, regulatory or administrative process or to obtain a protective order in respect thereof.  "
+    },
+    {
+      "index": 67,
+      "expected": "eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": true,
+        "clause_requires_notification": true,
+        "notification_duty_receiving_to_disclosing": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "It shall not be a breach of the confidentiality obligations hereof for a Receiving Party to disclose Confidential Information where, but only to the extent that, such disclosure is required by law or applicable legal process, provided in such case the Receiving Party shall  (i) give the earliest notice possible to the Disclosing Party that such disclosure is or may be required and  "
+    },
+    {
+      "index": 75,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Contemplate one or more meetings and various communications that will involve the disclosure by one of the parties [DISCLOSING PARTY] to the other party [RECEIVING PARTY] of technical, business, marketing, planning, pricing and other information and data, in written, oral, electronic, magnetic, photographic and/or other forms, including information and data regarding Internet-based transport solutions  (Collectively CONFIDENTIAL INFORMATION). "
+    },
+    {
+      "index": 76,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "c. Seller, Key Personnel and Shareholder covenant and agree that each shall not for a period of one (1) year, communicate or divulge to, or use for the benefit of itself or any other person, firm, association or corporation, any information in any way relating to the Proprietary Property, in competition with the business of the Company. "
+    },
+    {
+      "index": 77,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subject to Recipient\u2019s obligations of non-disclosure, Recipient shall be free to use the residuals resulting from the use or access to the Confidential Information of Discloser.  "
+    },
+    {
+      "index": 78,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2. All the information that  (ii) is disclosed verbally, and at the time of its disclosure, the Disclosing Party's identify such information to be protected in accordance with this Agreement (\"Confidential Information\"), shall be considered confidential and restricted property of the Disclosing Party. 3. The term \"Information\" shall include all written information, verbal or otherwise presented in tangible or intangible way, including, but not limited to, trade secrets, discoveries, ideas, concepts, know-how, techniques, technology, products, designs, specifications, drawings, diagrams, data, computer programs, business activities and operations, reports, studies and other technical, commercial, financial information of each Party or its Affiliates. "
+    },
+    {
+      "index": 83,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "VENDOR, its employees, agents, contractors, and subcontractors shall use the Confidential Information solely in connection with performance by VENDOR of the services provided to UNIVERSITY and for no other purpose.  "
+    },
+    {
+      "index": 84,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "b. Except in connection with any joint project between Cyberlux and ICT, the receiving party shall not make any use of the disclosing party's Proprietary Information for is own benefit or for the benefit of any other individual, corporation or entity. "
+    },
+    {
+      "index": 85,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement shall not prohibit disclosure to third party consultants and professional advisors provided such third parties enter into and agree to be bound by this Agreement. "
+    },
+    {
+      "index": 86,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Any Confidential Information that is not returned or destroyed, including without limitation any oral Confidential Information, shall remain subject to the confidentiality obligations set forth in this Exhibit B. "
+    },
+    {
+      "index": 88,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Furthermore, nothing contained hereunder shall be construed as creating, conveying, transferring, granting or conferring by one party on the other party any rights, license or authority in or to the information provided.  "
+    },
+    {
+      "index": 89,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Employee agrees that all Confidential Information and all records, documents and materials relating to all Confidential Information (including all copies thereof) shall be and remain the sole and exclusive property of a Banking Organization, and upon Employee\u2019s termination of employment, all such Confidential Information, whether in paper or electronic form, shall be returned to a Financial Institution in good condition, without Employee retaining a copy thereof, including, but not limited to, retaining an electronic copy on any electronic device regardless of whether such device is owned by Employee.  Upon termination of Employee\u2019s employment, Employee shall immediately return to the Bank (if subsequent to the Effective Time) or Heritage (if prior to the Effective Time), all Banking Organizations documents and property, including, but not limited to, Confidential Information, computer discs, manuals, reports, files, memoranda, records, door and file keys, passwords and access codes, and any other physical or tangible things that Employee received, prepared, or helped prepare in connection with the Employee\u2019s employment, and Employee shall not retain any copies, duplicates, reproductions or excerpts thereof.  At the Bank\u2019s or Heritage\u2019s request, Employee shall provide written verification under the penalties for perjury of his/her compliance with this covenant. "
+    },
+    {
+      "index": 90,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "4. The receiving Party hereby covenants that, during the validity period of this Agreement and for a period of five (5) years after its end or its termination, the Proprietary Information received from the disclosing Party shall: (c) not be used in whole or in part for any purpose other than the purpose of this Agreement as specified in the preamble and for the Project above without the prior written consent of the disclosing Party, "
+    },
+    {
+      "index": 91,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2.5 Neither party shall be required to keep confidential any information which is, or becomes, publicly available, is independently developed by either party outside the scope of this agreement, or is rightfully obtained from third parties. "
+    },
+    {
+      "index": 92,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Confidential Information: means all confidential information (however recorded, preserved or disclosed) disclosed by a Party or its Representatives to the other Party and that Party's Representatives including but not limited to: (a) the fact that discussions and negotiations are taking place concerning the Purpose and the status of those discussions and negotiations; (b) the existence and terms of this Agreement; "
+    },
+    {
+      "index": 95,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "8. Except as provided under clause 12.2 of the General Purchase Conditions, it is expressly understood and agreed by the Parties hereto that the disclosure and provision of Proprietary Information under this Agreement by a Party to the other Party shall not be construed as granting to the receiving Party under the laws of any country any rights whether expressed or implied by licenceor otherwise on the matters, inventions or discoveries to which such Proprietary Information pertains or any copyright, trademark or trade secret rights. The property in all information and/or data disclosed by the Buyer to the Supplier pursuant to this Agreement shall subject to any right of any other owner, rest with the Buyer. "
+    },
+    {
+      "index": 97,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. In consideration of the disclosure of Proprietary Information by the Disclosing Party, the Receiving Party hereby agrees:  (iii) not to make any use whatsoever at any time of such Proprietary Information except to evaluate internally its relationship with the Disclosing Party, and "
+    },
+    {
+      "index": 98,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(a) Each of PictureTel and Polycom shall  (ii) not disclose the Confidential Information to any third party, except for disclosures to its directors, executive officers and representatives of its advisors (such as independent accountants, investment bankers, consultants and attorneys) acting on its behalf (collectively, its \"Representatives\") who in each case, in such party's reasonable judgment, need to know such information for the purpose of evaluating a possible Transaction and who are set forth on Annex A hereto, as it may be amended by the parties from time to time;  "
+    },
+    {
+      "index": 99,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Confidential Information is and shall be considered valuable trade secrets owned exclusively by the Disclosing Party.  The Disclosing Party retains all right, title and interest in the Confidential Information and any reasonably related information which may be subsequently developed, and the Receiving Party waives all rights to the intellectual property and copyright therein in favour of the Disclosing Party. No license is granted to the Receiving Party in relation to any intellectual property rights that attach to or may be embodied in any Confidential Information, or is implied by the conveying of such Confidential Information to the Receiving Party. "
+    },
+    {
+      "index": 102,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "9. At the end of the contract the receiving party shall return the confidential information and any possibly extant copies after receipt of a written request, provided that this is technically feasible and does not violate the retention obligations.  "
+    },
+    {
+      "index": 103,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "A. \"Confidential Information\" of a party shall mean any trade secrets, know-how, inventions, products, designs, methods, techniques, systems, processes, software programs, works of authorship, business plans, customer lists, projects, plans, pricing, proposals and any other information which a party discloses to the Recipient Party that:  (i) if disclosed in writing is clearly marked as confidential or carries a similar legend; or  (ii) if disclosed verbally or in tangible form is identified as confidential at the time of disclosure, then summarized in a writing so marked by the Disclosing Party and delivered to the Recipient Party with fifteen (15) days.  "
+    },
+    {
+      "index": 104,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "3. Notwithstanding any other provisions of the Agreement, each party acknowledges that Confidential Information shall not include any information which: b. was received from a third party not under an obligation of confidence to Receiving Party; "
+    },
+    {
+      "index": 106,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Borrower may also disclose the Information to its legal counsel. "
+    },
+    {
+      "index": 108,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Recipient shall use the Confidential Information exclusively for HySafe purposes, especially to advice the Governing Board of HySafe. "
+    },
+    {
+      "index": 109,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In view thereof, the parties undertake that - 3.2 they will not, without the prior written consent of the disclosing party: 3.2.1 during the course of the negotiations and discussions referred to in 1 or at any time thereafter, directly or indirectly, use any of the confidential information, otherwise than for the purpose of such negotiations and discussions or for the implementation of any agreement resulting there from; "
+    },
+    {
+      "index": 110,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "1. For purposes of this Agreement, \u201cConfidential Information\u201d means, with respect to either party, any and all information in written, representational, electronic, verbal or other form relating directly or indirectly to the present or potential business, operation or financial condition of or relating to the disclosing party (including, but not limited to, information identified as being proprietary and/or confidential or pertaining to, pricing, marketing plans or strategy, volumes, services rendered, customers and suppliers lists, financial or technical or service matters or data, employee/agent/ consultant/officer/director related personal or sensitive data and any information which might reasonably be presumed to be proprietary or confidential in nature) excluding any such information which  "
+    },
+    {
+      "index": 116,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "However, PwC may retain a copy of the confidential information for our internal purposes. "
+    },
+    {
+      "index": 121,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "b. The Parties shall disclose the Information to their employees, Affiliates, external experts and/or consultants only on a need to know basis and only to the extent absolutely necessary for the Purpose.  "
+    },
+    {
+      "index": 125,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon the termination of Covenantor's employment with Buyer, Covenantor shall immediately surrender to Buyer all notes, data, sketches, drawings, manuals, documents, records, data bases, programs, blueprints, memoranda, specifications, customer lists, financial reports, equipment and all other physical forms of expression incorporating or containing any Confidential Information, it being distinctly understood that all such writings, physical forms of expression and other things are the exclusive property of Buyer.  "
+    },
+    {
+      "index": 126,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(a) The Receiving Party shall, and shall cause its Representatives to, use the Confidential Information solely for the purpose of evaluating a possible Transaction.  "
+    },
+    {
+      "index": 130,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2. Exclusions. \u201cConfidential Information\u201d excludes information which:  (d) Recipient has independently developed without using any Confidential Information or breaching this Agreement; or  (e) Discloser gives written permission to Recipient to disclose. Subject to the obligations of this Agreement, neither party will be precluded from independently developing technology or pursuing business opportunities similar to those covered by the Confidential Information disclosed hereunder.  Each party acknowledges that the other party may currently or in the future be developing information internally, or receiving information from third parties, that is similar to the Confidential Information.  Nothing in this Agreement will prohibit Recipient from developing or having developed for it products, concepts, systems or techniques that are similar to those contemplated by or embodied in the Confidential Information, provided the Recipient does not violate its obligations under this Agreement. "
+    },
+    {
+      "index": 131,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(a) Nothing in this Agreement shall be construed as granting or conferring any rights, interests or intellectual property rights by assignment, license or otherwise, relating to any Confidential Information in or for any intellectual property, invention, discovery or improvement or derivative made, conceived or acquired prior or subsequent to the Effective Date.  "
+    },
+    {
+      "index": 133,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "(e) Receiving Party shall, at Disclosing Party's request, return all originals, copies, reproductions and summaries of Confidential Information and all other tangible materials and devices provided to the Receiving Party as Confidential Information, or at Disclosing Party's option, certify destruction of the same. "
+    },
+    {
+      "index": 134,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Notwithstanding the Parties entering into any further agreement or arrangement, or any other event or occurrence, the provisions of this Agreement relating to nondisclosure (including the provisions relating to the breach of this Agreement) or use of the Information shall remain in full force and effect for ________ years or as long as the Information is confidential and non-public, whichever is less, unless otherwise agreed to in writing by the Parties hereto. "
+    },
+    {
+      "index": 139,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "a. What is included, \"Confidential information\" is non-public information, know-how and trade secrets in any form that: \uf0b7 Are designated as \"confidential\"; or \uf0b7 A reasonable person knows or reasonably should understand to be confidential. "
+    },
+    {
+      "index": 141,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_addresses_compelled_disclosure": false,
+        "clause_requires_notification": false,
+        "notification_duty_receiving_to_disclosing": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "2. Each party agrees that at all times until termination or expiration of this Agreement it will hold in strict confidence and not disclose to any third party Confidential Information of the other, except as approved in writing by the other party to this Agreement, and will use the Confidential Information for no purpose other than evaluating or pursuing a business relationship with the other party to this Agreement.  "
+    }
+  ]
+}

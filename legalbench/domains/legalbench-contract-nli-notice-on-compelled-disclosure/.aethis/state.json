@@ -1,0 +1,6 @@
+{
+  "project_id": "proj_foPS6-QKzjyI0_f9",
+  "bundle_id": "legalbench_contract_nli_notice_on_compelled_disclosure:20260425-79fb42fa",
+  "task_selection": "random sample (tools/random_task_pick.py --seed 43)",
+  "split_seed": 7
+}

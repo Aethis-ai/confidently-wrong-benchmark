@@ -1,0 +1,2057 @@
+{
+  "task": "diversity_2",
+  "split": "test",
+  "model": "claude-sonnet-4-6",
+  "summary": {
+    "correct": 201,
+    "total": 300,
+    "parse_err": 56,
+    "api_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 1,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 2,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 3,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 4,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 5,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 6,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 7,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 8,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 9,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 10,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 11,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 12,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 13,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 14,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 15,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 16,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 17,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 18,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 19,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 20,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 21,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 22,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 23,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 24,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 25,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 26,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 27,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 28,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 29,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 30,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 31,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 32,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 33,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 34,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 35,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 36,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 37,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 38,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 39,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 40,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 41,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 42,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 43,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 44,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 45,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 46,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 47,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 48,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 49,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 50,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 51,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 52,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 53,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 54,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 55,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 56,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 57,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 58,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 59,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 60,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 61,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 62,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 63,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 64,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 65,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 66,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 67,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 68,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 69,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 70,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 71,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 72,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 73,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 74,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 75,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 76,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 77,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 78,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 79,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 80,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 81,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 82,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 83,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 84,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "Looking at this problem:\n\n**Complete Diversity:**\n- Plaintiff:"
+    },
+    {
+      "index": 85,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 86,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 87,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 88,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 89,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 90,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 91,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 92,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 93,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 94,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 95,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 96,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 97,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 98,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 99,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 100,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 101,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 102,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 103,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 104,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 105,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 106,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 107,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 108,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 109,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 110,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 111,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 112,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 113,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 114,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 115,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 116,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 117,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 118,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 119,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 120,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 121,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 122,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 123,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 124,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 125,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 126,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 127,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 128,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 129,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 130,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 131,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 132,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 133,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 134,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 135,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 136,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 137,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 138,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 139,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 140,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy "
+    },
+    {
+      "index": 141,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 142,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 143,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 144,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 145,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 146,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 147,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 148,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 149,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 150,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 151,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 152,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 153,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 154,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 155,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 156,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 157,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 158,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 159,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 160,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 161,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 162,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 163,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 164,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 165,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 166,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 167,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction: complete diversity"
+    },
+    {
+      "index": 168,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 169,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 170,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 171,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 172,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 173,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 174,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 175,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 176,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 177,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 178,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 179,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 180,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 181,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 182,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 183,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 184,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 185,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 186,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 187,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 188,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 189,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 190,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 191,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 192,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 193,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 194,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 195,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 196,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 197,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 198,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 199,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 200,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 201,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 202,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 203,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 204,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 205,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 206,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 207,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 208,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 209,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 210,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 211,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 212,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 213,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 214,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 215,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 216,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 217,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 218,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 219,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 220,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 221,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 222,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 223,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 224,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 225,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 226,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 227,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 228,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 229,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 230,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 231,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 232,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 233,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 234,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 235,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 236,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 237,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 238,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 239,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 240,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 241,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 242,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 243,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 244,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 245,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 246,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 247,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 248,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 249,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 250,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 251,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 252,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 253,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 254,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 255,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 256,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 257,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 258,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 259,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 260,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 261,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 262,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 263,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 264,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 265,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 266,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 267,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 268,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 269,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 270,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 271,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 272,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 273,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 274,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Parties:**"
+    },
+    {
+      "index": 275,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 276,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 277,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 278,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 279,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 280,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 281,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 282,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 283,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 284,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 285,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 286,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 287,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 288,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 289,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 290,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 291,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 292,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 293,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 294,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 295,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 296,
+      "expected": "no",
+      "answer": "yes",
+      "correct": false,
+      "raw": "Yes"
+    },
+    {
+      "index": 297,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    },
+    {
+      "index": 298,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 299,
+      "expected": "no",
+      "answer": "no",
+      "correct": true,
+      "raw": "No"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "project_id": "proj_xZpRl7Apw33tdBhB",
+  "bundle_id": "legalbench_cuad_liquidated_damages:20260426-2690b810",
+  "task_selection": "random sample (tools/random_task_pick.py --seed 43)",
+  "split_seed": 7
+}

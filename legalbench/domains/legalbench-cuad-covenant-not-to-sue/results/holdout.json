@@ -1,0 +1,1714 @@
+{
+  "task": "cuad_covenant_not_to_sue",
+  "bundle_id": "legalbench_cuad_covenant_not_to_sue:20260425-0e17cf68",
+  "extractor_model": "claude-sonnet-4-6",
+  "split": {
+    "method": "tools/test_split.py",
+    "seed": 7,
+    "dev_fraction": 0.5,
+    "evaluated_on": "holdout",
+    "n_total": 154
+  },
+  "summary": {
+    "correct": 150,
+    "total": 154,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 1,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "NCM shall not engage in any conduct which may place Network Affiliate or any Network Affiliate Mark in a negative light or context, and shall not represent that it owns or has any interest in any Network Affiliate Mark other than as expressly granted herein, nor shall it contest or assist others in contesting the title or any rights of Network Affiliate (or any other owner) in and to any Network Affiliate Mark."
+    },
+    {
+      "index": 3,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Developer agrees that it will not at any time (i) do or cause to be done any act or thing contesting or in any way impairing any part of such right, title and interest or (ii) represent, expressly or by implication that it has any right, title or interest in or to any of the foregoing other than as expressly set forth herein."
+    },
+    {
+      "index": 5,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor acknowledges Zogenix's exclusive ownership of the Zogenix Trademarks and agrees not to take any action inconsistent with such ownership."
+    },
+    {
+      "index": 10,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Bioeq may terminate this Agreement immediately upon written notice to Licensee, if Licensee or any of its Affiliates or sublicensees directly or indirectly challenge the validity or enforceability of, or oppose any extension of or the grant of a supplementary protection certificate with respect to, any Licensed Patent in any legal, court, administrative or other governmental proceeding."
+    },
+    {
+      "index": 15,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Without limitation to the foregoing, Arizona shall not file applications to register any Company Licensed IP or assist any person in doing the same, or contest, challenge, or otherwise take any action adverse to the Company's and its Affiliates' ownership of or rights in and to the Company Licensed IP, or assist any person in doing the same."
+    },
+    {
+      "index": 16,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Licensee acknowledges that Fox is the owner of all right, title and interest in and to the PSM and the Properties, and further acknowledges the great value of the goodwill associated with the PSM and the Properties and that the PSM and the Properties have acquired secondary meaning in the mind of the public and that the trademarks and copyrights included in the PSM and the Properties, and the registrations thereof, are valid and subsisting, and further agrees that it shall not during the Term of this Agreement or at any time thereafter dispute or contest directly or indirectly, or do or cause to be done any act which in any way contests, impairs or tends to impair Fox's<omitted>exclusive rights and title to the PSM and the Properties, or the validity thereof or the validity of this Agreement, and shall not assist others in so doing."
+    },
+    {
+      "index": 17,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The occurrence of any one of the following events shall constitute a default under this Agreement requiring a 30 day notice period of termination by Pretzel Time to Franchisee:<omitted>(xi) Franchisee misuses Pretzel Time's Marks or asserts any interest in Pretzel Time's Marks; uses Pretzel Time's tradename or any part thereof as part to of its corporate name; does not cooperate in the enforcement of any Mark; or challenges or seeks to challenge the validity of the Marks;"
+    },
+    {
+      "index": 18,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Reed's shall not at any time acquire any rights, title or interest in Company's Intellectual Property. Reed's agrees that it will not at any time contest the ownership or validity of any Company Intellectual Property, nor register or attempt to register any rights with respect to Company Intellectual Property, nor do anything that would jeopardize or diminish Company's rights to or the value of Company Intellectual Property."
+    },
+    {
+      "index": 19,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "SpinCo agrees that it will not (i) oppose, challenge, petition to cancel, contest or threaten in any way, or assist another party in opposing, challenging, petitioning to cancel, contesting or threatening in any way, any application or registration by Nuance or its Affiliates or their respective licensees for any Nuance IP, (ii) engage in any act, or purposefully omit to perform any act, that impairs or adversely affects the rights of Nuance or any member of the Nuance Group in and to any Nuance IP or (iii) apply for any registration (including federal, state and national registrations) with respect to the Nuance IP."
+    },
+    {
+      "index": 20,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor acknowledges that Company owns and retains all copyrights and other proprietary rights in all the Products, and agrees that it will not at any time during or after the term of this Agreement assert or claim any interest in or do anything that may adversely affect the validity or enforceability of any trademark, trade name, copyright or logo belonging to or licensed to Company (including without limitation any act, or assistance to any act, which may infringe or lead to the infringement of any copyright in the Products)"
+    },
+    {
+      "index": 21,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Neither Vyera, nor any of its Affiliates shall directly or indirectly, challenge, or assist any Third Party to dispute or challenge, in a legal or administrative proceeding the patentability, enforceability or validity of any CytoDyn Patents."
+    },
+    {
+      "index": 23,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You will not contest, either directly or indirectly during or after the Term: 9.1.1.1 our (and/or any Entities') ownership of, rights to and interest in the System, Brand, Marks and any of their elements or components, including present and future distinguishing characteristics and agree that neither you nor any design or construction professional engaged by you may use our Standards, our Manual or your approved Plans and Designs for any hotel or lodging project other than the Hotel; 9.1.1.2 our sole right to grant licenses to use all or any elements or components of the System; 9.1.1.3 that we (and/or the Entities) are the owner of (or the licensee of, with the right to sub-license) all right, title and interest in and to the Brand and the Marks used in any form and in any design, alone or in any combination, together with the goodwill they symbolize; or 9,1.1.4 the validity or ownership of the Marks."
+    },
+    {
+      "index": 24,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Network Affiliate shall not engage in any conduct which may place NCM or any NCM Mark in a negative light or context, and shall not represent that it owns or has any interest in any NCM Mark other than as expressly granted herein, nor shall it contest or assist others in contesting the title or any rights of NCM (or any other owner) in and to any NCM Mark."
+    },
+    {
+      "index": 25,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Each party acknowledges and agrees that (i) all copyrights and trademarks used in connection herewith that are owned by a party shall be and remain the sole and complete property of such party; (ii) the other party shall not at any time acquire or claim any right, title or interest of any nature whatsoever in any such copyright or trademark by virtue of this Agreement; (iii) the other party shall not contest or assist others to contest the validity of all such copyrights and trademarks; and (iv) it will not incur or create any expenses chargeable to the other party."
+    },
+    {
+      "index": 29,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Sponsor will not, at any time after the Effective Date, dispute or contest, directly or indirectly, ANTHEMIC's exclusive ownership in their respective trademarks."
+    },
+    {
+      "index": 30,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Detto shall not contest the validity of any of the Property or PivX's exclusive ownership of them."
+    },
+    {
+      "index": 31,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Distributor shall not do, or omit to do, anything in its use of the Trade Marks that could adversely affect their validity or the goodwill of the Supplier."
+    },
+    {
+      "index": 32,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "TL recognizes Integrity's title to the Integrity Trademarks and will not at any time do or suffer to be done any act or thing which will in any way impair Integrity's rights in and to the Integrity Trademarks."
+    },
+    {
+      "index": 33,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Rubicon shall not contest ownership by ISA of any of the foregoing."
+    },
+    {
+      "index": 35,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Without limiting the generality of the foregoing, MLX agrees:<omitted>not to contest the validity of the HCI Marks or HCI's title thereto;"
+    },
+    {
+      "index": 37,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Depomed acknowledges and agrees that it shall not acquire and shall not claim any title to the King Trademarks adverse to King by virtue of the rights granted under this Agreement or through Depomed's use of the King Trademarks, it being the intention of the parties that all goodwill and improved reputation generated by Depomed and use of the King Trademarks shall inure to the benefit of King."
+    },
+    {
+      "index": 38,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "With the exception of claims related to representations contained in the franchise disclosure document for the Brand, you, on your own behalf and on behalf of, as applicable, your officers, directors, managers, employees, heirs, administrators, executors, agents and representatives and their respective successors and assigns hereby release, remise, acquit and forever discharge us and the Entities and our and their respective officers, directors, employees, managers, agents, representatives and their respective successors and assigns from any and all actions, claims, causes of action, suits, rights, debts, liabilities, accounts, agreements, covenants, contracts, promises, warranties, judgments, executions, demands, damages, costs and expenses, whether known or unknown at this time, of any kind or nature, absolute or contingent, existing at law or in equity, on account of any matter, cause or thing whatsoever that has happened, developed or occurred relating to this Agreement or the relationship between you and us."
+    },
+    {
+      "index": 42,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In particular, and without limitation, Reseller shall not<omitted>(c) dispute or deny the validity of any of the Intellectual Property Rights (including any attempt to register or record the same in any jurisdiction), (d) do any act or omit to do any act whereby TouchStar's right, title, and interest in the Intellectual Property Rights may become invalidated or otherwise adversely affected"
+    },
+    {
+      "index": 43,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Licensed Users shall not challenge the validity of the Licensed Mark, nor shall Licensed Users challenge Licensor's ownership of the Licensed Mark or the enforceability of Licensor's rights therein."
+    },
+    {
+      "index": 44,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Each party covenants that it shall not, under any circumstances, sue the other party (or its officers, directors, successors and assigns) or any of that parties' licensees, customers, or distributors (\"Protected Entities\") for patent infringment under any future patents or future patent rights relating to said Developments, that either party owns or controls, so long as that Protected Entity has a license from Commerce One or Corio to the Software, or to a product that is a modification of, derivative work based on, or replacement for the Software."
+    },
+    {
+      "index": 45,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Village Media Company shall not, and shall cause its Affiliates and their respective permitted sublicensees not to, whether during the Term or thereafter, challenge (a) the rights of PFHOF in and to any PFHOF Work, (b) the validity of any PFHOF Work, (c) PFHOF's right to grant rights or licenses relating to the PFHOF Works or (d) the validity, legality, or enforceability of this Agreement."
+    },
+    {
+      "index": 46,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Honeywell agrees that it will not, and agrees to cause each member of the Honeywell Group not to, (i) initiate any Action against any member of the SpinCo Group or its Affiliates for infringement, misappropriation or other violation of any Honeywell IP, (ii) oppose, challenge, petition to cancel, contest or threaten in any way, or assist another party in opposing, challenging, petitioning to cancel, contesting or threatening in any way, any application or registration by SpinCo or its Affiliates or their respective licensees for any SpinCo IP, the use of which is consistent with the use of such SpinCo IP in connection with the SpinCo Business as of immediately prior to the Distribution Date, (iii) engage in any act, or purposefully omit to perform any act, that impairs or adversely affects the rights of SpinCo or any member of the SpinCo Group in and to any SpinCo IP or (iv) apply for any registration with respect to the SpinCo IP (including federal, state and national registrations), in each case of the foregoing clauses (i) - (iv) for a period of five (5) years after the Distribution Date, without the prior written consent of SpinCo, which consent shall not be unreasonably withheld, conditioned or delayed."
+    },
+    {
+      "index": 48,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "In the event of termination, neither party, their heirs nor successors shall issue any challenge whatsoever to contest the termination."
+    },
+    {
+      "index": 49,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Each Grantor undertakes not to assert any -------------------- claim for Patent infringement with respect to use and maintenance of Licensed Products against any end user, customer or distributor of Grantee, or any subsequent vendee, lessee, or transferee to the extent the Licensed Products have been acquired from Grantee after the Effective Date and are used for the purpose for which they predominantly have been made (without modification or amendment)."
+    },
+    {
+      "index": 52,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "During and after the Term, neither Party shall register, use or claim ownership or other rights in any logo, trade name, brand name or trademark of the other Party in existence during the Term (nor any logo, trade name, brand name or trademark confusingly similar to any logo, trade name, brand name or trademark of the other Party in existence during the Term), nor assist anyone else to do so, nor make or assist in any challenge to any logo, trade name, brand name or trademark of the other Party in existence during the Term."
+    },
+    {
+      "index": 55,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor acknowledges Zogenix's exclusive ownership of the Product Trademarks and agrees not to take any action inconsistent with such ownership."
+    },
+    {
+      "index": 59,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Buyer Entities acknowledge and agree that<omitted>(c) the Company shall not represent or make any claim that it has an ownership interest in any Arizona Licensed IP."
+    },
+    {
+      "index": 60,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "During the Term, Valeant will not contest the ownership of the Dova Trademarks and Copyrights, their validity, or the validity of any registration therefor."
+    },
+    {
+      "index": 63,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In addition, LeadersOnline shall not now or in the future contest the validity of VerticalNet's ownership of its Intellectual Property; provided, however, that LeadersOnline may contest the validity of VerticalNet's Intellectual Property in any proceeding brought against LeadersOnline alleging infringement or misappropriation of VerticalNet's Intellectual Property."
+    },
+    {
+      "index": 67,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "At no time during or after the term of this Agreement shall either party challenge or assist others to challenge the other party's Trademarks or the registration thereof or attempt to register any trademarks, marks or trade names confusingly similar to those of the other party."
+    },
+    {
+      "index": 68,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Licensee hereby acknowledges the validity of Licensor's Trademarks and Licensor's exclusive right, title and interest in and to the Trademarks."
+    },
+    {
+      "index": 69,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor acknowledges Airspan's exclusive right, title, and interest in and to any trademarks, trade names, logos and designations which Airspan may at any time have adopted, used, or registered in the United States of America and in the Territory (the \"Trademarks\"), and will not at any time do or cause to be done any act or thing contesting or in any way impairing or tending to impair any part of said right, title, and interest."
+    },
+    {
+      "index": 71,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "HCI agrees: (i) that MLX is the owner of the MLX Marks and the goodwill and reputation associated therewith; (ii) not to contest the validity of the MLX Marks or MLX's title thereto;"
+    },
+    {
+      "index": 72,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "RemainCo hereby covenants not to sue SpinCo under any Licensed RemainCo Know-How and under RemainCo's right, title and interest in and to Shared Library Materials and Foundational Software, including, without limitation, all applicable Patents, Copyrights, and Know-How, for infringement or misappropriation based upon any action that occurs in connection with the continued operation of the SpinCo Business and any future extensions of the SpinCo Business in any field other than the RemainCo Core Field after the Distribution Date."
+    },
+    {
+      "index": 73,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor shall not dispute or contest for any reason whatsoever, directly or indirectly, during the term of this Agreement and thereafter, the validity, ownership or enforceability of any of the trademarks of Company, nor directly or indirectly attempt to acquire or damage the value of the goodwill associated with any of the trademarks of Company, nor counsel, procure or assist any third Party to do any of the foregoing"
+    },
+    {
+      "index": 76,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "At no time during the term of the Agreement or thereafter shall Women.com attack, challenge or file any application with respect to any eDiets Mark."
+    },
+    {
+      "index": 77,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Distributor will not challenge any intellectual property rights claimed by JRVS in such trademarks."
+    },
+    {
+      "index": 79,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Neither you nor any of your owners, principals, or other persons acting on your behalf will directly or indirectly contest the validity or our ownership of the Proprietary Marks, nor will you, directly or indirectly, seek to register the Proprietary Marks with any government agency (unless we have given you our express prior written consent to do so)."
+    },
+    {
+      "index": 80,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "During the Term of this Agreement and for three years thereafter, the Distributor (on behalf of itself and each of its affiliates) agrees not to commence, or provide any information to or otherwise assist any person or entity in connection with, any suit, action or proceeding contesting the ownership, validity or enforceability of any patent, copyright, trademark, trade name or other propriety right owned by or licensed to the Company, whether currently existing or hereinafter invented, developed or acquired unless required to by court order."
+    },
+    {
+      "index": 87,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Licensee agrees and covenants that it shall not challenge, contest, or take any actions inconsistent with Licensor's exclusive rights of ownership of the Licensed Mark."
+    },
+    {
+      "index": 88,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Distributor shall not, and shall cause its Affiliates not to, (i) use, seek to register, or otherwise claim rights in any Trademark that is confusingly similar to, misleading or deceptive with respect to, or that materially dilutes, any of the Zogenix Trademarks, or (ii) knowingly do, cause to be done, or knowingly omit to do any act, the doing, causing or omitting of which endangers, undermines, impairs, destroys or similarly affects, in any material respect, the validity or strength of any of the Zogenix Trademarks (including any registration or pending registration application relating thereto) or the value of the goodwill pertaining to any of the Zogenix Trademarks."
+    },
+    {
+      "index": 89,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In addition, Impresse shall not now or in the future contest the validity of VerticalNet's ownership of its Intellectual Property; provided, however, that Impresse may contest the validity of VerticalNet's Intellectual Property in any proceeding brought against Impresse alleging infringement or misappropriation of VerticalNet's Intellectual Property."
+    },
+    {
+      "index": 90,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Developer expressly acknowledges El Pollo Loco's exclusive right, title, and interest in an to the trade name, service mark and trademark \"El Pollo Loco\", and such other trade names, service marks, and trademarks which are designated as part of the El Pollo Loco\u00ae System (the \"Marks\"), and Developer agrees not to represent in any manner that Developer has any ownership in El Pollo Loco\u00ae Marks."
+    },
+    {
+      "index": 91,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Licensee shall not otherwise contest, dispute, or challenge the Licensor's right, title, and interest in and to the Licensed Mark."
+    },
+    {
+      "index": 92,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Company agrees that it shall not seek to register or obtain ownership rights in any of Janssen's corporate names, logos, or Product Trademarks (or any confusingly similar trademark)."
+    },
+    {
+      "index": 96,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "During the Term and after expiration or termination of this Agreement, MusclePharm shall not contest or otherwise challenge or attack the AS Parties' rights in the Trademarks or Name and Appearance Rights or the validity of the license being granted herein."
+    },
+    {
+      "index": 97,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "ISO agrees to never contest the ownership of these marks and Visa and/or MasterCard may at any time immediately and without advance notice prohibit ISO from using their respective marks."
+    },
+    {
+      "index": 98,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "At no time shall IAC challenge or assist others to challenge the Sonos Marks, or registrations thereof, or attempt to register any trademarks, service marks, trade names or other marks confusingly similar to the Sonos Marks."
+    },
+    {
+      "index": 100,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Except for claims under Sections 9.4 [INDEMNIFICATION BY IMPRESSE] and 9.5 [INDEMNIFICATION BY VERTICALNET]<omitted>hereof, neither party may bring a claim or action regardless of form, arising out of or related to this Agreement, including any claim of fraud or misrepresentation, more than two years after the cause of action accrues or becomes known, whichever is later."
+    },
+    {
+      "index": 101,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Franchisee shall not at any time during the term of this Agreement or after its termination, contest the validity or ownership of any of the Marks or assist any other person in contesting the validity or ownership of the Marks."
+    },
+    {
+      "index": 102,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Turpin covenants that Turpin shall not at any time directly or indirectly contest or assist any third party in contesting the Company's right, title, and interest in and to the Work Product or any Intellectual Property Rights therein."
+    },
+    {
+      "index": 105,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "All applicable rights to copyrights, patents, trademarks, trade names, logos and identifying slogans and other intellectual property rights in the products are the exclusive property of WLI and Power2Ship shall not contest such ownership."
+    },
+    {
+      "index": 106,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In addition, VerticalNet shall not now or in the future contest the validity of Neoforma's Intellectual Property"
+    },
+    {
+      "index": 107,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "During the Term of this Agreement and after its expiration or termination, you agree not to directly or indirectly contest, or aid in contesting, the validity or ownership of the Proprietary Marks or take any action detrimental to our rights in the Proprietary Marks."
+    },
+    {
+      "index": 109,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Monsanto further agrees that it will in no way dispute, impugn or attack the validity of the Additional Roundup Products Trademarks or the respective owner's rights thereto."
+    },
+    {
+      "index": 110,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Neither Parent nor SpinCo shall make, and shall not permit any member of the Parent Group or SpinCo Group, as the case may be, to make, any claim or demand, or commence any Action asserting any claim or demand, including any claim of contribution or any indemnification, against the other Party or any other member of the Parent Group or SpinCo Group, as the case may be, or any other Person released pursuant to Section 4.1(a) or Section 4.1(b), with respect to any Liabilities released pursuant to Section 4.1(a) or Section 4.1(b)."
+    },
+    {
+      "index": 113,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Licensee will not, at any time during or after this Agreement, register, attempt to register, claim any interest in, contest the use of, or otherwise adversely affect the validity of any of Licensor's marks (including, without limitation, any act or assistance to any act, which may infringe or lead to the infringement of any such marks)."
+    },
+    {
+      "index": 114,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You will not, at any time during the term of this Agreement or after its termination or expiration, contest the validity or ownership of any of the Marks or assist any other person in contesting the validity or ownership of the Marks."
+    },
+    {
+      "index": 116,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Arizona acknowledges and agrees that (a) the Company and its Affiliates own the Company Licensed IP, (b) neither Arizona, nor its Affiliates or its Sublicensees, will acquire any ownership rights in the Company Licensed IP, and (c) Arizona shall not represent or make any claim that it has an ownership interest in any Company Licensed IP. W"
+    },
+    {
+      "index": 118,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Dolphins and Hydron further agree that they will not at any time do or cause to be done any act or thing, directly or indirectly, which contests or in any way impairs or tends to impair any part of the right, title and interest of the other in its Marks; and the Dolphins and Hydron shall not, in any manner, represent that it has any ownership interest in the other's Marks or the registrations therefor."
+    },
+    {
+      "index": 121,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "MacroGenics may terminate this Agreement immediately upon written notice to Green Cross in the event Green Cross or any of its Affiliates: (a) directly or indirectly oppose, or assist any Third Party to oppose, in any patent office proceeding, the grant of any patent or patent application within the MacroGenics Licensed Patents, or, in any patent office proceeding, dispute or directly or indirectly assist any Third Party to dispute, the validity of any patent within the MacroGenics Licensed Patents or any of the claims thereof, including opposing any application for amendment thereto;<omitted>(b) directly or indirectly oppose, or assist any Third Party to oppose, in any court proceeding, the grant of any patent or patent application within the MacroGenics Licensed Patents, or, in any court proceeding, dispute or directly or indirectly assist any Third Party to dispute, the validity of any patent within the MacroGenics Licensed Patents or any of the claims thereof; or (c) bring any claim or proceedings of whatever nature in relation to the MacroGenics Licensed Patents against MacroGenics and/or any of MacroGenics' Affiliates (or in respect of the foregoing their directors and officers) in respect of any activities carried out by them under any MacroGenics Licensed Patents which may be the subject of a Valid Claim of the MacroGenics Licensed Patents."
+    },
+    {
+      "index": 123,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "SCIEN agrees that it will not during the term of this Agreement, or thereafter, attack the title or any rights of HEMISPHERX in and to Interferon alfa-n3 (human leukocyte derived) or attack the validity of the license granted herein by HEMISPHERX and solely owned by HEMISPHERX."
+    },
+    {
+      "index": 124,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You and all Owners must execute a general release, in a form satisfactory to us, of all claims against us and our past, present and future affiliates, officers, directors, shareholders, agents and employees."
+    },
+    {
+      "index": 125,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "To the extent permitted by law you hereby irrevocably and unconditionally waive in favour of the Company, its licensees and successors in title, all existing and future Moral Rights (or similar rights existing in any part of the world) you may have in respect of any Works under Chapter IV of the Copyright Designs and Patents Act 1988 in England or any similar provisions of law in any jurisdiction, including (but without limitation) the right to be identified, the right of integrity and the right against false attribution, and agrees not to institute, support, maintain or<omitted>permit any action or claim to the effect that any treatment, exploitation or use of such Works, Inventions or other materials infringes the Consultant's Moral Rights."
+    },
+    {
+      "index": 126,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": true
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "If the Executive's employment is terminated at any time by reason of any reconstruction or amalgamation of any Group Company, whether by winding up or otherwise, and the Executive is offered employment with any concern or undertaking involved in or resulting from the reconstruction or amalgamation on terms which (considered in their entirety) are no less favourable to any material extent than the terms of this Agreement, the Executive acknowledges and agrees that there shall be no claim against the Company or any undertaking arising out of or connected with such termination."
+    },
+    {
+      "index": 127,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Provided they do not infringe the marks of Affiliate or an affiliate of Affiliate, Affiliate shall not directly or indirectly question, attack, contest or in any other manner impugn the validity of the Marks or Network's rights in and to the Marks and shall reasonably cooperate with Network's quality control, monitoring and inspection of the use of the Marks."
+    },
+    {
+      "index": 131,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Valeant shall not at any time during the Term knowingly do or allow to be done any act or thing which will in any way impair or diminish the rights of Dova in or to the Dova Trademarks and Copyrights."
+    },
+    {
+      "index": 134,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "You agree that you will not, at any time directly or indirectly challenge or contest the validity of, or take any action to jeopardize our rights in or ownership of, any of the Marks or any registration of a Mark or any copyrighted work."
+    },
+    {
+      "index": 140,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Each party each agrees that it will not knowingly do anything inconsistent with the other party's ownership of such party's intellectual property, including without limitation, questioning the validity of that party's Trademarks or registering or attempting to register the other party's Trademarks in its own name or that of any other firm, person or corporation."
+    },
+    {
+      "index": 142,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "In addition, VerticalNet shall not now or in the future contest the validity of Impresse's ownership of its Intellectual Property; provided, however, that VerticalNet may contest the validity of Impresse's Intellectual Property in any proceeding brought against VerticalNet alleging infringement or misappropriation of Impresse's Intellectual Property."
+    },
+    {
+      "index": 146,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "The Developer recognizes the Client's right, title, and interest in and to all service marks, trademarks, trade names , Copyrights and Patents used by the Client and agrees not to engage in any activities or commit any acts, directly or indirectly, that may contest, dispute, or otherwise impair the Client's right, title, and interest therein, nor shall the Developer cause diminishment of value of said trademarks or trade names through any act or representation"
+    },
+    {
+      "index": 147,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "The Investor hereby irrevocably waives, to the extent that it may do so under applicable law: (a) any defense based on the adequacy of a remedy at law which may be asserted as a bar to the remedy of specific performance in any action brought against the Investor for specific performance of this Agreement by Agent, for itself and on behalf of the Lenders, or for the benefit of the Agent and the Lenders by a receiver or trustee appointed for any Borrower or in respect of all or a substantial part of any Borrower's assets under the bankruptcy or insolvency laws of any jurisdiction to which such Borrower is, or its assets are, subject, (b) all statutes of limitations as a defense to any action or proceeding brought against the Investor by the Agent, for itself and on behalf of the Lenders under this Agreement, to the fullest extent permitted by law, (c) any right the Investor may have to require the Agent or the Lenders to proceed against the Borrowers (or any of them), proceed against or exhaust any security held from the Borrowers (or any of them), or pursue any other remedy in the Agent's or the Lenders' power to pursue, (d) any defense based on any claim that the Investor's obligations hereunder exceed or are more burdensome than those of the Borrowers under the Financing Agreement or the other Loan Documents"
+    },
+    {
+      "index": 148,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Franchisee shall not challenge, directly or indirectly, Franchisor's interest in, or the validity of, any Franchisor Property, or any application for registration or trademark registration thereof or any rights of Franchisor therein."
+    },
+    {
+      "index": 150,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "Otis and Carrier, on behalf of themselves and the other members of, respectively, the Otis Group and the Carrier Group, agree and promise not to (a) challenge in any jurisdiction or venue the right or title of UTC or any other members of the UTC Group in and to any United Technologies Trademark, or the validity or enforceability of any United Technologies Trademark or any registration thereof, or (b) register or renew, attempt to register or renew, or assist a Person other than UTC or a member of the UTC Group in registering or renewing, any United Technologies Trademark."
+    },
+    {
+      "index": 152,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": true,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "eligible",
+      "correct": true,
+      "text": "We may immediately terminate this Agreement on notice to you and without any opportunity to cure the default if:<omitted>14.2.7 you contest in any court or proceeding our ownership of the System or any part of the System or the validity of any of the Marks;"
+    },
+    {
+      "index": 153,
+      "expected": "eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": false,
+      "text": "CUSTOMER SHALL RELEASE, DEFEND, INDEMNIFY AND HOLD HARMLESS TRANSPORTER AND TRANSPORTER'S MEMBERS, DIRECTORS, OFFICERS, AGENTS AND EMPLOYEES FROM AND AGAINST ANY AND ALL SUITS, ACTIONS, CAUSES OF ACTION, CLAIMS, DEMANDS, LOSSES, LIABILITIES AND EXPENSES (INCLUDING, WITHOUT LIMITATION, INTEREST, COURT COSTS, REASONABLE ATTORNEYS' FEES AND EXPENSES, AND OTHER COSTS OF DEFENSE) (COLLECTIVELY, \"CLAIMS\") RELATING TO, CAUSED BY OR ARISING OUT OF CUSTOMER'S BREACH OF ANY REPRESENTATION, WARRANTY OR COVENANT MADE BY CUSTOMER HEREUNDER, BUT NOT TO THE PROPORTIONATE EXTENT THAT SUCH CLAIM IS CAUSED BY OR RESULTS FROM OR ARISES OUT OF THE GROSS NEGLIGENCE OR WILLFUL MISCONDUCT OF TRANSPORTER."
+    },
+    {
+      "index": 155,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement shall become effective upon the date first written above and shall remain in full force and effect for a period of two years (2), unless earlier terminated pursuant to the provisions in this Agreement."
+    },
+    {
+      "index": 156,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The benefits of the Agreement shall inure to the respective successors and assignees of the parties and assigns and representatives, and the obligations and liabilities assumed in this Agreement by the parties hereto shall be binding upon their respective successors and assigns; provided that the rights and obligations of UTK under this Agreement may not be assigned or delegated without the prior written consent of AVDU and any such purported assignment shall be null and void."
+    },
+    {
+      "index": 157,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Shipper shall tender to Carrier and Carrier shall transport in a series of shipments not less than 10,000 pounds of Commodities per year."
+    },
+    {
+      "index": 160,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subcontractor shall not assign any right or interest under this Agreement (excepting monies due, or to become due) or delegate or subcontract any Work or other obligation to be performed or owed under this Agreement without prior consent of EDGE."
+    },
+    {
+      "index": 162,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement can be terminated at any time prior to the expiry of the Term, as follows: (a) by the Consultant electing to give the Company not less than 3 months prior notice of such termination; (b) by the Company electing to give the Consultant 3 months prior notice of such termination along with a termination payment equal to the annual Consulting Fee;"
+    },
+    {
+      "index": 165,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "If M&I and Customer are unable to agree upon the terms for renewal of this Agreement at least six (6) months prior to the expiration of the Term, then Customer may, at its option, renew this Agreement for one (1) twelve month period at the then-current terms and conditions of this Agreement."
+    },
+    {
+      "index": 166,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "MacroGenics shall have the initial right to institute and direct legal proceedings against any Third Party believed to be infringing Jointly Owned Patents that claims or covers a Product sold outside the Territory."
+    },
+    {
+      "index": 167,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Grantor's Franchise Fee shall be a percentage share of the base year total annual Franchise Fee, which shall be determined on a pro rata basis according to its percentage share of the total dollar value of Grantee's gas sales occurring within the localities during the calendar year."
+    },
+    {
+      "index": 170,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "To the extent required and for the avoidance of doubt, Stryker hereby grants Conformis, and Conformis hereby accepts, a non-exclusive license to the Stryker Background IP and Improved Stryker Background IP solely for purposes of performing any obligations under this Agreement and the Distribution Agreement."
+    },
+    {
+      "index": 171,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement will be governed by and construed in accordance with the laws of the State of New York without regard to its provisions concerning the applicability of the laws of other jurisdictions, and specifically excluding the United Nations Convention on the International Sale of Goods."
+    },
+    {
+      "index": 174,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Customer may, without Manufacturer's consent, assign the rights and obligations of this Agreement (i) on a Product-by-Product basis, to a Third Party in connection with a bona fide transfer, sale or divestiture of all or substantially all of its business to which such Product relates or in the event of such business's spin-off, merger or consolidation with another company or business entity or (ii) to any Third Party which acquires or succeeds to all or substantially all of the assets of the business of Customer to which this Agreement and the Facility Addenda relate (including in connection with such business's spin-off, merger or consolidation with another company or business entity)."
+    },
+    {
+      "index": 175,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Without the prior written consent of the other Party hereto, neither Party will sell, transfer, assign, pledge or otherwise dispose of, whether voluntarily, involuntarily, by operation of law or otherwise, this Agreement or any of its rights or duties hereunder; provided, however, that either Party may assign, sublicense or transfer this Agreement and all of its rights and obligations hereunder, in their entirety, to any of its Affiliates or to a successor in connection with the sale or other transfer of all or substantially all of its business or assets to which this Agreement relates, whether by merger, sale of stock, sale of assets or otherwise, and"
+    },
+    {
+      "index": 176,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement may not be assigned by either Party without the prior written consent of the other Party."
+    },
+    {
+      "index": 177,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Should COFS unilaterally terminate the provisions of this AGREEMENT related to COFS Property only, with the right to do so beginning on a period beginning no sooner than ninety (90) days following the Post-Well Study (ies), and ending at the one year period following the Post-Well Study (ies), during which STW may exercise its Option to Produce Water, in accordance with Section 15 of this AGREEMENT, COFS shall reimburse STW for 100% of the costs paid by STW up to the point of such termination, pursuant to the AGREEMENT, according to a reasonable accounting schedule of costs prepared by STW and submitted to COFS."
+    },
+    {
+      "index": 178,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement will automatically renew for successive one-year terms unless terminated by either party by providing the other with 30 days written notice that this Agreement will not be renewed or Affiliate enters into a Processing agreement with Network 1 and an ISO Sponsorship agreement with Harris Bank in which case this Agreement will automatically terminate concurrent with the execution of such agreements."
+    },
+    {
+      "index": 179,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement shad be deemed a contract made under and shall be construed in accordance with and governed by the laws ofthe State ofTexas and that actions arising out ofthis Agreement may be litigated in courts having situs in Harris County, Texas."
+    },
+    {
+      "index": 183,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Promptly after any public announcement regarding any proposed transaction that would result in a Change in Circumstances, Buyer shall notify Seller, in writing, of the nature of such transaction, the parties thereto and the proposed date of consummation."
+    },
+    {
+      "index": 185,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Following expiry of the initial period described in Clause 15 above, DCL or SEV giving not less than six months notice in writing may terminate this Agreement."
+    },
+    {
+      "index": 186,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except as provided in this Section 13.2, this Agreement may not be assigned or otherwise transferred, nor may any rights or obligations hereunder be assigned or transferred, by either Party, without the written consent of the other Party (such consent not to be unreasonably withheld); provided that a merger, sale of stock or comparable transaction shall not constitute an assignment."
+    },
+    {
+      "index": 187,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Qualigen shall provide Sekisui with copies of any Product test records requested or Sekisui may audit Qualigen to review the Product test records."
+    },
+    {
+      "index": 190,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Todos shall ship ordered Products to the Reseller within ninety (90) days of Todos's acceptance of the applicable purchase order DAP Reseller's warehouse (Incoterms 2010), provided that Reseller's order for the Products does not deviate from the applicable Forecast by more than ten percent (10%)."
+    },
+    {
+      "index": 193,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Bonds and Insurance: the Transporter and the interested Senders in the Sole Risk Proposal shall obtain the necessary bonds and insurance to cover any Risk derived from the Sole Risk Proposal under terms reasonably acceptable for the Transporter, without prejudice of obtaining all other bonds and insurance requested by the Transporter."
+    },
+    {
+      "index": 195,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "You hereby agree with the Company that to protect the Company's and any and all Group Company's business interests, customer connections and goodwill and the stability of its or their workforce, that you will not during the Restricted Period (and in respect of sub-paragraph 14.2(f) below only, at any time):<omitted>(d) either on your own account or for any person, firm or company directly or indirectly solicit or entice away or endeavour to solicit or entice away any director or senior employee of the Company or any Group Company employed in a managerial, scientific or technical role with whom you have had material personal dealings in the twelve (12) months prior to the Termination Date;"
+    },
+    {
+      "index": 200,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "A charge of $50.00 per hour or fractional part thereof shall apply for all time consumed in excess of free time allowed for unloading when due to delays caused by Shipper or Consignee and beyond Carrier's control."
+    },
+    {
+      "index": 201,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "EKR may terminate this Agreement for convenience at any time upon [**] ([**]) days prior, written notice to PPI."
+    },
+    {
+      "index": 202,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Neither party to this Agreement shall assign, subcontract, or otherwise conveyor delegate its rights or duties hereunder to any third party without the prior written consent of the other party hereto, such consent not to be unreasonably withheld."
+    },
+    {
+      "index": 203,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon reasonable notice of not less than seven (7) business days, but in no event more than once per year (unless the immediately preceding audit showed a material underpayment), NETTAXI shall have the right, subject to suitable confidentiality measures, to cause a certified public accountant to inspect those portions of the books of account and records which relate to the royalties owed NETTAXI, to confirm that the correct amount owing NETTAXI under this Agreement has been paid."
+    },
+    {
+      "index": 204,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Notwithstanding anything to the contrary in Attachments A, G or H, in connection with any Change in Circumstances (as defined below), and without limiting Seller's/ExxonMobil Selling Affiliate's other rights under this Agreement or applicable law, Seller/ExxonMobil Selling Affiliates shall have the right: (i) only if required to enable Seller/ExxonMobil Selling Affiliate to comply with applicable laws and regulations, to terminate this Agreement and accelerate all amounts due from Buyer hereunder, making them immediately payable (ii) to modify the payment terms hereunder; and/or (iii) to require that Buyer/Buyer Affiliates pay in advance for shipments hereunder."
+    },
+    {
+      "index": 208,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Without limiting the generality of the foregoing, MacroGenics shall prosecute and maintain Jointly Owned Patents using outside counsel acceptable to Green Cross, and shall instruct such counsel to provide copies of correspondence and filings directly to Green Cross and otherwise permit Green Cross to participate with MacroGenics in any of the activities of such counsel with respect to the Patent and Trademark Prosecution of such Jointly Owned Patents."
+    },
+    {
+      "index": 209,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Party B shall provide the Driver User with long-term and stable rental sources and the most favorable financial leasing scheme, complete the vehicle leasing transactions with the Driver User through the Platform, and provide the Driver User with high-quality financial leasing services."
+    },
+    {
+      "index": 214,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The foregoing shall not apply to operation of an El Pollo Loco\u00ae restaurant by Developer pursuant to a Franchise Agreement with Franchisor or the ownership by Developer of less than five percent (5%) of the issued or outstanding stock of any company whose shares are listed for trading on any public exchange or on the over-the-counter market, provided that Developer does not control or become involved in the operations of any such company."
+    },
+    {
+      "index": 217,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Parties rights and obligations with respect to quality assurance audits are set forth in the Quality Agreement."
+    },
+    {
+      "index": 218,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Changepoint will replace any defective media returned to Changepoint during the Warranty Period."
+    },
+    {
+      "index": 219,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "During the Term and the [***] period thereafter, SutroVax or a SutroVax Affiliate may, during normal working hours and upon reasonable advance notice perform site audits and inspect, or request information relating to, Sutro's or its subcontractor's Facilities and records directly or indirectly involved in the performance of this Supply Agreement or related to the Product(s). Such requests should be made in writing and Sutro will allow for such audits or inspection to occur within [***] days from request (excepting for cause audits) for Sutro's Facilities and within [***] days' from request (excepting for cause audits) for Sutro's subcontractor's facilities. Reasonable advance notice for audits for cause shall not require more than [***] advance notice."
+    },
+    {
+      "index": 222,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Licensor hereby grants Licensee a non-exclusive license to use the logos, trademarks and service marks used by Licensor to identify the Titles (collectively, \"Licensor Marks\") in connection with the use of the Titles as set forth in this Agreement. Li"
+    },
+    {
+      "index": 224,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Neither party shall assign this Agreement without the express written consent of the other party."
+    },
+    {
+      "index": 232,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "During the Term, and for a period of [ * ] thereafter, Google may audit Distributor's relevant records to confirm Distributor's compliance with this Agreement."
+    },
+    {
+      "index": 236,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subject to Articles 5.1 and 5.2, the Parties acknowledge and agree that CERES shall have the exclusive right, with the right to grant sublicenses to this right, to use and commercially exploit JOINT INTELLECTUAL PROPERTY (including but not limited to RELEASED VARIETIES) and OTHER RESEARCH RESULTS for any and all uses and fields, including, but not limited to, use in the COLLABORATION CROPS and crops other than the COLLABORATION CROPS."
+    },
+    {
+      "index": 237,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The Term will automatically renew for successive additional periods of one (1) year each, provided that: (a) Distributor has made all Guaranteed Minimum Purchases and has complied with the marketing requirements under paragraph 4.1(b); (b) the parties have agreed in writing upon the Guaranteed Minimum Purchase amounts and Product price discounts for the next subsequent one (1) year renewal period; (c) neither party provided the other party with notice of such party's intention not to renew this Agreement at least thirty (30) days prior to any year's Expiration Date; and (d) neither party provided the other party with such notice as may be required pursuant to paragraphs 5.2, 5.3 or 5.4."
+    },
+    {
+      "index": 238,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Distributor shall promptly inform Erchonia of any suggested modifications or improvements to the Products and shall, upon Erchonia's request and at Erchonia's expense, execute any documents necessary or appropriate to assign or confirm that all intellectual property rights in any modification<omitted>or improvement related to the Products are fully vested in Erchonia."
+    },
+    {
+      "index": 239,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "At the reasonable written request of Bellicum during the Term, Miltenyi shall enter into a direct supply agreement for Miltenyi Products with any Licensee nominated by Bellicum, materially consistent with the terms and conditions of this Agreement and the Quality Agreement (as applicable), except as agreed otherwise in writing between Miltenyi and the respective Bellicum Licensee."
+    },
+    {
+      "index": 240,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Company agrees to provide and maintain, at its own expense, general commercial and product liability insurance with limits no less than Three Million Dollars ($3,000,000) and naming Licensor and Duval as additional named insureds."
+    },
+    {
+      "index": 245,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement is governed by and construed in accordance with English law, save where provided otherwise herein."
+    },
+    {
+      "index": 246,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "This Agreement and any disputes, claims, or actions related thereto shall be governed by and construed in accordance with the laws of the State of California, USA, without regard to the conflicts of law provisions thereof."
+    },
+    {
+      "index": 248,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Publishers may not use either Proprietary Software or Source Code held in escrow to develop a product that competes with those services offered by HealthGate."
+    },
+    {
+      "index": 249,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subject to Section 8.3.5 hereof, nothing herein is intended to preclude FG from granting rights to supply or supplying (a) any Lead Compound outside of the Astellas Territory to any third party for use within or outside the Field, or (b) any compound Controlled by FG within the Astellas Territory except for a Lead Compound for the duration of its designation in compliance with the terms and conditions of this Agreement."
+    },
+    {
+      "index": 250,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "For each new Authorized Location, upon written notice by Garman of the completion of the installation of the Software as contracted for in Section 4 including training provided for in Section 5, Sparkling shall operate and test the Software for an acceptance period of 30 business days in accordance with Sparkling's normal operating practices."
+    },
+    {
+      "index": 253,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In addition, IAC shall secure any and all Intellectual Property Rights that may pertain to the Sonos Products that are created by such IAC Subcontractor, and hereby transfers and assigns all such Intellectual Property Rights"
+    },
+    {
+      "index": 254,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon reasonable request not more than once during any calendar year, and with reasonable notice, the Servicer will give the Issuer, the Depositor, the Parent Support Provider, the Administrator, the Owner Trustee and the Indenture Trustee (or their representatives) access to the records and documents to conduct a review of the Servicer's performance under this Agreement."
+    },
+    {
+      "index": 255,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Dynamic Hearing's aggregate liability to IntriCon for direct loss and damages and all other liability not described herein arising in connection with this Agreement whether in negligence, tort, equity, contract or otherwise, is limited to payment of damages recoverable at law or equity up to a maximum of (and, for the sake of clarity must not exceed) $5m;"
+    },
+    {
+      "index": 257,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In addition, the member of the Parent Group retaining such Delayed SpinCo IP Asset or such Delayed SpinCo IP Liability shall, insofar as reasonably possible and to the extent permitted by applicable Law, treat such Delayed SpinCo IP Asset or Delayed SpinCo IP Liability in the ordinary course of business in accordance with past practice and take such other actions as may be reasonably requested by the member of the SpinCo Group to whom such Delayed SpinCo IP Asset is to be transferred or assigned, or which will assume such Delayed SpinCo IP Liability, as the case may be, in order to place such member of the SpinCo Group in a substantially similar position as if such Delayed SpinCo IP Asset or Delayed SpinCo IP Liability had been transferred, assigned or assumed as contemplated hereby and so that all the benefits and burdens relating to such Delayed SpinCo IP Asset or Delayed SpinCo IP Liability, as the case may be, including use, non- abandonment, avoidance from contribution to the public domain, risk of loss, potential for gain, and dominion, control and command over such Delayed SpinCo IP Asset or Delayed SpinCo IP Liability, as the case may be, and all costs and expenses related thereto, shall inure from and after the Effective Time to the SpinCo Group."
+    },
+    {
+      "index": 259,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The CAP for Licensed Technology shall be cumulative across all \"Supported Processors\" (including \"additional supported processors\") utilized by LICENSEE."
+    },
+    {
+      "index": 260,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "As used above, \"Change of Control\" means any of the following: (i) any transaction, or series of transactions, that would result in the transfer of at least fifty percent (50%) of the equity interest in a party (or of at least fifty percent (50%) of the equity interest in any business entity that owns or controls, directly or indirectly, at least fifty percent (50%) of the equity interest in a party (\"Party's Parent\")) to a single transferee or multiple transferees under common control; (ii) any transaction that would result in a Party's (or Party's Parent's) merging with one or more other entities."
+    },
+    {
+      "index": 264,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "THIS AGREEMENT SHALL BE GOVERNED BY AND CONSTRUED IN ACCORDANCE WITH THE LAWS OF THE SIATE OF TEXAS."
+    },
+    {
+      "index": 266,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Sonos reserves the right to inspect any Sonos Tools in IAC's control at any time, provided it gives IAC at least forty-eight (48) hours advance notice."
+    },
+    {
+      "index": 272,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "From the starting day of the project, Party B must ensure that the coking system works properly and working hours of the CDQ system must be no less than 8,000 hours/year."
+    },
+    {
+      "index": 274,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The validity, construction and interpretation of this Agreement and the rights and duties of the parties hereto shall be governed by the internal laws of the State of New York, excluding its principles of conflict of laws."
+    },
+    {
+      "index": 275,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The revenue share for the Program is stated in Exhibit B."
+    },
+    {
+      "index": 277,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In the event that Array (a) [ * ] during [ * ], or (b) intentionally conceals or falsifies a material result and/or material item of data concerning the safety or efficacy of the Product, which concealment or falsification (i) is undertaken to induce Ono to not terminate this Agreement and (ii) results in a substantial reduction to the value of the Product in the Ono Territory, then, as an alternative to its right to terminate this Agreement pursuant to Section 13.3 above, Ono may in its discretion elect to continue this Agreement, in which case (A) Ono shall be relieved of its due diligence obligations under this Agreement; and (B) as liquidated damages for the breaches described<omitted>in (a) or (b) above, the otherwise applicable royalty rate with respect to Products shall thereafter be [ * ] for the [ * ]"
+    },
+    {
+      "index": 279,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "In the event this Agreement is terminated by either Party for any reason whatsoever, HEMISPHERX agrees to reasonable efforts to make Product available to SCIEN for a period of three (3) months after the termination date at the same Transfer Price and under the same terms of payment."
+    },
+    {
+      "index": 282,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except for preexisting IAC Property and any third party's Intellectual Property, IAC shall and does hereby irrevocably assign, and shall and does cause IAC Affiliates and IAC Subcontractors to irrevocably assign, to Sonos all of IAC's, IAC Affiliates' or IAC Subcontractors' worldwide right title and interest in and to the Sonos Property , if any, whether developed solely by Sonos or jointly between Sonos or a Sonos Affiliate and IAC, an IAC Affiliate, or an IAC Subcontractor, that<omitted>may arise through the performance of its obligations under this Agreement."
+    },
+    {
+      "index": 284,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Notwithstanding the foregoing, in the event the form of consideration paid or payable includes securities for which there is not an active public market, in lieu of paying that portion of the fee with such securities COMPANY will make a cash payment to JHU equal to the fair market value of such securities."
+    },
+    {
+      "index": 285,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Except as expressly contemplated by this Agreement (including Article XIII hereof) and subject to Section 13.1 hereof, King shall not promote, market or distribute any product containing metformin hydrochloride as the sole active ingredient in the Territory during the Term of this Agreement, other than the Product."
+    },
+    {
+      "index": 286,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Under no circumstances shall any Party be liable to any other Party in contract, tort, (including negligence or breach of statutory duty) or otherwise for loss (whether direct or indirect) of profits, property, traffic, business or anticipated savings, or for any indirect or consequential loss or damage in connection with the operation of this Agreement howsoever caused."
+    },
+    {
+      "index": 289,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Reseller shall not obtain the TouchStar Software or Support Services (or any software or services which compete with the TouchStar Software) for sale from any Entity other than TouchStar or its authorized agents."
+    },
+    {
+      "index": 291,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Upon the expiration of the Term or termination of this Supply Agreement, in its entirety or with respect to one or more Products, this Supply Agreement shall, except as otherwise provided in this Section 10.3 or Section 10.5, be of no further force or effect; provided, however, that (a) in the event this Supply Agreement is terminated by SutroVax pursuant to Section 10.2.3 and there are outstanding Work Orders or other purchase orders accepted by Sutro that would not be fulfilled as a result of such termination, SutroVax shall reimburse Sutro for all supplies and materials purchased by Sutro and time incurred by Sutro personnel (to the extent incurred solely for manufacture of Product for SutroVax) for the manufacture, or preparation for the manufacture, of Products for any Work Orders placed by SutroVax and any other purchase orders accepted by Sutro prior to such expiration or termination, in each case to the extent Sutro cannot otherwise reasonably mitigate such the costs and expenses of such supplies, materials and time (e.g., by use of resulting supplies, materials and work-in-progress Product for other purposes); provided that to the extent SutroVax pays for any supplies or materials, upon SutroVax's request Sutro shall promptly transfer and deliver such supplies and materials to SutroVax; and (b) if this Supply Agreement is terminated with respect to one or more Products, but not all Products, then this Supply Agreement shall continue in full force and effect with respect to the applicable Product(s) for which it is not terminated."
+    },
+    {
+      "index": 292,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "The term of the agreement is 20 years, during which if any main equipment of any Party stops operation due to technical problem or at the end of its life cycle, the agreement shall be automatically terminated."
+    },
+    {
+      "index": 295,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "You agree that all other data that you create or collect in connection with the System, and in connection with your operation of the Franchised Business (including customer lists and transaction data), is and will be owned exclusively by us during the term of, and after termination or expiration of, this Agreement."
+    },
+    {
+      "index": 298,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Bachem will not assign this Agreement without the prior written consent of Magenta, and any purported assignment in contravention of this Section 15.2 shall be null and void; provided, however, that either Party may assign this Agreement in connection with (i) the sale, transfer or other disposition of its assets related to this Agreement, (ii) a change in control of such Party, or (iii) the sale or transfer of substantially all of such Party's outstanding stock."
+    },
+    {
+      "index": 299,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "TELKOM shall have a non-exclusive, non-transferable LICENCE to USE the Source Code solely for its own use in order to support and maintain the SOFTWARE and for no other purpose whatsoever."
+    },
+    {
+      "index": 300,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "During the Term of this agreement, and for a period of twenty four (24)months after Termination (the \"Withholding Period\"), Contractor may retain monies (collections in Accounts Receivable) against any reasonable anticipated deductions for product recalls, unsalables, rebates, allowances or any audits or other adjustments it deems necessary."
+    },
+    {
+      "index": 305,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "DCL shall not be liable to SEV under the provisions of this clause 11 for indirect loss, consequential loss or loss of profits."
+    },
+    {
+      "index": 307,
+      "expected": "not_eligible",
+      "field_values": {
+        "clause_restricts_contesting_ip_validity": false,
+        "clause_restricts_unrelated_claims": false
+      },
+      "decision": "not_eligible",
+      "correct": true,
+      "text": "Subject to the terms and conditions of this Agreement, the Company hereby grants to Allscripts and its Affiliates a non- exclusive, royalty-free, irrevocable [***] non-transferable (except in accordance with Section 28.4), sublicensable (through multiple levels of sublicensees), fully paid-up right and license under all of the Company's Intellectual Property to, throughout the Territory, access, use, reproduce, perform, display, modify, create derivative works of, transmit, demonstrate, test, operate, port, configure, distribute, and make available the Installed Software and Subscription Software Services"
+    }
+  ]
+}

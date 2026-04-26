@@ -1,0 +1,6 @@
+{
+  "project_id": "proj_ZTRIoBz3xT0OTUGN",
+  "bundle_id": "legalbench_learned_hands_health:20260426-81ff1d8d",
+  "task_selection": "random sample (tools/random_task_pick.py --seed 43)",
+  "split_seed": 7
+}

@@ -1,0 +1,1814 @@
+{
+  "task": "diversity_5",
+  "split": "test",
+  "model": "claude-sonnet-4-6",
+  "summary": {
+    "correct": 1,
+    "total": 300,
+    "parse_err": 299,
+    "api_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 1,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 2,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 3,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 4,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 5,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 6,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 7,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 8,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 9,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 10,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy "
+    },
+    {
+      "index": 11,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 12,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 13,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 14,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 15,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 16,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 17,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 18,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 19,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 20,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 21,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 22,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 23,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 24,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 25,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 26,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 27,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 28,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 29,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 30,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 31,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 32,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 33,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 34,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 35,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 36,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 37,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 38,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 39,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 40,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 41,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 42,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 43,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 44,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 45,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 46,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 47,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 48,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 49,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 50,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 51,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 52,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 53,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking (1) complete"
+    },
+    {
+      "index": 54,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 55,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 56,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 57,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 58,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 59,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 60,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 61,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 62,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 63,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 64,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 65,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 66,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 67,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 68,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 69,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy "
+    },
+    {
+      "index": 70,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy "
+    },
+    {
+      "index": 71,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 72,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 73,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 74,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 75,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 76,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 77,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 78,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 79,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 80,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 81,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 82,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 83,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 84,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 85,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 86,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 87,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 88,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 89,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy "
+    },
+    {
+      "index": 90,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 91,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 92,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 93,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking both require"
+    },
+    {
+      "index": 94,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 95,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 96,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 97,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 98,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 99,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 100,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 101,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 102,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 103,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 104,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 105,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 106,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 107,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 108,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 109,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 110,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 111,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 112,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 113,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 114,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to analyze both requirements for diversity jurisdiction.\n\n**Complete Dive"
+    },
+    {
+      "index": 115,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 116,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 117,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 118,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 119,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 120,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking (1) complete"
+    },
+    {
+      "index": 121,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 122,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 123,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 124,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 125,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 126,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 127,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 128,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 129,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 130,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 131,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if federal diversity jurisdiction exists by checking (1) com"
+    },
+    {
+      "index": 132,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 133,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 134,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 135,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 136,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 137,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 138,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking (1) complete"
+    },
+    {
+      "index": 139,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 140,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 141,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 142,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 143,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both complete d"
+    },
+    {
+      "index": 144,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 145,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 146,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 147,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 148,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 149,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 150,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 151,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 152,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 153,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 154,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 155,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 156,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 157,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 158,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 159,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 160,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 161,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 162,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 163,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 164,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 165,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 166,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 167,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 168,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 169,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 170,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 171,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 172,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 173,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 174,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 175,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 176,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 177,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 178,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 179,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 180,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 181,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 182,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 183,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 184,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 185,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 186,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 187,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 188,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 189,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 190,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 191,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 192,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 193,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 194,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 195,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 196,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 197,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 198,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 199,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 200,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 201,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if federal diversity jurisdiction exists.\n\n**Step 1:"
+    },
+    {
+      "index": 202,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 203,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 204,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 205,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 206,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 207,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 208,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze both requirements for diversity jurisdiction.\n\n**Complete Dive"
+    },
+    {
+      "index": 209,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 210,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 211,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 212,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 213,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 214,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 215,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to analyze diversity jurisdiction based on the two requirements: complete"
+    },
+    {
+      "index": 216,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 217,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 218,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 219,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 220,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 221,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 222,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 223,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 224,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 225,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking (1) complete"
+    },
+    {
+      "index": 226,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 227,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 228,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 229,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 230,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 231,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 232,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 233,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 234,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 235,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 236,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 237,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 238,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 239,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 240,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 241,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 242,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 243,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 244,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 245,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if federal diversity jurisdiction exists by checking (1) com"
+    },
+    {
+      "index": 246,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 247,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 248,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 249,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 250,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 251,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 252,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 253,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 254,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 255,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 256,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 257,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 258,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 259,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 260,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 261,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to analyze whether diversity jurisdiction exists by checking (1) complete"
+    },
+    {
+      "index": 262,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 263,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 264,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 265,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 266,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 267,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 268,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**1. Complete"
+    },
+    {
+      "index": 269,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 270,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 271,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 272,
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true,
+      "raw": "Yes"
+    },
+    {
+      "index": 273,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 274,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 275,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 276,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 277,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 278,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 279,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 280,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 281,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 282,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 283,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 284,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 285,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 286,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 287,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 288,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to check both requirements: complete diversity and amount-in-controversy."
+    },
+    {
+      "index": 289,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    },
+    {
+      "index": 290,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to check both requirements for diversity jurisdiction.\n\n**Complete Divers"
+    },
+    {
+      "index": 291,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 292,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 293,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 294,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 295,
+      "expected": "no",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 296,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 297,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 298,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking (1) complete di"
+    },
+    {
+      "index": 299,
+      "expected": "yes",
+      "status": "parse_err",
+      "raw": "I need to determine if diversity jurisdiction exists by checking both requiremen"
+    }
+  ]
+}

@@ -1,0 +1,3612 @@
+{
+  "task": "diversity_4",
+  "bundle_id": "legalbench_diversity_4_v2:20260425-ad737155",
+  "summary": {
+    "correct": 300,
+    "total": 300,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 5400000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 3669000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 9490000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Washington",
+        "plaintiff_2_state": "North Carolina",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 16000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Georgia",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 30000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alaska",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 2945000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Oregon",
+        "claim_amount_per_plaintiff_usd": 23000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 5698000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 70000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 7981000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 5230000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "Colorado",
+        "claim_amount_per_plaintiff_usd": 55000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "Kentucky",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 66000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Texas",
+        "plaintiff_2_state": "Ohio",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 6000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nebraska",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Pennsylvania",
+        "claim_amount_per_plaintiff_usd": 2546000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Massachusetts",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 24000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Washington",
+        "plaintiff_2_state": "Maryland",
+        "defendant_state": "Alabama",
+        "claim_amount_per_plaintiff_usd": 8497000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alaska",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 2352000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 18,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 3943000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 7049000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "South Carolina",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 3245000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 64000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Illinois",
+        "claim_amount_per_plaintiff_usd": 3991000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Maryland",
+        "claim_amount_per_plaintiff_usd": 8000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 24,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 9640000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 5862000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 26,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 1049000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Arizona",
+        "defendant_state": "Idaho",
+        "claim_amount_per_plaintiff_usd": 2789000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oklahoma",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Maryland",
+        "claim_amount_per_plaintiff_usd": 8033000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 29,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Florida",
+        "claim_amount_per_plaintiff_usd": 5658000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 30,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Georgia",
+        "claim_amount_per_plaintiff_usd": 1492000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 31,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 1102000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 32,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Vermont",
+        "claim_amount_per_plaintiff_usd": 2251000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Iowa",
+        "plaintiff_2_state": "Indiana",
+        "defendant_state": "Iowa",
+        "claim_amount_per_plaintiff_usd": 5349000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 34,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Nebraska",
+        "defendant_state": "Louisiana",
+        "claim_amount_per_plaintiff_usd": 685000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 35,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 3792000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 2073000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oregon",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Oregon",
+        "claim_amount_per_plaintiff_usd": 3877000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 38000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 40,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "South Carolina",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 33000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 42,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Illinois",
+        "plaintiff_2_state": "Indiana",
+        "defendant_state": "Texas",
+        "claim_amount_per_plaintiff_usd": 7271000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 6869000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 44,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 1713000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 9518000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 3302000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 47,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "Rhode Island",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 25000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arkansas",
+        "plaintiff_2_state": "Delaware",
+        "defendant_state": "Arkansas",
+        "claim_amount_per_plaintiff_usd": 422000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 49,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Delaware",
+        "defendant_state": "Georgia",
+        "claim_amount_per_plaintiff_usd": 1180000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 50,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oregon",
+        "plaintiff_2_state": "Nebraska",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 4976000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 51,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 9461000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 52,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 53,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "Vermont",
+        "claim_amount_per_plaintiff_usd": 8959000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 54,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 9497000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 55,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 6566000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 56,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nebraska",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "Washington",
+        "claim_amount_per_plaintiff_usd": 6156000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 57,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 3171000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 58,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 1084000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 59,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 35000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 60,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 2009000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 61,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 7165000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 62,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Iowa",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Washington",
+        "claim_amount_per_plaintiff_usd": 7914000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 63,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 72000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 64,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Vermont",
+        "claim_amount_per_plaintiff_usd": 3474000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 65,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Massachusetts",
+        "plaintiff_2_state": "Vermont",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 3997000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 66,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Delaware",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 9479000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 67,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 4540000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 68,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Tennessee",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 6234000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 69,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Delaware",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 67000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 70,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wisconsin",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Illinois",
+        "claim_amount_per_plaintiff_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 71,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 7634000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 72,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 2252000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 73,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 2436000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 74,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 6375000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 75,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Montana",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 2000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 76,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "Arizona",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 2204000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 77,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Illinois",
+        "claim_amount_per_plaintiff_usd": 5836000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 78,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 46000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 79,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Missouri",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 7439000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 80,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 8297000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 81,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Idaho",
+        "claim_amount_per_plaintiff_usd": 2064000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 82,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Montana",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 31000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 83,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 5765000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 84,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Idaho",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "Wyoming",
+        "claim_amount_per_plaintiff_usd": 4049000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 85,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Rhode Island",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 464000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 86,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 54000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 87,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maine",
+        "plaintiff_2_state": "Nevada",
+        "defendant_state": "Nevada",
+        "claim_amount_per_plaintiff_usd": 15000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 88,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alaska",
+        "plaintiff_2_state": "Georgia",
+        "defendant_state": "Illinois",
+        "claim_amount_per_plaintiff_usd": 9429000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 89,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "California",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 5189000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 90,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 8820000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 91,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "Michigan",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 92,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 8432000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 93,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Tennessee",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 7673000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 94,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oregon",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Arizona",
+        "claim_amount_per_plaintiff_usd": 6016000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 95,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "Colorado",
+        "claim_amount_per_plaintiff_usd": 6165000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 96,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 7488000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 97,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New York",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 7658000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 98,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Delaware",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 5714000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 99,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "Delaware",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 4609000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 100,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Connecticut",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 7615000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 101,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Vermont",
+        "claim_amount_per_plaintiff_usd": 65000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 102,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 8417000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 103,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 2031000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 104,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "Georgia",
+        "claim_amount_per_plaintiff_usd": 34000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 105,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 6843000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 106,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Arizona",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 6180000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 107,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 6251000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 108,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 6448000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 109,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Illinois",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Iowa",
+        "claim_amount_per_plaintiff_usd": 3376000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 110,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Michigan",
+        "defendant_state": "Nevada",
+        "claim_amount_per_plaintiff_usd": 6426000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 111,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Utah",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 5367000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 112,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 60000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 113,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "Ohio",
+        "defendant_state": "Illinois",
+        "claim_amount_per_plaintiff_usd": 4914000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 114,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 8393000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 115,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "Missouri",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 9237000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 116,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 4449000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 117,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Texas",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 73000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 118,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Michigan",
+        "defendant_state": "Idaho",
+        "claim_amount_per_plaintiff_usd": 6885000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 119,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 633000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 120,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maryland",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "Wyoming",
+        "claim_amount_per_plaintiff_usd": 916000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 121,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oregon",
+        "plaintiff_2_state": "Rhode Island",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 8540000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 122,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 25000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 123,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "Nevada",
+        "claim_amount_per_plaintiff_usd": 8133000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 124,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 66000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 125,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 9000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 126,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Montana",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 4852000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 127,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wisconsin",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 8029000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 128,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 129,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Tennessee",
+        "plaintiff_2_state": "California",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 31000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 130,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 131,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 5236000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 132,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Nevada",
+        "claim_amount_per_plaintiff_usd": 9851000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 133,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 134,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 9000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 135,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Ohio",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 3813000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 136,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New York",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 55000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 137,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 8097000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 138,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Maryland",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 1152000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 139,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 3892000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 140,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Florida",
+        "claim_amount_per_plaintiff_usd": 7872000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 141,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 4264000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 142,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Connecticut",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 4983000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 143,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 6000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 144,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wisconsin",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Alaska",
+        "claim_amount_per_plaintiff_usd": 2251000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 145,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Connecticut",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Pennsylvania",
+        "claim_amount_per_plaintiff_usd": 3195000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 146,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Tennessee",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 6126000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 147,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "Nebraska",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 4979000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 148,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "Delaware",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 5286000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 149,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 4783000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 150,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 32000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 151,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Utah",
+        "plaintiff_2_state": "Rhode Island",
+        "defendant_state": "Utah",
+        "claim_amount_per_plaintiff_usd": 9461000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 152,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 9452000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 153,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Maryland",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 6000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 154,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wisconsin",
+        "plaintiff_2_state": "Massachusetts",
+        "defendant_state": "Pennsylvania",
+        "claim_amount_per_plaintiff_usd": 4555000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 155,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "Louisiana",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 1189000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 156,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "Washington",
+        "claim_amount_per_plaintiff_usd": 8346000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 157,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 29000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 158,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Massachusetts",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 35000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 159,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 21000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 160,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New York",
+        "plaintiff_2_state": "Florida",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 4415000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 161,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 16000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 162,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Idaho",
+        "claim_amount_per_plaintiff_usd": 5353000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 163,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 7258000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 164,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "West Virginia",
+        "claim_amount_per_plaintiff_usd": 4567000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 165,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Georgia",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 386000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 166,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 31000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 167,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 8285000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 168,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Utah",
+        "claim_amount_per_plaintiff_usd": 6064000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 169,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Idaho",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Wyoming",
+        "claim_amount_per_plaintiff_usd": 71000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 170,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 2444000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 171,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nebraska",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 7839000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 172,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Utah",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 46000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 173,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oklahoma",
+        "plaintiff_2_state": "Nebraska",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 55000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 174,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 3718000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 175,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 8015000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 176,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 9015000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 177,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Oklahoma",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 8645000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 178,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 8534000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 179,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wyoming",
+        "plaintiff_2_state": "Massachusetts",
+        "defendant_state": "Maryland",
+        "claim_amount_per_plaintiff_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 180,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 834000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 181,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 1837000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 182,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 6133000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 183,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 2333000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 184,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 2051000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 185,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 27000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 186,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arkansas",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "Arkansas",
+        "claim_amount_per_plaintiff_usd": 9452000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 187,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Florida",
+        "claim_amount_per_plaintiff_usd": 2973000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 188,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Michigan",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "Colorado",
+        "claim_amount_per_plaintiff_usd": 5625000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 189,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oklahoma",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 235000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 190,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Georgia",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Georgia",
+        "claim_amount_per_plaintiff_usd": 156000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 191,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "North Carolina",
+        "defendant_state": "West Virginia",
+        "claim_amount_per_plaintiff_usd": 9173000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 192,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 4000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 193,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oregon",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 194,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oklahoma",
+        "plaintiff_2_state": "Tennessee",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 6459000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 195,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "Louisiana",
+        "defendant_state": "Wisconsin",
+        "claim_amount_per_plaintiff_usd": 7223000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 196,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 9562000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 197,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Georgia",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 7234000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 198,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 73000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 199,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arkansas",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 9484000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 200,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maine",
+        "plaintiff_2_state": "North Carolina",
+        "defendant_state": "Oregon",
+        "claim_amount_per_plaintiff_usd": 5000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 201,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alabama",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 71000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 202,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Alabama",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 9289000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 203,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Hawaii",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 4631000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 204,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 3996000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 205,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 4375000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 206,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Nebraska",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 8818000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 207,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Alabama",
+        "claim_amount_per_plaintiff_usd": 57000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 208,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Washington",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 1525000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 209,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "South Carolina",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 349000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 210,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Wisconsin",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "Pennsylvania",
+        "claim_amount_per_plaintiff_usd": 64000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 211,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 2230000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 212,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Colorado",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 213,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 4392000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 214,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Kentucky",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 7000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 215,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Georgia",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 53000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 216,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 1432000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 217,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Kentucky",
+        "defendant_state": "Kentucky",
+        "claim_amount_per_plaintiff_usd": 5557000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 218,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Mississippi",
+        "defendant_state": "New Mexico",
+        "claim_amount_per_plaintiff_usd": 6636000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 219,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Tennessee",
+        "plaintiff_2_state": "Connecticut",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 3697000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 220,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 221,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 7746000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 222,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Hawaii",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 8470000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 223,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 3571000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 224,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alaska",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Pennsylvania",
+        "claim_amount_per_plaintiff_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 225,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "North Dakota",
+        "claim_amount_per_plaintiff_usd": 3153000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 226,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Oklahoma",
+        "plaintiff_2_state": "Pennsylvania",
+        "defendant_state": "Vermont",
+        "claim_amount_per_plaintiff_usd": 2274000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 227,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 8101000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 228,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "New Jersey",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 5684000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 229,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Nevada",
+        "claim_amount_per_plaintiff_usd": 6630000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 230,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Hampshire",
+        "plaintiff_2_state": "Wyoming",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 16000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 231,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Mexico",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Utah",
+        "claim_amount_per_plaintiff_usd": 6574000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 232,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Minnesota",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Oklahoma",
+        "claim_amount_per_plaintiff_usd": 5573000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 233,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arkansas",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "Arkansas",
+        "claim_amount_per_plaintiff_usd": 2648000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 234,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Oregon",
+        "claim_amount_per_plaintiff_usd": 8171000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 235,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Vermont",
+        "plaintiff_2_state": "Florida",
+        "defendant_state": "Oregon",
+        "claim_amount_per_plaintiff_usd": 23000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 236,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maryland",
+        "plaintiff_2_state": "Maryland",
+        "defendant_state": "Maryland",
+        "claim_amount_per_plaintiff_usd": 259000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 237,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 5000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 238,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New York",
+        "plaintiff_2_state": "South Carolina",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 14000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 239,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Rhode Island",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 1019000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 240,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Oregon",
+        "defendant_state": "Iowa",
+        "claim_amount_per_plaintiff_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 241,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 8744000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 242,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kentucky",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "New York",
+        "claim_amount_per_plaintiff_usd": 38000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 243,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Hawaii",
+        "claim_amount_per_plaintiff_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 244,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maryland",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 3681000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 245,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Georgia",
+        "defendant_state": "Georgia",
+        "claim_amount_per_plaintiff_usd": 4917000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 246,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alaska",
+        "plaintiff_2_state": "Florida",
+        "defendant_state": "Washington",
+        "claim_amount_per_plaintiff_usd": 8977000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 247,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 26000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 248,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Illinois",
+        "plaintiff_2_state": "Kentucky",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 249,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Nebraska",
+        "claim_amount_per_plaintiff_usd": 426000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 250,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "Massachusetts",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 2573000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 251,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "Alabama",
+        "claim_amount_per_plaintiff_usd": 6431000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 252,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nebraska",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "Colorado",
+        "claim_amount_per_plaintiff_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 253,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 5798000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 254,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 255,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "New York",
+        "defendant_state": "Maryland",
+        "claim_amount_per_plaintiff_usd": 41000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 256,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nevada",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 6269000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 257,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Rhode Island",
+        "plaintiff_2_state": "Arizona",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 8929000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 258,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Connecticut",
+        "claim_amount_per_plaintiff_usd": 8086000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 259,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Nebraska",
+        "plaintiff_2_state": "Minnesota",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 68000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 260,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Maine",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 8810000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 261,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Texas",
+        "plaintiff_2_state": "South Dakota",
+        "defendant_state": "Florida",
+        "claim_amount_per_plaintiff_usd": 11000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 262,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Utah",
+        "plaintiff_2_state": "Illinois",
+        "defendant_state": "New Hampshire",
+        "claim_amount_per_plaintiff_usd": 1369000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 263,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Illinois",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 8455000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 264,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Arkansas",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 2000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 265,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Virginia",
+        "plaintiff_2_state": "Idaho",
+        "defendant_state": "Rhode Island",
+        "claim_amount_per_plaintiff_usd": 5096000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 266,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New Jersey",
+        "plaintiff_2_state": "Missouri",
+        "defendant_state": "South Dakota",
+        "claim_amount_per_plaintiff_usd": 26000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 267,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Missouri",
+        "defendant_state": "Missouri",
+        "claim_amount_per_plaintiff_usd": 67000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 268,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alabama",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "Florida",
+        "claim_amount_per_plaintiff_usd": 2742000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 269,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Virginia",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 60000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 270,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 13000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 271,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "South Carolina",
+        "claim_amount_per_plaintiff_usd": 2192000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 272,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "New Mexico",
+        "defendant_state": "Virginia",
+        "claim_amount_per_plaintiff_usd": 1545000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 273,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Iowa",
+        "defendant_state": "Massachusetts",
+        "claim_amount_per_plaintiff_usd": 2684000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 274,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Ohio",
+        "plaintiff_2_state": "Texas",
+        "defendant_state": "Delaware",
+        "claim_amount_per_plaintiff_usd": 1355000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 275,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "West Virginia",
+        "claim_amount_per_plaintiff_usd": 6328000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 276,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Utah",
+        "plaintiff_2_state": "Maryland",
+        "defendant_state": "Utah",
+        "claim_amount_per_plaintiff_usd": 2944000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 277,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "West Virginia",
+        "claim_amount_per_plaintiff_usd": 1844000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 278,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Missouri",
+        "plaintiff_2_state": "Ohio",
+        "defendant_state": "Tennessee",
+        "claim_amount_per_plaintiff_usd": 7300000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 279,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Mississippi",
+        "plaintiff_2_state": "Kentucky",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 8271000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 280,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "Alaska",
+        "defendant_state": "Mississippi",
+        "claim_amount_per_plaintiff_usd": 8698000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 281,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Carolina",
+        "plaintiff_2_state": "Massachusetts",
+        "defendant_state": "Indiana",
+        "claim_amount_per_plaintiff_usd": 66000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 282,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Montana",
+        "plaintiff_2_state": "Michigan",
+        "defendant_state": "Arizona",
+        "claim_amount_per_plaintiff_usd": 14000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 283,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "California",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Washington",
+        "claim_amount_per_plaintiff_usd": 5351000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 284,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Indiana",
+        "plaintiff_2_state": "California",
+        "defendant_state": "California",
+        "claim_amount_per_plaintiff_usd": 3317000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 285,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arkansas",
+        "plaintiff_2_state": "Idaho",
+        "defendant_state": "Michigan",
+        "claim_amount_per_plaintiff_usd": 1068000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 286,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Dakota",
+        "plaintiff_2_state": "West Virginia",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 1744000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 287,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Massachusetts",
+        "plaintiff_2_state": "Colorado",
+        "defendant_state": "New Jersey",
+        "claim_amount_per_plaintiff_usd": 1488000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 288,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Florida",
+        "plaintiff_2_state": "Wisconsin",
+        "defendant_state": "Maine",
+        "claim_amount_per_plaintiff_usd": 5388000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 289,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Vermont",
+        "defendant_state": "Alaska",
+        "claim_amount_per_plaintiff_usd": 2268000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 290,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "New York",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "North Dakota",
+        "claim_amount_per_plaintiff_usd": 9254000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 291,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "South Carolina",
+        "plaintiff_2_state": "Maine",
+        "defendant_state": "North Carolina",
+        "claim_amount_per_plaintiff_usd": 7104000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 292,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Washington",
+        "defendant_state": "Montana",
+        "claim_amount_per_plaintiff_usd": 2688000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 293,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Kansas",
+        "plaintiff_2_state": "Vermont",
+        "defendant_state": "North Dakota",
+        "claim_amount_per_plaintiff_usd": 8962000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 294,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Alabama",
+        "plaintiff_2_state": "Utah",
+        "defendant_state": "Minnesota",
+        "claim_amount_per_plaintiff_usd": 50000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 295,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Arizona",
+        "plaintiff_2_state": "New Hampshire",
+        "defendant_state": "Idaho",
+        "claim_amount_per_plaintiff_usd": 8724000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 296,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "West Virginia",
+        "plaintiff_2_state": "North Dakota",
+        "defendant_state": "Utah",
+        "claim_amount_per_plaintiff_usd": 7235000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 297,
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_1_state": "Louisiana",
+        "plaintiff_2_state": "Indiana",
+        "defendant_state": "Ohio",
+        "claim_amount_per_plaintiff_usd": 9370000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 298,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "Pennsylvania",
+        "plaintiff_2_state": "Michigan",
+        "defendant_state": "Iowa",
+        "claim_amount_per_plaintiff_usd": 16000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 299,
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_1_state": "North Dakota",
+        "plaintiff_2_state": "Kansas",
+        "defendant_state": "Kansas",
+        "claim_amount_per_plaintiff_usd": 6341000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    }
+  ]
+}

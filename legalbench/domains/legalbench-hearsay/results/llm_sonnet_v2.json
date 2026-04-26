@@ -1,0 +1,694 @@
+{
+  "task": "hearsay",
+  "split": "test",
+  "model": "claude-sonnet-4-6",
+  "prompt_format": "upstream_base_prompt",
+  "summary": {
+    "correct": 72,
+    "total": 94,
+    "parse_err": 0,
+    "api_err": 0
+  },
+  "by_slice": {
+    "Non-assertive conduct": {
+      "correct": 19,
+      "total": 19
+    },
+    "Statement made in-court": {
+      "correct": 11,
+      "total": 14
+    },
+    "Standard hearsay": {
+      "correct": 19,
+      "total": 29
+    },
+    "Not introduced to prove truth": {
+      "correct": 13,
+      "total": 20
+    },
+    "Non-verbal hearsay": {
+      "correct": 10,
+      "total": 12
+    }
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 18,
+      "slice": "Non-assertive conduct",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 24,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 26,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 27,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 29,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 30,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 31,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 32,
+      "slice": "Statement made in-court",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 34,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 35,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 40,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 42,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 44,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 47,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 49,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 50,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 51,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 52,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 53,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 54,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 55,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 56,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 57,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 58,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 59,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 60,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 61,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 62,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 63,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 64,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 65,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 66,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 67,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 68,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 69,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 70,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 71,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 72,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 73,
+      "slice": "Non-verbal hearsay",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 74,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 75,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 76,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 77,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 78,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 79,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 80,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 81,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 82,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 83,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 84,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 85,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 86,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 87,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 88,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 89,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 90,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 91,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 92,
+      "slice": "Not introduced to prove truth",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 94,
+      "slice": "Standard hearsay",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    }
+  ]
+}

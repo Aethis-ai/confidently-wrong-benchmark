@@ -1,0 +1,8 @@
+{
+  "project_id": "proj_pVIM8FcYfA7pUpEj",
+  "bundle_id": "legalbench_cuad_covenant_not_to_sue:20260425-0e17cf68",
+  "last_test_passed": 4,
+  "last_test_total": 4,
+  "task_selection": "random sample (tools/random_task_pick.py --seed 42)",
+  "split_seed": 7
+}

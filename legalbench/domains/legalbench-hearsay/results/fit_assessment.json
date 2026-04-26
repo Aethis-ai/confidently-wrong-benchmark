@@ -1,0 +1,150 @@
+{
+  "source_path": "domains/legalbench-hearsay/sources/rule.md",
+  "domain": "us_federal_evidence",
+  "library_loaded": {
+    "source_ambiguity": [
+      "tools/patterns/library/source_ambiguity/en_legal.yaml"
+    ],
+    "domain_glossaries": [
+      "tools/patterns/library/domain_glossaries/us_federal_evidence.yaml",
+      "tools/patterns/library/domain_glossaries/us_leveraged_finance.yaml"
+    ],
+    "doctrinal_risk": [
+      "tools/patterns/library/doctrinal_risk/us_federal_evidence.yaml"
+    ],
+    "question_shapes": [
+      "tools/patterns/library/question_shapes/binary_classification.yaml"
+    ]
+  },
+  "checks": {
+    "source_ambiguity": {
+      "matched": []
+    },
+    "doctrinal_risk": {
+      "matched": [
+        {
+          "library_file": "tools/patterns/library/doctrinal_risk/us_federal_evidence.yaml",
+          "risk_id": "state-of-mind-vs-offered-for-truth",
+          "boundary": "FRE 801(c) \u2014 \"offered to prove the truth of the matter asserted\"",
+          "implication": "Score on this prong may plateau below 100%. SME hints aligned\nwith treatise doctrine have been observed to REGRESS accuracy\non datasets using the narrower interpretation (we observed 90.4%\n\u2192 87.2% on LegalBench `hearsay` after adding treatise hints).\n\nRefining hints to match the dataset's interpretation is\ncontamination of the SME-guidance methodology. Accept the\nceiling honestly and report it as a known doctrinal-boundary\neffect.",
+          "suggested_action": "Flag this source as having a doctrinally-contested prong. Set\n`expected_ceiling` in the fit-assessment report; do NOT suggest\ntreatise-style hints aimed at this boundary unless the SME\nexplicitly asks for them.",
+          "spans": [
+            {
+              "start": 20,
+              "end": 27,
+              "match": "hearsay"
+            },
+            {
+              "start": 69,
+              "end": 76,
+              "match": "hearsay"
+            },
+            {
+              "start": 147,
+              "end": 154,
+              "match": "hearsay"
+            },
+            {
+              "start": 282,
+              "end": 289,
+              "match": "hearsay"
+            },
+            {
+              "start": 546,
+              "end": 553,
+              "match": "hearsay"
+            },
+            {
+              "start": 589,
+              "end": 596,
+              "match": "Hearsay"
+            },
+            {
+              "start": 760,
+              "end": 767,
+              "match": "hearsay"
+            },
+            {
+              "start": 1155,
+              "end": 1162,
+              "match": "hearsay"
+            },
+            {
+              "start": 1730,
+              "end": 1737,
+              "match": "hearsay"
+            },
+            {
+              "start": 2184,
+              "end": 2191,
+              "match": "hearsay"
+            },
+            {
+              "start": 2533,
+              "end": 2540,
+              "match": "hearsay"
+            },
+            {
+              "start": 2596,
+              "end": 2603,
+              "match": "hearsay"
+            }
+          ]
+        }
+      ]
+    },
+    "question_shape": {
+      "detected": "unknown",
+      "evidence_trigger": null
+    },
+    "domain_glossary": {
+      "loaded_for": "us_federal_evidence",
+      "synonym_families": [
+        {
+          "id": "out-of-court-statement",
+          "canonical": "out-of-court statement",
+          "synonyms": [
+            "statement made outside the current trial",
+            "prior statement",
+            "earlier statement",
+            "statement made elsewhere"
+          ],
+          "note": "Statements made by the declarant in any setting other than the\nwitness stand at the current trial or hearing. Includes\ndepositions, prior trials, conversations, recordings, letters,\netc. Worth recognising as equivalents when the case narrative\nuses informal phrasing.\n",
+          "seen_in": [
+            {
+              "task": "hearsay (LegalBench)"
+            }
+          ]
+        },
+        {
+          "id": "declarant",
+          "canonical": "declarant",
+          "synonyms": [
+            "the speaker",
+            "the person who said",
+            "the person who made the statement"
+          ],
+          "note": "The person who made the out-of-court statement. Real fact\npatterns rarely use the term \"declarant\" verbatim.\n",
+          "seen_in": []
+        }
+      ]
+    }
+  },
+  "suggested_hints": [
+    {
+      "layer": "runtime_extractor",
+      "source": "domain_glossary",
+      "template": "Recognise the following synonym families when reading case narratives \u2014 all members of a family refer to the same underlying concept for prong-detection purposes:\n  - \"out-of-court statement\" \u2261 \"statement made outside the current trial\", \"prior statement\", \"earlier statement\", \"statement made elsewhere\"\n  - \"declarant\" \u2261 \"the speaker\", \"the person who said\", \"the person who made the statement\"",
+      "rationale": "Real drafting practice uses synonyms for canonical terms. The runtime LLM extractor needs domain-specific equivalences or it will miss the prong on cases that use alternative terminology."
+    }
+  ],
+  "expected_ceiling": {
+    "value": "<100% (doctrinal-boundary effect)",
+    "reasons": [
+      {
+        "risk_id": "state-of-mind-vs-offered-for-truth",
+        "implication": "Score on this prong may plateau below 100%. SME hints aligned\nwith treatise doctrine have been observed to REGRESS accuracy\non datasets using the narrower interpretation (we observed 90.4%\n\u2192 87.2% on LegalBench `hearsay` after adding treatise hints).\n\nRefining hints to match the dataset's interpretation is\ncontamination of the SME-guidance methodology. Accept the\nceiling honestly and report it as a known doctrinal-boundary\neffect."
+      }
+    ]
+  }
+}

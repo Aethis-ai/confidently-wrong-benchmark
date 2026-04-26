@@ -1,0 +1,11 @@
+{
+  "project_id": "proj_LTeEByzJZ3E9WmAI",
+  "bundle_id": "legalbench_diversity_2_v2:20260425-f2e82362",
+  "last_test_passed": 8,
+  "last_test_total": 8,
+  "previous_contaminated": {
+    "project_id": "proj_WvLrUO6yZBVqjZWb",
+    "bundle_id": "legalbench_diversity_2:20260425-24ac9d4f",
+    "note": "v1 invalidated, see issue #6 — source contained Inputs/Output/Edge-cases hint sections"
+  }
+}

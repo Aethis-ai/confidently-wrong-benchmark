@@ -1,0 +1,11 @@
+{
+  "project_id": "proj_Dt2wQwC3bLnjLk1O",
+  "bundle_id": "legalbench_hearsay_v2:20260425-258fc464",
+  "last_test_passed": 8,
+  "last_test_total": 8,
+  "previous": {
+    "project_id": "proj_iWHdCFtl5tSf-f4o",
+    "bundle_id": "legalbench_hearsay:20260425-2422fdb7",
+    "note": "v1 used a paraphrased FRE 801 source; v2 uses verbatim LegalBench Task description for consistency with frontier-LLM baselines"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "project_id": "proj_hDC0-YtgwO1Lzq4A",
+  "bundle_id": "legalbench_contract_nli_explicit_identification:20260425-e49a51b6",
+  "last_test_passed": 6,
+  "last_test_total": 6,
+  "task_selection": "random sample (tools/random_task_pick.py --seed 42)",
+  "split_seed": 7
+}

@@ -1,0 +1,11 @@
+{
+  "project_id": "proj_66KriOaMlV_oUUCh",
+  "bundle_id": "legalbench_diversity_4_v2:20260425-ad737155",
+  "last_test_passed": 8,
+  "last_test_total": 8,
+  "previous_contaminated": {
+    "project_id": "proj_hNnVjIMYDNfMcy55",
+    "bundle_id": "legalbench_diversity_4:20260425-21366668",
+    "note": "v1 invalidated, see issue #6"
+  }
+}

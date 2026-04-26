@@ -1,0 +1,1009 @@
+{
+  "task": "contract_nli_notice_on_compelled_disclosure",
+  "split": "test",
+  "model": "gpt-5.4",
+  "prompt_format": "upstream_base_prompt",
+  "summary": {
+    "correct": 79,
+    "total": 142,
+    "parse_err": 0,
+    "api_err": 0
+  },
+  "by_slice": {},
+  "per_case": [
+    {
+      "index": 0,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 18,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 24,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 26,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 29,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 30,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 31,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 32,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 34,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 35,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 40,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 42,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 44,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 47,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 49,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 50,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 51,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 52,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 53,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 54,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 55,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 56,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 57,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 58,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 59,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 60,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 61,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 62,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 63,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 64,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 65,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 66,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 67,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 68,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 69,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 70,
+      "slice": "",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 71,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 72,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 73,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 74,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 75,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 76,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 77,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 78,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 79,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 80,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 81,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 82,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 83,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 84,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 85,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 86,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 87,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 88,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 89,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 90,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 91,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 92,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 93,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 94,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 95,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 96,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 97,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 98,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 99,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 100,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 101,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 102,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 103,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 104,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 105,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 106,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 107,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 108,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 109,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 110,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 111,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 112,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 113,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 114,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 115,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 116,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 117,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 118,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 119,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 120,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 121,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 122,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 123,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 124,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 125,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 126,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 127,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 128,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 129,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 130,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 131,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 132,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 133,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 134,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 135,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 136,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 137,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 138,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 139,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 140,
+      "slice": "",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 141,
+      "slice": "",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "task": "diversity_1",
+  "split": "test",
+  "limit": 10,
+  "bundle_id": "legalbench_diversity_jurisdiction:20260425-03b7c5fc",
+  "engine_url": "http://127.0.0.1:8080",
+  "summary": {
+    "correct": 10,
+    "total": 10,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "text": "James is from Arizona. Lucas is from Arizona. James sues Lucas for negligence for $64,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 64000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "text": "Benjamin is from Alaska. Isabella is from Rhode Island. Benjamin sues Isabella for patent infringement for $36,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alaska",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 36000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "text": "James is from Montana. Elijah is from Montana. James sues Elijah for legal malpractice for $12,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 12000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "text": "Elijah is from California. Liam is from California. Elijah sues Liam for breach of contract for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "text": "Liam is from Georgia. Noah is from South Dakota. Liam sues Noah for negligence for $2,716,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 2716000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "text": "Olivia is from Arkansas. Ava is from Arkansas. Olivia sues Ava for breach of contract for $9,824,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 9824000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "text": "Sophia is from Nebraska. Ava is from Washington. Sophia sues Ava for legal malpractice for $34,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Washington",
+        "amount_in_controversy_usd": 34000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "text": "Isabella is from South Dakota. Olivia is from South Dakota. Isabella sues Olivia for defamation for $45,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 45000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "text": "Ava is from West Virginia. James is from Florida. Ava sues James for medical malpractice for $3,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "text": "Noah is from Nebraska. Evelyn is from Mississippi. Noah sues Evelyn for negligence for $7,361,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Mississippi",
+        "amount_in_controversy_usd": 7361000
+      },
+      "decision": "eligible",
+      "correct": true
+    }
+  ]
+}

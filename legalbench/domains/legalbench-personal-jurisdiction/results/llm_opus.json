@@ -1,0 +1,386 @@
+{
+  "task": "personal_jurisdiction",
+  "split": "test",
+  "model": "claude-opus-4-7",
+  "prompt_format": "upstream_base_prompt",
+  "summary": {
+    "correct": 46,
+    "total": 50,
+    "parse_err": 0,
+    "api_err": 0
+  },
+  "by_slice": {
+    "Yes contacts, no nexus.": {
+      "correct": 8,
+      "total": 8
+    },
+    "No contacts, no nexus.": {
+      "correct": 19,
+      "total": 20
+    },
+    "Domicile.": {
+      "correct": 9,
+      "total": 9
+    },
+    "Domicile": {
+      "correct": 1,
+      "total": 1
+    },
+    "Yes contacts, yes nexus.": {
+      "correct": 9,
+      "total": 12
+    }
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "slice": "Domicile",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 15,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "yes",
+      "correct": false
+    },
+    {
+      "index": 17,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 18,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "no",
+      "correct": false
+    },
+    {
+      "index": 19,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 24,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 26,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 29,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 30,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 31,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 32,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 34,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 35,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 40,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 42,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "slice": "Yes contacts, yes nexus.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 44,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "slice": "Domicile.",
+      "expected": "yes",
+      "answer": "yes",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 47,
+      "slice": "No contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    },
+    {
+      "index": 49,
+      "slice": "Yes contacts, no nexus.",
+      "expected": "no",
+      "answer": "no",
+      "correct": true
+    }
+  ]
+}

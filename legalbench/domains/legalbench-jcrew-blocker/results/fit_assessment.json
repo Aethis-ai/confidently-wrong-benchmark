@@ -1,0 +1,116 @@
+{
+  "source_path": "domains/legalbench-jcrew-blocker/sources/rule.md",
+  "domain": "us_leveraged_finance",
+  "library_loaded": {
+    "source_ambiguity": [
+      "tools/patterns/library/source_ambiguity/en_legal.yaml"
+    ],
+    "domain_glossaries": [
+      "tools/patterns/library/domain_glossaries/us_federal_evidence.yaml",
+      "tools/patterns/library/domain_glossaries/us_leveraged_finance.yaml"
+    ],
+    "doctrinal_risk": [
+      "tools/patterns/library/doctrinal_risk/us_federal_evidence.yaml"
+    ],
+    "question_shapes": [
+      "tools/patterns/library/question_shapes/binary_classification.yaml"
+    ]
+  },
+  "checks": {
+    "source_ambiguity": {
+      "matched": [
+        {
+          "library_file": "tools/patterns/library/source_ambiguity/en_legal.yaml",
+          "pattern_id": "typically-includes",
+          "severity": "medium",
+          "risk": "Introduces an enumeration whose semantics are ambiguous: \"all of\nthese are required\" (AND) vs \"any of these qualifies\" (OR). A\nbundle authored without disambiguation often encodes the\nconservative AND reading. Many real-world labelling conventions\nuse OR (the \"defining feature\" view), and a clean canonical-source\nauthoring run can score sharply lower than the labelled answer\nkey in that case.",
+          "spans": [
+            {
+              "start": 1035,
+              "end": 1053,
+              "match": "typically includes"
+            }
+          ],
+          "suggested_hint_template": "In real-world practice, [the X prong] is the defining feature of\n[the rule]. [Other prongs] are typical companion controls but\nnot strictly required. A clause containing only [the X prong]\nshould still be classified as [the rule]."
+        }
+      ]
+    },
+    "doctrinal_risk": {
+      "matched": []
+    },
+    "question_shape": {
+      "detected": "unknown",
+      "evidence_trigger": null
+    },
+    "domain_glossary": {
+      "loaded_for": "us_leveraged_finance",
+      "synonym_families": [
+        {
+          "id": "unrestricted-subsidiary",
+          "canonical": "unrestricted subsidiary",
+          "synonyms": [
+            "non-Loan Party Subsidiary",
+            "non-Restricted Subsidiary",
+            "non-Guarantor Subsidiary",
+            "Excluded Subsidiary",
+            "subsidiary that is not a Restricted Subsidiary",
+            "subsidiary that is not a Guarantor"
+          ],
+          "note": "Standard LSTA Model Credit Agreement terminology. Drafting\npractice varies; all of the above refer to subsidiaries outside\nthe loan's restricted/guaranteed group. A prohibition or\nrestriction targeting any of these terms is a prohibition on\ntransfer to an unrestricted subsidiary for J.Crew Blocker\nidentification.\n",
+          "seen_in": [
+            {
+              "task": "jcrew_blocker (LegalBench)",
+              "observation": "The single remaining miss after rule-authoring SME hints\n(1/54 in the v3 bundle) was a clause using \"non-Loan Party\nSubsidiary\" terminology. Adding this synonym family to the\nextractor prompt resolved it; v4 scored 54/54 (100%).\n"
+            }
+          ]
+        },
+        {
+          "id": "material-intellectual-property",
+          "canonical": "material intellectual property",
+          "synonyms": [
+            "Material Intellectual Property",
+            "material IP",
+            "Material IP",
+            "intellectual property material to the business of the Borrower"
+          ],
+          "note": "Real J.Crew Blocker provisions almost always restrict only\n\"material IP\" rather than \"all intellectual property\". This\nnarrower scope is consistent with the prohibition prong; the\noriginal 2016 J.Crew workaround targeted material IP\nspecifically. Should be treated as equivalent to the canonical\nterm for prong-detection purposes.\n",
+          "seen_in": [
+            {
+              "task": "jcrew_blocker (LegalBench)"
+            }
+          ]
+        },
+        {
+          "id": "restricted-subsidiary",
+          "canonical": "restricted subsidiary",
+          "synonyms": [
+            "Restricted Subsidiary",
+            "Loan Party Subsidiary",
+            "Guarantor Subsidiary",
+            "subsidiary that is a Loan Party"
+          ],
+          "note": "The complement of the unrestricted-subsidiary class. Frequently\nused in carve-outs (\"transfers between Restricted Subsidiaries\nare permitted\"). Important for the assessor to recognise so it\ndoesn't falsely flag carve-out language as a prohibition.\n",
+          "seen_in": []
+        }
+      ]
+    }
+  },
+  "suggested_hints": [
+    {
+      "layer": "rule_authoring",
+      "source": "pattern:typically-includes",
+      "template": "In real-world practice, [the X prong] is the defining feature of\n[the rule]. [Other prongs] are typical companion controls but\nnot strictly required. A clause containing only [the X prong]\nshould still be classified as [the rule].",
+      "rationale": "Source contains markers triggered by `typically-includes` (severity: medium). Adding a rule-authoring hint that disambiguates the AND/OR reading materially changes how the bundle encodes the rule."
+    },
+    {
+      "layer": "runtime_extractor",
+      "source": "domain_glossary",
+      "template": "Recognise the following synonym families when reading case narratives \u2014 all members of a family refer to the same underlying concept for prong-detection purposes:\n  - \"unrestricted subsidiary\" \u2261 \"non-Loan Party Subsidiary\", \"non-Restricted Subsidiary\", \"non-Guarantor Subsidiary\", \"Excluded Subsidiary\", \"subsidiary that is not a Restricted Subsidiary\", \"subsidiary that is not a Guarantor\"\n  - \"material intellectual property\" \u2261 \"Material Intellectual Property\", \"material IP\", \"Material IP\", \"intellectual property material to the business of the Borrower\"\n  - \"restricted subsidiary\" \u2261 \"Restricted Subsidiary\", \"Loan Party Subsidiary\", \"Guarantor Subsidiary\", \"subsidiary that is a Loan Party\"",
+      "rationale": "Real drafting practice uses synonyms for canonical terms. The runtime LLM extractor needs domain-specific equivalences or it will miss the prong on cases that use alternative terminology."
+    }
+  ],
+  "expected_ceiling": {
+    "value": "100% achievable",
+    "reasons": []
+  }
+}

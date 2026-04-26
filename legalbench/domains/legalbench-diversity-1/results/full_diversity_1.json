@@ -1,0 +1,3615 @@
+{
+  "task": "diversity_1",
+  "split": "test",
+  "limit": 300,
+  "bundle_id": "legalbench_diversity_jurisdiction:20260425-03b7c5fc",
+  "engine_url": "http://127.0.0.1:8080",
+  "summary": {
+    "correct": 300,
+    "total": 300,
+    "extract_fail": 0,
+    "engine_err": 0
+  },
+  "per_case": [
+    {
+      "index": 0,
+      "text": "James is from Arizona. Lucas is from Arizona. James sues Lucas for negligence for $64,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 64000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 1,
+      "text": "Benjamin is from Alaska. Isabella is from Rhode Island. Benjamin sues Isabella for patent infringement for $36,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alaska",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 36000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 2,
+      "text": "James is from Montana. Elijah is from Montana. James sues Elijah for legal malpractice for $12,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 12000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 3,
+      "text": "Elijah is from California. Liam is from California. Elijah sues Liam for breach of contract for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 4,
+      "text": "Liam is from Georgia. Noah is from South Dakota. Liam sues Noah for negligence for $2,716,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 2716000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 5,
+      "text": "Olivia is from Arkansas. Ava is from Arkansas. Olivia sues Ava for breach of contract for $9,824,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 9824000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 6,
+      "text": "Sophia is from Nebraska. Ava is from Washington. Sophia sues Ava for legal malpractice for $34,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Washington",
+        "amount_in_controversy_usd": 34000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 7,
+      "text": "Isabella is from South Dakota. Olivia is from South Dakota. Isabella sues Olivia for defamation for $45,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 45000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 8,
+      "text": "Ava is from West Virginia. James is from Florida. Ava sues James for medical malpractice for $3,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 9,
+      "text": "Noah is from Nebraska. Evelyn is from Mississippi. Noah sues Evelyn for negligence for $7,361,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Mississippi",
+        "amount_in_controversy_usd": 7361000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 10,
+      "text": "Sophia is from North Carolina. William is from New York. Sophia sues William for negligence for $24,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Carolina",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 24000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 11,
+      "text": "Isabella is from New Jersey. Benjamin is from Texas. Isabella sues Benjamin for wrongful eviction for $8,050,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 8050000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 12,
+      "text": "Mia is from Illinois. Theodore is from Alaska. Mia sues Theodore for medical malpractice for $7,232,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 7232000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 13,
+      "text": "Theodore is from Arizona. Evelyn is from Vermont. Theodore sues Evelyn for copyright infringement for $72,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Vermont",
+        "amount_in_controversy_usd": 72000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 14,
+      "text": "Evelyn is from New York. William is from New York. Evelyn sues William for medical malpractice for $59,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 15,
+      "text": "Henry is from Montana. Ava is from Florida. Henry sues Ava for trademark infringement for $4,824,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 4824000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 16,
+      "text": "Benjamin is from Arkansas. Amelia is from Arkansas. Benjamin sues Amelia for legal malpractice for $39,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 39000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 17,
+      "text": "Lucas is from Massachusetts. Theodore is from Massachusetts. Lucas sues Theodore for trademark infringement for $17,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "Massachusetts",
+        "amount_in_controversy_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 18,
+      "text": "William is from New Jersey. Olivia is from New Jersey. William sues Olivia for legal malpractice for $23,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "New Jersey",
+        "amount_in_controversy_usd": 23000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 19,
+      "text": "Lucas is from West Virginia. James is from West Virginia. Lucas sues James for patent infringement for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 20,
+      "text": "Evelyn is from Wisconsin. Amelia is from Iowa. Evelyn sues Amelia for breach of contract for $51,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 21,
+      "text": "Emma is from Virginia. Isabella is from Virginia. Emma sues Isabella for breach of contract for $6,348,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 6348000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 22,
+      "text": "Sophia is from Nevada. Evelyn is from Nevada. Sophia sues Evelyn for defamation for $10,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Nevada",
+        "amount_in_controversy_usd": 10000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 23,
+      "text": "Elijah is from Kansas. Liam is from California. Elijah sues Liam for copyright infringement for $33,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 33000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 24,
+      "text": "Liam is from Rhode Island. Amelia is from Alabama. Liam sues Amelia for wrongful eviction for $1,756,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Rhode Island",
+        "defendant_state": "Alabama",
+        "amount_in_controversy_usd": 1756000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 25,
+      "text": "Theodore is from Iowa. William is from Iowa. Theodore sues William for legal malpractice for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Iowa",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 26,
+      "text": "Mia is from Michigan. Sophia is from Michigan. Mia sues Sophia for legal malpractice for $7,684,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Michigan",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 7684000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 27,
+      "text": "Harper is from New York. Lucas is from New York. Harper sues Lucas for medical malpractice for $9,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 9000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 28,
+      "text": "Evelyn is from Arkansas. Noah is from South Dakota. Evelyn sues Noah for patent infringement for $56,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 29,
+      "text": "Charlotte is from Georgia. Harper is from Kansas. Charlotte sues Harper for patent infringement for $40,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 40000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 30,
+      "text": "Elijah is from Oregon. William is from Maine. Elijah sues William for wrongful eviction for $4,721,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Maine",
+        "amount_in_controversy_usd": 4721000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 31,
+      "text": "Elijah is from Arkansas. James is from Arkansas. Elijah sues James for breach of contract for $25,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 25000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 32,
+      "text": "Elijah is from Indiana. William is from North Carolina. Elijah sues William for negligence for $9,001,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 9001000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 33,
+      "text": "Mia is from Connecticut. Sophia is from Connecticut. Mia sues Sophia for trespass for $2,195,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 2195000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 34,
+      "text": "Charlotte is from Illinois. Benjamin is from Massachusetts. Charlotte sues Benjamin for negligence for $22,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Massachusetts",
+        "amount_in_controversy_usd": 22000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 35,
+      "text": "William is from Hawaii. Oliver is from Hawaii. William sues Oliver for wrongful eviction for $2,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Hawaii",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 2000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 36,
+      "text": "Noah is from Texas. Ava is from Texas. Noah sues Ava for negligence for $3,527,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Texas",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 3527000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 37,
+      "text": "Emma is from Florida. Elijah is from Hawaii. Emma sues Elijah for medical malpractice for $70,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Florida",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 70000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 38,
+      "text": "Charlotte is from Wyoming. Olivia is from Wyoming. Charlotte sues Olivia for defamation for $3,628,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 3628000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 39,
+      "text": "Noah is from Texas. Olivia is from Texas. Noah sues Olivia for negligence for $59,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Texas",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 40,
+      "text": "Olivia is from West Virginia. Harper is from West Virginia. Olivia sues Harper for medical malpractice for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 41,
+      "text": "Emma is from Maine. Benjamin is from Maine. Emma sues Benjamin for trespass for $33,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Maine",
+        "amount_in_controversy_usd": 33000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 42,
+      "text": "Harper is from Mississippi. William is from Mississippi. Harper sues William for securities fraud for $48,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Mississippi",
+        "defendant_state": "Mississippi",
+        "amount_in_controversy_usd": 48000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 43,
+      "text": "Mia is from Maryland. Noah is from Maryland. Mia sues Noah for breach of contract for $36,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 36000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 44,
+      "text": "Olivia is from Washington. Liam is from Washington. Olivia sues Liam for trademark infringement for $60,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Washington",
+        "defendant_state": "Washington",
+        "amount_in_controversy_usd": 60000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 45,
+      "text": "Henry is from Minnesota. Harper is from Oklahoma. Henry sues Harper for wrongful eviction for $3,550,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Minnesota",
+        "defendant_state": "Oklahoma",
+        "amount_in_controversy_usd": 3550000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 46,
+      "text": "Harper is from Indiana. James is from Missouri. Harper sues James for trademark infringement for $17,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 47,
+      "text": "Harper is from Idaho. Amelia is from Idaho. Harper sues Amelia for trademark infringement for $51,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Idaho",
+        "defendant_state": "Idaho",
+        "amount_in_controversy_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 48,
+      "text": "Olivia is from Maryland. Amelia is from Colorado. Olivia sues Amelia for defamation for $69,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Colorado",
+        "amount_in_controversy_usd": 69000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 49,
+      "text": "Amelia is from North Dakota. Noah is from North Dakota. Amelia sues Noah for negligence for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "North Dakota",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 50,
+      "text": "William is from Tennessee. Charlotte is from Delaware. William sues Charlotte for wrongful eviction for $2,544,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 2544000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 51,
+      "text": "Oliver is from Nevada. Noah is from Nevada. Oliver sues Noah for medical malpractice for $53,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Nevada",
+        "amount_in_controversy_usd": 53000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 52,
+      "text": "James is from Idaho. Olivia is from Kansas. James sues Olivia for wrongful eviction for $6,257,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Idaho",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 6257000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 53,
+      "text": "Noah is from Wyoming. Olivia is from Wyoming. Noah sues Olivia for legal malpractice for $2,495,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 2495000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 54,
+      "text": "Amelia is from Hawaii. Oliver is from Hawaii. Amelia sues Oliver for defamation for $9,587,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Hawaii",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 9587000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 55,
+      "text": "Theodore is from Missouri. Amelia is from Missouri. Theodore sues Amelia for defamation for $3,559,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Missouri",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 3559000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 56,
+      "text": "Theodore is from Connecticut. Mia is from West Virginia. Theodore sues Mia for breach of contract for $20,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 20000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 57,
+      "text": "Sophia is from Ohio. Elijah is from Ohio. Sophia sues Elijah for wrongful eviction for $9,867,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Ohio",
+        "defendant_state": "Ohio",
+        "amount_in_controversy_usd": 9867000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 58,
+      "text": "Elijah is from Washington. Charlotte is from Missouri. Elijah sues Charlotte for trespass for $68,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Washington",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 68000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 59,
+      "text": "James is from Hawaii. Noah is from South Dakota. James sues Noah for breach of contract for $1,441,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Hawaii",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 1441000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 60,
+      "text": "Charlotte is from Georgia. Mia is from Georgia. Charlotte sues Mia for trespass for $2,073,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 2073000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 61,
+      "text": "Harper is from Virginia. Isabella is from Illinois. Harper sues Isabella for medical malpractice for $5,941,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Illinois",
+        "amount_in_controversy_usd": 5941000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 62,
+      "text": "Liam is from Wisconsin. Noah is from Wisconsin. Liam sues Noah for legal malpractice for $69,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 69000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 63,
+      "text": "Elijah is from Montana. Lucas is from Delaware. Elijah sues Lucas for trademark infringement for $56,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 64,
+      "text": "Charlotte is from Kansas. James is from Kansas. Charlotte sues James for copyright infringement for $13,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 13000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 65,
+      "text": "Olivia is from Oregon. Oliver is from Oregon. Olivia sues Oliver for breach of contract for $7,736,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Oregon",
+        "amount_in_controversy_usd": 7736000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 66,
+      "text": "Mia is from Arizona. Amelia is from Arizona. Mia sues Amelia for defamation for $730,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 730000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 67,
+      "text": "Harper is from Delaware. Charlotte is from Arizona. Harper sues Charlotte for trespass for $769,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 769000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 68,
+      "text": "Benjamin is from Rhode Island. Oliver is from Utah. Benjamin sues Oliver for legal malpractice for $40,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Rhode Island",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 40000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 69,
+      "text": "Isabella is from Louisiana. Emma is from Hawaii. Isabella sues Emma for defamation for $2,714,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Louisiana",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 2714000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 70,
+      "text": "Theodore is from Texas. Noah is from Texas. Theodore sues Noah for trademark infringement for $6,956,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Texas",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 6956000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 71,
+      "text": "Benjamin is from North Carolina. Evelyn is from North Carolina. Benjamin sues Evelyn for defamation for $1,220,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Carolina",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 1220000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 72,
+      "text": "Benjamin is from Nevada. Evelyn is from Louisiana. Benjamin sues Evelyn for breach of contract for $49,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 49000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 73,
+      "text": "Emma is from Tennessee. Lucas is from Tennessee. Emma sues Lucas for wrongful eviction for $1,600,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 1600000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 74,
+      "text": "Isabella is from Virginia. Amelia is from Colorado. Isabella sues Amelia for patent infringement for $827,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Colorado",
+        "amount_in_controversy_usd": 827000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 75,
+      "text": "Sophia is from Virginia. Lucas is from Virginia. Sophia sues Lucas for patent infringement for $7,947,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 7947000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 76,
+      "text": "Liam is from Alabama. James is from Alabama. Liam sues James for wrongful eviction for $2,269,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alabama",
+        "defendant_state": "Alabama",
+        "amount_in_controversy_usd": 2269000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 77,
+      "text": "Liam is from North Carolina. Elijah is from North Carolina. Liam sues Elijah for legal malpractice for $7,879,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Carolina",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 7879000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 78,
+      "text": "Elijah is from New York. James is from Alaska. Elijah sues James for medical malpractice for $8,244,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 8244000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 79,
+      "text": "Amelia is from Arkansas. Olivia is from New Hampshire. Amelia sues Olivia for trademark infringement for $7,403,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "New Hampshire",
+        "amount_in_controversy_usd": 7403000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 80,
+      "text": "Isabella is from Wyoming. Benjamin is from Wyoming. Isabella sues Benjamin for copyright infringement for $19,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 19000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 81,
+      "text": "Olivia is from New York. James is from New York. Olivia sues James for medical malpractice for $6,810,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 6810000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 82,
+      "text": "Mia is from Michigan. Amelia is from Michigan. Mia sues Amelia for copyright infringement for $5,791,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Michigan",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 5791000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 83,
+      "text": "Liam is from Indiana. William is from Indiana. Liam sues William for negligence for $9,278,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Indiana",
+        "amount_in_controversy_usd": 9278000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 84,
+      "text": "Theodore is from Delaware. Liam is from Rhode Island. Theodore sues Liam for defamation for $58,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 58000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 85,
+      "text": "James is from North Dakota. Noah is from Georgia. James sues Noah for negligence for $1,506,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 1506000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 86,
+      "text": "Oliver is from Nevada. Emma is from Michigan. Oliver sues Emma for copyright infringement for $37,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 37000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 87,
+      "text": "Olivia is from Wyoming. Oliver is from Wyoming. Olivia sues Oliver for breach of contract for $7,322,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 7322000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 88,
+      "text": "Noah is from Massachusetts. Lucas is from North Carolina. Noah sues Lucas for securities fraud for $7,756,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 7756000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 89,
+      "text": "Mia is from Vermont. Evelyn is from Kansas. Mia sues Evelyn for trespass for $8,300,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Vermont",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 8300000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 90,
+      "text": "Oliver is from Hawaii. Theodore is from Maryland. Oliver sues Theodore for breach of contract for $8,330,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Hawaii",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 8330000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 91,
+      "text": "Henry is from Maine. Theodore is from Oklahoma. Henry sues Theodore for defamation for $52,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Oklahoma",
+        "amount_in_controversy_usd": 52000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 92,
+      "text": "Charlotte is from New Jersey. Isabella is from Rhode Island. Charlotte sues Isabella for defamation for $8,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 8000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 93,
+      "text": "Sophia is from West Virginia. William is from West Virginia. Sophia sues William for negligence for $3,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 94,
+      "text": "Henry is from Virginia. Liam is from Minnesota. Henry sues Liam for securities fraud for $25,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Minnesota",
+        "amount_in_controversy_usd": 25000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 95,
+      "text": "Lucas is from Vermont. Mia is from Michigan. Lucas sues Mia for breach of contract for $7,676,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Vermont",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 7676000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 96,
+      "text": "Emma is from Maryland. Charlotte is from Texas. Emma sues Charlotte for breach of contract for $1,763,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 1763000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 97,
+      "text": "James is from Wisconsin. Olivia is from Wisconsin. James sues Olivia for breach of contract for $58,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 58000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 98,
+      "text": "Theodore is from Montana. Noah is from Montana. Theodore sues Noah for medical malpractice for $7,045,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 7045000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 99,
+      "text": "Oliver is from Missouri. Elijah is from Wisconsin. Oliver sues Elijah for patent infringement for $53,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Missouri",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 53000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 100,
+      "text": "Ava is from Arkansas. Henry is from Arkansas. Ava sues Henry for breach of contract for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 101,
+      "text": "Evelyn is from Missouri. Liam is from Missouri. Evelyn sues Liam for legal malpractice for $9,413,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Missouri",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 9413000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 102,
+      "text": "Theodore is from New Hampshire. Amelia is from New Hampshire. Theodore sues Amelia for legal malpractice for $2,133,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Hampshire",
+        "defendant_state": "New Hampshire",
+        "amount_in_controversy_usd": 2133000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 103,
+      "text": "Benjamin is from New York. Henry is from New York. Benjamin sues Henry for patent infringement for $9,039,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 9039000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 104,
+      "text": "Olivia is from New Hampshire. Lucas is from New Hampshire. Olivia sues Lucas for trespass for $8,885,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Hampshire",
+        "defendant_state": "New Hampshire",
+        "amount_in_controversy_usd": 8885000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 105,
+      "text": "Amelia is from Arizona. Emma is from Arizona. Amelia sues Emma for trademark infringement for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 106,
+      "text": "Sophia is from Maryland. Henry is from Oregon. Sophia sues Henry for defamation for $9,544,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Oregon",
+        "amount_in_controversy_usd": 9544000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 107,
+      "text": "Henry is from Illinois. William is from Wisconsin. Henry sues William for legal malpractice for $54,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 54000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 108,
+      "text": "Elijah is from South Dakota. Evelyn is from South Dakota. Elijah sues Evelyn for negligence for $68,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 68000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 109,
+      "text": "Benjamin is from Colorado. Ava is from Minnesota. Benjamin sues Ava for medical malpractice for $57,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Colorado",
+        "defendant_state": "Minnesota",
+        "amount_in_controversy_usd": 57000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 110,
+      "text": "Liam is from Nebraska. Lucas is from Nebraska. Liam sues Lucas for trademark infringement for $5,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 5000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 111,
+      "text": "Oliver is from Georgia. Isabella is from South Dakota. Oliver sues Isabella for negligence for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 112,
+      "text": "Evelyn is from Indiana. Olivia is from Indiana. Evelyn sues Olivia for legal malpractice for $2,608,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Indiana",
+        "amount_in_controversy_usd": 2608000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 113,
+      "text": "Emma is from New Mexico. Ava is from New Mexico. Emma sues Ava for copyright infringement for $55,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Mexico",
+        "defendant_state": "New Mexico",
+        "amount_in_controversy_usd": 55000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 114,
+      "text": "Benjamin is from Oregon. Theodore is from Oregon. Benjamin sues Theodore for wrongful eviction for $9,420,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Oregon",
+        "amount_in_controversy_usd": 9420000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 115,
+      "text": "Oliver is from Utah. Henry is from Utah. Oliver sues Henry for defamation for $6,375,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Utah",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 6375000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 116,
+      "text": "James is from North Dakota. Ava is from West Virginia. James sues Ava for trespass for $26,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 26000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 117,
+      "text": "Olivia is from New Jersey. William is from Indiana. Olivia sues William for wrongful eviction for $4,689,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "Indiana",
+        "amount_in_controversy_usd": 4689000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 118,
+      "text": "James is from South Dakota. Sophia is from Virginia. James sues Sophia for negligence for $9,010,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 9010000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 119,
+      "text": "Isabella is from Kentucky. Liam is from Kentucky. Isabella sues Liam for wrongful eviction for $37,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Kentucky",
+        "amount_in_controversy_usd": 37000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 120,
+      "text": "Noah is from South Dakota. Harper is from South Dakota. Noah sues Harper for wrongful eviction for $71,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 71000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 121,
+      "text": "Mia is from New Hampshire. Theodore is from New Hampshire. Mia sues Theodore for copyright infringement for $4,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Hampshire",
+        "defendant_state": "New Hampshire",
+        "amount_in_controversy_usd": 4000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 122,
+      "text": "James is from Oregon. Elijah is from Tennessee. James sues Elijah for medical malpractice for $72,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 72000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 123,
+      "text": "Liam is from Wisconsin. Henry is from Wisconsin. Liam sues Henry for negligence for $70,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 70000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 124,
+      "text": "Lucas is from West Virginia. Ava is from Arizona. Lucas sues Ava for wrongful eviction for $3,071,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 3071000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 125,
+      "text": "Lucas is from Mississippi. Harper is from Delaware. Lucas sues Harper for wrongful eviction for $8,362,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Mississippi",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 8362000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 126,
+      "text": "Benjamin is from Massachusetts. James is from Louisiana. Benjamin sues James for defamation for $5,784,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 5784000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 127,
+      "text": "Emma is from New Mexico. Elijah is from South Carolina. Emma sues Elijah for patent infringement for $74,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Mexico",
+        "defendant_state": "South Carolina",
+        "amount_in_controversy_usd": 74000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 128,
+      "text": "Noah is from Colorado. Charlotte is from Rhode Island. Noah sues Charlotte for trademark infringement for $13,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Colorado",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 13000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 129,
+      "text": "Benjamin is from Maine. Mia is from Nebraska. Benjamin sues Mia for patent infringement for $49,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 49000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 130,
+      "text": "Oliver is from Tennessee. Isabella is from Alaska. Oliver sues Isabella for breach of contract for $56,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 131,
+      "text": "Charlotte is from South Carolina. Benjamin is from Georgia. Charlotte sues Benjamin for wrongful eviction for $5,947,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "South Carolina",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 5947000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 132,
+      "text": "Liam is from Kansas. Lucas is from Louisiana. Liam sues Lucas for legal malpractice for $22,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 22000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 133,
+      "text": "Olivia is from Iowa. Emma is from Iowa. Olivia sues Emma for legal malpractice for $5,020,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Iowa",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 5020000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 134,
+      "text": "Oliver is from New York. Sophia is from Louisiana. Oliver sues Sophia for trademark infringement for $26,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 26000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 135,
+      "text": "Lucas is from Montana. Mia is from Nebraska. Lucas sues Mia for securities fraud for $21,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 21000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 136,
+      "text": "Emma is from Kentucky. Charlotte is from Kentucky. Emma sues Charlotte for trademark infringement for $12,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Kentucky",
+        "amount_in_controversy_usd": 12000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 137,
+      "text": "Liam is from Florida. Noah is from Florida. Liam sues Noah for securities fraud for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Florida",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 138,
+      "text": "Lucas is from Alaska. Noah is from Alaska. Lucas sues Noah for securities fraud for $5,215,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alaska",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 5215000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 139,
+      "text": "Isabella is from Wyoming. Mia is from Wyoming. Isabella sues Mia for wrongful eviction for $40,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 40000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 140,
+      "text": "Noah is from South Dakota. Evelyn is from Utah. Noah sues Evelyn for breach of contract for $20,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 20000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 141,
+      "text": "Noah is from Kansas. Sophia is from South Carolina. Noah sues Sophia for trespass for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "South Carolina",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 142,
+      "text": "Mia is from Arizona. William is from Arizona. Mia sues William for copyright infringement for $2,685,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 2685000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 143,
+      "text": "Henry is from Nebraska. Charlotte is from Mississippi. Henry sues Charlotte for copyright infringement for $56,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Mississippi",
+        "amount_in_controversy_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 144,
+      "text": "Sophia is from North Carolina. William is from North Carolina. Sophia sues William for medical malpractice for $7,261,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Carolina",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 7261000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 145,
+      "text": "Charlotte is from South Carolina. Henry is from South Carolina. Charlotte sues Henry for patent infringement for $3,202,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Carolina",
+        "defendant_state": "South Carolina",
+        "amount_in_controversy_usd": 3202000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 146,
+      "text": "Harper is from Iowa. Evelyn is from West Virginia. Harper sues Evelyn for trespass for $9,778,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Iowa",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 9778000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 147,
+      "text": "Theodore is from Minnesota. Amelia is from Minnesota. Theodore sues Amelia for trademark infringement for $6,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Minnesota",
+        "defendant_state": "Minnesota",
+        "amount_in_controversy_usd": 6000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 148,
+      "text": "Amelia is from Minnesota. Sophia is from Minnesota. Amelia sues Sophia for breach of contract for $1,900,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Minnesota",
+        "defendant_state": "Minnesota",
+        "amount_in_controversy_usd": 1900000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 149,
+      "text": "Elijah is from Minnesota. Theodore is from Wyoming. Elijah sues Theodore for wrongful eviction for $3,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Minnesota",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 150,
+      "text": "Mia is from Tennessee. Benjamin is from Tennessee. Mia sues Benjamin for defamation for $37,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 37000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 151,
+      "text": "Liam is from South Dakota. Evelyn is from Maryland. Liam sues Evelyn for trespass for $7,138,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 7138000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 152,
+      "text": "Amelia is from Utah. Oliver is from Rhode Island. Amelia sues Oliver for copyright infringement for $40,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Utah",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 40000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 153,
+      "text": "Benjamin is from Alaska. Evelyn is from Alaska. Benjamin sues Evelyn for breach of contract for $7,111,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alaska",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 7111000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 154,
+      "text": "Lucas is from Massachusetts. Amelia is from Ohio. Lucas sues Amelia for legal malpractice for $16,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "Ohio",
+        "amount_in_controversy_usd": 16000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 155,
+      "text": "Benjamin is from Georgia. Emma is from North Dakota. Benjamin sues Emma for defamation for $2,555,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "North Dakota",
+        "amount_in_controversy_usd": 2555000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 156,
+      "text": "Amelia is from Arizona. Theodore is from Alaska. Amelia sues Theodore for defamation for $18,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 157,
+      "text": "Theodore is from Arkansas. Sophia is from Arkansas. Theodore sues Sophia for copyright infringement for $2,442,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 2442000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 158,
+      "text": "Evelyn is from Kansas. Olivia is from Montana. Evelyn sues Olivia for legal malpractice for $4,676,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 4676000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 159,
+      "text": "Sophia is from Tennessee. Oliver is from Oklahoma. Sophia sues Oliver for patent infringement for $1,196,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Oklahoma",
+        "amount_in_controversy_usd": 1196000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 160,
+      "text": "Amelia is from New Jersey. Mia is from South Carolina. Amelia sues Mia for breach of contract for $18,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "South Carolina",
+        "amount_in_controversy_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 161,
+      "text": "Elijah is from Oklahoma. James is from Oklahoma. Elijah sues James for breach of contract for $4,334,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oklahoma",
+        "defendant_state": "Oklahoma",
+        "amount_in_controversy_usd": 4334000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 162,
+      "text": "Sophia is from Massachusetts. Isabella is from New York. Sophia sues Isabella for copyright infringement for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 163,
+      "text": "James is from Pennsylvania. Amelia is from Pennsylvania. James sues Amelia for patent infringement for $21,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Pennsylvania",
+        "amount_in_controversy_usd": 21000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 164,
+      "text": "Henry is from Montana. Mia is from Montana. Henry sues Mia for securities fraud for $63,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 63000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 165,
+      "text": "Noah is from Florida. Elijah is from Iowa. Noah sues Elijah for wrongful eviction for $59,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Florida",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 166,
+      "text": "Ava is from Utah. Henry is from Utah. Ava sues Henry for breach of contract for $18,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Utah",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 167,
+      "text": "Henry is from New Mexico. Emma is from New Mexico. Henry sues Emma for trademark infringement for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Mexico",
+        "defendant_state": "New Mexico",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 168,
+      "text": "Olivia is from Connecticut. Oliver is from Wyoming. Olivia sues Oliver for breach of contract for $46,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 46000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 169,
+      "text": "Ava is from North Carolina. Olivia is from North Carolina. Ava sues Olivia for trespass for $13,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Carolina",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 13000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 170,
+      "text": "Harper is from California. Theodore is from Ohio. Harper sues Theodore for negligence for $62,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "Ohio",
+        "amount_in_controversy_usd": 62000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 171,
+      "text": "Mia is from Washington. Amelia is from California. Mia sues Amelia for patent infringement for $6,400,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Washington",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 6400000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 172,
+      "text": "Harper is from Arizona. Mia is from Nebraska. Harper sues Mia for trespass for $5,442,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 5442000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 173,
+      "text": "Henry is from Illinois. Oliver is from Connecticut. Henry sues Oliver for copyright infringement for $502,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 502000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 174,
+      "text": "Sophia is from Rhode Island. Mia is from Pennsylvania. Sophia sues Mia for defamation for $6,275,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Rhode Island",
+        "defendant_state": "Pennsylvania",
+        "amount_in_controversy_usd": 6275000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 175,
+      "text": "Olivia is from Kansas. Evelyn is from Kansas. Olivia sues Evelyn for legal malpractice for $7,289,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 7289000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 176,
+      "text": "Mia is from Utah. Evelyn is from Utah. Mia sues Evelyn for securities fraud for $41,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Utah",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 41000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 177,
+      "text": "Harper is from Nebraska. Benjamin is from Nebraska. Harper sues Benjamin for trespass for $5,638,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nebraska",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 5638000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 178,
+      "text": "Evelyn is from Arizona. William is from Nebraska. Evelyn sues William for breach of contract for $3,052,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Nebraska",
+        "amount_in_controversy_usd": 3052000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 179,
+      "text": "Evelyn is from Virginia. Benjamin is from Wisconsin. Evelyn sues Benjamin for legal malpractice for $5,304,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 5304000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 180,
+      "text": "Elijah is from Indiana. William is from Missouri. Elijah sues William for securities fraud for $5,197,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 5197000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 181,
+      "text": "Theodore is from California. James is from Maryland. Theodore sues James for defamation for $2,770,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 2770000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 182,
+      "text": "Mia is from Georgia. James is from Georgia. Mia sues James for securities fraud for $56,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 56000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 183,
+      "text": "Oliver is from Oregon. William is from Oregon. Oliver sues William for defamation for $3,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Oregon",
+        "amount_in_controversy_usd": 3000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 184,
+      "text": "Ava is from Delaware. Mia is from Missouri. Ava sues Mia for wrongful eviction for $1,319,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 1319000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 185,
+      "text": "Henry is from Kansas. Oliver is from Nevada. Henry sues Oliver for securities fraud for $8,335,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Kansas",
+        "defendant_state": "Nevada",
+        "amount_in_controversy_usd": 8335000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 186,
+      "text": "James is from California. Elijah is from California. James sues Elijah for wrongful eviction for $5,265,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 5265000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 187,
+      "text": "Amelia is from West Virginia. Benjamin is from Ohio. Amelia sues Benjamin for trespass for $59,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "Ohio",
+        "amount_in_controversy_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 188,
+      "text": "Sophia is from Tennessee. Olivia is from Wyoming. Sophia sues Olivia for trespass for $8,770,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 8770000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 189,
+      "text": "James is from Oklahoma. Noah is from Rhode Island. James sues Noah for securities fraud for $4,295,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Oklahoma",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 4295000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 190,
+      "text": "Ava is from Maryland. Elijah is from Idaho. Ava sues Elijah for medical malpractice for $40,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Idaho",
+        "amount_in_controversy_usd": 40000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 191,
+      "text": "Oliver is from Kentucky. Ava is from Kentucky. Oliver sues Ava for trademark infringement for $2,004,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Kentucky",
+        "amount_in_controversy_usd": 2004000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 192,
+      "text": "Sophia is from Massachusetts. Theodore is from South Dakota. Sophia sues Theodore for copyright infringement for $31,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 31000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 193,
+      "text": "Lucas is from South Carolina. Theodore is from Illinois. Lucas sues Theodore for breach of contract for $2,203,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "South Carolina",
+        "defendant_state": "Illinois",
+        "amount_in_controversy_usd": 2203000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 194,
+      "text": "Harper is from Delaware. Emma is from Iowa. Harper sues Emma for negligence for $4,178,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 4178000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 195,
+      "text": "Henry is from Delaware. Ava is from Wyoming. Henry sues Ava for copyright infringement for $9,509,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 9509000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 196,
+      "text": "Emma is from Louisiana. Charlotte is from Louisiana. Emma sues Charlotte for defamation for $11,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Louisiana",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 11000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 197,
+      "text": "William is from Michigan. Emma is from Maryland. William sues Emma for trespass for $1,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Michigan",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 1000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 198,
+      "text": "Evelyn is from Tennessee. Harper is from Tennessee. Evelyn sues Harper for legal malpractice for $5,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 5000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 199,
+      "text": "William is from Washington. Oliver is from Washington. William sues Oliver for wrongful eviction for $10,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Washington",
+        "defendant_state": "Washington",
+        "amount_in_controversy_usd": 10000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 200,
+      "text": "Amelia is from Tennessee. Henry is from Tennessee. Amelia sues Henry for medical malpractice for $7,913,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 7913000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 201,
+      "text": "Noah is from Wisconsin. Evelyn is from Wisconsin. Noah sues Evelyn for trademark infringement for $33,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 33000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 202,
+      "text": "Elijah is from Florida. Emma is from New York. Elijah sues Emma for medical malpractice for $8,920,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Florida",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 8920000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 203,
+      "text": "Evelyn is from Maine. Isabella is from California. Evelyn sues Isabella for patent infringement for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 204,
+      "text": "Oliver is from Massachusetts. William is from Massachusetts. Oliver sues William for defamation for $36,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "Massachusetts",
+        "amount_in_controversy_usd": 36000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 205,
+      "text": "William is from South Dakota. Theodore is from South Dakota. William sues Theodore for breach of contract for $1,159,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "South Dakota",
+        "amount_in_controversy_usd": 1159000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 206,
+      "text": "Ava is from New Hampshire. James is from New Hampshire. Ava sues James for copyright infringement for $3,451,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Hampshire",
+        "defendant_state": "New Hampshire",
+        "amount_in_controversy_usd": 3451000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 207,
+      "text": "Henry is from New Jersey. Evelyn is from New Jersey. Henry sues Evelyn for negligence for $8,780,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "New Jersey",
+        "amount_in_controversy_usd": 8780000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 208,
+      "text": "Theodore is from Oregon. Harper is from Louisiana. Theodore sues Harper for securities fraud for $1,097,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 1097000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 209,
+      "text": "Liam is from Tennessee. Harper is from Florida. Liam sues Harper for patent infringement for $49,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 49000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 210,
+      "text": "Henry is from Massachusetts. William is from Louisiana. Henry sues William for trespass for $8,916,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Massachusetts",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 8916000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 211,
+      "text": "Olivia is from Idaho. Oliver is from Idaho. Olivia sues Oliver for patent infringement for $51,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Idaho",
+        "defendant_state": "Idaho",
+        "amount_in_controversy_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 212,
+      "text": "Ava is from Illinois. Isabella is from Alaska. Ava sues Isabella for medical malpractice for $58,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 58000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 213,
+      "text": "Elijah is from Montana. Henry is from Montana. Elijah sues Henry for medical malpractice for $9,419,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 9419000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 214,
+      "text": "Mia is from Maryland. Liam is from Florida. Mia sues Liam for defamation for $7,836,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Florida",
+        "amount_in_controversy_usd": 7836000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 215,
+      "text": "Olivia is from Arizona. Charlotte is from Arizona. Olivia sues Charlotte for copyright infringement for $7,957,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 7957000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 216,
+      "text": "Amelia is from Illinois. Elijah is from Illinois. Amelia sues Elijah for negligence for $11,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Illinois",
+        "amount_in_controversy_usd": 11000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 217,
+      "text": "Olivia is from Michigan. Henry is from Michigan. Olivia sues Henry for wrongful eviction for $2,445,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Michigan",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 2445000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 218,
+      "text": "Amelia is from Indiana. Elijah is from Michigan. Amelia sues Elijah for breach of contract for $74,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 74000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 219,
+      "text": "Evelyn is from Louisiana. Henry is from Connecticut. Evelyn sues Henry for legal malpractice for $32,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Louisiana",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 32000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 220,
+      "text": "William is from Maine. Amelia is from Michigan. William sues Amelia for trademark infringement for $5,492,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 5492000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 221,
+      "text": "Sophia is from Missouri. Amelia is from Vermont. Sophia sues Amelia for copyright infringement for $37,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Missouri",
+        "defendant_state": "Vermont",
+        "amount_in_controversy_usd": 37000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 222,
+      "text": "William is from South Dakota. Elijah is from Wyoming. William sues Elijah for wrongful eviction for $32,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "South Dakota",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 32000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 223,
+      "text": "Isabella is from California. Sophia is from California. Isabella sues Sophia for medical malpractice for $43,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 224,
+      "text": "Benjamin is from Connecticut. Ava is from Connecticut. Benjamin sues Ava for negligence for $74,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 74000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 225,
+      "text": "Emma is from Maryland. Lucas is from Maryland. Emma sues Lucas for breach of contract for $7,845,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 7845000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 226,
+      "text": "Isabella is from Idaho. Ava is from Idaho. Isabella sues Ava for legal malpractice for $6,199,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Idaho",
+        "defendant_state": "Idaho",
+        "amount_in_controversy_usd": 6199000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 227,
+      "text": "William is from Pennsylvania. Emma is from Pennsylvania. William sues Emma for negligence for $14,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Pennsylvania",
+        "amount_in_controversy_usd": 14000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 228,
+      "text": "Oliver is from New Hampshire. Amelia is from Tennessee. Oliver sues Amelia for securities fraud for $18,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Hampshire",
+        "defendant_state": "Tennessee",
+        "amount_in_controversy_usd": 18000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 229,
+      "text": "Noah is from Alabama. Oliver is from Alabama. Noah sues Oliver for securities fraud for $4,565,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alabama",
+        "defendant_state": "Alabama",
+        "amount_in_controversy_usd": 4565000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 230,
+      "text": "Oliver is from Texas. Emma is from Mississippi. Oliver sues Emma for defamation for $7,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Texas",
+        "defendant_state": "Mississippi",
+        "amount_in_controversy_usd": 7000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 231,
+      "text": "Isabella is from Vermont. Emma is from Vermont. Isabella sues Emma for patent infringement for $66,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Vermont",
+        "defendant_state": "Vermont",
+        "amount_in_controversy_usd": 66000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 232,
+      "text": "William is from Oregon. Henry is from Washington. William sues Henry for securities fraud for $7,645,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Oregon",
+        "defendant_state": "Washington",
+        "amount_in_controversy_usd": 7645000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 233,
+      "text": "Charlotte is from Connecticut. Sophia is from Connecticut. Charlotte sues Sophia for patent infringement for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 234,
+      "text": "Emma is from Wyoming. Lucas is from Wyoming. Emma sues Lucas for securities fraud for $9,429,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wyoming",
+        "defendant_state": "Wyoming",
+        "amount_in_controversy_usd": 9429000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 235,
+      "text": "Benjamin is from Colorado. Sophia is from Colorado. Benjamin sues Sophia for securities fraud for $158,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Colorado",
+        "defendant_state": "Colorado",
+        "amount_in_controversy_usd": 158000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 236,
+      "text": "Sophia is from Tennessee. Liam is from Iowa. Sophia sues Liam for negligence for $15,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Tennessee",
+        "defendant_state": "Iowa",
+        "amount_in_controversy_usd": 15000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 237,
+      "text": "Benjamin is from Arizona. Sophia is from Arizona. Benjamin sues Sophia for medical malpractice for $7,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 7000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 238,
+      "text": "Emma is from Pennsylvania. Evelyn is from Delaware. Emma sues Evelyn for trademark infringement for $51,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 51000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 239,
+      "text": "Olivia is from New York. Amelia is from Missouri. Olivia sues Amelia for wrongful eviction for $4,722,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "Missouri",
+        "amount_in_controversy_usd": 4722000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 240,
+      "text": "Liam is from Connecticut. Olivia is from Connecticut. Liam sues Olivia for legal malpractice for $2,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 2000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 241,
+      "text": "Noah is from Texas. Isabella is from Texas. Noah sues Isabella for patent infringement for $53,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Texas",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 53000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 242,
+      "text": "Oliver is from Louisiana. Ava is from Louisiana. Oliver sues Ava for copyright infringement for $772,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Louisiana",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 772000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 243,
+      "text": "Henry is from California. Charlotte is from New Jersey. Henry sues Charlotte for wrongful eviction for $35,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "New Jersey",
+        "amount_in_controversy_usd": 35000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 244,
+      "text": "Harper is from Colorado. Evelyn is from Colorado. Harper sues Evelyn for legal malpractice for $23,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Colorado",
+        "defendant_state": "Colorado",
+        "amount_in_controversy_usd": 23000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 245,
+      "text": "Benjamin is from Vermont. Lucas is from Vermont. Benjamin sues Lucas for negligence for $4,352,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Vermont",
+        "defendant_state": "Vermont",
+        "amount_in_controversy_usd": 4352000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 246,
+      "text": "Mia is from Pennsylvania. Theodore is from Montana. Mia sues Theodore for medical malpractice for $66,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Montana",
+        "amount_in_controversy_usd": 66000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 247,
+      "text": "Henry is from Iowa. Oliver is from North Carolina. Henry sues Oliver for legal malpractice for $8,702,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Iowa",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 8702000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 248,
+      "text": "Ava is from Georgia. James is from Georgia. Ava sues James for defamation for $43,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 249,
+      "text": "Noah is from Nevada. Liam is from Colorado. Noah sues Liam for defamation for $2,442,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Colorado",
+        "amount_in_controversy_usd": 2442000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 250,
+      "text": "Lucas is from Georgia. Isabella is from Georgia. Lucas sues Isabella for wrongful eviction for $52,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 52000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 251,
+      "text": "William is from Maine. Noah is from North Carolina. William sues Noah for defamation for $6,908,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 6908000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 252,
+      "text": "Noah is from Virginia. Isabella is from Virginia. Noah sues Isabella for negligence for $50,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 50000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 253,
+      "text": "James is from Georgia. Harper is from Rhode Island. James sues Harper for patent infringement for $6,009,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 6009000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 254,
+      "text": "Benjamin is from Maryland. Charlotte is from Wisconsin. Benjamin sues Charlotte for breach of contract for $5,934,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Wisconsin",
+        "amount_in_controversy_usd": 5934000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 255,
+      "text": "Liam is from New Jersey. Oliver is from Kentucky. Liam sues Oliver for wrongful eviction for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "Kentucky",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 256,
+      "text": "James is from Connecticut. Oliver is from Alaska. James sues Oliver for trespass for $26,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Alaska",
+        "amount_in_controversy_usd": 26000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 257,
+      "text": "Benjamin is from Connecticut. William is from Connecticut. Benjamin sues William for trespass for $59,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Connecticut",
+        "defendant_state": "Connecticut",
+        "amount_in_controversy_usd": 59000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 258,
+      "text": "Evelyn is from Hawaii. Charlotte is from Hawaii. Evelyn sues Charlotte for defamation for $5,401,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Hawaii",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 5401000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 259,
+      "text": "Charlotte is from Indiana. Ava is from Indiana. Charlotte sues Ava for trespass for $22,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Indiana",
+        "amount_in_controversy_usd": 22000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 260,
+      "text": "Emma is from Vermont. Ava is from Vermont. Emma sues Ava for trademark infringement for $3,521,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Vermont",
+        "defendant_state": "Vermont",
+        "amount_in_controversy_usd": 3521000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 261,
+      "text": "Harper is from California. Isabella is from California. Harper sues Isabella for patent infringement for $8,374,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "California",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 8374000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 262,
+      "text": "Harper is from Arizona. Mia is from Arizona. Harper sues Mia for negligence for $9,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 9000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 263,
+      "text": "Sophia is from Idaho. Noah is from California. Sophia sues Noah for trademark infringement for $1,924,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Idaho",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 1924000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 264,
+      "text": "Elijah is from Maine. Henry is from Maine. Elijah sues Henry for medical malpractice for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Maine",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 265,
+      "text": "Emma is from New Mexico. Liam is from New Mexico. Emma sues Liam for trademark infringement for $5,854,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Mexico",
+        "defendant_state": "New Mexico",
+        "amount_in_controversy_usd": 5854000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 266,
+      "text": "William is from Georgia. Isabella is from Georgia. William sues Isabella for breach of contract for $7,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Georgia",
+        "defendant_state": "Georgia",
+        "amount_in_controversy_usd": 7000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 267,
+      "text": "Harper is from Wisconsin. Olivia is from Michigan. Harper sues Olivia for trespass for $48,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Wisconsin",
+        "defendant_state": "Michigan",
+        "amount_in_controversy_usd": 48000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 268,
+      "text": "Charlotte is from West Virginia. Theodore is from West Virginia. Charlotte sues Theodore for trespass for $43,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "West Virginia",
+        "amount_in_controversy_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 269,
+      "text": "Benjamin is from Alaska. Isabella is from Arkansas. Benjamin sues Isabella for breach of contract for $64,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Alaska",
+        "defendant_state": "Arkansas",
+        "amount_in_controversy_usd": 64000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 270,
+      "text": "Emma is from New Mexico. Liam is from New Mexico. Emma sues Liam for patent infringement for $47,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New Mexico",
+        "defendant_state": "New Mexico",
+        "amount_in_controversy_usd": 47000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 271,
+      "text": "Charlotte is from North Dakota. Liam is from North Dakota. Charlotte sues Liam for defamation for $8,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "North Dakota",
+        "amount_in_controversy_usd": 8000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 272,
+      "text": "Isabella is from Delaware. Oliver is from Delaware. Isabella sues Oliver for defamation for $43,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 43000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 273,
+      "text": "Noah is from Michigan. Ava is from Texas. Noah sues Ava for trademark infringement for $3,346,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Michigan",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 3346000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 274,
+      "text": "Charlotte is from Arkansas. Emma is from Louisiana. Charlotte sues Emma for copyright infringement for $9,606,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Arkansas",
+        "defendant_state": "Louisiana",
+        "amount_in_controversy_usd": 9606000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 275,
+      "text": "Isabella is from Kentucky. Oliver is from Rhode Island. Isabella sues Oliver for medical malpractice for $17,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 17000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 276,
+      "text": "Henry is from Arizona. William is from Kansas. Henry sues William for trespass for $42,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Arizona",
+        "defendant_state": "Kansas",
+        "amount_in_controversy_usd": 42000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 277,
+      "text": "James is from Kentucky. Theodore is from Kentucky. James sues Theodore for medical malpractice for $28,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Kentucky",
+        "amount_in_controversy_usd": 28000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 278,
+      "text": "Lucas is from Virginia. Mia is from New York. Lucas sues Mia for breach of contract for $2,565,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Virginia",
+        "defendant_state": "New York",
+        "amount_in_controversy_usd": 2565000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 279,
+      "text": "Elijah is from West Virginia. Harper is from Utah. Elijah sues Harper for patent infringement for $34,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "West Virginia",
+        "defendant_state": "Utah",
+        "amount_in_controversy_usd": 34000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 280,
+      "text": "Amelia is from Pennsylvania. Benjamin is from Pennsylvania. Amelia sues Benjamin for patent infringement for $39,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Pennsylvania",
+        "amount_in_controversy_usd": 39000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 281,
+      "text": "Olivia is from Pennsylvania. Isabella is from Pennsylvania. Olivia sues Isabella for wrongful eviction for $4,896,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Pennsylvania",
+        "defendant_state": "Pennsylvania",
+        "amount_in_controversy_usd": 4896000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 282,
+      "text": "Benjamin is from Montana. Sophia is from California. Benjamin sues Sophia for negligence for $10,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Montana",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 10000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 283,
+      "text": "Olivia is from Iowa. Amelia is from California. Olivia sues Amelia for negligence for $37,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Iowa",
+        "defendant_state": "California",
+        "amount_in_controversy_usd": 37000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 284,
+      "text": "William is from Rhode Island. James is from Rhode Island. William sues James for trademark infringement for $9,043,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Rhode Island",
+        "defendant_state": "Rhode Island",
+        "amount_in_controversy_usd": 9043000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 285,
+      "text": "Ava is from Nevada. Evelyn is from Nevada. Ava sues Evelyn for patent infringement for $8,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Nevada",
+        "defendant_state": "Nevada",
+        "amount_in_controversy_usd": 8000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 286,
+      "text": "Amelia is from North Dakota. James is from North Carolina. Amelia sues James for copyright infringement for $3,730,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "North Carolina",
+        "amount_in_controversy_usd": 3730000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 287,
+      "text": "James is from Maine. Evelyn is from Arizona. James sues Evelyn for defamation for $42,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maine",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 42000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 288,
+      "text": "Noah is from Maryland. Harper is from Maryland. Noah sues Harper for trademark infringement for $4,047,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 4047000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 289,
+      "text": "James is from North Dakota. Emma is from Texas. James sues Emma for patent infringement for $5,556,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "Texas",
+        "amount_in_controversy_usd": 5556000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 290,
+      "text": "Emma is from Delaware. Sophia is from Delaware. Emma sues Sophia for securities fraud for $4,507,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Delaware",
+        "defendant_state": "Delaware",
+        "amount_in_controversy_usd": 4507000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 291,
+      "text": "Henry is from New York. William is from North Dakota. Henry sues William for trespass for $67,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "New York",
+        "defendant_state": "North Dakota",
+        "amount_in_controversy_usd": 67000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 292,
+      "text": "Elijah is from Indiana. Charlotte is from Virginia. Elijah sues Charlotte for trespass for $19,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Indiana",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 19000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 293,
+      "text": "Benjamin is from Oklahoma. Mia is from Oklahoma. Benjamin sues Mia for negligence for $3,382,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Oklahoma",
+        "defendant_state": "Oklahoma",
+        "amount_in_controversy_usd": 3382000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 294,
+      "text": "Henry is from Kentucky. Noah is from Arizona. Henry sues Noah for breach of contract for $70,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Kentucky",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 70000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 295,
+      "text": "Elijah is from New Jersey. Benjamin is from Hawaii. Elijah sues Benjamin for legal malpractice for $4,626,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "New Jersey",
+        "defendant_state": "Hawaii",
+        "amount_in_controversy_usd": 4626000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 296,
+      "text": "Lucas is from North Dakota. Emma is from Arizona. Lucas sues Emma for breach of contract for $57,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "North Dakota",
+        "defendant_state": "Arizona",
+        "amount_in_controversy_usd": 57000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 297,
+      "text": "Harper is from Maryland. Henry is from Maryland. Harper sues Henry for trespass for $63,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Maryland",
+        "defendant_state": "Maryland",
+        "amount_in_controversy_usd": 63000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    },
+    {
+      "index": 298,
+      "text": "Olivia is from Washington. Amelia is from Virginia. Olivia sues Amelia for breach of contract for $3,199,000.",
+      "expected": "eligible",
+      "field_values": {
+        "plaintiff_state": "Washington",
+        "defendant_state": "Virginia",
+        "amount_in_controversy_usd": 3199000
+      },
+      "decision": "eligible",
+      "correct": true
+    },
+    {
+      "index": 299,
+      "text": "William is from Illinois. Liam is from Illinois. William sues Liam for legal malpractice for $9,665,000.",
+      "expected": "not_eligible",
+      "field_values": {
+        "plaintiff_state": "Illinois",
+        "defendant_state": "Illinois",
+        "amount_in_controversy_usd": 9665000
+      },
+      "decision": "not_eligible",
+      "correct": true
+    }
+  ]
+}

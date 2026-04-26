@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 .llm_cache/
 .legalbench_prompts/
+domains/*/results/extract_cache/
+domains/*/results/llm_cache/
+domains/*/.aethis/secrets/

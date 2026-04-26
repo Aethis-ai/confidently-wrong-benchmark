@@ -5,11 +5,13 @@
 | | |
 |---|---|
 | **Name** | Confidently Wrong Benchmark |
-| **Version** | 1.0 |
+| **Paper version** | v3.8 (April 2026) |
+| **Dataset version** | 1.0 |
 | **License** | CC-BY-4.0 |
 | **Size** | 225 scenarios across 4 paper-scope domains (plus 30 out-of-scope supplementary) |
 | **Task** | Binary eligibility classification under nested exception chains |
 | **Format** | YAML |
+| **External validation** | v3.8 §6.10 — 9 LegalBench tasks, 949 held-out cases. See [`../legalbench/`](../legalbench/). |
 
 ## Domains
 

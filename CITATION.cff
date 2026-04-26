@@ -7,8 +7,16 @@ authors:
     given-names: Paul
     affiliation: Aethis
     orcid: ""
+  - family-names: Kozak
+    given-names: John
+    affiliation: Aethis
+    orcid: ""
+  - family-names: Doake
+    given-names: Lisa
+    affiliation: Aethis
+    orcid: ""
 version: "3.8"
-date-released: "2026-04-13"
+date-released: "2026-04-26"
 url: "https://github.com/Aethis-ai/confidently-wrong-benchmark"
 repository-code: "https://github.com/Aethis-ai/confidently-wrong-benchmark"
 license: CC-BY-4.0

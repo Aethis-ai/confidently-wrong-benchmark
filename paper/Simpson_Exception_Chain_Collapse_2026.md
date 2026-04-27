@@ -7,7 +7,7 @@ author:
   - name: Lisa Doake
 institute: "Aethis (aethis.ai)"
 date: "April 2026"
-version: "3.8"
+version: "3.9"
 arxiv_subject: "cs.AI"
 arxiv_cross_list: "cs.LO, cs.LG"
 abstract: |
@@ -133,6 +133,8 @@ Chain-of-thought prompting [@wei2022cot] and zero-shot reasoning elicitation [@k
 ## 3.5 Neuro-Symbolic Architectures and LLM + Formal Method Hybrids
 
 The neuro-symbolic research programme [@garcez2009neural] argues that robust AI systems require integration of neural pattern recognition with symbolic reasoning. Marcus [@marcus2020nextdecade] argues that the reliability limitations of purely statistical systems necessitate a return to hybrid approaches combining learned representations with structured reasoning. Kambhampati et al. [@kambhampati2024llmmodulo] advance this position with the *LLM-Modulo* framework, arguing that LLMs are most robustly deployed as approximate generators paired with formal verifiers and critics that provide external correctness guarantees. The Eligibility Module is a specific instantiation of the LLM-Modulo pattern applied to statutory rule evaluation: LLMs perform pattern-recognition tasks they excel at (reading legislation, extracting structure, generating code), while a constraint evaluation engine handles the evaluation task requiring mathematical guarantees.
+
+Statutory rule evaluation is a particularly favourable application of the LLM-Modulo pattern, in ways that distinguish it from prior instantiations in code synthesis and symbolic planning. Three properties combine. First, the verification fragment is decidable: rule application over compiled constraints terminates in deterministic time with a total correctness criterion, in contrast to test-suite verification of synthesised code (which provides only partial coverage) or constraint satisfaction over learned world models (which is frequently approximate). Second, the artefact being verified — a compiled rule bundle — is persistent and amortised: a single authoring pass serves arbitrarily many subsequent decisions, where per-query LLM-Modulo cycles in code synthesis or planning re-incur authoring cost on every instance. Third, the correctness criterion is externally specified by statute and domain-expert review rather than chosen by the system designer, which makes test-driven validation against expert-defined fixtures (Section 7.3) a meaningful integrity check rather than a tautology. These properties together explain why the LLM-Modulo separation can deliver categorical guarantees at the execution layer in this domain, even where the same separation provides only best-effort guarantees in general program synthesis or planning.
 
 Most directly related is Logic-LM [@pan2023logiclm], which uses LLMs to translate natural language problems into formal logical representations, then invokes symbolic solvers for evaluation. LINC [@olausson2023linc] similarly uses LLMs to generate first-order logic programs from natural language for theorem prover evaluation. These systems demonstrate the feasibility of the authoring-execution separation that underlies the Eligibility Module. The present system differs in three respects relevant to high-stakes deployment: it operates on *persistently stored* rule bundles rather than ephemeral per-query translations; it maintains a provenance chain linking each rule to specific source citations; and it is designed for production deployment where audit trails and version control are compliance requirements.
 
@@ -846,6 +848,16 @@ The Eligibility Module produces a binary determination with the exact logical pa
 ## 9.3 Quality Gates
 
 The rule authoring pipeline includes multiple quality gates before a rule bundle is persisted for deployment: iterative LLM synthesis-and-critique (Section 7.1), source citation validation, and — as the strongest gate — test-driven validation against SME-defined test suites (Section 7.3). Rules must produce correct outcomes on golden path, edge case, and corner case scenarios defined by domain experts before they are deployed.
+
+## 9.4 Model Drift and Bundle Certification
+
+Frontier LLMs change between API versions and, as the v3.8 replication documents (§6.5 Finding 4), within the same nominal model alias without announcement. For systems that perform inference on every query against a frontier LLM, this raises a regulatory question with no clean answer: how can a deployed determination system be certified at time T when the underlying inference engine can change at time T+1 without notice or visibility? The Eligibility Module separates this question into two parts that can be addressed independently.
+
+**Execution layer (L3) is invariant by construction.** Once a rule bundle is compiled, every determination is produced by deterministic SMT-based evaluation against that bundle. No LLM is in the inference path. Frontier model changes — silent or announced — do not alter the determinations produced by an existing bundle on existing inputs. A regulator certifying a deployed bundle is certifying a fixed artefact, not a moving target.
+
+**Authoring layers (L1 retrieval, L2 formalisation) are versioned and replayable.** Each rule bundle is generated against a recorded model snapshot, with full provenance back to source legislation. If a future model would generate different rules from the same sources, the deployed bundle is unaffected; re-authoring is a deliberate, audited action that re-triggers test-driven validation (Section 7.3) and produces a new bundle version. SME test suites act as a regression gate: silent behavioural changes in the authoring model that affect rule semantics surface as test failures rather than as silent eligibility drift in production.
+
+This separation does not eliminate the underlying drift problem in frontier models — it relocates it to the authoring boundary, where it is observable and auditable, rather than the inference boundary, where it is silent and continuous. Whether the L1/L2 boundary is itself sufficiently controlled for a given regulated workflow is a question the bundle's quality engineering must answer (Sections 7 and 9.3); a separate open question is whether silent drift in the authoring model can produce silent incorrect rules that pass the SME test suite by coincidence — this is tracked as an open follow-up item rather than resolved within v3.9.
 
 ---
 

@@ -4,13 +4,13 @@ Frontier LLMs collapse on nested conditional rules of the form "A is required UN
 
 This repository contains the benchmark dataset, the v3.8 adversarial extension, the LegalBench external-validation harness, full per-call replication artefacts, and the accompanying paper.
 
-## Headline Results (v3.8, April 2026)
+## Headline Results (paper v3.9.2, April 2026)
 
-All numbers from the paper ([Simpson, Kozak, Doake, v3.8, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
+All numbers from the paper ([Simpson, Kozak, Doake, v3.9.2, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
 
 ### 1. v3.8 Adversarial Construction-CAR Extension (paper §6.4.1)
 
-20 newly-authored adversarial scenarios stratified across five complexity dimensions (independent-prose-then-engine methodology). The 11 GPT-5.4-failed scenarios from v3.7 have closed under model drift; these 20 are the v3.8 demonstration that the failure pattern remains observable on the same domain at deeper composition.
+20 newly-authored adversarial scenarios stratified across five complexity dimensions (independent-prose-then-engine methodology). The original v3.7 GPT-5.4 construction-CAR failure cells have largely closed under model drift; these 20 are the v3.8 demonstration that the failure pattern remains observable on the same domain at deeper composition.
 
 | Configuration | Accuracy on N=20 | Notes |
 |---|:--:|---|
@@ -40,19 +40,19 @@ Full replication artefacts: `legalbench/docs/replication/A*.json`, `legalbench/d
 
 ### 3. External validation on LegalBench (paper §6.10)
 
-On 9 peer-reviewed LegalBench tasks (949 held-out cases authored by Stanford researchers, not by Aethis), the Eligibility Module is significantly more accurate than each of three frontier LLMs by exact combined paired-binomial McNemar's test: *p* < 0.001 vs Claude Sonnet 4.6, *p* = 0.003 vs Claude Opus 4.7, *p* < 0.001 vs GPT-5.4. The structural advantage is largest on multi-prong rule-application tasks (Δ up to +41 pp) and persists at a smaller but cross-task-significant margin on randomly-sampled tasks chosen without fit inspection (seeds 42 + 43; seed 44 pre-registered at tag [`pre-v3.8-legalbench-preregistration`](https://github.com/Aethis-ai/confidently-wrong-benchmark/releases/tag/pre-v3.8-legalbench-preregistration)).
+On 9 peer-reviewed LegalBench tasks (949 held-out cases authored by Stanford researchers, not by Aethis), the Eligibility Module is significantly more accurate than each of three frontier LLMs by exact combined paired-binomial McNemar's test: *p* < 0.001 vs Claude Sonnet 4.6, *p* = 0.003 vs Claude Opus 4.7, *p* < 0.001 vs GPT-5.4. The structural advantage is largest on multi-prong rule-application tasks (Δ up to +41 pp) and persists at a smaller but cross-task-significant margin on randomly-sampled tasks chosen without fit inspection (seeds 42 + 43; seed 44 pre-registered at tag [`pre-v3.8-legalbench-preregistration`](https://github.com/Aethis-ai/confidently-wrong-benchmark/releases/tag/pre-v3.8-legalbench-preregistration)). The GPT-5.4 aggregate should be read with the paper's §6.10.4 caveat: most discordant GPT-5.4 LegalBench cases arise from prompt-format sensitivity on classification tasks, not from the exception-chain failure pattern itself.
 
 See [`legalbench/`](legalbench/) for the full harness, all per-task results, the statistical pipeline, and the v3.8 reproducibility / adversarial-extension artefacts.
 
 ## Key Findings (v3.8)
 
-1. **The structural advantage of deterministic execution holds across model drift.** Even when specific v3.7 frontier-LLM failure cells close under model updates, the engine remains 100%. The §6.4.1 adversarial extension and §6.10 LegalBench results both demonstrate that current frontier models still fail; the engine still wins. The architectural argument is independent of any specific empirical snapshot.
+1. **The structural advantage of deterministic execution holds across model drift.** Even when specific v3.7 frontier-LLM failure cells close under model updates, the engine remains consistent with the formal fixtures. The §6.4.1 adversarial extension and the multi-prong LegalBench tasks both show current frontier models can still fail on compositional rule evaluation. The architectural argument is independent of any specific empirical snapshot.
 
 2. **GPT-5.4 default reasoning is essentially "no reasoning".** On the 20 v3.8 adversarial scenarios, GPT-5.4 at default reasoning effort uses 0 reasoning tokens per call — the API short-circuits to a 4–6 token answer. Switching to `reasoning_effort=low` invokes the reasoning channel (16–126 tokens per scenario) and catches the carveback-gap edge case that default misses. The v3.7 paper claim that "default reasoning is better than low" was withdrawn in v3.8 after instrumented replication produced the opposite.
 
 3. **The DE3/LEG3 carveback gap is a structural failure mode across both major model families.** Three of four frontier-LLM configurations (GPT-5.4 default, Opus 4.7, Sonnet 4.6) return the wrong verdict on the explicit carveback-gap scenario (where `is_access_damage=true` and `consequence_of_failure=false` causes the carveback group to fail before enhanced-cover logic is reached). Pattern is consistent with compositional-evaluation limits of transformer-based LLMs documented in §3.3 (Dziri et al., Valmeekam et al.).
 
-4. **External validation on LegalBench replicates the structural-advantage finding cross-model-family, with statistical significance.** §6.10 combined McNemar's *p* < 0.001 against Sonnet 4.6 and GPT-5.4; *p* = 0.003 against Opus 4.7. Reproducible from `legalbench/tools/significance.py`.
+4. **External validation on LegalBench supports the structural-advantage finding cross-model-family, with caveats.** §6.10 combined McNemar's *p* < 0.001 against Sonnet 4.6 and GPT-5.4; *p* = 0.003 against Opus 4.7. The GPT-5.4 classification-task cliff is prompt-format-coupled and is not treated as broad model-capability evidence. Reproducible from `legalbench/tools/significance.py`.
 
 5. **The shifting-ground problem is the central practical implication.** Frontier-LLM accuracy on a fixed benchmark is a function of the model snapshot, the harness configuration, and the prompt format — at least one of which can shift without notice. For regulated workflows, this is structurally incompatible with verification pipelines required by frameworks like the EU AI Act. Deterministic execution avoids this class of risk by construction.
 

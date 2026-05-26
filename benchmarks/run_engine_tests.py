@@ -83,7 +83,7 @@ def load_canonical_bundle_id(example_dir: Path) -> str | None:
 async def discover_bundle(session: aiohttp.ClientSession, api_url: str, project_name: str, api_key: str | None = None) -> str:
     """Find the bundle_id for a project by matching section_id."""
     headers = {"X-API-Key": api_key} if api_key else {}
-    async with session.get(f"{api_url}/api/v1/public/bundles", headers=headers, timeout=aiohttp.ClientTimeout(total=15)) as resp:
+    async with session.get(f"{api_url}/api/v1/public/rulesets", headers=headers, timeout=aiohttp.ClientTimeout(total=15)) as resp:
         resp.raise_for_status()
         bundles = await resp.json()
 
@@ -96,11 +96,11 @@ async def discover_bundle(session: aiohttp.ClientSession, api_url: str, project_
     for b in bundles:
         section = b["section_id"].replace("-", "_").lower()
         if normalized in section or section in normalized:
-            return b["bundle_id"]
+            return b["ruleset_id"]
 
     for b in bundles:
         if b["section_id"] == project_name:
-            return b["bundle_id"]
+            return b["ruleset_id"]
 
     console.print(f"[red]ERROR:[/red] No bundle found matching project [bold]{project_name}[/bold]")
     for b in bundles:
@@ -120,7 +120,7 @@ async def run_test(
 ) -> dict:
     """Run a single test. Returns the full API response plus pass/fail."""
     payload = {
-        "bundle_id": bundle_id,
+        "ruleset_id": bundle_id,
         "field_values": test["inputs"],
         "include_explanation": True,
         "include_trace": True,
@@ -271,14 +271,15 @@ def print_provenance(results: list) -> None:
             console.print()
         return
 
-    # Fallback: check explanation for source_refs
+    # Fallback: check explanation for source_refs (engine may return strings or objects)
     for r in results:
         explanation = r.get("explanation") or []
-        has_refs = any(rule.get("source_refs") for rule in explanation)
+        rule_objs = [rule for rule in explanation if isinstance(rule, dict)]
+        has_refs = any(rule.get("source_refs") for rule in rule_objs)
         if has_refs:
             console.print(f"  [bold]Provenance[/bold] [dim](source references per rule)[/dim]")
             console.print()
-            for rule in explanation:
+            for rule in rule_objs:
                 refs = rule.get("source_refs")
                 if refs:
                     console.print(f"    [cyan]{rule.get('title', rule.get('criterion_id'))}[/cyan]")

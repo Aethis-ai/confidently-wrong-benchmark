@@ -29,6 +29,9 @@ Options:
 - `--no-cache` — bypass server caches to measure uncached performance
 - `--all` — run all domain directories found under the given path
 - `--quiet` / `-q` — minimal output (pass/fail only)
+- `--api-key KEY` — API key for authenticated access, or set `AETHIS_API_KEY` env var
+
+The anonymous tier on `api.aethis.ai` has a daily request cap that can be exhausted by a single full benchmark run. For repeated runs, set `AETHIS_API_KEY` to an account-tier key (any non-anonymous key works; `aethis login` will create one). Without a key, the runner still works but may hit `HTTP 429` partway through a large run.
 
 ## LLM comparison
 

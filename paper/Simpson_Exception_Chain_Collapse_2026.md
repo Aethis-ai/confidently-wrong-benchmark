@@ -6,8 +6,8 @@ author:
   - name: John Kozak
   - name: Lisa Doake
 institute: "Aethis (aethis.ai)"
-date: "April 2026"
-version: "3.9.2"
+date: "July 2026"
+version: "3.11.0"
 arxiv_subject: "cs.AI"
 arxiv_cross_list: "cs.LO, cs.LG"
 abstract: |
@@ -39,7 +39,8 @@ abstract: |
   scenarios stratified across five complexity dimensions
   (independent-prose-then-engine methodology to address the code-derived
   ground-truth critique). Result: the Eligibility Module is 20/20 (100%);
-  Claude Opus 4.7 (current Anthropic strongest) is 18/20 (90%); GPT-5.4 at
+  Claude Opus 4.7 (Anthropic's strongest model at evaluation time, April 2026)
+  is 18/20 (90%); GPT-5.4 at
   default reasoning effort is 19/20 (95%) but uses zero reasoning tokens
   on every scenario — short-circuit answers; Sonnet 4.6 is 19/20. Three of
   four frontier-LLM configurations fail on the same scenario (the DE3/LEG3
@@ -99,7 +100,7 @@ We present the **Aethis Eligibility Module** (hereafter: the Eligibility Module)
 
 The architectural contribution is to relocate the locus of uncertainty: from the inference boundary, where it is silent and continuous, to the specification boundary, where it is deliberate and audited. This does not eliminate the underlying uncertainty; it makes it tractable — addressable through SME-validated test suites, explicit bundle versioning, and the L1/L2/L3 separation set out in Section 5.5.
 
-Our benchmark of 225 scenarios across four sections tests six LLMs (three frontier, three production-tier) against the Eligibility Module on the specific task of nested exception-chain evaluation. The Eligibility Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: Claude Opus 4.6 returns the wrong answer on 10% of spacecraft scenarios, and all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied. Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt fixes 5 of 7 original failures but introduces 20 new false positives, reducing net accuracy from 90% to 65%.
+Our benchmark of 225 scenarios across four sections tests six LLMs (three frontier, three production-tier) in the March 2026 pass, with Claude Opus 4.7 and GPT-4.1-mini added in the April 2026 v3.8 replication, against the Eligibility Module on the specific task of nested exception-chain evaluation. The Eligibility Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: Claude Opus 4.6 returns the wrong answer on 10% of spacecraft scenarios, and all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied. Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt reduces false negatives from 7 to 4 but introduces 20 false positives, reducing net accuracy from 90% to 65%.
 
 On the benchmarked class of nested exception-chain tasks, LLM errors are systematic enough that deterministic formal execution removes one entire class of error from the trust surface for high-stakes decisions where consistency with formal fixtures is required. This is not a claim that LLMs are unreliable in general; it is a specific finding about a specific class of rule evaluation.[^1]
 
@@ -118,6 +119,8 @@ The challenge of encoding legislation as executable logic has a forty-year histo
 McCarty's TAXMAN system [-@mccarty1977taxman] demonstrated as early as 1977 that AI systems could reason over tax code with explicit logical representations. Bench-Capon and colleagues developed value-based argumentation frameworks for legal reasoning over multiple decades [-@benchcapon2010argument], establishing that legislation's exception structure requires more than propositional logic to represent faithfully.
 
 The formal treatment for exception chains specifically is defeasible logic, introduced by Reiter [-@reiter1980default] and developed by Nute [-@nute1994defeasible] and Governatori et al. [-@governatori2010changing]. Defeasible logic provides formal semantics for "A holds UNLESS B applies, UNLESS C overrides B" - precisely the pattern our benchmark identifies as a failure pattern for LLMs. The Eligibility Module does not use defeasible logic directly, instead compiling exception chains to formal material implication constraints evaluated by an SMT solver, but operates in the same tradition: the failure pattern we document is exactly the problem defeasible logic was designed to solve, now re-emerging in systems that replaced formal encoding with statistical inference over legislative text.
+
+The broader "Rules as Code" movement — encoding legislation as machine-executable representations at the point of drafting — has gained institutional momentum since 2020, with government-backed programmes in New Zealand, France, and Germany deploying visual decision-tree modelling tools for legislative analysis [@mohun2020cracking; @mowbray2023representing]. These systems encode statutory logic as structured flowcharts or decision trees authored via no-code configuration, enabling non-technical legislative drafters to model requirements directly. Mowbray et al. [-@mowbray2023representing] identify scalability as the central challenge: decision trees grow combinatorially as exception depth increases, and maintaining consistency across large rule sets requires manual audit. The approach shares this paper's core premise — that statutory rules should be formally encoded rather than statistically inferred — but differs in representational power. Decision trees can model branching logic; constraint-based representations can additionally prove properties of the encoded rule system (completeness, consistency, unreachability of dead states). The exception-chain collapse pattern documented in §4 is precisely the class of nested structure where this distinction is practically relevant: a three-level exception chain is representable as a decision tree, but verifying that no branch combination produces a contradictory outcome requires the kind of satisfiability check that decision-tree representations do not natively support.
 
 ## 3.2 LLM Benchmarks for Legal and Logical Reasoning
 
@@ -139,7 +142,7 @@ Mirzadeh et al. [-@mirzadeh2024gsmsymbolic] show that LLM mathematical reasoning
 
 ## 3.4 Prompt Engineering and Its Limits
 
-Chain-of-thought prompting [-@wei2022cot] and zero-shot reasoning elicitation [-@kojima2022zeroshot] have substantially improved LLM performance on arithmetic and multi-step problems. Wang et al. [-@wang2023selfconsistency] show that self-consistency (majority voting) improves performance on reasoning tasks. Our robustness analysis (Section 6.7) explicitly tests whether enhanced prompting closes the accuracy gap on exception chain evaluation, and finds a trade-off rather than a fix: an enhanced prompt that correctly identifies and targets the failure pattern (independent exemption evaluation) fixes 5 of 7 false negatives but introduces 20 false positives, reducing net accuracy from 90% to 65%. The result demonstrates that prompt-based repair on this class of task is fragile - instructions that correct under-application of exemptions simultaneously cause over-application elsewhere.
+Chain-of-thought prompting [-@wei2022cot] and zero-shot reasoning elicitation [-@kojima2022zeroshot] have substantially improved LLM performance on arithmetic and multi-step problems. Wang et al. [-@wang2023selfconsistency] show that self-consistency (majority voting) improves performance on reasoning tasks. Our robustness analysis (Section 6.7) explicitly tests whether enhanced prompting closes the accuracy gap on exception chain evaluation, and finds a trade-off rather than a fix: an enhanced prompt that correctly identifies and targets the failure pattern (independent exemption evaluation) reduces false negatives from 7 to 4 while introducing 20 false positives, reducing net accuracy from 90% to 65%. The result demonstrates that prompt-based repair on this class of task is fragile - instructions that correct under-application of exemptions simultaneously cause over-application elsewhere.
 
 ## 3.5 Neuro-Symbolic Architectures and LLM + Formal Method Hybrids
 
@@ -337,7 +340,7 @@ This distinction matters for regulatory defensibility. The provenance chain (Sec
 
 ---
 
-# 6. Accuracy Benchmark: Eligibility Module vs Six LLMs
+# 6. Accuracy Benchmark: Eligibility Module vs Eight LLMs
 
 ## 6.1 Methodology
 
@@ -356,6 +359,10 @@ Both systems receive identical inputs: the same legislation text (markdown-forma
 | GPT-5.3 | OpenAI | Production | Mid |
 | GPT-5-mini | OpenAI | Production | Low |
 | GPT-5-nano | OpenAI | Production | Lowest |
+| Claude Opus 4.7 | Anthropic | Frontier | Premium |
+| GPT-4.1-mini | OpenAI | Production | Low |
+
+Claude Opus 4.7 and GPT-4.1-mini were added in the April 2026 v3.8 replication (Tables 6, 8a, 8c); they are not part of the original March 2026 six-model selection. GPT-4.1-mini serves as a cost-tier baseline for the construction domain.
 
 **Evaluation coverage.** Not all models were evaluated on all domains. The following matrix shows the scope of each model's evaluation:
 
@@ -367,12 +374,14 @@ Both systems receive identical inputs: the same legislation text (markdown-forma
 | GPT-5.3 | — | — | — | 11-scenario subset | production reference |
 | GPT-5-mini | ✓ | ✓ | ✓ | — | |
 | GPT-5-nano | — | ✓ | 48-scenario baseline | — | cost reference |
+| Claude Opus 4.7 | — | — | ✓ | ✓ | + §6.4.1 adversarial; v3.8 replication only |
+| GPT-4.1-mini | — | — | — | ✓ | construction cost-tier reference |
 
 Results reported below should be read against this matrix. Aggregate claims refer only to evaluations actually conducted.
 
-**Model selection.** The six models span three attributes: (i) frontier versus production tier, (ii) the two providers our organisation had API access to during the evaluation window (Anthropic and OpenAI), and (iii) a range of cost tiers representing realistic deployment choices. Models from other providers (Google Gemini, DeepSeek, Meta Llama, Mistral) were not included in this pass due to access and budget constraints; broader provider coverage is pre-registered for replication at N=66 (Section 6.9). The selection was fixed before any results were computed and was not adjusted based on intermediate findings.
+**Model selection.** The six models span three attributes: (i) frontier versus production tier, (ii) the two providers our organisation had API access to during the evaluation window (Anthropic and OpenAI), and (iii) a range of cost tiers representing realistic deployment choices. Models from other providers (Google Gemini, DeepSeek, Meta Llama, Mistral) were not included in this pass due to access and budget constraints; broader provider coverage is pre-registered for replication at N=66 (Section 6.9). The selection was fixed before any results were computed and was not adjusted based on intermediate findings. Claude Opus 4.7 and GPT-4.1-mini were added later, at v3.8 replication time — Opus 4.7 as the then-strongest Anthropic model and GPT-4.1-mini as a cost-tier reference for the construction domain — which post-dates this original fixed selection.
 
-**LLM configuration:** Temperature 0 where supported (Claude models; GPT-5 family does not expose this parameter — sampling is controlled internally by the model's reasoning pipeline). Runs per scenario: 3 (majority vote; robustness analysis tests N=10). Prompt: generic legal assessment, no special instructions about exemptions or OR-branching.
+**LLM configuration:** Temperature 0 where supported (Claude models; GPT-5 family does not expose this parameter — sampling is controlled internally by the model's reasoning pipeline). The §6.7 robustness baseline was additionally run at T=0.3 as a temperature-sensitivity control; Table 9 shows the failure set is identical at T=0.3 and T=0. Runs per scenario: 3 (majority vote; robustness analysis tests N=10). Prompt: generic legal assessment, no special instructions about exemptions or OR-branching.
 
 **Prompt variants explored.** Two to three prompt variants were explored informally during initial development to confirm that the observed failure pattern was not an artefact of wording — for example, whether instructing the LLM to "think step by step" or to "consider all exemption routes before deciding" closed the gap on exception-chain scenarios. These variants did not materially change the pattern and were not logged systematically. Systematic prompt comparison across three variants per scenario is pre-registered for the N=66 replication (Section 6.9). The enhanced prompt analysed in Section 6.7 is a fourth variant specifically targeting the failure pattern.
 
@@ -446,7 +455,7 @@ Numbers are the v3.6 / v3.7 snapshot (March 2026); v3.8 replication numbers are 
 |:--------------------|:------:|:--------------------:|
 | **Eligibility Module** | **68/68 (100%) [94.7–100]** | **68/68 (100%)** (deterministic; invariant by construction) |
 | GPT-5.4 | 68/68 (100%) | not re-tested (was already at 100%) |
-| Claude Opus 4.7 (current Anthropic strongest) | not in v3.7 | **68/68 (100%)** [94.7–100] |
+| Claude Opus 4.7 (Anthropic's strongest at evaluation, Apr 2026) | not in v3.7 | **68/68 (100%)** [94.7–100] |
 | Claude Opus 4.6 | 61/68 (89.7%) [80.2–94.9] | **67/68 (98.5%)** [92.1–99.7] — 6 fewer failures |
 | Claude Sonnet 4.6 | 62/68 (91.2%) [82.1–95.9] | 60/68 (88.2%) [78.5–93.9] — 2 more failures |
 | GPT-5-mini | 51/68 (75.0%) [63.6–83.8] | not re-tested |
@@ -495,7 +504,7 @@ Primary results on the 58-scenario construction insurance benchmark. v3.7 number
 |--------------------|---------------------------|--------------------|
 | **Eligibility Module** | **58/58 (100%)  [93.8–100.0]** | **74/74 (100%)** [95.1–100] (deterministic; invariant by construction) |
 | GPT-5.4            | 56/58 (96.6%) [88.3–99.0] | **74/74 (100%)** [95.1–100] — closed silently between March and April |
-| Claude Opus 4.7 (current strongest)    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
+| Claude Opus 4.7 (Anthropic's strongest at evaluation, Apr 2026)    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
 | Claude Opus 4.6    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
 | Claude Sonnet 4.6  | not tested in v3.7 | 72/74 (97.3%) [90.7–99.3] — fails on `access_100m_design_not_covered`, `surface_eligible_design_access_blocks` |
 | GPT-4.1-mini       | 46/58 (79.3%) [67.2–87.7] | 65/74 (87.8%) [78.5–93.5] — direction holds; magnitude shifted; still fails on `neg_*` (negation_stacking), `surface_*` (contradictory_cue), and `ultimate_trap_1` |
@@ -548,11 +557,11 @@ By design, these 20 scenarios stress-test specific compositional failure modes. 
 | GPT-5.4 (`reasoning_effort=low`) | 20/20 (100%) | [83.9–100] | — |
 | Claude Sonnet 4.6 | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit` |
 | GPT-5.4 (default) | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit`; **0 reasoning tokens on every scenario** |
-| **Claude Opus 4.7** (current Anthropic strongest) | **18/20 (90.0%)** | **[69.9–97.2]** | `v38_b3_499m_workmanship_access_no_design_limit`, `v38_e4_carveback_gap_explicit` |
+| **Claude Opus 4.7** (Anthropic's strongest at evaluation, Apr 2026) | **18/20 (90.0%)** | **[69.9–97.2]** | `v38_b3_499m_workmanship_access_no_design_limit`, `v38_e4_carveback_gap_explicit` |
 
 **Figure 9: v3.8 adversarial extension forest plot.**
 
-![Wilson 95% CIs across the five evaluated configurations on the 20-scenario v3.8 adversarial CAR extension. The Eligibility Module is at the 100% ceiling by construction. Three of four frontier-LLM configurations fail at least one scenario; Opus 4.7 (Anthropic's strongest current model) fails two. Generated from Table 8c data by `figures/scripts/forest_plot_v3_8_adversarial.py`.](figures/forest_v3_8_adversarial.png)
+![Wilson 95% CIs across the five evaluated configurations on the 20-scenario v3.8 adversarial CAR extension. The Eligibility Module is at the 100% ceiling by construction. Three of four frontier-LLM configurations fail at least one scenario; Opus 4.7 (Anthropic's strongest model at evaluation time, April 2026) fails two. Generated from Table 8c data by `figures/scripts/forest_plot_v3_8_adversarial.py`.](figures/forest_v3_8_adversarial.png)
 
 **Cross-evaluation note: the carveback-gap scenario (E4) is failed by three of four frontier-LLM configurations across both Anthropic and OpenAI families.** The scenario tests the DE3/LEG3 coverage gap explicitly documented in `source.md` Cl. 7 commentary: with `is_access_damage=true` and `consequence_of_failure=false`, the carveback group fails (Route A needs consequence; Route B needs not-access). The £200 M project value qualifies for enhanced cover, but the prior carveback gate blocks the claim before the enhanced-cover logic is reached. GPT-5.4 default and Sonnet 4.6 return `eligible`; Opus 4.7 returns `eligible`; correct answer is `not_eligible`. Only GPT-5.4 at `reasoning_effort=low` — the configuration that forces the model to use reasoning tokens (95 tokens on E4) rather than short-circuit (default = 0 reasoning tokens on every scenario) — gets it right. The pattern is consistent with a structural compositional-evaluation failure mode rather than a per-model artefact.
 
@@ -562,13 +571,13 @@ Replication artefacts: `tools/replication_run.py`, `tools/run_engine_v3_8_advers
 
 ## 6.5 Error Analysis
 
-Five findings emerge from the multi-model benchmark:
+Six findings emerge from the multi-model benchmark (one, Finding 5, was withdrawn in v3.8 and is retained below for the record):
 
 **Finding 1: The failure pattern is exception-chain specific.** All frontier models achieve 100% on `english_language` (43 scenarios with multi-route logic). On the spacecraft section with its three-level exception chain, Claude Opus 4.6 drops to 90% and GPT-5-mini to 75%. The breaking point is nested exceptions, not legal reasoning in general.
 
-**Finding 2: All failures are false negatives.** Across all baseline evaluations reported in this paper, we observed no false positives. No LLM ever declares an ineligible applicant eligible or a non-covered claim covered. The failure mode is exclusively conservative - but in a high-stakes context, a false negative may deny someone a pathway the rules explicitly provide.
+**Finding 2: All failures are false negatives.** Across all baseline evaluations in the §6.1–§6.7 controlled benchmark, we observed no false positives. No LLM ever declares an ineligible applicant eligible or a non-covered claim covered. The failure mode is exclusively conservative - but in a high-stakes context, a false negative may deny someone a pathway the rules explicitly provide. (The §6.10 LegalBench classification baselines exhibit a different failure mode — positive-class anchoring under the upstream few-shot prompt format, which does produce false positives; see §6.10.4.)
 
-**Finding 3: The veteran exemption is the universal failure point.** The most-failed scenario across all models is `age_59_veteran_1000hrs`. Every model except GPT-5.4 consistently (0/3 runs) marks this person ineligible. The LLM conflates two independent exemption pathways.
+**Finding 3: The veteran exemption is the universal failure point.** The most-failed scenario across all models is `age_59_veteran_1000hrs`. Claude Opus 4.6 and Sonnet 4.6 mark this person ineligible on every run (0/3); GPT-5-mini answers correctly on only 1 of 3 runs; GPT-5.4 alone is correct on all runs (Table 2). The LLM conflates two independent exemption pathways.
 
 **Finding 4 (revised v3.8): Frontier model accuracy is unstable across model updates and prompt configurations.** The v3.6 / v3.7 paper reported that GPT-5.4 dropped to 96.6% on the construction insurance section while achieving 100% on spacecraft and immigration. **The v3.8 replication finds that specific failure case has closed:** under the same paper-prompt format and harness, current `gpt-5.4` is 74/74 (100%) on the full construction-CAR suite (Table 8a). The Opus 4.6 spacecraft failure rate also dropped from 89.7% (March) to 98.5% (April) under the same `claude-opus-4-6` alias. No model-version bump was announced; the specific empirical failures changed silently between months. The structural failure pattern remains observable on the v3.8 adversarial extension (§6.4.1: Opus 4.7 fails 2/20, GPT-5.4 default fails 1/20, Sonnet 4.6 fails 1/20), and on §6.10 LegalBench (combined McNemar's *p* < 0.001 vs each frontier model). For a regulated workflow built on a benchmark-time accuracy claim, the central practical observation is that the specific model performance is a moving target — even within a single model alias — while the deterministic execution layer is invariant by construction.
 
@@ -608,11 +617,11 @@ This section addresses the key question: whether the observed failures are promp
 
 **v3.8 caveat.** The "7 failing spacecraft scenarios" baseline that R1 was tested on (Opus 4.6 = 61/68 in March) does not replicate today: in April 2026 Opus 4.6 returns the correct answer on 67 of 68 spacecraft scenarios under the same prompt and harness, leaving only 1 systematic failure rather than 7 (Table 6 v3.8 column). The 70-trial 0/70 result therefore stands as a March 2026 finding about a specific 7-scenario set that is no longer at the same baseline failure rate. Re-running the 70-trial design against the current 1-scenario failure set would require a separate investigation we have not undertaken in v3.8. The headline qualitative claim — *that some specific Opus failures were stable rather than stochastic at the original snapshot* — survives. The headline quantitative claim — *that 4.19% upper bound applies to current Opus 4.6 production behaviour on current failure cases* — does not.
 
-**R2: Enhanced prompting trades one failure mode for another.** The enhanced prompt explicitly instructs the LLM to "evaluate each exemption independently" and warns about exception chains. This partially succeeds: 5 of the 7 original false negatives are corrected, including the veteran exemption scenarios that the generic prompt consistently fails. However, the same instructions cause the model to over-apply exemption logic, producing **20 false positives** — the first time in our benchmark that an LLM declares an ineligible applicant eligible. The model now grants eligibility to applicants below the flight hours threshold (499 < 500), with expired medical certificates, and on orbital missions where the age exemption is explicitly revoked. Net accuracy drops from 61/68 (89.7%, CI [80.2%, 94.9%]) to 44/68 (64.7%, CI [52.8%, 75.0%]) — the CIs are disjoint, so the drop is statistically significant.
+**R2: Enhanced prompting trades one failure mode for another.** The enhanced prompt explicitly instructs the LLM to "evaluate each exemption independently" and warns about exception chains. This partially succeeds: the false-negative count falls from 7 to 4 (with run-to-run variance in which specific scenarios fail; see R4). However, the same instructions cause the model to over-apply exemption logic, producing **20 false positives** — the first time in our benchmark that an LLM declares an ineligible applicant eligible. The model now grants eligibility to applicants below the flight hours threshold (499 < 500), with expired medical certificates, and on orbital missions where the age exemption is explicitly revoked. Net accuracy drops from 61/68 (89.7%, CI [80.2%, 94.9%]) to 44/68 (64.7%, CI [52.8%, 75.0%]) — the CIs are disjoint, so the drop is statistically significant.
 
 **Figure 5: Prompt-repair trade-off (Claude Opus 4.6, spacecraft).**
 
-![Accuracy with Wilson 95% CIs under the generic and enhanced prompt, with per-row outcome composition annotated inline (correct / false-negative / false-positive counts out of n=68). The 89.7% → 64.7% drop is statistically significant — the two CIs are disjoint, shaded in red. The generic prompt fails conservatively (7 FN, 0 FP); the enhanced prompt corrects three of those false negatives but introduces 20 false positives for the first time in the benchmark. Generated from Section 6.7 data by `figures/scripts/fnfp_tradeoff_r2.py`.](figures/fnfp_tradeoff_enhanced_prompt.png) We note that R2 tests only one enhanced prompt variant. Section 6.9 pre-registers a three-variant comparison (few-shot, self-critique, decomposition) to test whether this FN/FP trade-off is fundamental to prompt repair on this class of task or specific to the particular prompt tested here.
+![Accuracy with Wilson 95% CIs under the generic and enhanced prompt, with per-row outcome composition annotated inline (correct / false-negative / false-positive counts out of n=68). The 89.7% → 64.7% drop is statistically significant — the two CIs are disjoint, shaded in red. The generic prompt fails conservatively (7 FN, 0 FP); the enhanced prompt reduces the false-negative count from 7 to 4 but introduces 20 false positives for the first time in the benchmark. Generated from Section 6.7 data by `figures/scripts/fnfp_tradeoff_r2.py`.](figures/fnfp_tradeoff_enhanced_prompt.png) We note that R2 tests only one enhanced prompt variant. Section 6.9 pre-registers a three-variant comparison (few-shot, self-critique, decomposition) to test whether this FN/FP trade-off is fundamental to prompt repair on this class of task or specific to the particular prompt tested here.
 
 This is not simply a bad prompt. The enhanced prompt correctly identifies the reasoning gap (independent exemption evaluation) and provides accurate instructions. The problem is that the same instructions that fix under-application of exemptions cause over-application elsewhere. The generic prompt's conservative bias - all false negatives, no false positives - is a more predictable failure mode than the enhanced prompt's scattered errors across both directions. For a production system, a consistent conservative bias is easier to compensate for than unpredictable failures in both directions.
 
@@ -656,7 +665,7 @@ The prompt-repair finding (R2) rests on one enhanced prompt variant; the reasoni
 
 4. **Independent expected-value authoring for new scenarios**: each of the 55 new scenarios has a prose expected-value assertion written against the legislative clause chain before the fixture is consulted. Mismatches between prose and fixture are flagged for SME review rather than silently reconciled. This addresses the internal-validity hole where code-derived expected values allow fixtures and the execution engine to trivially agree.
 
-**Pre-registration commitment.** Results — whether they confirm, weaken, or refute the v3.6 findings — will be reported in v3.7 regardless of direction. Findings 5 and 6, and Section 6.7 R5, will be updated or withdrawn based on the replication.
+**Pre-registration commitment.** Results — whether they confirm, weaken, or refute the earlier findings — will be reported in a subsequent revision regardless of direction. (Status as of v3.11, July 2026: the N=66 replication and prompt-variant sweep remain pre-registered and not yet run; they are the next experimental milestone for this paper.) Findings 5 and 6, and Section 6.7 R5, will be updated or withdrawn based on the replication.
 
 ---
 
@@ -723,7 +732,7 @@ The aggregate GPT-5.4 comparison should be interpreted cautiously. Most of the d
 
 ### 6.10.3 Selection bias and the random-sample replication
 
-A reviewer might fairly ask whether the four "curated" tasks above (`hearsay`, `personal_jurisdiction`, `jcrew_blocker`, `cuad_covenant_not_to_sue`) were chosen because they fit the Eligibility Module's structural shape — multi-prong rule application of the kind §4.2 identifies as a frontier-LLM failure pattern. They were. To test whether the result is selection-bias-dependent, we repeated the protocol on **six additional LegalBench tasks selected by seeded random sample** from the 153-task pool excluding tasks already integrated. The selection (seeds 42 and 43, n=2 and n=4 respectively, generated by `tools/random_task_pick.py`) was committed before the upstream Task descriptions were inspected. A third seed (seed=44, n=2) was pre-registered at the public release tag `pre-v3.8-legalbench-preregistration` (commit SHA `f7c5994`) but is not yet run; the tag preserves the seed-before-results discipline if those tasks are added in a future revision.
+A reviewer might fairly ask whether the four "curated" tasks above (`hearsay`, `personal_jurisdiction`, `jcrew_blocker`, `cuad_covenant_not_to_sue`) were chosen because they fit the Eligibility Module's structural shape — multi-prong rule application of the kind §4.2 identifies as a frontier-LLM failure pattern. They were. To test whether the result is selection-bias-dependent, we repeated the protocol on **six additional LegalBench tasks selected by seeded random sample** from the 153-task pool excluding tasks already integrated. The selection (seeds 42 and 43, n=2 and n=4 respectively, generated by `tools/random_task_pick.py`) was committed before the upstream Task descriptions were inspected. A third seed (seed=44, n=2) was pre-registered at the public release tag `pre-v3.8-legalbench-preregistration` (annotated tag object `f7c5994`; the tagged commit is `58d3b5d`) but is not yet run; the tag preserves the seed-before-results discipline if those tasks are added in a future revision.
 
 The six random-sample tasks span CUAD contract-clause classification, ContractNLI entailment, OPP115 privacy-policy classification, and LearnedHands legal-aid post categorisation — predominantly single-clause classification rather than the multi-prong rule application that §4.2 characterises as the failure pattern. Predicted-mismatch territory.
 
@@ -774,7 +783,7 @@ The retroactive held-out methodology is acknowledged as a methodological comprom
 
 **What would refute this section's central claim.** A documented LLM-only configuration that, on the same 949 held-out LegalBench cases (with the deterministic seed-7 partition reproduced from `tools/test_split.py`), achieves a combined accuracy ≥ 95% on the same nine tasks under any disclosed prompting strategy would substantially weaken the structural-advantage interpretation in §6.10.5–§6.10.6. Such a result would not falsify the existence of the §4.2 failure pattern (which is a small-N existence claim by design) but would show that prompt engineering alone can match the Module on this evaluation set, removing the *architectural* basis for the headline gap reported in Table 6.10.B.
 
-The benchmark scenarios, source files, runners, statistical analysis script, and pre-registration artefacts are released in the `legalbench/` subdirectory of <https://github.com/Aethis-ai/confidently-wrong-benchmark> for replication. The pre-registration of the seed-44 random-sample replication is verifiable via the public Git tag `pre-v3.8-legalbench-preregistration` at SHA `f7c5994`. The held-out partition reproducibility is verified at `legalbench/docs/reproducibility-checks.md` (9/9 tasks: re-running `tools/test_split.py --seed 7 --dev_fraction 0.5` from a clean checkout reproduces the index sets used in committed engine results exactly).
+The benchmark scenarios, source files, runners, statistical analysis script, and pre-registration artefacts are released in the `legalbench/` subdirectory of <https://github.com/Aethis-ai/confidently-wrong-benchmark> for replication. The pre-registration of the seed-44 random-sample replication is verifiable via the public Git tag `pre-v3.8-legalbench-preregistration` (annotated tag object `f7c5994`, tagged commit `58d3b5d`). The held-out partition reproducibility is verified at `legalbench/docs/reproducibility-checks.md` (9/9 tasks: re-running `tools/test_split.py --seed 7 --dev_fraction 0.5` from a clean checkout reproduces the index sets used in committed engine results exactly).
 
 ---
 
@@ -1006,11 +1015,15 @@ All rules, fields, and rule sets are stored immutably with versioning and supers
 
 P.S. conceived the paper, designed and implemented the Eligibility Module — including the code-generation layer, compilation architecture, SMT constraint-evaluation engine, rule-authoring tools, and benchmark harness — designed and ran all experiments, analysed the results, and drafted the manuscript. P.S. additionally designed and ran the §6.10 LegalBench external-validation programme: per-task rule-bundle authoring, SME-guidance design, runtime extractor configurations, statistical-analysis pipeline (`tools/significance.py`), held-out partition methodology, pre-registered random sampling protocol, GPT-5.4 zero-shot prompt-sensitivity check, and Figures 7 and 8. J.K. proposed the use of an SMT solver as the execution engine for deterministic rule evaluation within P.S.'s existing code-generation and compilation architecture, and contributed ongoing design discussion. L.D., Immigration Solicitor and accredited Senior Caseworker and Supervisor under the Law Society Immigration and Asylum Accreditation Scheme, with over twenty years' experience in immigration law, authored the benchmark scenarios for the British Nationality Act eligibility determinations (`life_uk` and `english_language` sections) and validated their legal formalisations; she did not contribute to the spacecraft, construction insurance, or LegalBench materials. All authors reviewed the final manuscript.
 
+# Competing Interests
+
+All authors are affiliated with Aethis, which develops and commercially deploys the Eligibility Module evaluated in this paper. The benchmark scenarios, harness, prompts, and per-case result artefacts are publicly released (see Data and Code Availability) so that all reported comparisons can be independently reproduced.
+
 # Data and Code Availability
 
 The benchmark scenarios, expected outcomes, prompts, and evaluation harness for the §6.1–§6.9 controlled benchmark (225 paper-scope scenarios across four domains) are released publicly as the *confidently-wrong-benchmark* repository: <https://github.com/Aethis-ai/confidently-wrong-benchmark>.
 
-The §6.10 LegalBench external-validation harness (15 per-task projects covering the 9 reported tasks plus 6 supplementary, including verbatim CC-BY-4.0 source-rule files, all per-case engine + LLM result JSONs for every reported number, the dev/holdout partition utility, the seeded random-sample task picker, the per-task statistical-analysis pipeline, and the seed-44 pre-registration tag) is released as the `legalbench/` subdirectory of the same repository: <https://github.com/Aethis-ai/confidently-wrong-benchmark/tree/main/legalbench>. The migration commit is tagged as `pre-v3.8-legalbench-preregistration` (commit SHA `f7c5994`) — that tag is the externally-verifiable boundary for the §6.10.3 random-sample-replication claim. Held-out partition reproducibility is verified at `legalbench/docs/reproducibility-checks.md` (9/9 tasks reproduce exactly from a clean checkout).
+The §6.10 LegalBench external-validation harness (15 per-task projects covering the 9 reported tasks plus 6 supplementary, including verbatim CC-BY-4.0 source-rule files, all per-case engine + LLM result JSONs for every reported number, the dev/holdout partition utility, the seeded random-sample task picker, the per-task statistical-analysis pipeline, and the seed-44 pre-registration tag) is released as the `legalbench/` subdirectory of the same repository: <https://github.com/Aethis-ai/confidently-wrong-benchmark/tree/main/legalbench>. The migration is tagged as `pre-v3.8-legalbench-preregistration` (annotated tag object `f7c5994`, tagged commit `58d3b5d`) — that tag is the externally-verifiable boundary for the §6.10.3 random-sample-replication claim. Held-out partition reproducibility is verified at `legalbench/docs/reproducibility-checks.md` (9/9 tasks reproduce exactly from a clean checkout).
 
 Both sub-corpora are intended to allow independent re-evaluation of the reported results and evaluation of future models against the same task structure.
 
@@ -1018,6 +1031,6 @@ Both sub-corpora are intended to allow independent re-evaluation of the reported
 
 ---
 
-*Version 3.9.2 · Working paper · April 2026*
+*Version 3.11.0 · Working paper · July 2026*
 
-*Changelog: v3.9.2 — prose-only reviewer-hardening pass for §6.10. Reframed the GPT-5.4 LegalBench classification cliff as prompt-format sensitivity rather than model-capability evidence; added a caution after Table 6.10.B that the aggregate GPT-5.4 comparison is not the primary exception-chain evidence; added a §6.8 external-validity caveat that broader prompt sweeps are required before treating those cells as best-achievable GPT-5.4 estimates. No benchmark numbers changed; PDF rebuilt. v3.9.1 — Maurice-pass prose tightening following an external referee report on v3.9 (GH `aethis.os` issue #17, 2026-04-28). Pure-prose, zero-cascade revision: no benchmark numbers moved; no downstream commercial document needs to re-sync. Specific changes: added the specification-vs-execution one-liner in §5.5; added the relocation-of-uncertainty framing in the abstract and §2; bounded the prompt-engineering claim to the strategies tested in §6.7; sharpened scope to multi-prong compositional rule evaluation under nested exceptions; paired execution-guarantee statements with Level-2 boundaries; renamed §5.4 to "Why the Eligibility Module Excludes These Errors by Construction"; explicitly framed the 20 v3.8 adversarial scenarios as a stress test; added §10.1 limitation 6 that the failure mode is bounded. Earlier revision history omitted; full version history is tracked in git.*
+*Changelog: v3.11.0 — consistency and staleness pass; no benchmark numbers changed. Unified the R2 false-negative accounting to the committed 7→4 figure across §2, §3.4, §6.5 Finding 3, §6.7 R2 and Figure 5; scoped Finding 2's no-false-positives claim to the §6.1–§6.7 controlled benchmark and cross-referenced the §6.10 LegalBench positive-class anchoring; corrected Finding 3 against Table 2; reconciled the §6.1 / Table 9 temperature description (added the T=0.3 sensitivity-control note); re-dated the §6.9 pre-registration commitment to a subsequent revision with a July 2026 status note; distinguished the pre-registration annotated-tag object from its tagged commit SHA (§6.10.3, Data and Code Availability); added dated (evaluation-time) qualifiers to the previously-undated "strongest Anthropic model" claims; extended the §6.1 model roster and evaluation-coverage matrix to all evaluated configurations (added Claude Opus 4.7 and GPT-4.1-mini) and updated the §6 heading to eight LLMs; and added a Competing Interests statement. v3.10.0 — added a §3.1 paragraph on the "Rules as Code" movement (Mohun & Roberts 2020, Mowbray et al. 2023), positioning decision-tree legislative modelling as sharing the paper's core premise (formal encoding over statistical inference) while distinguishing the constraint-based approach by its ability to prove properties — completeness, consistency, unreachability of dead states — that decision-tree representations do not natively support. Two references added to the bibliography. No benchmark numbers changed; no downstream commercial document needs to re-sync. Earlier revision history omitted; full version history is tracked in git.*

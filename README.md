@@ -4,9 +4,9 @@ Frontier LLMs collapse on nested conditional rules of the form "A is required UN
 
 This repository contains the benchmark dataset, the v3.8 adversarial extension, the LegalBench external-validation harness, full per-call replication artefacts, and the accompanying paper.
 
-## Headline Results (paper v3.9.2, April 2026)
+## Headline Results (paper v3.11.0, July 2026)
 
-All numbers from the paper ([Simpson, Kozak, Doake, v3.9.2, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
+All numbers from the paper ([Simpson, Kozak, Doake, v3.11, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
 
 ### 1. v3.8 Adversarial Construction-CAR Extension (paper §6.4.1)
 

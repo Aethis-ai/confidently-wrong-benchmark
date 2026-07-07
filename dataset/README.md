@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Name** | Confidently Wrong Benchmark |
-| **Paper version** | v3.8 (April 2026) |
+| **Paper version** | v3.11.0 (July 2026; benchmark numbers unchanged since v3.8) |
 | **Dataset version** | 1.0 |
 | **License** | CC-BY-4.0 |
 | **Size** | 225 scenarios across 4 paper-scope domains (plus 30 out-of-scope supplementary) |

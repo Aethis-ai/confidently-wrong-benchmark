@@ -7,66 +7,50 @@ author:
   - name: Lisa Doake
 institute: "Aethis (aethis.ai)"
 date: "July 2026"
-version: "3.11.0"
+version: "3.13.0"
 arxiv_subject: "cs.AI"
 arxiv_cross_list: "cs.LO, cs.LG"
 abstract: |
-  We document a class of failure in frontier large language models — exception
+  We document a failure class in frontier large language models — exception
   chain collapse — observed during eligibility evaluation under nested
   conditional rules of the form "A is required UNLESS B applies, UNLESS C
   overrides B". The failure is real and reproducible at first observation,
-  but its specific empirical surface is unstable: between March and April 2026
-  several v3.6/v3.7 paper cells closed silently under the same model alias,
-  with no version bump (e.g. GPT-5.4 on construction-CAR moved from 96.6% to
-  100% on the same prompt and harness). For a regulated workflow that depends
-  on benchmark-time accuracy claims, this is the central problem: the ground
-  shifts under the production system without notice.
+  but its empirical surface is unstable: between March and April 2026,
+  several reported failure cells closed silently under the same model alias,
+  with no version bump (GPT-5.4 on construction insurance moved from 96.6%
+  to 100% on the same prompt and harness). For a regulated workflow that
+  depends on benchmark-time accuracy claims, this is the central problem:
+  frontier-model accuracy is a moving compliance boundary, and it moves
+  without notice.
 
-  We present the Aethis Eligibility Module, a neuro-symbolic architecture that
-  uses LLMs to author rules from authoritative sources, then executes those
-  rules through an SMT-based deterministic evaluation layer. The Module
-  achieves 100% consistency with the benchmark's formal rule fixtures
-  by construction — independent of model drift, reasoning-effort defaults,
-  or prompt format. We harden this claim with three sources of evidence:
+  We present the Aethis Eligibility Module, a neuro-symbolic architecture
+  that uses LLMs to author rules from authoritative sources, then executes
+  those rules through an SMT-based deterministic evaluation layer. The
+  execution layer is exactly consistent with the authored specification,
+  independent of model drift, reasoning-effort defaults, or prompt format.
+  Three evidence bases support the claim. (i) A controlled benchmark of 225
+  scenarios across four regulatory domains documents the original failure
+  pattern and, in replication, the silent drift that partially closed it
+  (§6). (ii) A 20-scenario adversarial extension on construction insurance
+  (§6.4.1): the deterministic engine scores 20/20; of four frontier-LLM
+  configurations, one (GPT-5.4 at low reasoning effort) also scores 20/20,
+  while the other three — including Anthropic's strongest model at
+  evaluation time — each fail the same coverage-gap edge case. Matching the
+  engine on a given slice is achievable; staying matched across silent model
+  updates and configuration changes is the property none of these systems
+  can offer. (iii) External validation on nine peer-reviewed LegalBench
+  tasks, 949 held-out cases (§6.10): the engine is significantly more
+  accurate than each of three frontier models (combined McNemar's
+  $p \le 0.003$), with the largest margins against the Anthropic models —
+  up to +41 percentage points — on the curated multi-prong
+  rule-application tasks (GPT-5.4's larger margins are dominated by a
+  prompt-format sensitivity analysed in §6.10.4).
 
-  *(i) §6 controlled benchmark.* 225 scenarios across four regulatory domains
-  document the original failure pattern (March 2026 snapshot). A v3.8
-  replication finds several v3.6/v3.7 cells have closed at current frontier
-  performance; we report both numbers side-by-side as the model-drift
-  evidence base.
-
-  *(ii) §6.4.1 v3.8 adversarial extension.* 20 newly-authored construction-CAR
-  scenarios stratified across five complexity dimensions
-  (independent-prose-then-engine methodology to address the code-derived
-  ground-truth critique). Result: the Eligibility Module is 20/20 (100%);
-  Claude Opus 4.7 (Anthropic's strongest model at evaluation time, April 2026)
-  is 18/20 (90%); GPT-5.4 at
-  default reasoning effort is 19/20 (95%) but uses zero reasoning tokens
-  on every scenario — short-circuit answers; Sonnet 4.6 is 19/20. Three of
-  four frontier-LLM configurations fail on the same scenario (the DE3/LEG3
-  carveback-gap edge case), consistent with a structural rather than
-  per-model failure mode.
-
-  *(iii) §6.10 external validation on LegalBench.* On nine peer-reviewed
-  LegalBench tasks (949 held-out cases), the Eligibility Module is
-  significantly more accurate than each of `claude-sonnet-4-6`
-  (combined McNemar's $p < 0.001$), `claude-opus-4-7` ($p = 0.003$), and
-  `gpt-5.4` ($p < 0.001$); the structural advantage is largest on
-  multi-prong rule-application tasks ($\Delta$ up to +41 percentage points)
-  and persists at a smaller, directionally consistent margin on randomly-
-  sampled tasks chosen without fit inspection (cross-task-significant there
-  against `gpt-5.4`; the all-nine-task combination is the load-bearing test).
-
-  The architectural contribution is to relocate the locus of uncertainty:
-  from the inference boundary, where it is silent and continuous, to the
-  specification boundary, where it is deliberate and audited. The execution
-  layer is guaranteed by construction; the specification layer is governed
-  by SME-validated test suites and an explicit bundle-versioning regime
-  (§5.5, §9.4). This relocates the problem rather than eliminating it.
-
-  All numbers in this paper are reproducible from committed scripts and
-  result JSONs. The benchmark scenarios, the rule encodings, the harness,
-  and the per-call replication artefacts are released publicly.
+  The architectural contribution is to relocate uncertainty from the
+  inference boundary, where it is silent and continuous, to the
+  specification boundary, where it is deliberate and audited (§5.5, §9.4).
+  All numbers are reproducible from committed scripts and result JSONs; the
+  scenarios, rule encodings, and harness are public.
 ---
 
 ---
@@ -77,13 +61,13 @@ In 1986, Sergot, Sadri, Kowalski, and colleagues published a landmark paper in *
 
 Forty years on, large language models can read the same Act, explain it in plain English, and answer broad legal questions with fluency that would have seemed extraordinary even five years ago. It is tempting to conclude that the formal encoding project is no longer necessary. Our benchmark tests this assumption directly on the same legislation Sergot et al. encoded, extended to three further domains, and finds it does not hold - at least not for the specific class of task where exception chains are nested three levels deep.
 
-The failure is specific. On straightforward multi-route eligibility logic, frontier models perform well, achieving 100% accuracy on 43 English-language scenarios (95% Wilson CI [91.8%, 100%]). But when legislation introduces nested exception chains, accuracy degrades sharply and in a way that is insensitive to temperature, sample count, and the prompting strategies tested here (a single-prompt baseline and one enhanced variant; see §6.7). Claude Opus 4.6 scores 61/68 (89.7%, CI [80.2%, 94.9%]) on the spacecraft section. With 10 runs on each of the 7 failing scenarios — 70 trials in total — it produces zero correct answers. The Clopper–Pearson 95% one-sided upper bound on per-trial success probability is 4.19%: the failures are systematic, not stochastic. Attempts to close the gap via enhanced prompting trade false negatives for false positives: the enhanced prompt reduces net accuracy to 64.7% (CI [52.8%, 75.0%]) while introducing 20 false positives for the first time.
+The failure is specific. On straightforward multi-route eligibility logic, frontier models perform well, achieving 100% accuracy on 43 English-language scenarios (95% Wilson CI [91.8%, 100%]). But when legislation introduces nested exception chains, accuracy degrades sharply and in a way that is insensitive to temperature, sample count, and the prompting strategies tested here (a single-prompt baseline and one enhanced variant; see §6.7). In the March 2026 baseline, Claude Opus 4.6 scored 61/68 (89.7%, CI [80.2%, 94.9%]) on the spacecraft section. With 10 runs on each of the 7 then-failing scenarios — 70 trials in total — it produced zero correct answers. The Clopper–Pearson 95% one-sided upper bound on per-trial success probability is 4.19%: at that snapshot the failures were systematic, not stochastic. (The April 2026 replication finds most of those specific cells have since closed under the same model alias — the instability analysed in §6.5 Finding 6 and the §6.7 caveats.) Attempts to close the gap via enhanced prompting trade false negatives for false positives: the enhanced prompt reduces net accuracy to 64.7% (CI [52.8%, 75.0%]) while introducing 20 false positives for the first time.
 
 More precisely, the failure regime characterised here is *multi-prong compositional rule evaluation under nested exceptions*: tasks where multiple coordinate clauses must each be evaluated against a typed input and then combined across two or more levels of UNLESS-style exception structure. The "exception chain collapse" terminology is retained throughout the paper as the dominant failure pattern within that regime; the more precise scope phrase is what we mean wherever the dominant pattern is invoked.
 
 We make three contributions:
 
-1. **A failure pattern taxonomy.** We identify and characterise two systematic failure patterns in nested exception-chain evaluation: *exemption anchoring* (failure to evaluate alternative routes independently when the primary route fails) and *exception chain collapse* (failure to correctly nest multi-level UNLESS logic). We demonstrate both are systematic across six models (three frontier, three production-tier) and two providers on this benchmarked class of task.
+1. **A failure pattern taxonomy.** We identify and characterise two systematic failure patterns in nested exception-chain evaluation: *exemption anchoring* (failure to evaluate alternative routes independently when the primary route fails) and *exception chain collapse* (failure to correctly nest multi-level UNLESS logic). We observe both patterns across eight models (four frontier, four production-tier) and two providers on this benchmarked class of task, on the model–suite combinations actually evaluated (§6.1 coverage matrix); individual models pass individual suites, and specific failure cells move across model updates (§6.5 Findings 4 and 6).
 
 2. **A multi-domain benchmark.** We present 225 scenarios across four sections spanning two UK immigration requirements (life-in-the-UK knowledge and English language proficiency), a synthetic spacecraft certification statute, and a synthetic construction insurance wording modelled on London market DE3/DE5 clause structure - designed to isolate exception chain evaluation as the test variable. Benchmark scenarios are released as a public dataset. The specific accuracy figures reported here will evolve as models improve; the task structure and failure pattern constitute the durable contribution.
 
@@ -97,15 +81,15 @@ The paper is structured as follows. Section 2 summarises key findings. Section 3
 
 Artificial intelligence is entering high-stakes decision-making: immigration eligibility, safety certification, insurance underwriting, benefits entitlement, financial compliance. These are domains where errors have material consequences, where false negatives deny people their rights, and where explainability is mandatory.
 
-We present the **Aethis Eligibility Module** (hereafter: the Eligibility Module), a neuro-symbolic engine that separates what LLMs do well from what requires formal guarantees. LLMs read authoritative sources and generate rules as structured code. The Eligibility Module compiles and evaluates those rules using an SMT-based deterministic evaluation layer, providing constraint evaluation with mathematically defined semantics and full auditability.
+We present the **Aethis Eligibility Module** (hereafter the Eligibility Module; where unambiguous, simply the Module or the engine), a neuro-symbolic engine that separates what LLMs do well from what requires formal guarantees. LLMs read authoritative sources and generate rules as structured code. The Eligibility Module compiles and evaluates those rules using an SMT-based deterministic evaluation layer, providing constraint evaluation with mathematically defined semantics and full auditability.
 
 The architectural contribution is to relocate the locus of uncertainty: from the inference boundary, where it is silent and continuous, to the specification boundary, where it is deliberate and audited. This does not eliminate the underlying uncertainty; it makes it tractable — addressable through SME-validated test suites, explicit bundle versioning, and the L1/L2/L3 separation set out in Section 5.5.
 
-Our benchmark of 225 scenarios across four sections tests six LLMs (three frontier, three production-tier) in the March 2026 pass, with Claude Opus 4.7 and GPT-4.1-mini added in the April 2026 v3.8 replication, against the Eligibility Module on the specific task of nested exception-chain evaluation. The Eligibility Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: Claude Opus 4.6 returns the wrong answer on 10% of spacecraft scenarios, and in the March 2026 baseline evaluations all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied (later evaluation arms do surface false positives; see §6.5 Finding 2). Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt reduces false negatives from 7 to 4 but introduces 20 false positives, reducing net accuracy from 90% to 65%.
+Our benchmark of 225 scenarios across four sections tests eight LLMs (four frontier, four production-tier) against the Eligibility Module on the specific task of nested exception-chain evaluation — six models in the March 2026 pass, with Claude Opus 4.7 and GPT-4.1-mini added in the April 2026 v3.8 replication. The Module achieves complete consistency with the benchmark's formal rule fixtures across all domains - a consequence of deterministic execution over the authored specification, not empirical tuning. On adversarial exception-chain scenarios, frontier models produce systematic false negatives: in the March 2026 baseline Claude Opus 4.6 returned the wrong answer on 10% of spacecraft scenarios (1.5% by the April 2026 replication — the drift §6 documents), and in the March 2026 baseline evaluations all observed failures are false negatives - eligible applicants incorrectly rejected, valid claims incorrectly denied (later evaluation arms do surface false positives; see §6.5 Finding 2). Attempting to improve LLM accuracy via enhanced prompting trades false negatives for false positives: the enhanced prompt reduces false negatives from 7 to 4 but introduces 20 false positives, reducing net accuracy from 90% to 65%.
 
 On the benchmarked class of nested exception-chain tasks, LLM errors are systematic enough that deterministic formal execution removes one entire class of error from the trust surface for high-stakes decisions where consistency with formal fixtures is required. This is not a claim that LLMs are unreliable in general; it is a specific finding about a specific class of rule evaluation.[^1]
 
-[^1]: The system described in this paper is deployed commercially by Aethis (aethis.ai) for UK immigration and naturalisation workflows. The immigration benchmark sections cover selected requirements from this domain; the full determination involves additional sections not included in this publication.
+[^1]: Aethis (aethis.ai) is deploying the system described in this paper in a controlled UK immigration pilot: it prepares eligibility evaluations for solicitor review, and solicitors remain the decision-makers. The immigration benchmark sections cover selected requirements from this domain; the full determination involves additional sections not included in this publication.
 
 ---
 
@@ -115,11 +99,11 @@ This work sits at the intersection of four research traditions: formal and compu
 
 ## 3.1 Formal and Computational Approaches to Legal Reasoning
 
-The challenge of encoding legislation as executable logic has a forty-year history. Sergot et al. [-@sergot1986bna] formalised the British Nationality Act 1981 as a Prolog logic program, demonstrating that statutory rules could be faithfully represented as Horn clauses with negation as failure. Published in *Communications of the ACM* in 1986, this work identified the same legislation evaluated in our benchmark and showed that OR-branching eligibility logic can be captured in a formal system with provable properties. The Eligibility Module revisits the same statutory text with a different technical foundation - formal constraints compiled from LLM-authored rules rather than hand-coded Prolog - and extends evaluation to adversarial exception chain scenarios not part of the original formalism.
+The challenge of encoding legislation as executable logic has a forty-year history. Sergot et al. [-@sergot1986bna] formalised the British Nationality Act 1981 as a Prolog logic program, demonstrating that statutory rules could be faithfully represented as Horn clauses with negation as failure. Published in *Communications of the ACM* in 1986, this work identified the same legislation evaluated in our benchmark and showed that OR-branching eligibility logic can be captured in a formal system with provable properties. The Module revisits the same statutory text with a different technical foundation - formal constraints compiled from LLM-authored rules rather than hand-coded Prolog - and extends evaluation to adversarial exception chain scenarios not part of the original formalism.
 
 McCarty's TAXMAN system [-@mccarty1977taxman] demonstrated as early as 1977 that AI systems could reason over tax code with explicit logical representations. Bench-Capon and colleagues developed value-based argumentation frameworks for legal reasoning over multiple decades [-@benchcapon2010argument], establishing that legislation's exception structure requires more than propositional logic to represent faithfully.
 
-The formal treatment for exception chains specifically is defeasible logic, introduced by Reiter [-@reiter1980default] and developed by Nute [-@nute1994defeasible] and Governatori et al. [-@governatori2010changing]. Defeasible logic provides formal semantics for "A holds UNLESS B applies, UNLESS C overrides B" - precisely the pattern our benchmark identifies as a failure pattern for LLMs. The Eligibility Module does not use defeasible logic directly, instead compiling exception chains to formal material implication constraints evaluated by an SMT solver, but operates in the same tradition: the failure pattern we document is exactly the problem defeasible logic was designed to solve, now re-emerging in systems that replaced formal encoding with statistical inference over legislative text.
+The formal treatment for exception chains specifically is defeasible logic, introduced by Reiter [-@reiter1980default] and developed by Nute [-@nute1994defeasible] and Governatori et al. [-@governatori2010changing]. Defeasible logic provides formal semantics for "A holds UNLESS B applies, UNLESS C overrides B" - precisely the pattern our benchmark identifies as a failure pattern for LLMs. The Module does not use defeasible logic directly, instead compiling exception chains to formal material implication constraints evaluated by an SMT solver, but operates in the same tradition: the failure pattern we document is exactly the problem defeasible logic was designed to solve, now re-emerging in systems that replaced formal encoding with statistical inference over legislative text.
 
 The broader "Rules as Code" movement — encoding legislation as machine-executable representations at the point of drafting — has gained institutional momentum since 2020, with government-backed programmes in New Zealand, France, and Germany deploying visual decision-tree modelling tools for legislative analysis [@mohun2020cracking; @mowbray2023representing]. These systems encode statutory logic as structured flowcharts or decision trees authored via no-code configuration, enabling non-technical legislative drafters to model requirements directly. Mowbray et al. [-@mowbray2023representing] identify scalability as the central challenge: decision trees grow combinatorially as exception depth increases, and maintaining consistency across large rule sets requires manual audit. The approach shares this paper's core premise — that statutory rules should be formally encoded rather than statistically inferred — but differs in representational power. Decision trees can model branching logic; constraint-based representations can additionally prove properties of the encoded rule system (completeness, consistency, unreachability of dead states). The exception-chain collapse pattern documented in §4 is precisely the class of nested structure where this distinction is practically relevant: a three-level exception chain is representable as a decision tree, but verifying that no branch combination produces a contradictory outcome requires the kind of satisfiability check that decision-tree representations do not natively support.
 
@@ -147,17 +131,17 @@ Chain-of-thought prompting [-@wei2022cot] and zero-shot reasoning elicitation [-
 
 ## 3.5 Neuro-Symbolic Architectures and LLM + Formal Method Hybrids
 
-The neuro-symbolic research programme [-@garcez2009neural] argues that robust AI systems require integration of neural pattern recognition with symbolic reasoning. Marcus [-@marcus2020nextdecade] argues that the reliability limitations of purely statistical systems necessitate a return to hybrid approaches combining learned representations with structured reasoning. Kambhampati et al. [-@kambhampati2024llmmodulo] advance this position with the *LLM-Modulo* framework, arguing that LLMs are most robustly deployed as approximate generators paired with formal verifiers and critics that provide external correctness guarantees. The Eligibility Module is a specific instantiation of the LLM-Modulo pattern applied to statutory rule evaluation: LLMs perform pattern-recognition tasks they excel at (reading legislation, extracting structure, generating code), while a constraint evaluation engine handles the evaluation task requiring mathematical guarantees.
+The neuro-symbolic research programme [-@garcez2009neural] argues that robust AI systems require integration of neural pattern recognition with symbolic reasoning. Marcus [-@marcus2020nextdecade] argues that the reliability limitations of purely statistical systems necessitate a return to hybrid approaches combining learned representations with structured reasoning. Kambhampati et al. [-@kambhampati2024llmmodulo] advance this position with the *LLM-Modulo* framework, arguing that LLMs are most robustly deployed as approximate generators paired with formal verifiers and critics that provide external correctness guarantees. The Module is a specific instantiation of the LLM-Modulo pattern applied to statutory rule evaluation: LLMs perform pattern-recognition tasks they excel at (reading legislation, extracting structure, generating code), while a constraint evaluation engine handles the evaluation task requiring mathematical guarantees.
 
-Statutory rule evaluation is a particularly favourable application of the LLM-Modulo pattern, in ways that distinguish it from prior instantiations in code synthesis and symbolic planning. Three properties combine. First, the verification fragment is decidable: rule application over compiled constraints terminates in deterministic time with a total correctness criterion, in contrast to test-suite verification of synthesised code (which provides only partial coverage) or constraint satisfaction over learned world models (which is frequently approximate). Second, the artefact being verified — a compiled rule bundle — is persistent and amortised: a single authoring pass serves arbitrarily many subsequent decisions, where per-query LLM-Modulo cycles in code synthesis or planning re-incur authoring cost on every instance. Third, the correctness criterion is externally specified by statute and domain-expert review rather than chosen by the system designer, which makes test-driven validation against expert-defined fixtures (Section 7.3) a meaningful integrity check rather than a tautology. These properties together explain why the LLM-Modulo separation can deliver categorical guarantees at the execution layer in this domain, even where the same separation provides only best-effort guarantees in general program synthesis or planning.
+Statutory rule evaluation is a particularly favourable application of the LLM-Modulo pattern, in ways that distinguish it from prior instantiations in code synthesis and symbolic planning. Three properties combine. First, the verification fragment is decidable: rule application over compiled constraints terminates deterministically with a total correctness criterion, in contrast to test-suite verification of synthesised code (which provides only partial coverage) or constraint satisfaction over learned world models (which is frequently approximate). Second, the artefact being verified — a compiled rule bundle — is persistent and amortised: a single authoring pass serves arbitrarily many subsequent decisions, where per-query LLM-Modulo cycles in code synthesis or planning re-incur authoring cost on every instance. Third, the correctness criterion is externally specified by statute and domain-expert review rather than chosen by the system designer, which makes test-driven validation against expert-defined fixtures (Section 7.3) a meaningful integrity check rather than a tautology. These properties together explain why the LLM-Modulo separation can deliver categorical guarantees at the execution layer in this domain, even where the same separation provides only best-effort guarantees in general program synthesis or planning.
 
 Most directly related is Logic-LM [-@pan2023logiclm], which uses LLMs to translate natural language problems into formal logical representations, then invokes symbolic solvers for evaluation. LINC [-@olausson2023linc] similarly uses LLMs to generate first-order logic programs from natural language for theorem prover evaluation. These systems demonstrate the feasibility of the authoring-execution separation that underlies the Eligibility Module. The present system differs in three respects relevant to high-stakes deployment: it operates on *persistently stored* rule bundles rather than ephemeral per-query translations; it maintains a provenance chain linking each rule to specific source citations; and it is designed for production deployment where audit trails and version control are compliance requirements.
 
-Program-aided language models (PAL [-@gao2023pal]) demonstrate the broader pattern of using LLMs to generate code that is then executed deterministically. The Eligibility Module applies this separation to statutory rule encoding with additional quality engineering (Section 7) to ensure generated rules meet a quality threshold before entering the persistent rule store.
+Program-aided language models (PAL [-@gao2023pal]) demonstrate the broader pattern of using LLMs to generate code that is then executed deterministically. The Module applies this separation to statutory rule encoding with additional quality engineering (Section 7) to ensure generated rules meet a quality threshold before entering the persistent rule store.
 
 ## 3.6 SMT-Based Constraint Evaluation
 
-Satisfiability Modulo Theories (SMT) solving has seen extensive application in software verification, symbolic execution, hardware design, and safety-critical systems. The Eligibility Module applies SMT-based constraint evaluation to regulatory rule execution - rules compiled from LLM-authored code into formal constraint representations. The near-zero marginal evaluation cost after compilation makes formal constraint evaluation practical for production deployment at scale, a property that distinguishes constraint compilation from per-query LLM inference.
+Satisfiability Modulo Theories (SMT) solving has seen extensive application in software verification, symbolic execution, hardware design, and safety-critical systems. The Module applies SMT-based constraint evaluation to regulatory rule execution - rules compiled from LLM-authored code into formal constraint representations. The near-zero marginal evaluation cost after compilation makes formal constraint evaluation practical for production deployment at scale, a property that distinguishes constraint compilation from per-query LLM inference.
 
 ---
 
@@ -204,7 +188,7 @@ The Spacecraft Crew Certification Act (a synthetic statute modelled on UK legisl
 
 *\*Dolphin is a valid species under the synthetic statute (s.3 excludes only Vogons). This scenario tests whether the model correctly applies the veteran exemption to a non-human applicant with otherwise valid credentials.*
 
-The veteran exemption (Override C) is the hardest concept for LLMs in this benchmark. It operates independently of age: a 25-year-old with 1500 flight hours is exempt from flight readiness requirements, just as a 60-year-old would be. Most LLMs tested treat the veteran exemption as age-dependent, producing false negatives with high confidence — Claude Opus 4.6 and Sonnet 4.6 mark the age-59 veteran ineligible on every run (0/3; Table 2), though GPT-5.4 answers the veteran scenarios correctly. The Eligibility Module evaluates these correctly by construction.
+The veteran exemption (Override C) is the hardest concept for LLMs in this benchmark. It operates independently of age: a 25-year-old with 1500 flight hours is exempt from flight readiness requirements, just as a 60-year-old would be. Most LLMs tested treat the veteran exemption as age-dependent, producing false negatives with high confidence — Claude Opus 4.6 and Sonnet 4.6 mark the age-59 veteran ineligible on every run (0/3; Table 2), though GPT-5.4 answers the veteran scenarios correctly. The Eligibility Module evaluates these correctly (§5.4).
 
 ## 4.3 Why False Negatives Matter
 
@@ -251,11 +235,13 @@ Every generated rule carries provenance linking it to specific source material. 
 
 **Table 3: Source Provenance Chain**
 
-| Source Type | Endpoint | Format | Citation Example | Verification |
-|:----------|:------------|:---------------|:-----------------------------|:-------------------------|
-| Primary legislation | legislation.gov.uk/api | Structured markup | `BNA1981#Schedule1/P1.1` | Direct resolution from LLM-cited references |
-| Policy guidance | GOV.UK Content API | Structured API | `GOVUK#english-lang/part-2` | Direct resolution from LLM-cited references |
-| Form guidance | PDF parser | Structured text | `form-an#section-4/para-3` | Direct resolution from LLM-cited references |
+| Source Type | Endpoint | Format | Citation Example |
+|:--------------------|:------------------------|:------------------|:----------------------------|
+| Primary legislation | legislation.gov.uk API | Structured markup | `BNA1981#Schedule1/P1.1` |
+| Policy guidance | GOV.UK Content API | Structured API | `GOVUK#english-lang/part-2` |
+| Form guidance | PDF parser | Structured text | `form-an#section-4/para-3` |
+
+Citations in all three source types are verified by direct resolution from the LLM-cited references.
 
 When the LLM fails to cite a source (or cites an invalid reference), the system falls back to embedding-based semantic similarity matching as a secondary mechanism. This multi-stage citation verification with semantic fallback provides higher fidelity than post-hoc similarity matching alone, because the LLM that generated the rule knows which source material it used.
 
@@ -285,7 +271,7 @@ Each branch is a boolean expression evaluated independently. If `medical_exempti
 
 ## 5.4 Why the Eligibility Module Excludes These Errors by Construction
 
-The LLM failures in our benchmark fall into two categories, both of which are excluded by the execution semantics of the Eligibility Module. To make this precise, we state the compilation formally.
+The LLM failures in our benchmark fall into two categories, both of which are excluded by the execution semantics of the Module. To make this precise, we state the compilation formally.
 
 Let $\mathcal{F} = \{f_1, \ldots, f_m\}$ be the set of typed applicant fields, and let $\sigma : \mathcal{F} \to \mathcal{V}$ be an applicant assignment (each field mapped to a typed value). A **rule** is a quantifier-free formula $\phi$ in the theory of bitvectors, linear integer/real arithmetic, and uninterpreted functions over $\mathcal{F}$. A **rule bundle** is a tuple $\mathcal{R} = \langle \mathcal{G}, \mathcal{O} \rangle$ where $\mathcal{G} = \{G_1, \ldots, G_k\}$ is a set of rule groups, each $G_i = \{\phi_{i,1}, \ldots, \phi_{i,n_i}\}$ representing independent legal routes within a requirement, and $\mathcal{O}$ is an outcome combinator.
 
@@ -315,7 +301,7 @@ $$
 A
 $$
 
-or equivalently $(B \land \neg C) \lor D \lor A$. This is a closed-form Boolean expression over the applicant fields. Evaluation is a standard SMT decision problem in $O(\text{poly}(|\phi|))$ for the quantifier-free fragment used; the result is a Boolean truth value with no variance over re-evaluation, temperature, or model version.
+or equivalently $(B \land \neg C) \lor D \lor A$. This is a closed-form Boolean expression over the applicant fields. Evaluating it against a fixed applicant assignment and a compiled rule bundle is a deterministic computation; the result is a Boolean truth value with no variance over re-evaluation, temperature, or model version.
 
 **Contrast with LLM inference.** An LLM computes
 
@@ -323,7 +309,7 @@ $$
 p_\theta(\text{eligible} \mid \text{legislation},\, \sigma) \;\approx\; \mathbb{1}[\phi_{\text{gt}}(\sigma) = \top]
 $$
 
-where $\phi_{\text{gt}}$ is the ground-truth formula. The left-hand side is a learned distribution over tokens; the approximation is empirically good on shallow compositional tasks and empirically poor on three-level exception chains (Section 6). The right-hand side — what the Eligibility Module computes — is the indicator function itself. The failure patterns in Section 4 are failures of the approximation, and they are excluded by construction whenever the evaluator operates directly on $\phi_{\text{gt}}$. The guarantee covers Level 3 (execution) only; whether the authored $\phi$ faithfully represents $\phi_{\text{gt}}$ is the Level 2 problem (Section 5.5, Section 7).
+where $\phi_{\text{gt}}$ is the ground-truth formula. The left-hand side is a learned distribution over tokens; the approximation is empirically good on shallow compositional tasks and empirically poor on three-level exception chains (Section 6). The right-hand side — what the engine computes — is the indicator function itself. The failure patterns in Section 4 are failures of the approximation, and they are excluded by construction whenever the evaluator operates directly on $\phi_{\text{gt}}$. The guarantee covers Level 3 (execution) only; whether the authored $\phi$ faithfully represents $\phi_{\text{gt}}$ is the Level 2 problem (Section 5.5, Section 7).
 
 ## 5.5 What the Eligibility Module Guarantees - and What It Does Not
 
@@ -335,7 +321,7 @@ Stated more fully: the system provides deterministic guarantees at one level onl
 
 **Level 2 - Rule formalisation.** LLMs generate rules from source material. An incorrectly formalised rule produces incorrect determinations, even if the execution is formally correct. This is the "garbage in, garbage out" property stated precisely: deterministic execution of incorrectly formalised rules produces incorrect but deterministic results. The system addresses this through test-driven validation: subject matter experts define test cases covering golden paths, edge cases, and corner cases, and authored rules must pass these test suites before deployment (Section 7.3). Rules can also be reviewed by human experts, but the primary quality gate is automated test-case validation, not manual review.
 
-**Level 3 - Rule execution.** Once rules are correctly formalised, the Eligibility Module guarantees correct execution with mathematically defined semantics. The failure patterns documented in Section 4 - exemption anchoring and exception chain collapse - are excluded by the execution semantics at this level.
+**Level 3 - Rule execution.** Once rules are correctly formalised, the engine guarantees correct execution with mathematically defined semantics. The failure patterns documented in Section 4 - exemption anchoring and exception chain collapse - are excluded by the execution semantics at this level.
 
 This distinction matters for regulatory defensibility. The provenance chain (Section 9.1) supports audit of Levels 1 and 2; Level 3 is guaranteed by the execution semantics. Execution correctness is a necessary precondition for trust in the overall system: if the execution layer itself could introduce errors, no amount of rule quality engineering would produce reliable determinations. By solving Level 3 first, the system reduces the trust problem to a single surface — rule formalisation quality — which is addressed through iterative synthesis refinement (Section 7.1) and test-driven validation against SME-defined test suites (Section 7.3).
 
@@ -370,8 +356,8 @@ Claude Opus 4.7 and GPT-4.1-mini were added in the April 2026 v3.8 replication (
 | Model | life_uk (56) | english_language (43) | spacecraft (68) | construction_car (58) | Notes |
 |-------|:---:|:---:|:---:|:---:|-------|
 | Claude Opus 4.6 | ✓ | ✓ | ✓ | ✓ (v3.8 replication) | + robustness (N=10) |
-| Claude Sonnet 4.6 | ✓ | ✓ | ✓ | ✓ (v3.8 replication) | |
-| GPT-5.4 | ✓ | ✓ | ✓ | ✓ | + enhanced prompt |
+| Claude Sonnet 4.6 | ✓ | ✓ | ✓ | ✓ (v3.8 replication) | + §6.4.1 adversarial |
+| GPT-5.4 | ✓ | ✓ | ✓ | ✓ | + enhanced prompt; + §6.4.1 adversarial (default and low reasoning); + n=11 instrumented replication |
 | GPT-5.3 | — | — | — | 11-scenario subset | production reference |
 | GPT-5-mini | ✓ | ✓ | ✓ | — | |
 | GPT-5-nano | — | ✓ | 48-scenario baseline | — | cost reference |
@@ -380,7 +366,7 @@ Claude Opus 4.7 and GPT-4.1-mini were added in the April 2026 v3.8 replication (
 
 Results reported below should be read against this matrix. Aggregate claims refer only to evaluations actually conducted.
 
-**Model selection.** The six models span three attributes: (i) frontier versus production tier, (ii) the two providers our organisation had API access to during the evaluation window (Anthropic and OpenAI), and (iii) a range of cost tiers representing realistic deployment choices. Models from other providers (Google Gemini, DeepSeek, Meta Llama, Mistral) were not included in this pass due to access and budget constraints; broader provider coverage is pre-registered for replication at N=66 (Section 6.9). The selection was fixed before any results were computed and was not adjusted based on intermediate findings. Claude Opus 4.7 and GPT-4.1-mini were added later, at v3.8 replication time — Opus 4.7 as the then-strongest Anthropic model and GPT-4.1-mini as a cost-tier reference for the construction domain — which post-dates this original fixed selection.
+**Model selection.** The original six-model selection (March 2026) spans three attributes: (i) frontier versus production tier, (ii) the two providers our organisation had API access to during the evaluation window (Anthropic and OpenAI), and (iii) a range of cost tiers representing realistic deployment choices. Models from other providers (Google Gemini, DeepSeek, Meta Llama, Mistral) were not included in this pass due to access and budget constraints; broader provider coverage is pre-registered for replication at N=66 (Section 6.9). The selection was fixed before any results were computed and was not adjusted based on intermediate findings. Claude Opus 4.7 and GPT-4.1-mini were added later, at v3.8 replication time — Opus 4.7 as the then-strongest Anthropic model and GPT-4.1-mini as a cost-tier reference for the construction domain — which post-dates this original fixed selection.
 
 **LLM configuration:** Temperature 0 where supported (Claude models; GPT-5 family does not expose this parameter — sampling is controlled internally by the model's reasoning pipeline). The §6.7 robustness baseline was additionally run at T=0.3 as a temperature-sensitivity control; Table 9 shows the failure set is identical at T=0.3 and T=0. Runs per scenario: 3 (majority vote; robustness analysis tests N=10). Prompt: generic legal assessment, no special instructions about exemptions or OR-branching.
 
@@ -397,7 +383,7 @@ Results reported below should be read against this matrix. Aggregate claims refe
 | `spacecraft` | Spacecraft Crew Certification Act (synthetic statute) | Synthetic, modelled on UK legislative structure |
 | `construction_car` | CAR policy defect exclusion endorsement (synthetic wording) | Synthetic, modelled on London market DE3/DE5 clauses |
 
-All models evaluated on the `life_uk` section (see the coverage matrix) achieve 100% (depth-1 combinatorial boolean logic); this section is reported here for completeness but not charted separately. All frontier models also achieve 100% on `english_language` (depth-2 multi-route logic); production-tier GPT-5-nano scores 48.8% on the same section (Table 5). These two sections establish a baseline: the failure pattern is specific to exception chain depth, not general to legal reasoning.
+All models evaluated on the `life_uk` section (see the coverage matrix) achieve 100% (depth-1 combinatorial boolean logic); this section is reported here for completeness but not charted separately. All frontier models evaluated on `english_language` also achieve 100% (depth-2 multi-route logic); production-tier GPT-5-nano scores 48.8% on the same section (Table 5). These two sections establish a baseline: the failure pattern is specific to exception chain depth, not general to legal reasoning.
 
 **Note on immigration sections.** The life_uk and english_language sections cover two specific isolated requirements within UK naturalisation eligibility. The full naturalisation determination involves additional sections with exception chain structures of equivalent or greater complexity to the spacecraft section; those are not included here.
 
@@ -454,7 +440,7 @@ Numbers are the v3.6 / v3.7 snapshot (March 2026); v3.8 replication numbers are 
 
 | Model | March 2026 (v3.7) | April 2026 (v3.8 replication, same prompt + harness) |
 |:--------------------|:------:|:--------------------:|
-| **Eligibility Module** | **68/68 (100%) [94.7–100]** | **68/68 (100%)** (deterministic; invariant by construction) |
+| **Eligibility Module** | **68/68 (100%) [94.7–100]** | **68/68 (100%)** (deterministic) |
 | GPT-5.4 | 68/68 (100%) | not re-tested (was already at 100%) |
 | Claude Opus 4.7 (Anthropic's strongest at evaluation, Apr 2026) | not in v3.7 | **68/68 (100%)** [94.7–100] |
 | Claude Opus 4.6 | 61/68 (89.7%) [80.2–94.9] | **67/68 (98.5%)** [92.1–99.7] — 6 fewer failures |
@@ -503,7 +489,7 @@ Primary results on the 58-scenario construction insurance benchmark. v3.7 number
 
 | Model              | March 2026 (v3.7) | April 2026 (v3.8 replication, full 58-suite + 16 early scenarios from the §6.9 exception-chain expansion set) |
 |--------------------|---------------------------|--------------------|
-| **Eligibility Module** | **58/58 (100%)  [93.8–100.0]** | **74/74 (100%)** [95.1–100] (deterministic; invariant by construction) |
+| **Eligibility Module** | **58/58 (100%)  [93.8–100.0]** | **74/74 (100%)** [95.1–100] (deterministic) |
 | GPT-5.4            | 56/58 (96.6%) [88.3–99.0] | **74/74 (100%)** [95.1–100] — closed silently between March and April |
 | Claude Opus 4.7 (Anthropic's strongest at evaluation, Apr 2026)    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
 | Claude Opus 4.6    | not tested in v3.7 | 74/74 (100%) [95.1–100] |
@@ -512,31 +498,31 @@ Primary results on the 58-scenario construction insurance benchmark. v3.7 number
 
 *GPT-5.3 was the cost-tier production reference in v3.7 (claimed 7/11 on the n=11 exception-chain subset). The model alias was deprecated by OpenAI between March and April 2026 (`NotFoundError: model gpt-5.3 does not exist`). Replication impossible.*
 
-The v3.7 paper's lead frontier-LLM failure case (GPT-5.4 missing 2/58 construction scenarios) does not replicate in v3.8. The v3.4 / v3.7 narrative *"no frontier model achieves 100% across all four paper domains"* must be qualified: as of April 2026, GPT-5.4, Opus 4.7, and Opus 4.6 all reach 100% on the v3.7 58-scenario construction benchmark using the same paper-prompt format. Sonnet 4.6 still fails 2/74; GPT-4.1-mini still fails 9/74; the cost-tier and a small set of mid-tier failure modes remain visible. **The v3.7 paper-suite no longer differentiates the engine from the strongest frontier configurations on the controlled benchmark — and that is itself the point.** §6.4.1 below documents the v3.8 adversarial extension that does still differentiate, demonstrating that the structural advantage holds at deeper composition.
+The v3.7 paper's lead frontier-LLM failure case (GPT-5.4 missing 2/58 construction scenarios) does not replicate in v3.8. The v3.4 / v3.7 narrative *"no frontier model achieves 100% across all four paper domains"* must be qualified: as of April 2026, GPT-5.4, Opus 4.7, and Opus 4.6 all reach 100% on the v3.7 58-scenario construction benchmark using the same paper-prompt format. Sonnet 4.6 still fails 2/74; GPT-4.1-mini still fails 9/74; the cost-tier and a small set of mid-tier failure modes remain visible. **The v3.7 paper suite no longer differentiates the engine from the strongest frontier configurations. That is the moving-boundary problem in miniature: the benchmark stood still and the models moved — in this instance toward the ceiling, silently, under unchanged aliases.** §6.4.1 below documents the v3.8 adversarial extension, where the gap re-opens at deeper composition.
 
 Replication artefacts: `confidently-wrong-benchmark/legalbench/docs/replication/A*.json` and `STREAM_A_REPORT.md` for full per-scenario JSON, including which specific scenarios each model failed on.
 
 **Table 8b: Construction Insurance — Exception-Chain Sub-Study (N=11)**
 
-Inter-model comparison on the 11-scenario `exception_chain`-tagged subset. Wilson 95% CIs in brackets. The original v3.6 / v3.7 row "GPT-5.4 (low reasoning) — 7/11 (63.6%)" is **withdrawn in v3.8** following an instrumented replication that returned 11/11 (100%) correct under explicit `reasoning_effort=low`; see `docs/r5-withdrawal-note.md` and Finding 5 above. The §6.9 pre-registered N=66 replication remains the venue for any larger-sample reasoning-effort test.
+Inter-model comparison on the 11-scenario `exception_chain`-tagged subset. Wilson 95% CIs in brackets. The original v3.6 / v3.7 row "GPT-5.4 (low reasoning) — 7/11 (63.6%)" is **withdrawn in v3.8** following an instrumented replication that returned 11/11 (100%) correct with the low reasoning-effort configuration explicitly requested; see `docs/r5-withdrawal-note.md` and Finding 5 (§6.5). The §6.9 pre-registered N=66 replication remains the venue for any larger-sample reasoning-effort test.
 
 | Model                   | Exception-chain (n=11)    | Notes                                |
 |-------------------------|---------------------------|--------------------------------------|
-| **Eligibility Module**  | **11/11 (100%)  [74.1–100.0]** | deterministic by construction       |
+| **Eligibility Module**  | **11/11 (100%)  [74.1–100.0]** | deterministic                       |
 | GPT-5.4 (default)       | 10/11 (90.9%) [62.3–98.4] | original v3.6 / v3.7 figure          |
-| GPT-5.4 (`reasoning_effort=low`, v3.8 replication) | 11/11 (100%) [74.1–100.0] | instrumented; cannot reproduce v3.6 / v3.7 7/11 |
+| GPT-5.4 (low reasoning effort, v3.8 replication) | 11/11 (100%) [74.1–100.0] | instrumented; cannot reproduce v3.6 / v3.7 7/11 |
 | GPT-5.3                 | 7/11 (63.6%)  [35.4–84.8] | production-tier baseline             |
 | GPT-4.1-mini            | 5/11 (45.5%)  [21.3–72.0] | cost-tier baseline                   |
 
-GPT-5.3 scores 7/11 (63.6%, 95% CI [35.4%, 84.8%]) on the 11-scenario exception chain subset. It correctly identifies absolute exclusions and simple carve-backs but fails on four scenarios requiring multi-level exception reasoning, including enhanced cover reinstatement, the pioneer override, and the depth-5 unblock. The v3.6 / v3.7 paper additionally claimed GPT-5.4 at `reasoning_effort=low` matched this 7/11 with the same four scenarios failing — that intra-model reasoning-effort claim is **withdrawn in v3.8**: an instrumented replication on the exact same 11 scenarios returned 11/11 correct under explicit `reasoning_effort=low`, and no committed script reproduces the original 7/11 figure (see Finding 5 above and `docs/r5-withdrawal-note.md`). The inter-model gap (GPT-5.3 64% vs GPT-5.4 default 91% on the same chain) is real and narrow; §6.9 pre-registers an N=66 replication for the deeper compute-dependence question.
+GPT-5.3 scores 7/11 (63.6%, 95% CI [35.4%, 84.8%]) on the 11-scenario exception chain subset. It correctly identifies absolute exclusions and simple carve-backs but fails on four scenarios requiring multi-level exception reasoning, including enhanced cover reinstatement, the pioneer override, and the depth-5 unblock. The v3.6 / v3.7 paper additionally claimed GPT-5.4 at low reasoning effort matched this 7/11 with the same four scenarios failing — that intra-model reasoning-effort claim is **withdrawn in v3.8**: an instrumented replication on the exact same 11 scenarios returned 11/11 correct with the low reasoning-effort configuration explicitly requested, and no committed script reproduces the original 7/11 figure (see Finding 5, §6.5, and `docs/r5-withdrawal-note.md`). The inter-model gap (GPT-5.3 64% vs GPT-5.4 default 91% on the same chain) is real and narrow; §6.9 pre-registers an N=66 replication for the deeper compute-dependence question.
 
-Note: v3.5 of this paper reported GPT-5.3 at 27% (3/11). That figure was inflated by a harness configuration issue in which the output budget was too small for reasoning models — their internal chain-of-thought tokens consumed the budget before visible output was produced, which scored as errors. With the corrected budget, GPT-5.3's actual accuracy is 64%. The correction is detailed in Section 6.8.
+Note: v3.5 of this paper reported GPT-5.3 at 27% (3/11). That figure was inflated by a configuration issue in the benchmark harness under which some reasoning-model responses were cut off before a visible answer was produced and scored as errors. With the harness corrected, GPT-5.3's actual accuracy is 64%. The correction is detailed in Section 6.8.
 
-GPT-5.4 was reported in March 2026 to fail on the pioneer override boundary: `access_500m_design` was incorrectly rejected (the override applies at ≥ £500 M), while the identical scenario at £800 M was correctly accepted. **In April 2026 this specific cell no longer reproduces:** GPT-5.4 returns the correct verdict (covered) on `access_500m_design` under the same prompt. GPT-4.1-mini's enhanced-cover-chain failure is still present in v3.8 replication. The Eligibility Module evaluates `500 >= 500 = True` with no ambiguity, regardless of model drift.
+GPT-5.4 was reported in March 2026 to fail on the pioneer override boundary: `access_500m_design` was incorrectly rejected (the override applies at ≥ £500 M), while the identical scenario at £800 M was correctly accepted. **In April 2026 this specific cell no longer reproduces:** GPT-5.4 returns the correct verdict (covered) on `access_500m_design` under the same prompt. GPT-4.1-mini's enhanced-cover-chain failure is still present in v3.8 replication. The engine evaluates `500 >= 500 = True` with no ambiguity, regardless of model drift.
 
 ### 6.4.1 v3.8 Adversarial Extension (20 scenarios)
 
-The v3.7 58-scenario suite no longer reliably differentiates the strongest frontier configurations from the Eligibility Module on the controlled benchmark — the specific failure cells documented in March 2026 have largely closed at current model performance. To re-establish a current frontier-LLM failure demonstration on the same domain (and to test whether the structural advantage of deterministic execution is real or transient), we authored 20 new construction-CAR scenarios stratified across five complexity dimensions:
+The v3.7 58-scenario suite no longer reliably differentiates the strongest frontier configurations from the Eligibility Module — the specific failure cells documented in March 2026 have largely closed at current model performance. To test whether frontier models still fail at deeper composition on the same domain, and whether the advantage of deterministic execution is durable or transient, we authored 20 new construction-CAR scenarios stratified across five complexity dimensions:
 
 - **A — Maximum-stack adversarial:** three or more rule-failure modes simultaneously (e.g. depth-6 pioneer override + non-JCT existing-structures + design defect + access damage).
 - **B — Threshold-boundary edge cases:** at-threshold (£100 M, £500 M), just-below (£99 M, £499 M), just-above (£100 M+ε, £500 M+ε).
@@ -544,7 +530,7 @@ The v3.7 58-scenario suite no longer reliably differentiates the strongest front
 - **D — Surface-vs-deep contradiction:** surface text suggests opposite of correct answer (e.g. "£800 M project, design defect, access damage" surface signal = not covered; correct answer = covered via pioneer override).
 - **E — Conjunction tracking:** every condition near-violating; one boolean flip reverses the outcome.
 
-By design, these 20 scenarios stress-test specific compositional failure modes. They are not claimed to be representative of typical legislative drafting frequency or distribution; they are an adversarial probe at the upper end of the complexity stack the Module is intended to handle, included to demonstrate that the structural advantage persists when frontier models are pushed beyond the v3.7 baseline difficulty.
+By design, these 20 scenarios stress-test specific compositional failure modes. They are not claimed to be representative of typical legislative drafting frequency or distribution; they are an adversarial probe at the upper end of the complexity stack the Module is intended to handle, included to test whether the engine's advantage persists when frontier models are pushed beyond the v3.7 baseline difficulty.
 
 **Methodology — addressing the code-derived ground-truth critique.** Each scenario was authored with an *independent prose justification* for its expected outcome before the engine was consulted. The prose lives in the scenario's `notes:` field; the binary expected-value (`expect.outcome`) was authored in the same pass for consistency. The scenarios were then submitted to the engine via the public `/api/v1/public/decide` endpoint against the canonical bundle `construction-all-risks:20260412-gold` (the same bundle the full 74-scenario replication suite of Table 8a uses; the rule encoding was *not* modified for the v3.8 extension). Engine outcome matched authored expectation on 20/20, indicating self-consistency between the prose, the binary, and the rule encoding. The frontier-LLM runs (below) provide a third independent check: when models read the same `source.md` and answer the same scenarios, their disagreements with engine reveal model failures, not authoring errors (see §6.4.1 cross-evaluation note).
 
@@ -553,20 +539,22 @@ By design, these 20 scenarios stress-test specific compositional failure modes. 
 **Table 8c: v3.8 Adversarial Extension — 20 scenarios, 4 frontier-LLM configurations**
 
 | Configuration | Correct | Wilson 95% CI | Failure scenarios |
-|---|:--:|:--:|---|
+|:----------------------------------|:------------:|:-------------:|:---------------------------|
 | **Eligibility Module** | **20/20 (100%)** | **[83.9–100]** | — |
-| GPT-5.4 (`reasoning_effort=low`) | 20/20 (100%) | [83.9–100] | — |
-| Claude Sonnet 4.6 | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit` |
-| GPT-5.4 (default) | 19/20 (95.0%) | [76.4–99.1] | `v38_e4_carveback_gap_explicit`; **0 reasoning tokens on every scenario** |
-| **Claude Opus 4.7** (Anthropic's strongest at evaluation, Apr 2026) | **18/20 (90.0%)** | **[69.9–97.2]** | `v38_b3_499m_workmanship_access_no_design_limit`, `v38_e4_carveback_gap_explicit` |
+| GPT-5.4 (low reasoning effort) | 20/20 (100%) | [83.9–100] | — |
+| Claude Sonnet 4.6 | 19/20 (95.0%) | [76.4–99.1] | E4 (carveback gap) |
+| GPT-5.4 (default)* | 19/20 (95.0%) | [76.4–99.1] | E4 (carveback gap) |
+| Claude Opus 4.7† | 18/20 (90.0%) | [69.9–97.2] | B3 (£499 M boundary), E4 |
+
+*\*GPT-5.4 (default) engaged no extended reasoning on any scenario; see the reasoning-effort observation below. †Anthropic's strongest model at evaluation time (April 2026). Scenario labels map to the released YAML: E4 = `v38_e4_carveback_gap_explicit`, B3 = `v38_b3_499m_workmanship_access_no_design_limit`.*
 
 **Figure 9: v3.8 adversarial extension forest plot.**
 
-![Wilson 95% CIs across the five evaluated configurations on the 20-scenario v3.8 adversarial CAR extension. The Eligibility Module is at the 100% ceiling by construction. Three of four frontier-LLM configurations fail at least one scenario; Opus 4.7 (Anthropic's strongest model at evaluation time, April 2026) fails two. Generated from Table 8c data by `figures/scripts/forest_plot_v3_8_adversarial.py`.](figures/forest_v3_8_adversarial.png)
+![Wilson 95% CIs across the five evaluated configurations on the 20-scenario v3.8 adversarial CAR extension. The Eligibility Module and GPT-5.4 at low reasoning effort sit at the 100% ceiling; the other three frontier-LLM configurations each fail at least one scenario, with Opus 4.7 (Anthropic's strongest model at evaluation time, April 2026) failing two. Generated from Table 8c data by `figures/scripts/forest_plot_v3_8_adversarial.py`.](figures/forest_v3_8_adversarial.png)
 
-**Cross-evaluation note: the carveback-gap scenario (E4) is failed by three of four frontier-LLM configurations across both Anthropic and OpenAI families.** The scenario tests the DE3/LEG3 coverage gap explicitly documented in `source.md` Cl. 7 commentary: with `is_access_damage=true` and `consequence_of_failure=false`, the carveback group fails (Route A needs consequence; Route B needs not-access). The £200 M project value qualifies for enhanced cover, but the prior carveback gate blocks the claim before the enhanced-cover logic is reached. GPT-5.4 default and Sonnet 4.6 return `eligible`; Opus 4.7 returns `eligible`; correct answer is `not_eligible`. Only GPT-5.4 at `reasoning_effort=low` — the configuration that forces the model to use reasoning tokens (95 tokens on E4) rather than short-circuit (default = 0 reasoning tokens on every scenario) — gets it right. The pattern is consistent with a structural compositional-evaluation failure mode rather than a per-model artefact.
+**Cross-evaluation note: the carveback-gap scenario (E4) is failed by three of four frontier-LLM configurations across both Anthropic and OpenAI families.** The scenario tests the DE3/LEG3 coverage gap explicitly documented in `source.md` Cl. 7 commentary: with `is_access_damage=true` and `consequence_of_failure=false`, the carveback group fails (Route A needs consequence; Route B needs not-access). The £200 M project value qualifies for enhanced cover, but the prior carveback gate blocks the claim before the enhanced-cover logic is reached. GPT-5.4 default and Sonnet 4.6 return `eligible`; Opus 4.7 returns `eligible`; correct answer is `not_eligible`. Only GPT-5.4 at low reasoning effort — the configuration that forces the model to deliberate on the scenario rather than answer immediately (at default effort it engaged no extended reasoning on any scenario) — gets it right. The pattern is consistent with a structural compositional-evaluation failure mode rather than a per-model artefact.
 
-**Reasoning-effort observation.** GPT-5.4 at default reasoning effort uses **0 reasoning tokens on 20 of 20 v3.8 adversarial scenarios** — the API returns the answer in 4–6 completion tokens with no chain-of-thought. At `reasoning_effort=low`, the same model uses 16–126 reasoning tokens per scenario. On the harder cases this additional deliberation matters: low-reasoning gets E4 right where default short-circuits to wrong. The v3.6 / v3.7 paper claim that "default reasoning is better than low reasoning" (Finding 5, withdrawn) appears to be inverted under current model behaviour — default short-circuits without reasoning; low forces deliberation.
+**Reasoning-effort observation.** GPT-5.4 at default reasoning effort engaged **no extended reasoning on any of the 20 v3.8 adversarial scenarios** — it returns an immediate short answer with no visible deliberation. At low reasoning effort, the same model deliberates on every scenario. On the harder cases this additional deliberation matters: low-reasoning gets E4 right where default short-circuits to wrong. The v3.6 / v3.7 paper claim that "default reasoning is better than low reasoning" (Finding 5, withdrawn) appears to be inverted under current model behaviour — default short-circuits without deliberating; low forces deliberation.
 
 Replication artefacts: `tools/replication_run.py`, `tools/run_engine_v3_8_adversarial.py`, scenario YAML at `dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml`, per-scenario JSONs at `docs/replication/B3_*.json` and `docs/replication/B4_*.json`, full report at `docs/replication/STREAM_B_REPORT.md`. All in the public `confidently-wrong-benchmark/legalbench/` (paths relative to that repo root).
 
@@ -574,23 +562,23 @@ Replication artefacts: `tools/replication_run.py`, `tools/run_engine_v3_8_advers
 
 Six findings emerge from the multi-model benchmark (one, Finding 5, was withdrawn in v3.8 and is retained below for the record):
 
-**Finding 1: The failure pattern is exception-chain specific.** All frontier models achieve 100% on `english_language` (43 scenarios with multi-route logic). On the spacecraft section with its three-level exception chain, Claude Opus 4.6 drops to 90% and GPT-5-mini to 75%. The breaking point is nested exceptions, not legal reasoning in general.
+**Finding 1: The failure pattern is exception-chain specific.** All frontier models evaluated on `english_language` achieve 100% (43 scenarios with multi-route logic; §6.1 coverage matrix). On the spacecraft section with its three-level exception chain, Claude Opus 4.6 drops to 90% and GPT-5-mini to 75%. The breaking point is nested exceptions, not legal reasoning in general.
 
 **Finding 2: The baseline failures are false negatives.** Across the March 2026 baseline evaluations (§6.3–§6.4), we observed no false positives: no LLM ever declared an ineligible applicant eligible or a non-covered claim covered. The baseline failure mode is exclusively conservative - but in a high-stakes context, a false negative may deny someone a pathway the rules explicitly provide. Two later evaluation arms are explicit exceptions to the no-false-positive observation: the §6.4.1 v3.8 adversarial extension, where three frontier configurations (GPT-5.4 default, Sonnet 4.6, and Opus 4.7) return `eligible` on the `not_eligible` E4 carveback-gap scenario — false positives (§6.4.1); and the §6.10 LegalBench classification baselines, which exhibit positive-class anchoring under the upstream few-shot prompt format, also producing false positives (see §6.10.4).
 
 **Finding 3: The veteran exemption is the universal failure point.** The most-failed scenario across all models is `age_59_veteran_1000hrs`. Claude Opus 4.6 and Sonnet 4.6 mark this person ineligible on every run (0/3); GPT-5-mini answers correctly on only 1 of 3 runs; GPT-5.4 alone is correct on all runs (Table 2). The LLM conflates two independent exemption pathways.
 
-**Finding 4 (revised v3.8): Frontier model accuracy is unstable across model updates and prompt configurations.** The v3.6 / v3.7 paper reported that GPT-5.4 dropped to 96.6% on the construction insurance section while achieving 100% on spacecraft and immigration. **The v3.8 replication finds that specific failure case has closed:** under the same paper-prompt format and harness, current `gpt-5.4` is 74/74 (100%) on the full construction-CAR suite (Table 8a). The Opus 4.6 spacecraft accuracy also rose from 89.7% (March) to 98.5% (April) under the same `claude-opus-4-6` alias. No model-version bump was announced; the specific empirical failures changed silently between months. The structural failure pattern remains observable on the v3.8 adversarial extension (§6.4.1: Opus 4.7 fails 2/20, GPT-5.4 default fails 1/20, Sonnet 4.6 fails 1/20), and on §6.10 LegalBench (combined McNemar's *p* < 0.001 vs each frontier model). For a regulated workflow built on a benchmark-time accuracy claim, the central practical observation is that the specific model performance is a moving target — even within a single model alias — while the deterministic execution layer is invariant by construction.
+**Finding 4 (revised v3.8): Frontier model accuracy is unstable across model updates and prompt configurations.** The v3.6 / v3.7 paper reported that GPT-5.4 dropped to 96.6% on the construction insurance section while achieving 100% on spacecraft and immigration. **The v3.8 replication finds that specific failure case has closed:** under the same paper-prompt format and harness, current `gpt-5.4` is 74/74 (100%) on the full construction-CAR suite (Table 8a). The Opus 4.6 spacecraft accuracy also rose from 89.7% (March) to 98.5% (April) under the same `claude-opus-4-6` alias. No model-version bump was announced; the specific empirical failures changed silently between months. The structural failure pattern remains observable on the v3.8 adversarial extension (§6.4.1: Opus 4.7 fails 2/20, GPT-5.4 default fails 1/20, Sonnet 4.6 fails 1/20), and on §6.10 LegalBench (combined McNemar's *p* ≤ 0.003 vs each frontier model; Table 6.10.B). For a regulated workflow built on a benchmark-time accuracy claim, the practical consequence is that specific model performance is a moving target — even within a single model alias — while the deterministic execution layer does not move.
 
-**Finding 5 — WITHDRAWN in v3.8.** Earlier revisions of this paper (v3.6, v3.7) reported, as a tentative N=11 finding, that GPT-5.4 at `reasoning_effort=low` scored 7/11 (63.6%) on the construction-CAR exception-chain subset, matching GPT-5.3 at default reasoning. **The v3.8 polish pass could not reproduce this result.** Two converging issues: (a) the committed LLM-comparison harness in `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py` does not pass `reasoning_effort` as an OpenAI API parameter, and no other committed script produced the v3.6 / v3.7 figure — the original result has no committed-code provenance; (b) an instrumented v3.8 replication on the exact 11 `exception_chain`-tagged scenarios with explicit `reasoning_effort=low` and full per-call logging returns 11/11 (100%) correct, with all responses non-empty (`finish_reason=stop`) and reasoning-token counts in the expected 13–166 range. The parsimonious explanation is that the v3.6 / v3.7 result was a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 token-budget bug (§6.8 *Harness configuration correction*); we cannot rule out model drift since the original test, but the absence of a reproducible script is on its own sufficient to retract. Full withdrawal note, replication command, and per-scenario JSON: `docs/r5-withdrawal-note.md` and `docs/verify_gpt5_reasoning_n11.json`. Section 6.9's pre-registered N=66 replication is retained as the venue in which any larger-sample reasoning-effort effect would be detected.
+**Finding 5 — WITHDRAWN in v3.8.** Earlier revisions of this paper (v3.6, v3.7) reported, as a tentative N=11 finding, that GPT-5.4 at low reasoning effort scored 7/11 (63.6%) on the construction-CAR exception-chain subset, matching GPT-5.3 at default reasoning. **The v3.8 polish pass could not reproduce this result.** Two converging issues: (a) the committed LLM-comparison harness in `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py` does not exercise the reduced reasoning-effort configuration, and no other committed script produced the v3.6 / v3.7 figure — the original result has no committed-code provenance; (b) an instrumented v3.8 replication on the exact 11 `exception_chain`-tagged scenarios, with the low reasoning-effort configuration explicitly requested and full per-call logging, returns 11/11 (100%) correct, with every response complete and non-empty and with deliberate reasoning activity recorded on each call. The parsimonious explanation is that the v3.6 / v3.7 result was a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 harness-configuration bug (§6.8 *Harness configuration correction*); we cannot rule out model drift since the original test, but the absence of a reproducible script is on its own sufficient to retract. Full withdrawal note, replication command, and per-scenario JSON: `docs/r5-withdrawal-note.md` and `docs/verify_gpt5_reasoning_n11.json`. Section 6.9's pre-registered N=66 replication is retained as the venue in which any larger-sample reasoning-effort effect would be detected.
 
-**Finding 6 (revised v3.8): The shifting-ground problem.** Multiple v3.6 / v3.7 frontier-LLM cells do not replicate under the same prompt and harness six weeks later. The most concrete examples: GPT-5.4 on construction-CAR moved from 96.6% to 100% (Table 8a); Opus 4.6 on spacecraft moved from 89.7% to 98.5% (Table 6); the v3.6 / v3.7 GPT-5.4 reasoning-effort-dependence claim (Finding 5) was withdrawn after an instrumented replication produced the opposite result; the GPT-5.3 model alias was deprecated by OpenAI mid-paper-cycle. None of these are catastrophic individually, but the pattern is that *frontier-LLM accuracy on a fixed benchmark is a function of the model snapshot, the harness configuration, and the prompt format — and at least one of these can shift without notice*. For a regulated workflow that depends on benchmark-time accuracy claims to certify deployment, this property is structurally incompatible with the verification pipelines required by frameworks like the EU AI Act. The Eligibility Module avoids this class of risk by construction: rules are compiled once at authoring time and evaluated deterministically thereafter; the same bundle gives the same answer on the same inputs in March, April, or any subsequent month, regardless of any silent change to upstream model behaviour. The v3.8 adversarial extension (§6.4.1) is published precisely so that this paper's frontier-LLM numbers are themselves replicable from the committed harness — not as a snapshot but as a procedure.
+**Finding 6 (revised v3.8): The shifting-ground problem.** Multiple v3.6 / v3.7 frontier-LLM cells do not replicate under the same prompt and harness six weeks later. The most concrete examples: GPT-5.4 on construction-CAR moved from 96.6% to 100% (Table 8a); Opus 4.6 on spacecraft moved from 89.7% to 98.5% (Table 6); the v3.6 / v3.7 GPT-5.4 reasoning-effort-dependence claim (Finding 5) was withdrawn after an instrumented replication produced the opposite result; the GPT-5.3 model alias was deprecated by OpenAI mid-paper-cycle. None of these are catastrophic individually, but the pattern is that *frontier-LLM accuracy on a fixed benchmark is a function of the model snapshot, the harness configuration, and the prompt format — and at least one of these can shift without notice*. For a regulated workflow that depends on benchmark-time accuracy claims to certify deployment, this property is structurally incompatible with the verification pipelines required by frameworks like the EU AI Act. The Eligibility Module avoids this class of risk: rules are compiled once at authoring time and evaluated deterministically thereafter; the same bundle gives the same answer on the same inputs in March, April, or any subsequent month, regardless of any silent change to upstream model behaviour. The v3.8 adversarial extension (§6.4.1) is published precisely so that this paper's frontier-LLM numbers are themselves replicable from the committed harness — not as a snapshot but as a procedure.
 
 ## 6.6 The Cost-Accuracy Trade-off
 
 | Property | Eligibility Module | GPT-5.4 (best LLM) |
 |----------|:-----------------:|:------------------:|
-| Deterministic | Yes (by construction) | No |
+| Deterministic | Yes | No |
 | Cost per evaluation | Near-zero marginal after compilation | ~\$0.02 per scenario |
 | Latency | <1ms | ~2–5 seconds |
 | Auditability | Exact logical path | Post-hoc rationalisation |
@@ -607,8 +595,8 @@ This section addresses the key question: whether the observed failures are promp
 
 | Condition | Claude Opus 4.6 | GPT-5.4 |
 |:----------------------------------------|:-----------------:|:-----:|
-| Generic prompt, T=0.3 (Claude) / API default (GPT), N=3 *(baseline)* | 90% (7 FN) | 100% |
-| Generic prompt, T=0, N=3 *(Claude only)* | 90% (7 FN, all 0/3) | N/A* |
+| Generic prompt, T=0.3 (Claude) / API default (GPT), N=3 *(temperature-sensitivity arm)* | 90% (7 FN) | 100% |
+| Generic prompt, T=0, N=3 *(primary configuration; Claude only)* | 90% (7 FN, all 0/3) | N/A* |
 | Generic prompt, T=0.3, N=10 *(Claude only)* | 90% (7 FN, all **0/10**) | - |
 | Enhanced prompt, N=3 | **65%** (4 FN + **20 FP**) | **99%** (1 FN) |
 
@@ -630,7 +618,7 @@ This is not simply a bad prompt. The enhanced prompt correctly identifies the re
 
 **R4: Run-to-run variance confirms fragility.** Re-running the enhanced prompt benchmark on the same model produces qualitatively identical results (20 FP, 4 FN) but with slight variance in which specific scenarios fail. This contrasts with the generic prompt, where the same 7 scenarios fail identically across independent runs. The enhanced prompt introduces not only new failure modes but also non-deterministic failure patterns - precisely the property a high-stakes system cannot tolerate.
 
-**R5 — WITHDRAWN in v3.8.** Earlier revisions of this paper reported that GPT-5.4 at `reasoning_effort=low` scored 7/11 on the construction-CAR exception chain, suggesting reasoning-compute-dependence within the GPT-5 family. The v3.8 polish pass found (a) no committed script reproduces the v3.6 / v3.7 result — the LLM-comparison harness at `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py` does not pass `reasoning_effort` as an API parameter, and (b) an instrumented replication on the exact 11 `exception_chain`-tagged scenarios with explicit `reasoning_effort=low` returns 11/11 (100%) correct, with all responses non-empty and reasoning tokens in the 13–166 range. Most likely cause: the v3.6 / v3.7 figure was a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 token-budget bug. The intra-model reasoning-compute-dependence hypothesis is therefore **withdrawn**. Claude Opus 4.6's temperature invariance (100% at both default T and T=1.0) stands as a separate observation but no longer serves as a parallel data point to a withdrawn claim. Section 6.9's pre-registered N=66 replication is retained as the venue for any larger-sample test of reasoning-effort dependence. Withdrawal note + per-scenario JSON: `docs/r5-withdrawal-note.md`, `docs/verify_gpt5_reasoning_n11.json`.
+**R5 — WITHDRAWN in v3.8.** Earlier revisions of this paper reported that GPT-5.4 at low reasoning effort scored 7/11 on the construction-CAR exception chain, suggesting reasoning-compute-dependence within the GPT-5 family. The v3.8 polish pass found (a) no committed script reproduces the v3.6 / v3.7 result — the LLM-comparison harness at `confidently-wrong-benchmark/benchmarks/run_llm_comparison.py` does not exercise the reduced reasoning-effort configuration, and (b) an instrumented replication on the exact 11 `exception_chain`-tagged scenarios, with the low reasoning-effort configuration explicitly requested, returns 11/11 (100%) correct, with every response complete and non-empty and deliberate reasoning activity recorded on each call. Most likely cause: the v3.6 / v3.7 figure was a harness artefact analogous to the v3.5 → v3.6 GPT-5.3 harness-configuration bug. The intra-model reasoning-compute-dependence hypothesis is therefore **withdrawn**. Claude Opus 4.6's temperature stability (identical spacecraft results at T=0 and T=0.3; Table 9) stands as a separate observation but no longer serves as a parallel data point to a withdrawn claim. Section 6.9's pre-registered N=66 replication is retained as the venue for any larger-sample test of reasoning-effort dependence. Withdrawal note + per-scenario JSON: `docs/r5-withdrawal-note.md`, `docs/verify_gpt5_reasoning_n11.json`.
 
 The robustness findings address the prompting-contest objection at the level of the strategies tested here. The gap is not caused by a suboptimal generic prompt that the enhanced variant fixes. On the two prompts tested, prompt engineering on this class of task exhibits a trade-off: instructions that reduce false negatives on exception chains simultaneously increase false positives by causing over-application of the same exemption logic. This is consistent with the compositional reasoning limitation identified by Dziri et al. [-@dziri2023faith]: the model does not have a stable internal representation of the exception chain structure that can be steered by prompt instructions without side effects. We find no evidence that the prompting strategies tested here reliably resolve the failure mode; whether richer strategies (few-shot, self-critique, decomposition, tool-augmented) close the gap is the pre-registered subject of §6.9.
 
@@ -640,10 +628,10 @@ We follow academic convention in identifying threats to the validity of these fi
 
 **Internal validity:**
 - *Prompt sensitivity.* The benchmark uses a generic prompt, not an optimised one. This is intentional (Section 6.1), but means we are not measuring best-possible LLM performance. The robustness analysis (Section 6.7) tests one enhanced prompt variant that specifically targets the identified failure pattern; it reduces false negatives but introduces false positives, with net accuracy decreasing. We cannot exclude the possibility that a different prompt strategy could improve accuracy without side effects, but the result demonstrates that targeted prompt repair on this class of task involves trade-offs between failure modes.
-- *Harness configuration correction (v3.6).* v3.5 reported GPT-5.3 at 27% (3/11) on the construction exception chain. That figure was inflated by a configuration issue in the benchmark harness: the output budget was too small for reasoning models, whose internal chain-of-thought tokens consumed the budget before visible output was produced, resulting in empty responses scored as errors. With the corrected budget, GPT-5.3's actual accuracy is 64% (7/11). The correction does not affect the qualitative finding — GPT-5.3 still fails systematically on multi-level exception scenarios — but the quantitative severity is less extreme than originally reported. The benchmark script has been corrected and the updated results are publicly reproducible.
+- *Harness configuration correction (v3.6).* v3.5 reported GPT-5.3 at 27% (3/11) on the construction exception chain. That figure was inflated by a configuration issue in the benchmark harness under which some reasoning-model responses were cut off before a visible answer was produced, and the resulting empty responses were scored as errors. With the harness corrected, GPT-5.3's actual accuracy is 64% (7/11). The correction does not affect the qualitative finding — GPT-5.3 still fails systematically on multi-level exception scenarios — but the quantitative severity is less extreme than originally reported. The benchmark script has been corrected and the updated results are publicly reproducible.
 - *Expected values partly code-derived.* The `life_uk` expected values are computed by Python code from the section’s authored eligibility formula (Appendix A.1); L.D. authored and validated the legal formalisation (Author Contributions), but the 56 generated expected values were not individually hand-verified. The `english_language` scenarios were hand-verified against Form AN guidance. The spacecraft scenarios use a synthetic statute with unambiguous values.
 - *Structured inputs only.* Applicant data is provided as typed key-value pairs. A production system requires extraction from natural language or documents; that layer is not tested here.
-- *Adversarial scenarios are post-hoc.* The spacecraft adversarial suite was designed after observing LLM failure patterns. The baseline results (48 scenarios) show the same failure pattern; the adversarial additions amplify it. Selection bias of this kind is addressed for the LegalBench external-validation arm by §6.10.3's pre-registered random-sample replication (seeds 42, 43, 44).
+- *Adversarial scenarios are post-hoc.* The spacecraft adversarial suite was designed after observing LLM failure patterns. The baseline results (48 scenarios) show the same failure pattern; the adversarial additions amplify it. Selection bias of this kind is addressed for the LegalBench external-validation arm by §6.10.3's pre-registered random-sample replication (seeds 42 and 43 run; seed 44 pre-registered but not yet run).
 
 **External validity:**
 - *Synthetic domains.* The spacecraft domain uses a synthetic statute. The construction insurance domain uses synthetic policy wording modelled on real clauses. Findings in these domains may not generalise directly to all legal contexts. §6.10 provides cross-domain external validity on a public peer-reviewed legal-reasoning benchmark (LegalBench).
@@ -705,13 +693,13 @@ Table 6.10.A reports per-task accuracy on the held-out evaluation sample, with 9
 
 \normalsize
 
-¹ Random sample, seed=42 (pre-registered in `tools/random_task_pick.py`). Personal jurisdiction is 28 USC §1332(a). Notice-on-compelled-disclosure full task name: `contract_nli_notice_on_compelled_disclosure`. Explicit-id full name: `contract_nli_explicit_identification`. Opp115 full name: `opp115_international_and_specific_audiences`.
+¹ Random sample, seed=42 (pre-registered in `tools/random_task_pick.py`). Notice-on-compelled-disclosure full task name: `contract_nli_notice_on_compelled_disclosure`. Explicit-id full name: `contract_nli_explicit_identification`. Opp115 full name: `opp115_international_and_specific_audiences`.
 
 ² Random sample, seed=43.
 
 **Cell legend.** Engine column: correct/n (accuracy, 95% Wilson CI). LLM columns: correct/n (accuracy); Δ vs Engine in percentage points / exact two-sided McNemar's *p* on per-case discordance with the Engine. Negative Δ indicates the LLM out-performed the Engine at that N; no negative Δ reaches significance.
 
-When per-task results are aggregated by paired-binomial test on discordant cases across the full 949-case held-out evaluation, the Eligibility Module is significantly more accurate than each of the three frontier models at the conventional $p < 0.05$ level:
+When per-task results are aggregated by paired-binomial test on discordant cases across the full 949-case held-out evaluation, the engine is significantly more accurate than each of the three frontier models at the conventional $p < 0.05$ level:
 
 **Table 6.10.B — Combined paired-binomial across 9 LegalBench tasks**
 
@@ -723,9 +711,9 @@ When per-task results are aggregated by paired-binomial test on discordant cases
 
 The aggregate GPT-5.4 comparison should be interpreted cautiously. Most of the discordant GPT-5.4 cases arise from the classification-prompt sensitivity analysed in §6.10.4, not from the multi-prong rule-evaluation tasks that provide the closest external analogue to the exception-chain failure pattern in §4.2. We therefore treat the GPT-5.4 aggregate as evidence that the Module remains robust under the evaluated LegalBench protocol, not as a broad claim about GPT-5.4's best-achievable legal-reasoning performance.
 
-**Per-task statistical power.** The small-N curated tasks have limited per-task power: `personal_jurisdiction` (N=25) cannot detect held-out accuracy differences smaller than approximately ±20pp at $\alpha = 0.05$, 80% power, and `hearsay` (N=47) is similarly underpowered for $\Delta < 14$pp. The load-bearing test in this section is the combined paired-binomial across all 949 held-out cases (Table 6.10.B); per-task McNemar's *p*-values are reported for completeness but should be interpreted as supplementary, particularly on the curated multi-prong tasks.
+**Per-task statistical power.** The small-N curated tasks have limited per-task power: `personal_jurisdiction` (N=25) cannot detect held-out accuracy differences smaller than approximately ±20pp at $\alpha = 0.05$, 80% power, and `hearsay` (N=47) is similarly underpowered for $\Delta < 14$pp. The primary inferential test in this section is the combined paired-binomial across all 949 held-out cases (Table 6.10.B); per-task McNemar's *p*-values are reported for completeness but should be interpreted as supplementary, particularly on the curated multi-prong tasks.
 
-**Multiple comparisons.** Table 6.10.A reports 27 simultaneous per-task McNemar's tests (9 tasks × 3 LLMs), uncorrected. Under Bonferroni correction at $\alpha = 0.05/27 \approx 0.0019$, only the strongest comparisons remain individually significant (most of the GPT-5.4 cells; `jcrew_blocker` vs Sonnet). The combined paired-binomial in Table 6.10.B aggregates discordant pairs across all tasks and is a single test, not subject to the same correction; it is the load-bearing inferential claim and remains $p \le 0.003$ against every model under any reasonable family-wise correction.
+**Multiple comparisons.** Table 6.10.A reports 27 simultaneous per-task McNemar's tests (9 tasks × 3 LLMs), uncorrected. Under Bonferroni correction at $\alpha = 0.05/27 \approx 0.0019$, only the strongest comparisons remain individually significant (most of the GPT-5.4 cells; `jcrew_blocker` vs Sonnet). The combined paired-binomial in Table 6.10.B aggregates discordant pairs across all tasks and is a single test, not subject to the same correction; it is the primary inferential claim and remains $p \le 0.003$ against every model under any reasonable family-wise correction.
 
 **Figure 7: LegalBench per-task held-out accuracy with Wilson 95% CIs.**
 
@@ -739,7 +727,7 @@ The six random-sample tasks span CUAD contract-clause classification, ContractNL
 
 The result is consistent: the Eligibility Module wins on the random-sample tasks, but with smaller per-task margins against Sonnet 4.6 and Opus 4.7 (1–3 percentage points on the random sample, versus up to +41 percentage points on the curated multi-prong tasks); GPT-5.4’s per-task margins are larger in both arms but are dominated by the §6.10.4 prompt-format sensitivity rather than the exception-chain pattern. The combined paired-binomial test reported in Table 6.10.B includes both curated and random-sample tasks; with the curated subset removed, the random-sample combined comparison reaches significance against GPT-5.4 ($b=331$, $c=33$, $p<0.001$); against Opus 4.7 it is suggestive but not significant ($b=26$, $c=13$, $p=0.053$), and against Sonnet 4.6 it is positive but not significant ($b=22$, $c=14$, $p=0.24$). (Correction, v3.11: earlier revisions printed random-only aggregates computed under a mislabelled five-task partition that counted `cuad_covenant_not_to_sue` as curated; the figures above are recomputed from the committed per-task discordance tables over the documented six-task random sample, and reconcile with Table 6.10.B, whose all-nine-task result is unaffected.)
 
-The interpretation: the Eligibility Module's structural advantage is **largest where the underlying rule has multiple genuinely-distinct prongs** combined by deterministic logic — exactly the failure pattern of §4.2. On single-clause classification tasks the structural advantage shrinks to a 1–3 percentage point edge that is directionally consistent across tasks but small per task; at the random-only level the combined test detects it clearly only against GPT-5.4 — the all-nine-task combination in Table 6.10.B is the load-bearing aggregate.
+The interpretation: the Eligibility Module's structural advantage is **largest where the underlying rule has multiple genuinely-distinct prongs** combined by deterministic logic — exactly the failure pattern of §4.2. On single-clause classification tasks the structural advantage shrinks to a 1–3 percentage point edge that is directionally consistent across tasks but small per task; at the random-only level the combined test detects it clearly only against GPT-5.4 — the all-nine-task combination in Table 6.10.B is the primary aggregate.
 
 ### 6.10.4 GPT-5.4 prompt-format sensitivity on classification tasks
 
@@ -749,7 +737,7 @@ We do not characterise this as a capability statement about GPT-5.4 broadly, and
 
 This distinction matters because the same model recovers under a simpler prompt. We tested `cuad_covenant_not_to_sue` with a zero-shot variant: the same model and the same task description from `sources/rule.md`, but no few-shot Q/A examples — only the rule, the clause, and the question "Answer Yes or No." On the same 154-case held-out subset, GPT-5.4 zero-shot achieves **143/154 (92.9%)**, up from 83/154 (53.9%) under the few-shot prompt — a +39pp recovery. The yes-rate normalises from 98.7% under the few-shot prompt to 45.5%, matching the dataset's underlying ~50% positive prior. This empirically confirms the framing for this task: the low GPT-5.4 few-shot result is **prompt-format-coupled, not a model-capability ceiling**.
 
-Notably, the Eligibility Module still beats GPT-5.4 zero-shot on this task: 150/154 (97.4%) vs 143/154 (92.9%), exact two-sided McNemar's *b* = 7, *c* = 0, *p* = 0.016. The structural advantage holds even against the best-prompt configuration of the strongest LLM tested.
+Notably, the engine still beats GPT-5.4 zero-shot on this task: 150/154 (97.4%) vs 143/154 (92.9%), exact two-sided McNemar's *b* = 7, *c* = 0, *p* = 0.016. The margin holds even against the best-prompt configuration of the strongest LLM tested.
 
 **Figure 8: GPT-5.4 calibration cliff and zero-shot recovery.**
 
@@ -770,7 +758,7 @@ To test this, we re-ran the Eligibility Module pipeline with **Opus 4.7 as the r
 | `hearsay` (94) | 76.6% | 90.4% | 83.0% | 86.2% |
 | `personal_jurisdiction` (50) | 92.0% | 98.0% | 92.0% | 98.0% |
 
-The Eligibility Module's structural advantage holds for **both** extractor models. On `personal_jurisdiction`, the lift is identical (+6.0pp) regardless of extractor; on `hearsay`, the lift is +13.8pp with Sonnet and +3.2pp with Opus — Opus is genuinely better at hearsay reasoning end-to-end, so the symbolic engine adds less incremental value to the stronger extractor. In neither case does the Eligibility Module pipeline lose to its corresponding LLM-only baseline. The result is consistent with the §4.2 framing: the deterministic conjunction step is the source of the gain, not the choice of extractor.
+The advantage holds for **both** extractor models. On `personal_jurisdiction`, the lift is identical (+6.0pp) regardless of extractor; on `hearsay`, the lift is +13.8pp with Sonnet and +3.2pp with Opus — Opus is genuinely better at hearsay reasoning end-to-end, so the symbolic engine adds less incremental value to the stronger extractor. In neither case does the Module pipeline lose to its corresponding LLM-only baseline. The result is consistent with the §4.2 framing: the deterministic conjunction step is the source of the gain, not the choice of extractor.
 
 ### 6.10.6 Discussion
 
@@ -778,7 +766,7 @@ The LegalBench results are external validation of the central claim of this pape
 
 The retroactive held-out methodology is acknowledged as a methodological compromise. For the three curated tasks, hint iteration during authoring used the full LegalBench `test` split before the held-out partition was introduced; the held-out results in Table 6.10.A are therefore reported on a half-test subset that the authors *did* see during iteration but did not focus on. For the six random-sample tasks, the held-out methodology was applied prospectively (hints iterated only on a dev half, holdout evaluated once with frozen hints). The combined paired-binomial result in Table 6.10.B is dominated by the random-sample tasks by case count (850 of 949 cases) and remains significant.
 
-**Engine error analysis.** The Eligibility Module is correct on 900/949 held-out cases (94.8%); the 49 errors are not uniformly distributed. By task: `opp115_international_and_specific_audiences` 23/347 (6.6%, the largest absolute contributor), `contract_nli_explicit_identification` 7/55 (12.7%, the highest rate), `learned_hands_health` 6/113 (5.3%), `cuad_liquidated_damages` 5/110 (4.5%), `cuad_covenant_not_to_sue` 4/154 (2.6%), `hearsay` 2/47 (4.3%), `personal_jurisdiction` 1/25 (4.0%), `contract_nli_notice_on_compelled_disclosure` 1/71 (1.4%), `jcrew_blocker` 0/27 (0.0%). The three curated multi-prong tasks contribute 3 errors out of 99 cases (3.0%); the six single-clause classification (random-sample) tasks contribute 46 errors out of 850 cases (5.4%). The pattern is consistent with the structural-advantage interpretation in §6.10.3: where the underlying rule has multiple genuinely-distinct prongs and the engine's deterministic conjunction step is structurally aligned with the rule shape, errors are rare. Where the task is single-clause classification and the engine reduces to "the LLM extractor's binary judgement, run through a one-clause rule," the engine's accuracy reflects the extractor's accuracy on borderline cases.
+**Engine error analysis.** The engine is correct on 900/949 held-out cases (94.8%); the 49 errors are not uniformly distributed. By task: `opp115_international_and_specific_audiences` 23/347 (6.6%, the largest absolute contributor), `contract_nli_explicit_identification` 7/55 (12.7%, the highest rate), `learned_hands_health` 6/113 (5.3%), `cuad_liquidated_damages` 5/110 (4.5%), `cuad_covenant_not_to_sue` 4/154 (2.6%), `hearsay` 2/47 (4.3%), `personal_jurisdiction` 1/25 (4.0%), `contract_nli_notice_on_compelled_disclosure` 1/71 (1.4%), `jcrew_blocker` 0/27 (0.0%). The three curated multi-prong tasks contribute 3 errors out of 99 cases (3.0%); the six single-clause classification (random-sample) tasks contribute 46 errors out of 850 cases (5.4%). The pattern is consistent with the structural-advantage interpretation in §6.10.3: where the underlying rule has multiple genuinely-distinct prongs and the engine's deterministic conjunction step is structurally aligned with the rule shape, errors are rare. Where the task is single-clause classification and the engine reduces to "the LLM extractor's binary judgement, run through a one-clause rule," the engine's accuracy reflects the extractor's accuracy on borderline cases.
 
 **Model-family and jurisdictional limitations.** This evaluation tests two model families (Anthropic via Sonnet 4.6 and Opus 4.7; OpenAI via GPT-5.4). It does not test other frontier or production LLMs (Llama, Gemini, DeepSeek, Mistral). The §6.10.4 calibration finding for GPT-5.4 is shown to be prompt-format-coupled within OpenAI's GPT-5 family but its presence or absence in other model families is untested. All nine LegalBench tasks evaluated here are US-jurisdiction English-language tasks; the §6 controlled benchmark is UK-leaning. Generalisation to other jurisdictions or non-English legal corpora is out of scope for the present revision.
 
@@ -790,7 +778,7 @@ The benchmark scenarios, source files, runners, statistical analysis script, and
 
 # 7. Challenges in LLM-Guided Rule Synthesis
 
-Rule authoring is the bottleneck. The execution layer (Level 3) provides deterministic guarantees by construction, but those guarantees are only as good as the rules they operate on. Execution correctness is a necessary precondition for trust — it eliminates one entire class of error — but the hard problem remains: can an LLM reliably formalise legislation into rules that faithfully capture the legislator's intent? This paper does not claim to solve that problem. It reports that the execution layer is robust and that we approach the Level 2 problem through two complementary quality mechanisms, summarised below. Implementation specifics — thresholds, iteration bounds, internal evaluator rubrics, and feedback-steering heuristics — are not disclosed here.
+Rule authoring is the bottleneck. The execution layer (Level 3) provides deterministic guarantees, but those guarantees are only as good as the rules they operate on. Execution correctness is a necessary precondition for trust — it eliminates one entire class of error — but the hard problem remains: can an LLM reliably formalise legislation into rules that faithfully capture the legislator's intent? This paper does not claim to solve that problem. It reports that the execution layer is robust and that we approach the Level 2 problem through two complementary quality mechanisms, summarised below. Implementation specifics — thresholds, iteration bounds, internal evaluator rubrics, and feedback-steering heuristics — are not disclosed here.
 
 ## 7.1 Iterative LLM-Assisted Authoring
 
@@ -843,7 +831,7 @@ The architecture is applicable to any domain exhibiting the three properties ide
 
 # 9. Compliance and Regulatory Considerations
 
-The EU AI Act [-@euaiact2024] classifies AI systems used in migration, asylum, and border control management as high-risk (Annex III, Category 7), requiring conformity assessments, risk management systems, and human oversight. Systems used for eligibility determination in regulated domains face increasing scrutiny under this framework. The architecture described here - deterministic execution with full provenance - is designed with these requirements in mind.
+The EU AI Act [-@euaiact2024] classifies as high-risk certain specified AI uses in migration, asylum, visa, and residence contexts when deployed by or on behalf of competent public authorities (Annex III, point 7), requiring conformity assessments, risk management systems, and human oversight. Whether a given deployment falls within Annex III depends on the specific use and deploying entity; we do not claim that the system described here is automatically in scope. More broadly, systems used for eligibility determination in regulated domains face increasing scrutiny under this and similar frameworks, and the architecture described here - deterministic execution with full provenance - is designed with those requirements in mind.
 
 ## 9.1 Auditability
 
@@ -867,11 +855,11 @@ flowchart LR
     ANC --> LEG[Authoritative Sources<br/>legislation.gov.uk<br/>GOV.UK guidance]
 ```
 
-This chain is qualitatively different from an LLM's reasoning trace. An LLM produces a natural language explanation that may not reflect its actual inference process. The Eligibility Module produces the exact logical path: the specific constraints evaluated, the specific values tested, and the specific branch of the OR expression that was or was not satisfied.
+This chain is qualitatively different from an LLM's reasoning trace. An LLM produces a natural language explanation that may not reflect its actual inference process. The engine produces the exact logical path: the specific constraints evaluated, the specific values tested, and the specific branch of the OR expression that was or was not satisfied.
 
 ## 9.2 Explainability and Human Oversight
 
-The Eligibility Module produces a binary determination with the exact logical path, not a confidence score. A solicitor can verify the determination by checking the logical path against their understanding of the legislation. The system supports human-supervised workflows and can be configured so that determinations are reviewed by a professional before external action is taken.
+The Module produces a binary determination with the exact logical path, not a confidence score. A solicitor can verify the determination by checking the logical path against their understanding of the legislation. The system supports human-supervised workflows and can be configured so that determinations are reviewed by a professional before external action is taken.
 
 ## 9.3 Quality Gates
 
@@ -879,9 +867,9 @@ The rule authoring pipeline includes multiple quality gates before a rule bundle
 
 ## 9.4 Model Drift and Bundle Certification
 
-Frontier LLMs change between API versions and, as the v3.8 replication documents (§6.5 Finding 4), within the same nominal model alias without announcement. For systems that perform inference on every query against a frontier LLM, this raises a regulatory question with no clean answer: how can a deployed determination system be certified at time T when the underlying inference engine can change at time T+1 without notice or visibility? The Eligibility Module separates this question into two parts that can be addressed independently.
+Frontier LLMs change between API versions and, as the v3.8 replication documents (§6.5 Finding 4), within the same nominal model alias without announcement. For systems that perform inference on every query against a frontier LLM, this raises a regulatory question with no clean answer: how can a deployed determination system be certified at time T when the underlying inference engine can change at time T+1 without notice or visibility? The architecture separates this question into two parts that can be addressed independently.
 
-**Execution layer (L3) is invariant by construction.** Once a rule bundle is compiled, every determination is produced by deterministic SMT-based evaluation against that bundle. No LLM is in the inference path. Frontier model changes — silent or announced — do not alter the determinations produced by an existing bundle on existing inputs. A regulator certifying a deployed bundle is certifying a fixed artefact, not a moving target.
+**Execution layer (L3) is invariant.** Once a rule bundle is compiled, every determination is produced by deterministic SMT-based evaluation against that bundle. No LLM is in the inference path. Frontier model changes — silent or announced — do not alter the determinations produced by an existing bundle on existing inputs. A regulator certifying a deployed bundle is certifying a fixed artefact, not a moving target.
 
 **Authoring layers (L1 retrieval, L2 formalisation) are versioned and replayable.** Each rule bundle is generated against a recorded model snapshot, with full provenance back to source legislation. If a future model would generate different rules from the same sources, the deployed bundle is unaffected; re-authoring is a deliberate, audited action that re-triggers test-driven validation (Section 7.3) and produces a new bundle version. SME test suites act as a regression gate: silent behavioural changes in the authoring model that affect rule semantics surface as test failures rather than as silent eligibility drift in production.
 
@@ -1018,7 +1006,7 @@ P.S. conceived the paper, designed and implemented the Eligibility Module — in
 
 # Competing Interests
 
-All authors are affiliated with Aethis, which develops and commercially deploys the Eligibility Module evaluated in this paper. The benchmark scenarios, harness, prompts, and per-case result artefacts are publicly released (see Data and Code Availability) so that all reported comparisons can be independently reproduced.
+All authors are affiliated with Aethis, which develops the Eligibility Module evaluated in this paper and is deploying it in a controlled UK immigration pilot, in which it prepares eligibility evaluations for solicitor review and solicitors remain the decision-makers. The benchmark scenarios, harness, prompts, and per-case result artefacts are publicly released (see Data and Code Availability) so that all reported comparisons can be independently reproduced.
 
 # Data and Code Availability
 
@@ -1032,6 +1020,6 @@ Both sub-corpora are intended to allow independent re-evaluation of the reported
 
 ---
 
-*Version 3.11.0 · Working paper · July 2026*
+*Version 3.13.0 · Working paper · July 2026*
 
-*Changelog: v3.11.0 — consistency and staleness pass; no benchmark numbers changed; added a zero-context cold-read verification pass (16 findings triaged: fixed / false-positive / number-disputed); corrected the §6.10.3 random-only combined aggregates, previously computed under a mislabelled five-task partition — recomputed from the committed per-task discordance tables over the documented six-task random sample (significance vs Sonnet 4.6 at the random-only level does not survive the correction; Table 6.10.B is unaffected). Unified the R2 false-negative accounting to the committed 7→4 figure across §2, §3.4, §6.7 R2 and Figure 5; scoped Finding 2's no-false-positives claim to the March 2026 baseline evaluations (§6.3–§6.4) and cross-referenced the §6.10 LegalBench positive-class anchoring; corrected Finding 3 against Table 2; reconciled the §6.1 / Table 9 temperature description (added the T=0.3 sensitivity-control note); re-dated the §6.9 pre-registration commitment to a subsequent revision with a July 2026 status note; distinguished the pre-registration annotated-tag object from its tagged commit SHA (§6.10.3, Data and Code Availability); added dated (evaluation-time) qualifiers to the previously-undated "strongest Anthropic model" claims; extended the §6.1 model roster and evaluation-coverage matrix to all evaluated configurations (added Claude Opus 4.7 and GPT-4.1-mini) and updated the §6 heading to eight LLMs; and added a Competing Interests statement. v3.10.0 — added a §3.1 paragraph on the "Rules as Code" movement (Mohun & Roberts 2020, Mowbray et al. 2023), positioning decision-tree legislative modelling as sharing the paper's core premise (formal encoding over statistical inference) while distinguishing the constraint-based approach by its ability to prove properties — completeness, consistency, unreachability of dead states — that decision-tree representations do not natively support. Two references added to the bibliography. No benchmark numbers changed; no downstream commercial document needs to re-sync. Earlier revision history omitted; full version history is tracked in git.*
+*Changelog: v3.13.0 — circulation-readiness correction; no benchmark numbers changed. Removed the general polynomial-time complexity claim for compiled-bundle evaluation, stating only that evaluation against a fixed applicant assignment and compiled bundle is deterministic (§5); qualified the EU AI Act discussion to the specified migration, asylum, visa, and residence uses deployed by or on behalf of competent public authorities, without implying the system is automatically within Annex III scope (§9); restated the deployment status as a controlled UK immigration pilot in which the system prepares eligibility evaluations for solicitor review and solicitors remain the decision-makers (§1 footnote, Competing Interests); abstracted prose-level benchmark-configuration mechanics (API parameter names, per-call token counts, response finish states, and harness output-budget debugging detail) from §6.4, §6.4.1, §6.5, §6.7, and §6.8, leaving all benchmark numbers and the public raw reproduction artefacts unchanged. A zero-context cold-read pass then re-synchronised the abstract and introduction with the body's own dated qualifications: March-2026 baseline dating on the §1/§2 headline figures, the combined LegalBench significance stated as *p* ≤ 0.003 per Table 6.10.B, the "+41pp" margin scoped to the curated tasks against the Anthropic models, and coverage-matrix-scoped model claims; plus minor labelling corrections (Table 9 arm labels, §6.10.A footnote, seed-44 status, cross-reference directions). v3.12.0 — editorial refactor for external circulation; no benchmark numbers changed. Abstract cut by roughly a third and restated around the moving-compliance-boundary framing, now stating plainly that one frontier configuration (GPT-5.4 at low reasoning effort) matches the engine 20/20 on the §6.4.1 extension; contribution summaries (§1, §2) updated from six to eight models to match the §6 heading, with the six-model original selection noted once in §6.1; reduced repeated hedging phrases ("by construction", "structural advantage", "load-bearing") to their definitional uses; restructured Table 3 (verification note moved to prose) and Table 8c (short E4/B3 scenario labels with a full-ID footnote) so all columns typeset within the page; regenerated Figure 9 without the in-figure footnote that collided with the axis label; the changelog is no longer rendered into the PDF (retained in the markdown source; full history in git). No downstream commercial document needs to re-sync. Earlier revision history omitted; full version history is tracked in git.*

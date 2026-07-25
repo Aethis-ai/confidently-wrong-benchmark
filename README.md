@@ -4,9 +4,9 @@ Frontier LLMs collapse on nested conditional rules of the form "A is required UN
 
 This repository contains the benchmark dataset, the v3.8 adversarial extension, the LegalBench external-validation harness, full per-call replication artefacts, and the accompanying paper.
 
-## Headline Results (paper v3.11.0, July 2026)
+## Headline Results (paper v3.13.0, July 2026)
 
-All numbers from the paper ([Simpson, Kozak, Doake, v3.11, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
+All numbers from the paper ([Simpson, Kozak, Doake, v3.13, 2026](paper/Simpson_Exception_Chain_Collapse_2026.md)). Three independent evidence sources.
 
 ### 1. v3.8 Adversarial Construction-CAR Extension (paper §6.4.1)
 
@@ -15,10 +15,10 @@ All numbers from the paper ([Simpson, Kozak, Doake, v3.11, 2026](paper/Simpson_E
 | Configuration | Accuracy on N=20 | Notes |
 |---|:--:|---|
 | **Aethis Engine** | **20/20 (100%)** | deterministic by construction |
-| GPT-5.4 (`reasoning_effort=low`) | 20/20 (100%) | 16–126 reasoning tokens per scenario |
+| GPT-5.4 (low reasoning effort) | 20/20 (100%) | deliberates on every scenario |
 | Claude Sonnet 4.6 | 19/20 (95%) | fails E4 (DE3/LEG3 carveback gap) |
-| GPT-5.4 (default) | 19/20 (95%) | fails E4; **0 reasoning tokens on every scenario** |
-| **Claude Opus 4.7** (current Anthropic strongest) | **18/20 (90%)** | fails B3 (£499 M boundary) + E4 |
+| GPT-5.4 (default) | 19/20 (95%) | fails E4; **engages no extended reasoning on any scenario** |
+| **Claude Opus 4.7** (Anthropic's strongest model at evaluation time, April 2026) | **18/20 (90%)** | fails B3 (£499 M boundary) + E4 |
 
 Three of four frontier-LLM configurations fail on the same scenario (the DE3/LEG3 carveback gap) across both Anthropic and OpenAI. Reproducible from `tools/replication_run.py` against `dataset/construction-all-risks/scenarios_v3_8_adversarial.yaml`.
 
@@ -48,7 +48,7 @@ See [`legalbench/`](legalbench/) for the full harness, all per-task results, the
 
 1. **The structural advantage of deterministic execution holds across model drift.** Even when specific v3.7 frontier-LLM failure cells close under model updates, the engine remains consistent with the formal fixtures. The §6.4.1 adversarial extension and the multi-prong LegalBench tasks both show current frontier models can still fail on compositional rule evaluation. The architectural argument is independent of any specific empirical snapshot.
 
-2. **GPT-5.4 default reasoning is essentially "no reasoning".** On the 20 v3.8 adversarial scenarios, GPT-5.4 at default reasoning effort uses 0 reasoning tokens per call — the API short-circuits to a 4–6 token answer. Switching to `reasoning_effort=low` invokes the reasoning channel (16–126 tokens per scenario) and catches the carveback-gap edge case that default misses. The v3.7 paper claim that "default reasoning is better than low" was withdrawn in v3.8 after instrumented replication produced the opposite.
+2. **GPT-5.4 default reasoning is essentially "no reasoning".** On the 20 v3.8 adversarial scenarios, GPT-5.4 at default reasoning effort engages no extended reasoning — it short-circuits to an immediate short answer. Requesting low reasoning effort invokes deliberation on every scenario and catches the carveback-gap edge case that default misses. The v3.7 paper claim that "default reasoning is better than low" was withdrawn in v3.8 after instrumented replication produced the opposite.
 
 3. **The DE3/LEG3 carveback gap is a structural failure mode across both major model families.** Three of four frontier-LLM configurations (GPT-5.4 default, Opus 4.7, Sonnet 4.6) return the wrong verdict on the explicit carveback-gap scenario (where `is_access_damage=true` and `consequence_of_failure=false` causes the carveback group to fail before enhanced-cover logic is reached). Pattern is consistent with compositional-evaluation limits of transformer-based LLMs documented in §3.3 (Dziri et al., Valmeekam et al.).
 
@@ -110,21 +110,21 @@ legalbench/                      # External validation on LegalBench (§6.10, v3
 ## Paper
 
 **Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation**
-Paul Simpson, John Kozak, Lisa Doake. April 2026 (v3.8).
+Paul Simpson, John Kozak, Lisa Doake. July 2026 (v3.13.0, working paper).
 
 - Source: [`paper/Simpson_Exception_Chain_Collapse_2026.md`](paper/Simpson_Exception_Chain_Collapse_2026.md)
 - PDF: [`paper/Simpson_Exception_Chain_Collapse_2026.pdf`](paper/Simpson_Exception_Chain_Collapse_2026.pdf)
-- arXiv: [TBD — added on submission]
 - LegalBench external-validation harness (§6.10): [`legalbench/`](legalbench/)
 
 ## Citation
 
 ```bibtex
-@article{simpson2026confidently,
+@misc{simpson2026confidently,
   title={Confidently Wrong: Exception Chain Collapse in Frontier LLM Rule Evaluation},
   author={Simpson, Paul and Kozak, John and Doake, Lisa},
-  journal={arXiv preprint arXiv:TBD},
-  year={2026}
+  year={2026},
+  note={Working paper v3.13.0},
+  howpublished={\url{https://github.com/Aethis-ai/confidently-wrong-benchmark}}
 }
 ```
 
